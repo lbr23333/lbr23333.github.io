@@ -4,3 +4,27 @@ title = 'lbr23333'
 theme = "PaperMod"
 [params]
 math = true
+[params.profileMode]
+enabled = true
+title = "你好，我是刘般若"
+subtitle = "粒子天体物理研究生"
+imageUrl = "https://github.com/lbr23333.png"
+imageWidth = 120
+imageHeight = 120
+imageTitle = "我的头像"
+
+[[params.socialIcons]]
+name = "email"
+url = "mailto:lbr200423333@gmial.com"
+
+[[menu.main]]
+identifier = "posts"
+name = "📚 全部文章"
+url = "/posts/"
+weight = 10
+
+[[menu.main]]
+identifier = "tags"
+name = "🏷️ 标签"
+url = "/tags/"
+weight = 20
