@@ -15,7 +15,7 @@ imageTitle = "我的头像"
 
 [[params.socialIcons]]
 name = "email"
-url = "mailto:lbr200423333@gmial.com"
+url = "mailto:lbr200423333@gmail.com"
 
 [[menu.main]]
 identifier = "posts"
