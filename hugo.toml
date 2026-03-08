@@ -17,6 +17,11 @@ imageTitle = "我的头像"
 name = "email"
 url = "mailto:lbr200423333@gmail.com"
 
+[[params.socialIcons]]
+name = "💗email"
+url = "2735311972@qq.com"
+title = "💗email"
+
 [[menu.main]]
 identifier = "posts"
 name = "📚 全部文章"
