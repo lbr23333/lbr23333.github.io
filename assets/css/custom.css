@@ -1,0 +1,21 @@
+/* Custom CSS for bounce effect on links in profile subtitle */
+
+.profile span a {
+    transition: transform 0.3s ease;
+}
+
+.profile span a:hover {
+    animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
