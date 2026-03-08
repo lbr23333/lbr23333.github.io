@@ -31,4 +31,3 @@ weight = 20
 
 [params.assets]
 favicon = "/qimojv.JPG"
-customCSS = ["/css/custom.css"]
