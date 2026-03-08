@@ -6,7 +6,7 @@ draft = false
 为什么抄书？
 
 
-[广义相对论](/Notes.pdf)
+[广义相对论](/Notes.pdf)只上传了Schwarzschild时空和一部分黑的笔记
 
 
-[量子场论](/PeskinChapter3.pdf)
+[量子场论](/PeskinChapter3.pdf)只上传了PeskinChapter3
