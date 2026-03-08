@@ -6,7 +6,7 @@ draft = false
 为什么抄书？
 
 
-[广义相对论](/static/Notes.pdf)
+[广义相对论](/Notes.pdf)
 
 
-[量子场论](/static/PeskinChapter3.pdf)
+[量子场论](/PeskinChapter3.pdf)
