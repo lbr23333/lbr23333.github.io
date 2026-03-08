@@ -5,5 +5,4 @@ title = 'Hello World'
 +++
 This is my first blog!
 $$1+1=2$$ 
-$ 2^2=4 $
 一切都将一去杳然，任何人都无法将其捕获。
