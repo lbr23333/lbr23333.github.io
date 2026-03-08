@@ -18,9 +18,9 @@ name = "email"
 url = "mailto:lbr200423333@gmail.com"
 
 [[params.socialIcons]]
-name = "💗email"
+name = "fzj-email"
 url = "2735311972@qq.com"
-title = "💗email"
+title = "fzj-email"
 
 [[menu.main]]
 identifier = "posts"
