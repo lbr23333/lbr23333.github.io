@@ -7,7 +7,7 @@ math = true
 [params.profileMode]
 enabled = true
 title = "你好！我是刘般若"
-subtitle = "粒子天体物理研究生｜"
+subtitle = "粒子天体物理研究生"
 imageUrl = "https://github.com/lbr23333.png"
 imageWidth = 120
 imageHeight = 120
