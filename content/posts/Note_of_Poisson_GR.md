@@ -12,6 +12,4 @@ tags = ["广义相对论"]
 * 三本经典的GR教材：Schutz,MTW,Wald1. 其中Schutz,MTW现在都有中译本. ^1.分别是入门、详尽、严谨。以Wald为最后一本经典的GR书正如以Weinberg为最后一本QFT教材一样，正在达成一种诡异的共识。
 * 这本书围绕的是GR非常酷的应用：黑洞理论。
 *  
-## Chapter1 Fundamentals
-### 1.1 Vectors,dual vectors,and tensors
-考虑一条由λ参数化的曲线\$\gamma$，在任一个坐标系中为x^α(λ).则标量场f(x^α)沿该曲线的变换为
+（感觉还是不太习惯于用Markdown做笔记，我将继续投入TeXmacs的怀抱，所以以后的笔记还是以pdf的形式发布，Markdown用于记录一些琐事）
