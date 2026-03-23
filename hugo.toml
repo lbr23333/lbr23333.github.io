@@ -31,3 +31,9 @@ weight = 20
 
 [params.assets]
 favicon = "/qimojv.JPG"
+
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [['$$', '$$']]
+    inline = [['$', '$']]
