@@ -1,0 +1,10 @@
+{{ $read := float (.Get "read" | default 0) }}
+{{ $total := float (.Get "total" | default 1) }}
+{{ $percentage := mul (div $read $total) 100 }}
+
+<div style="width: 100%; background-color: #e0e0e0; border-radius: 8px; margin: 20px 0; overflow: hidden;">
+  <div style="width: {{ $percentage }}%; background-color: #5b9e84; height: 12px; border-radius: 8px; transition: width 0.5s ease-in-out;"></div>
+</div>
+<p style="font-size: 0.85em; color: #888; text-align: center; margin-top: -15px; margin-bottom: 20px;">
+  当前阅读进度: {{ .Get "read" }} / {{ .Get "total" }} 页 ({{ printf "%.1f" $percentage }}%)
+</p>
