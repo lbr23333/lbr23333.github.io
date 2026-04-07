@@ -29,6 +29,12 @@ name = "🏷️ 标签"
 url = "/tags/"
 weight = 20
 
+[[menu.main]]
+identifier = "books"
+name = "📖 读书"
+url = "/books/"
+weight = 20
+
 [params.assets]
 favicon = "/qimojv.JPG"
 
