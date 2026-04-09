@@ -28,7 +28,7 @@ weight : 1
 
 任何带电粒子穿过介质时，介质中粒子受极化而激发到高能级，激发粒子回到基态时释放光子，该光子的速度如前所述小于入射粒子的速度，于是产生了类似音爆的现象（冲击波）。
 
-如图所示![](/images/comsic_ray/Cherenkov.svg.png)
+如图所示![切伦科夫](/images/cosmicray/Cherenkov.svg.png)
 显然有发射角满足
 $$
 \theta = \cos^{-1}(\frac{1}{n\beta})
