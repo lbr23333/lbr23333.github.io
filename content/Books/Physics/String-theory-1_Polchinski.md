@@ -63,3 +63,42 @@ $$
 * 具体到chapter1中的String，一通复分析计算得到了Virasoro Algebra
 
 对，就看了这么一点。
+
+###### 4.15
+
+算是把第二章看完了
+
+有一些开始没想明白，后来想通了的问题
+
+1. 为什么在共形权h的定义中
+   $$
+\mathcal{A}'(z')=\xi^{-h}\mathcal{A}(z) 
+   $$
+   h恰好是A算符共形变换的z^-2项系数，即
+   $$
+T(z)\mathcal{A}(0,0)=\dots+\frac{h}{z^2}\mathcal{A}(0,0)+\frac{1}{z}\partial \mathcal{A}(0,0)+\dots
+   $$
+   可以考虑无穷小的共形变换：
+   $$
+\xi=1+\epsilon
+   $$
+   $$
+z'=(1+\epsilon)z=z+\epsilon v(z),i.e. v(z)=z
+   $$
+   于是由Ward恒等式可得：
+   $$
+\delta\mathcal{A}(z)=-\epsilon(z\mathcal{A}^{(0)}(z)+\mathcal{A}^{(1)}(z))
+   $$
+   另一方面，
+   $$
+\mathcal{A}'(z')=\xi^{-h}\mathcal{A}(z) =(1+\epsilon)^{-h}\mathcal{{A}}
+=(1-\epsilon h)\mathcal{A}
+\\
+\mathcal{A}'(z')=\mathcal{A}'(z+\epsilon z)=\mathcal{A}'(z)+\epsilon z \partial \mathcal{A}(Z)
+\\
+\xRightarrow{}\delta\mathcal{A}=\mathcal{A}'(z)-\mathcal{A}(z)=-h\epsilon \mathcal{A}(z)-\epsilon z\partial\mathcal{A}(z)
+   $$
+   于是
+   $$
+\mathcal{A}^{(1)}(z)=h\mathcal{A}(z)
+   $$
