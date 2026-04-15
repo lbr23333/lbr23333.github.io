@@ -68,6 +68,29 @@ $$
 
 算是把第二章看完了
 
+2.7节 Mode expansion
+
+这一节就是把前面在2.5中提到的几个CFT用2.6里面的一些方法，计算一些基本的量，比较重点计算的主要是
+* X^mu CFT
+* bc CFT
+  
+2.8节 Vertex operators
+
+饺子醋来咯。最展现CFT魅力的一集。
+* 由于世界面w-coord可以由共形变换z=exp(-iw)，变换到一个z-coord上的unit disk(closed string)，又由于
+$$
+\Psi_\mathcal{A}=\int [\phi_i]_{\phi_b}exp(-S[\phi_i])\mathcal{A}(0)
+$$
+可知w-coord中的任意态都对应z-coord中的一个local operator at origin，此即是vertex operator.
+* 计算了general升降算符与态认同的表示
+* bc theory and open string camputation
+* path integral and an explicit example --- single free scalar field
+
+2.9节
+
+累了，后面更。
+
+---
 有一些开始没想明白，后来想通了的问题
 
 1. 为什么在共形权h的定义中
