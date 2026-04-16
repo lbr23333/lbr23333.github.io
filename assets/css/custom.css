@@ -1,0 +1,4 @@
+.katex, .katex * {
+    box-sizing: content-box !important;
+    line-height: normal !important;
+}
