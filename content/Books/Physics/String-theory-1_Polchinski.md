@@ -2,7 +2,7 @@
 title: "String Thory Volume 1"
 description: "Polchinski"
 ---
-{{< progress read="40" total="328" >}}
+{{< progress read="76" total="328" >}}
 
 >悲哀的是，在初次接触量子场论到正式开始学习弦论，居然过了足足两年？
 
@@ -41,7 +41,7 @@ $$
  2.3节 Ward Id.
  * 得到了流与变换的关系，最常用的形式为
 $$
-Res_{z\rightarrow z_0}j(z)A(z_0,\bar{z_0})+\bar{Res}_{z\rightarrow z_0}\tilde{j}(\bar{z})A(z_0,\bar{z_0}) = \frac{1}{i\epsilon}\delta A(z_0,\bar{z_0})
+Res_{z\rightarrow z_0}j(z)A(z_0,\bar{z_0})+\overline{Res}_{z\rightarrow z_0}\tilde{j}(\bar{z})A(z_0,\bar{z_0}) = \frac{1}{i\epsilon}\delta A(z_0,\bar{z_0})
 $$
 * 给出了重要的世界面上坐标平移所导出的能动张量
 $$
