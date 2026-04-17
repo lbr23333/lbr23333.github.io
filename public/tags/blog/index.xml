@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Blog on lbr23333</title>
+    <link>http://localhost:1313/tags/blog/</link>
+    <description>Recent content in Blog on lbr23333</description>
+    <generator>Hugo -- 0.147.4</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>202604Blog</title>
+      <link>http://localhost:1313/posts/blogs/2026/blog202604/</link>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/blogs/2026/blog202604/</guid>
+      <description>&lt;h3 id=&#34;43&#34;&gt;4.3&lt;/h3&gt;
+&lt;p&gt;突然发现拓扑中的完备是一个很直观的定义（ &lt;del&gt;* 实际上拓扑中的定义都很直观 *&lt;/del&gt; ）。度量空间是完备的，如果对于其中任何的柯西序列是收敛的。当初乍一看柯西序列的定义：对于序列{x_n}，若
+&lt;/p&gt;
+$$
+ \forall \epsilon &gt; 0,\exist N&gt;0,s.t.\forall n,m&gt;N,d(x_m,x_n)&lt;\epsilon
+$$&lt;p&gt;
+则是柯西序列。与收敛序列定义几乎相同，一个很好的反例是将极限点扣除的收敛序列就是柯西序列但显然不收敛。但正是这样生硬的扣除导致了空间的不完备，所以再看上面度量空间完备的定义，就很合理。实际上，在度量空间中，完备等价于绝对闭。所谓绝对闭是指将空间嵌入到一个更大的空间仍是闭的（否则考虑到全空间的既开又闭trivial）。再加上度量空间的整体有界，就可以像欧氏空间中用（整体）有界（绝对）闭来等价描述紧。&lt;/p&gt;
+&lt;p&gt;我勒个Sorgenfrey啊，居然有专门收集各种标准证明的网站&lt;a href=&#34;https://proofwiki.org/wiki/Main_Page&#34;&gt;proofwiki&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;45&#34;&gt;4.5&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;章台柳，章台柳，昔日青青今在否&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/Blog/IMG_3228.jpeg&#34;&gt;
+还有两张可以在Github里找到&lt;/p&gt;
+&lt;h3 id=&#34;47&#34;&gt;4.7&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;世间对村上春树一半的误解，来自看过《挪威的森林》；另一半的误解，来自没有看过《发条鸟年代记》。&amp;ndash;编辑渡边&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;单说震撼完全无法描述我现在的心情。&lt;/p&gt;
+&lt;p&gt;首先不得不承认的是，全篇结构松散，情节推进缓慢，现实虚幻相交常常让我不知所云，主线在第二部居然才堪堪而始。但仍不可否认这就是我心目中村上春树最伟大的一部作品。 书中靠绵谷升所暗示的日本军国主义，与冈田亨（也就是“我”）对于生活的“从容”所对抗（很抱歉我是在想不出来用什么词语去形容，上世纪八十年代的日本恐怕从容也是一种难得心态），极力地抨击了日本二战后不承认罪行的丑恶嘴脸。行文的巅峰大概就是对战中细节的残忍描述，“文章浑天成，妙手偶得之”大概就是如此，之后的村上春树也再也没有过如此高度的行文。我从来都不认为村上春树能够得到诺奖，唯该篇除外。&lt;/p&gt;
+&lt;h3 id=&#34;49&#34;&gt;4.9&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;昨夜雨疏风骤，浓睡不消残酒&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;不知为何最近午睡都难醒，心情不是特别好，而且不是一般地不是特别好，也就是很差咯。没有平日里那样的激情，倒也算不上激情，是那种能够支撑在这个地方生活下去的欲望。这是怎么了？&lt;/p&gt;
+&lt;h3 id=&#34;410&#34;&gt;4.10&lt;/h3&gt;
+&lt;p&gt;「流形之间的push forward本质上是映射在该点的微分，在选定了局域坐标系后，其表示矩阵就是Jacobian」&lt;/p&gt;
+&lt;h3 id=&#34;411&#34;&gt;4.11&lt;/h3&gt;
+&lt;p&gt;看Polchinski纯像区在蠕动，一天看不到十面&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;416&#34;&gt;4.16&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;天街小雨润如酥，草色遥看近却无。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;我说这是重整化，有没有懂的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>202603Blog</title>
+      <link>http://localhost:1313/posts/blogs/2026/blog202603/</link>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/blogs/2026/blog202603/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;3.13&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;若无闲事挂心头，便是人间好时节。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;原来梁书中对于矢量的定义是代数版本，相比之下一般的微分几何书中采取的曲线等价类版本更能让我接受（或者说初学者）。但都同我最初所想不太一样，即都对曲线有所依赖，&lt;del&gt;* 我总以为有不依赖于曲线的方法 *&lt;/del&gt;(&lt;strong&gt;3.14&lt;/strong&gt;修正，不是曲线依赖，是point-wise定义的，因为从几何的定义上来看只保留了一阶导数的信息，而舍弃了曲线整体；另外从代数角度来看，切矢量作为导子更是如此。另外由协变导数的定义也可以很容易看出是point-wise定义的)。
+另外值得一提的是，伍鸿熙老师的《黎曼几何入门》确实引人入胜，定义的动机、几何图像交代得非常清楚。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.14&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;终于开始看BBS力，希望这学期末时能有所感悟（当然是不期望这学期能看完了）。
+伍老师书简直把我没想过的一些点都写出来了！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.15&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;伍书中对于“测地线是局域最短线”（第三章定理2）的证明是极好的，非常能代表本书。首先说明了指数映射是局域上的一个微分同胚，指数映射是保径向长度的。设想出定理2的形式，现在欧氏空间中进行证明，再对其步骤进行推广到一般的流形当中。由于微分同胚，只需要考虑一个切空间中的开球映射到流形中的“开球”。再证明推广到一般流形中度规所定义的内积有同欧氏空间中好的性质，即径向单位切向量内积为1，而径向与切于球面的向量正交（即书中Lemma4，Lemma5即GuassLemma）。从而完成推广，即完成了对定理2的证明。从猜想到实践一气呵成，畅快无比。
+几何上，利用指数映射将欧氏空间中的直线推广到一般流形中的测地线
+&lt;/p&gt;
+$$径向最短\Leftrightarrow总长度最小\Leftrightarrow无切球分量\Leftrightarrow测地线$$&lt;p&gt;
+很好地体现了测地线的分析学定义&lt;/p&gt;
+$$\nabla_{\dot{\gamma}}\dot{\gamma}=0$$&lt;p&gt;的意义！&lt;/p&gt;
+&lt;p&gt;怠于输入太多数学符号，看上去可能有些不太习惯，还请见谅。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.16&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;依旧伍书，第四章中有一个高观点证明球面上大圆是测地线的方法。先证明了Lemma4:&lt;/p&gt;
+$$一个等距变换的固定点集是一个全测地子流形。$$&lt;p&gt;所谓全测地子流形就是指大流形中切于该子流形的测地线都在该子流形内，如果子流形恰为一维，显然子流形本身就是测地线（书中关于Lemma4的证明也是先如此说明的）。考虑到二维球面上一大圆为一三维欧氏空间中的二维平面与二维球面所截得，三维欧氏空间中关于二维平面的反射诱导出二维球面上的一个等距，可得大圆恰好是固定子集，即是测地线。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.19&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;雄关漫道真如铁，而今迈步从头越。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;之前学过的一点拓扑和微分流形都忘完了，今天开始补，第二遍应该学很快。（大概&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.21&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;购味全饮半而倒入咖啡，实乃每周末一趣事。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是一份上等的饮品（&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;从前完全没有想过为什么要定义Product Topology，今天应该算是想明白了一点。直观上所定义的“乘积拓扑”：&lt;/p&gt;
+$$
+\text{对于拓扑空间族}(X_\alpha,\mathcal{T}_{\alpha}),\text{考虑有} \\
+T_{box}=  \{ U\subset\Pi_{\alpha}X_\alpha:\forall(x_\alpha)\in U,\\ \exists U_\alpha \in \mathcal{T}_\alpha \text{ s.t } (x)\in \Pi_\alpha U_\alpha\subset U\}
+$$&lt;p&gt;实际上，这样所定义的拓扑称为 box topology，它看上去确实就像乘积拓扑一样，但当考虑无限乘积空间中如下映射与开集时：&lt;/p&gt;
+$$
+\begin{aligned}
+f:\mathbb{R}\rightarrow\mathbb{R}^{\mathbb{N}}:t \mapsto(t,t,...)\\
+\Pi_{i\in \mathbb{N}}(-\frac{1}{n},\frac{1}{n})
+\end{aligned}
+$$&lt;p&gt;显然其原像为 {0}，不是开集，根据连续的定义得知 f 不是一个连续映射，这当然是不合理的。而补救的方法也很简单，即令上无穷开集的乘积改为有限开集的乘积再乘上余下空间的全空间，就没有上述问题了，这样定义的拓扑就是规规矩矩的乘积拓扑。而一般书中说的都是另外一种定义：使得投影映射（从乘积空间到某个单独的空间）连续的拓扑就是乘积拓扑。这两个定义是等价的，这很好理解，因为保持 $\pi_i$ 连续实际上就是要求每个空间都有“开集原像为开集”这样好的性质。具体地：&lt;/p&gt;
+$$
+\begin{aligned}
+&amp; \text{考虑 } U_{i_j} \text{ 为空间 } X_{i_j} \text{ 中的开集，其中 } j=1, 2,...,n  \\ \text{，可知：} 
+&amp; \pi^{-1}_{i_1}\cap\pi^{-1}_{i_2}\cap\pi^{-1}_{i_3}\cap...\pi^{-1}_{i_n}=\Pi_{j}U_{i_j}\times\Pi_{k \ne i_j }x_k
+\end{aligned}
+$$&lt;p&gt;也即与上面第一个定义一致。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

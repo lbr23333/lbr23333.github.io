@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>202603Blog | lbr23333</title>
+<meta name="keywords" content="Blog, 年代记">
+<meta name="description" content="3.13
+
+若无闲事挂心头，便是人间好时节。
+原来梁书中对于矢量的定义是代数版本，相比之下一般的微分几何书中采取的曲线等价类版本更能让我接受（或者说初学者）。但都同我最初所想不太一样，即都对曲线有所依赖，* 我总以为有不依赖于曲线的方法 *(3.14修正，不是曲线依赖，是point-wise定义的，因为从几何的定义上来看只保留了一阶导数的信息，而舍弃了曲线整体；另外从代数角度来看，切矢量作为导子更是如此。另外由协变导数的定义也可以很容易看出是point-wise定义的)。
+另外值得一提的是，伍鸿熙老师的《黎曼几何入门》确实引人入胜，定义的动机、几何图像交代得非常清楚。
+3.14
+终于开始看BBS力，希望这学期末时能有所感悟（当然是不期望这学期能看完了）。
+伍老师书简直把我没想过的一些点都写出来了！
+3.15
+伍书中对于“测地线是局域最短线”（第三章定理2）的证明是极好的，非常能代表本书。首先说明了指数映射是局域上的一个微分同胚，指数映射是保径向长度的。设想出定理2的形式，现在欧氏空间中进行证明，再对其步骤进行推广到一般的流形当中。由于微分同胚，只需要考虑一个切空间中的开球映射到流形中的“开球”。再证明推广到一般流形中度规所定义的内积有同欧氏空间中好的性质，即径向单位切向量内积为1，而径向与切于球面的向量正交（即书中Lemma4，Lemma5即GuassLemma）。从而完成推广，即完成了对定理2的证明。从猜想到实践一气呵成，畅快无比。
+几何上，利用指数映射将欧氏空间中的直线推广到一般流形中的测地线
+
+$$径向最短\Leftrightarrow总长度最小\Leftrightarrow无切球分量\Leftrightarrow测地线$$
+很好地体现了测地线的分析学定义
+$$\nabla_{\dot{\gamma}}\dot{\gamma}=0$$的意义！
+怠于输入太多数学符号，看上去可能有些不太习惯，还请见谅。
+3.16
+依旧伍书，第四章中有一个高观点证明球面上大圆是测地线的方法。先证明了Lemma4:
+$$一个等距变换的固定点集是一个全测地子流形。$$所谓全测地子流形就是指大流形中切于该子流形的测地线都在该子流形内，如果子流形恰为一维，显然子流形本身就是测地线（书中关于Lemma4的证明也是先如此说明的）。考虑到二维球面上一大圆为一三维欧氏空间中的二维平面与二维球面所截得，三维欧氏空间中关于二维平面的反射诱导出二维球面上的一个等距，可得大圆恰好是固定子集，即是测地线。
+3.19
+
+雄关漫道真如铁，而今迈步从头越。
+之前学过的一点拓扑和微分流形都忘完了，今天开始补，第二遍应该学很快。（大概
+3.21
+购味全饮半而倒入咖啡，实乃每周末一趣事。
+
+这是一份上等的饮品（
+从前完全没有想过为什么要定义Product Topology，今天应该算是想明白了一点。直观上所定义的“乘积拓扑”：
+$$
+\text{对于拓扑空间族}(X_\alpha,\mathcal{T}_{\alpha}),\text{考虑有} \\
+T_{box}=  \{ U\subset\Pi_{\alpha}X_\alpha:\forall(x_\alpha)\in U,\\ \exists U_\alpha \in \mathcal{T}_\alpha \text{ s.t } (x)\in \Pi_\alpha U_\alpha\subset U\}
+$$实际上，这样所定义的拓扑称为 box topology，它看上去确实就像乘积拓扑一样，但当考虑无限乘积空间中如下映射与开集时：
+$$
+\begin{aligned}
+f:\mathbb{R}\rightarrow\mathbb{R}^{\mathbb{N}}:t \mapsto(t,t,...)\\
+\Pi_{i\in \mathbb{N}}(-\frac{1}{n},\frac{1}{n})
+\end{aligned}
+$$显然其原像为 {0}，不是开集，根据连续的定义得知 f 不是一个连续映射，这当然是不合理的。而补救的方法也很简单，即令上无穷开集的乘积改为有限开集的乘积再乘上余下空间的全空间，就没有上述问题了，这样定义的拓扑就是规规矩矩的乘积拓扑。而一般书中说的都是另外一种定义：使得投影映射（从乘积空间到某个单独的空间）连续的拓扑就是乘积拓扑。这两个定义是等价的，这很好理解，因为保持 $\pi_i$ 连续实际上就是要求每个空间都有“开集原像为开集”这样好的性质。具体地：
+$$
+\begin{aligned}
+& \text{考虑 } U_{i_j} \text{ 为空间 } X_{i_j} \text{ 中的开集，其中 } j=1, 2,...,n  \\ \text{，可知：} 
+& \pi^{-1}_{i_1}\cap\pi^{-1}_{i_2}\cap\pi^{-1}_{i_3}\cap...\pi^{-1}_{i_n}=\Pi_{j}U_{i_j}\times\Pi_{k \ne i_j }x_k
+\end{aligned}
+$$也即与上面第一个定义一致。">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/blogs/2026/blog202603/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc7d6c1b0875c21905a871cd5cb2fe2277560b003e101702de7d452dab58ffea.css" integrity="sha256-3H1sGwh1whkFqHHNXLL&#43;IndWCwA&#43;EBcC3n1FLatY/&#43;o=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/qimojv.JPG">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/blogs/2026/blog202603/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css" />
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="lbr23333 (Alt + H)">lbr23333</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="📚 全部文章">
+                    <span>📚 全部文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="🏷️ 标签">
+                    <span>🏷️ 标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/books/" title="📖 读书">
+                    <span>📖 读书</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      202603Blog
+    </h1>
+    <div class="post-meta"><span title='2026-03-31 00:00:00 +0000 UTC'>March 31, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p><strong>3.13</strong></p>
+<blockquote>
+<p>若无闲事挂心头，便是人间好时节。</p></blockquote>
+<p>原来梁书中对于矢量的定义是代数版本，相比之下一般的微分几何书中采取的曲线等价类版本更能让我接受（或者说初学者）。但都同我最初所想不太一样，即都对曲线有所依赖，<del>* 我总以为有不依赖于曲线的方法 *</del>(<strong>3.14</strong>修正，不是曲线依赖，是point-wise定义的，因为从几何的定义上来看只保留了一阶导数的信息，而舍弃了曲线整体；另外从代数角度来看，切矢量作为导子更是如此。另外由协变导数的定义也可以很容易看出是point-wise定义的)。
+另外值得一提的是，伍鸿熙老师的《黎曼几何入门》确实引人入胜，定义的动机、几何图像交代得非常清楚。</p>
+<p><strong>3.14</strong></p>
+<p>终于开始看BBS力，希望这学期末时能有所感悟（当然是不期望这学期能看完了）。
+伍老师书简直把我没想过的一些点都写出来了！</p>
+<p><strong>3.15</strong></p>
+<p>伍书中对于“测地线是局域最短线”（第三章定理2）的证明是极好的，非常能代表本书。首先说明了指数映射是局域上的一个微分同胚，指数映射是保径向长度的。设想出定理2的形式，现在欧氏空间中进行证明，再对其步骤进行推广到一般的流形当中。由于微分同胚，只需要考虑一个切空间中的开球映射到流形中的“开球”。再证明推广到一般流形中度规所定义的内积有同欧氏空间中好的性质，即径向单位切向量内积为1，而径向与切于球面的向量正交（即书中Lemma4，Lemma5即GuassLemma）。从而完成推广，即完成了对定理2的证明。从猜想到实践一气呵成，畅快无比。
+几何上，利用指数映射将欧氏空间中的直线推广到一般流形中的测地线
+</p>
+$$径向最短\Leftrightarrow总长度最小\Leftrightarrow无切球分量\Leftrightarrow测地线$$<p>
+很好地体现了测地线的分析学定义</p>
+$$\nabla_{\dot{\gamma}}\dot{\gamma}=0$$<p>的意义！</p>
+<p>怠于输入太多数学符号，看上去可能有些不太习惯，还请见谅。</p>
+<p><strong>3.16</strong></p>
+<p>依旧伍书，第四章中有一个高观点证明球面上大圆是测地线的方法。先证明了Lemma4:</p>
+$$一个等距变换的固定点集是一个全测地子流形。$$<p>所谓全测地子流形就是指大流形中切于该子流形的测地线都在该子流形内，如果子流形恰为一维，显然子流形本身就是测地线（书中关于Lemma4的证明也是先如此说明的）。考虑到二维球面上一大圆为一三维欧氏空间中的二维平面与二维球面所截得，三维欧氏空间中关于二维平面的反射诱导出二维球面上的一个等距，可得大圆恰好是固定子集，即是测地线。</p>
+<p><strong>3.19</strong></p>
+<blockquote>
+<p>雄关漫道真如铁，而今迈步从头越。</p></blockquote>
+<p>之前学过的一点拓扑和微分流形都忘完了，今天开始补，第二遍应该学很快。（大概</p>
+<p><strong>3.21</strong></p>
+<p>购味全饮半而倒入咖啡，实乃每周末一趣事。</p>
+<blockquote>
+<p>这是一份上等的饮品（</p></blockquote>
+<p>从前完全没有想过为什么要定义Product Topology，今天应该算是想明白了一点。直观上所定义的“乘积拓扑”：</p>
+$$
+\text{对于拓扑空间族}(X_\alpha,\mathcal{T}_{\alpha}),\text{考虑有} \\
+T_{box}=  \{ U\subset\Pi_{\alpha}X_\alpha:\forall(x_\alpha)\in U,\\ \exists U_\alpha \in \mathcal{T}_\alpha \text{ s.t } (x)\in \Pi_\alpha U_\alpha\subset U\}
+$$<p>实际上，这样所定义的拓扑称为 box topology，它看上去确实就像乘积拓扑一样，但当考虑无限乘积空间中如下映射与开集时：</p>
+$$
+\begin{aligned}
+f:\mathbb{R}\rightarrow\mathbb{R}^{\mathbb{N}}:t \mapsto(t,t,...)\\
+\Pi_{i\in \mathbb{N}}(-\frac{1}{n},\frac{1}{n})
+\end{aligned}
+$$<p>显然其原像为 {0}，不是开集，根据连续的定义得知 f 不是一个连续映射，这当然是不合理的。而补救的方法也很简单，即令上无穷开集的乘积改为有限开集的乘积再乘上余下空间的全空间，就没有上述问题了，这样定义的拓扑就是规规矩矩的乘积拓扑。而一般书中说的都是另外一种定义：使得投影映射（从乘积空间到某个单独的空间）连续的拓扑就是乘积拓扑。这两个定义是等价的，这很好理解，因为保持 $\pi_i$ 连续实际上就是要求每个空间都有“开集原像为开集”这样好的性质。具体地：</p>
+$$
+\begin{aligned}
+& \text{考虑 } U_{i_j} \text{ 为空间 } X_{i_j} \text{ 中的开集，其中 } j=1, 2,...,n  \\ \text{，可知：} 
+& \pi^{-1}_{i_1}\cap\pi^{-1}_{i_2}\cap\pi^{-1}_{i_3}\cap...\pi^{-1}_{i_n}=\Pi_{j}U_{i_j}\times\Pi_{k \ne i_j }x_k
+\end{aligned}
+$$<p>也即与上面第一个定义一致。</p>
+<p><strong>3.23</strong></p>
+<p>在证明紧空间与紧空间的乘积仍是一个紧空间时，会用到Tube Lemma，也就是所谓的管形领域引理：</p>
+$$
+\text{If A is compact in X, B is compact in Y, }\\ \text{N is open in } X\times Y,\text{then exists open U in X and open V in Y}\\ s.t. A\times B\sub U\times V \sub N
+$$<p>
+证明其实也很简单，主要就是紧性将一个局域的性质推广到整体的能力。先证明一个特殊情况，即其中A是一个单点集（所谓管形）：
+</p>
+$$
+A=\{ x_0 \}\\
+\forall (x_0,y)\in X\times B,\exist U^{y}_{x_0}\sub X open,\exist V^y \sub Y open , \forall y\in B
+\\ s.t. (x_0,y)\in U^{y}_{x_0}\times V^y \sub N
+\\ \text{then } B\sub \cup_{y_i} V^{y_i} = V\sub \cup_{y\in B}V^y
+\\ \text{ , where yi belongs to a finite set since B is compact}
+\\ \text{let }U=\cap_{y_i}U^{y_i}_{x_0},\text{which is open for finity}
+\\ then U\times V =  U\times \cup_{y_i}V^{y_i}\sub \cup_{y_i}(U\times V_{y_i})\sub \cup_{y_i}(U^{y_i}_{x_0},V_{y_i})\sub \cup_{y}(U^{y}_{x_0},V^{y})\sub N
+\\ \text{the last sub is for the arbitrariness of y}
+$$<p>
+其中令我疑惑的是，为什么对于{x_0}要取不同的开集，直接取一个最小的不可以吗？
+因为要考虑B中点y取不同点时，都要满足U * V属于N的条件，所以取x_0的开领域要根据y变化，从而取交后得到最小的。考虑在R2中，A={0},B=[0,1]，而N是一个完全不规则的尼斯湖水怪形，很显然这个图形并不能直接由乘积得到（因为欧氏平面中称出来的总是方的，这也是不能直接取一个最小U的原因），对于不同y值，该图形有宽有窄，所以要取成U^{y}。
+（这公式格式好丑，但最近没时间，先忍忍&hellip;）</p>
+<p><strong>3.30</strong></p>
+<p>What mathematicians like is something GLOBAL ,but what physicist deal with is mostly something LOCAL.</p>
+<h5 id="331">3.31<a hidden class="anchor" aria-hidden="true" href="#331">#</a></h5>
+<p>所希望上岸的人都已上岸，无非人生一大庆幸。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/blog/">Blog</a></li>
+      <li><a href="http://localhost:1313/tags/%E5%B9%B4%E4%BB%A3%E8%AE%B0/">年代记</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">lbr23333</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

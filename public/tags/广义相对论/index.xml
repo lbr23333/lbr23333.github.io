@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>广义相对论 on lbr23333</title>
+    <link>http://localhost:1313/tags/%E5%B9%BF%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/</link>
+    <description>Recent content in 广义相对论 on lbr23333</description>
+    <generator>Hugo -- 0.147.4</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%B9%BF%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Poisson GR</title>
+      <link>http://localhost:1313/posts/notes/note_of_poisson_gr/</link>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/notes/note_of_poisson_gr/</guid>
+      <description>&lt;h1 id=&#34;notes-on-poisson-gr&#34;&gt;Notes on Poisson GR&lt;/h1&gt;
+&lt;h2 id=&#34;chapter0-前言&#34;&gt;Chapter0 前言&lt;/h2&gt;
+&lt;p&gt;考虑到自己先前在学习广义相对论中对微分几何的一些疑惑，加之上学期田老师几乎完全脱离数学的讲法，我想尽可能把微分几何搞清楚，但是又不太想直接看陈省身，所以先来看看Poisson，只有两百来页，应该很快就看完了吧（
+这本书是看到一个中黑洞热力学相关文献推荐，在GR部分所推荐的介于Carroll与Wald中间的一本针对GR中计算的书。在上学期也确实参考了一点，看上去确实不错，应该值得一读。
+另外是书中前言部分值得一提的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;三本经典的GR教材：Schutz,MTW,Wald1. 其中Schutz,MTW现在都有中译本. ^1.分别是入门、详尽、严谨。以Wald为最后一本经典的GR书正如以Weinberg为最后一本QFT教材一样，正在达成一种诡异的共识。&lt;/li&gt;
+&lt;li&gt;这本书围绕的是GR非常酷的应用：黑洞理论。&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;（感觉还是不太习惯于用Markdown做笔记，我将继续投入TeXmacs的怀抱，所以以后的笔记还是以pdf的形式发布，Markdown用于记录一些琐事）&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>研一上笔记</title>
+      <link>http://localhost:1313/posts/notes/old-notes/</link>
+      <pubDate>Sun, 08 Mar 2026 18:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/notes/old-notes/</guid>
+      <description>&lt;p&gt;为什么抄书？&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/Notes.pdf&#34;&gt;广义相对论&lt;/a&gt;只上传了Schwarzschild时空和一部分黑的笔记&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/PeskinChapter3.pdf&#34;&gt;量子场论&lt;/a&gt;只上传了PeskinChapter3&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

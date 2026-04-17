@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>宇宙线物理 | lbr23333</title>
+<meta name="keywords" content="">
+<meta name="description" content="课件实在看不下去，遂整理一份">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/notes/cosmic_ray/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc7d6c1b0875c21905a871cd5cb2fe2277560b003e101702de7d452dab58ffea.css" integrity="sha256-3H1sGwh1whkFqHHNXLL&#43;IndWCwA&#43;EBcC3n1FLatY/&#43;o=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/qimojv.JPG">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/notes/cosmic_ray/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css" />
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="lbr23333 (Alt + H)">lbr23333</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="📚 全部文章">
+                    <span>📚 全部文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="🏷️ 标签">
+                    <span>🏷️ 标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/books/" title="📖 读书">
+                    <span>📖 读书</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      宇宙线物理
+    </h1>
+    <div class="post-description">
+      课件实在看不下去，遂整理一份
+    </div>
+    <div class="post-meta"><span title='2026-04-15 00:00:00 +0000 UTC'>April 15, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content"><ul>
+<li><a href="#1%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80">1.理论基础</a></li>
+<li><a href="#2%E5%AE%9E%E9%AA%8C%E5%9F%BA%E7%A1%80">2.实验基础</a>
+<ul>
+<li><a href="#21">2.1</a>
+<ul>
+<li><a href="#213-%E5%88%87%E4%BC%A6%E7%A7%91%E5%A4%AB%E8%BE%90%E5%B0%84%E5%92%8C%E7%A9%BF%E8%B6%8A%E8%BE%90%E5%B0%84">2.1.3 切伦科夫辐射和穿越辐射</a>
+<ul>
+<li><a href="#%E5%88%87%E4%BC%A6%E7%A7%91%E5%A4%AB%E8%BE%90%E5%B0%84">切伦科夫辐射</a></li>
+</ul>
+</li>
+<li><a href="#214-%E5%85%89%E5%AD%90%E4%B8%8E%E7%89%A9%E8%B4%A8%E7%9A%84%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8">2.1.4 光子与物质的相互作用</a>
+<ul>
+<li><a href="#%E4%B8%BB%E8%A6%81%E7%AB%9E%E4%BA%89%E5%8C%BA%E5%9F%9F">主要竞争区域</a></li>
+<li><a href="#%E6%AD%A3%E8%B4%9F%E7%94%B5%E5%AD%90%E5%AF%B9%E4%BA%A7%E7%94%9F">正负电子对产生</a></li>
+<li><a href="#%E5%85%89%E5%AD%90%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E6%88%AA%E9%9D%A2">光子相互作用截面</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#22-%E7%94%B5%E7%A3%81%E7%BA%A7%E8%81%94%E8%BF%87%E7%A8%8B">2.2 电磁级联过程</a>
+<ul>
+<li><a href="#%E4%BA%91%E9%9B%BE%E5%AE%A4">云雾室</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1理论基础">1.理论基础<a hidden class="anchor" aria-hidden="true" href="#1理论基础">#</a></h2>
+<h2 id="2实验基础">2.实验基础<a hidden class="anchor" aria-hidden="true" href="#2实验基础">#</a></h2>
+<h3 id="21">2.1<a hidden class="anchor" aria-hidden="true" href="#21">#</a></h3>
+<p>核心问题：宇宙线进入物质或者大气后，会通过哪些相互作用损失能量、改变方向、产生新粒子，形成可以探测的簇射。</p>
+<h4 id="213-切伦科夫辐射和穿越辐射">2.1.3 切伦科夫辐射和穿越辐射<a hidden class="anchor" aria-hidden="true" href="#213-切伦科夫辐射和穿越辐射">#</a></h4>
+<h5 id="切伦科夫辐射">切伦科夫辐射<a hidden class="anchor" aria-hidden="true" href="#切伦科夫辐射">#</a></h5>
+<p>切伦科夫辐射是一种电磁辐射，是当粒子穿越介质时，速度大于该介质中光速时所产生的。其成因类似于音爆。</p>
+<blockquote>
+<p>切伦科夫辐射的一个经典例子是水下的核电站会有蓝色光芒</p></blockquote>
+<p>任何带电粒子穿过介质时，介质中粒子受极化而激发到高能级，激发粒子回到基态时释放光子，该光子的速度如前所述小于入射粒子的速度，于是产生了类似音爆的现象（冲击波）。</p>
+<p>如图所示<img alt="切伦科夫" loading="lazy" src="/images/cosmicray/Cherenkov.svg.png">
+显然有发射角满足
+</p>
+$$
+\theta = \cos^{-1}(\frac{1}{n\beta})
+$$<p>
+其中n就是折射率，beta为入射粒子的速度/光速c。可见，粒子速度越大，或折射率越大，辐射角越大。辐射角是确定粒子带电的一个重要依据，后面会谈到切伦科夫辐射的应用也大多与此相关。
+对于空气介质，折射率很小，辐射角有近似关系为(WHY)
+</p>
+$$
+\theta = \sqrt{2(1-\frac{1}{n\beta})}
+$$<p>在高能(TeV)伽马射线或宇宙射线与地球大气相互作用时，可能产生一对速度极高的正负电子对。这些带电粒子在大气中发射的切伦科夫辐射就可以被用来确定伽马射线或宇宙射线的方向和能量，如成像大气切伦科夫技术(IACT)。带电粒子在地面上的水槽中发生切伦科夫辐射，也被用于超大型中位子探测器（如Super-Kamiokande）。</p>
+<h4 id="214-光子与物质的相互作用">2.1.4 光子与物质的相互作用<a hidden class="anchor" aria-hidden="true" href="#214-光子与物质的相互作用">#</a></h4>
+<blockquote>
+<p>大多数都是老熟人了，只是列出一下</p></blockquote>
+<p>1.光电效应</p>
+<p>2.康普顿散射（光子与物质相互作用而失去能量）</p>
+<blockquote>
+<p>由QFT，光与物质中电子相互作用</p></blockquote>
+<p>3.逆康普顿散射（&hellip;而获得能量）</p>
+<p>4.正负电子对产生（毕业论文？）</p>
+<p>5.光致裂变(Photofission)：高能光子（多为gamma射线）被原子核吸收，导致原子核发生裂变，分裂成两个或者多个较轻的碎片并释放中子与能量</p>
+<blockquote>
+<p>没见过，但似乎不是很重要</p></blockquote>
+<h5 id="主要竞争区域">主要竞争区域<a hidden class="anchor" aria-hidden="true" href="#主要竞争区域">#</a></h5>
+<p>低能(&lt;0.1MeV)：光电效应</p>
+<p>中能(0.1-10MeV):康普顿散射</p>
+<p>高能(&gt;10MeV):对产生</p>
+<h5 id="正负电子对产生">正负电子对产生<a hidden class="anchor" aria-hidden="true" href="#正负电子对产生">#</a></h5>
+<blockquote>
+<p>给我一种QFT只是为了这么一两条结论的无力感</p></blockquote>
+<blockquote>
+<p>张上课也是废话很多，把我们当小学生教。</p></blockquote>
+<p>正负电子对产生截面有近似公式为
+</p>
+$$
+\text{to be noted}
+$$<p>另外一个衡量能量衰减的物理量为电子辐射长度，是指在介质中因轫致辐射损失能量到初始的1/e时所经历的平均距离：
+</p>
+$$
+\text{to be noted}
+$$<p>同理也有光子的平均自由程：在介质中发生对产生的平均自由程，使得光子强度衰减到初始的1/e.</p>
+<h5 id="光子相互作用截面">光子相互作用截面<a hidden class="anchor" aria-hidden="true" href="#光子相互作用截面">#</a></h5>
+<blockquote>
+<p>也就是trivially将所有可能发生的相互作用截面加起来</p></blockquote>
+$$
+\sigma_{tot}=\sigma_{p.e.}+\sigma_{R}+\sigma_{c}+K
+$$<p>
+右边分别是光电效应、瑞利散射、康普顿散射和对产生的截面。</p>
+<p>其中对产生K还可以分成核电子对产生K_nuc（光子与原子核的相互作用）和电子对产生K_e.</p>
+<p>另外，在铅这样高原子序数的介质中，对产生界面更强，同时出现了额外的巨偶极共振现象。</p>
+<h3 id="22-电磁级联过程">2.2 电磁级联过程<a hidden class="anchor" aria-hidden="true" href="#22-电磁级联过程">#</a></h3>
+<h5 id="云雾室">云雾室<a hidden class="anchor" aria-hidden="true" href="#云雾室">#</a></h5>
+<p>Brass thick=1.4 cm是因为电子在铜里的辐射长度为1.43cm</p>
+<p>过程过粒子越来越多是因为电子的轫致辐射，辐射光子又产生出正负电子对</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">lbr23333</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

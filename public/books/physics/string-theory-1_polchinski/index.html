@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>String Thory Volume 1 | lbr23333</title>
+<meta name="keywords" content="">
+<meta name="description" content="Polchinski">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/books/physics/string-theory-1_polchinski/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc7d6c1b0875c21905a871cd5cb2fe2277560b003e101702de7d452dab58ffea.css" integrity="sha256-3H1sGwh1whkFqHHNXLL&#43;IndWCwA&#43;EBcC3n1FLatY/&#43;o=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/qimojv.JPG">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/books/physics/string-theory-1_polchinski/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css" />
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="lbr23333 (Alt + H)">lbr23333</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="📚 全部文章">
+                    <span>📚 全部文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="🏷️ 标签">
+                    <span>🏷️ 标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/books/" title="📖 读书">
+                    <span>📖 读书</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      String Thory Volume 1
+    </h1>
+    <div class="post-description">
+      Polchinski
+    </div>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content">
+
+
+
+<div style="width: 100%; background-color: #e0e0e0; border-radius: 8px; margin: 20px 0; overflow: hidden;">
+  <div style="width: 23.170731707317074%; background-color: #5b9e84; height: 12px; border-radius: 8px; transition: width 0.5s ease-in-out;"></div>
+</div>
+<p style="font-size: 0.85em; color: #888; text-align: center; margin-top: -15px; margin-bottom: 20px;">
+  当前阅读进度: 76 / 328 页 (23.2%)
+</p>
+<blockquote>
+<p>悲哀的是，在初次接触量子场论到正式开始学习弦论，居然过了足足两年？</p></blockquote>
+<h5 id="202648">2026.4.8<a hidden class="anchor" aria-hidden="true" href="#202648">#</a></h5>
+<p>之前在很多人的推荐下看BBS，而且BBS网上还有翻译<a href="https://zhuanlan.zhihu.com/p/142917854">知乎</a>。但感觉物理细节省略得有点多，很是不习惯，换成Polchinski后观感就好多了。目前看得还不是很多，等有什么感想再来写。</p>
+<h5 id="412">4.12<a hidden class="anchor" aria-hidden="true" href="#412">#</a></h5>
+<p>难滴扣胩！
+总结第二章一下到现在为止都干了什么（当然是到我现在看的地方为止）。说实话就是用一套很严密、很数学的方法得到了Virasoro代数，至于这个代数有什么用我还不是很清楚，但是课上得到的轻而易举就让我感觉很慌。不得不说还是很激动的。</p>
+<p>2.1节</p>
+<ul>
+<li>引出了主要讨论的对象：二维无质量标量场。</li>
+<li>引入复坐标</li>
+<li>得到了
+$$
+S = \frac{1}{2\pi \alpha'}\int d^2z \partial X^{\mu}\partial X_{\mu}
+$$</li>
+<li>再利用路径积分得到了运动方程
+$$
+<\partial \bar{\partial}X^{\mu}(z,\bar{z})...>=0 ,\text{其中...是其他不在z处的场}
+$$</li>
+<li>但若考虑有z处的场，就会得到一个☝️发散的结果（也就是接触项），于是引出了正规排序normal ordering，从
+$$
+\frac{1}{\pi \alpha'}\partial_z\partial_{\bar{z}}X^{\mu}(z,\bar{z})X^{\nu}(z',\bar{z}')=-\eta^{\mu\nu}\delta^2(z-z',\bar{z}-\bar{z}')
+$$
+到
+$$
+:X^{\mu}(z,\bar{z})X^{\nu}(z',\bar{z}'):=X^{\mu}(z,\bar{z})X^{\nu}(z',\bar{z}')+\frac{\alpha'}{2}\eta^{\mu\nu}ln|z_{12}|^2
+$$</li>
+</ul>
+<p>2.2节 OPE</p>
+<ul>
+<li>细致讨论了各种接触项的去处，也就是OPE的计算（其实并不细致，细节都是读者自己写的）</li>
+<li>引入的～：保留singular项（开始不知道为什么，到后面清楚了。Virasoro生成元的定义Ln用到了围道积分，所以只有奇异项会贡献留数。关于为什么要这样定义生成元，其实在该节也说明了：因为这个生成元其实就是能动张量T的展开系数，而展开系数可以重构出理论）</li>
+</ul>
+<p>2.3节 Ward Id.</p>
+<ul>
+<li>得到了流与变换的关系，最常用的形式为
+$$
+Res_{z\rightarrow z_0}j(z)A(z_0,\bar{z_0})+\overline{Res}_{z\rightarrow z_0}\tilde{j}(\bar{z})A(z_0,\bar{z_0}) = \frac{1}{i\epsilon}\delta A(z_0,\bar{z_0})
+$$</li>
+<li>给出了重要的世界面上坐标平移所导出的能动张量
+$$
+T_{ab}=-\frac{1}{\alpha'}:(\partial_a X^{\mu}\partial_b X_{\mu}-\frac{1}{2}\delta_{ab}\partial_c X^{\mu}\partial^c X_{\mu}):
+$$</li>
+</ul>
+<p>2.4 Conf.invariance</p>
+<ul>
+<li>指出T就是共形变换的生成元</li>
+<li>计算一般算符与T的OPE</li>
+<li>用Ward Id.得到了一般算符的共形变换</li>
+<li>引出了共形权的概念（为什么没人打共形权？气抖冷）</li>
+<li>计算
+$$
+\text{OPE  }T(z)T(0) \xRightarrow{} \text{无穷小变换} \xRightarrow{} \text{有限变换(Schwarzian derivative)}
+$$</li>
+</ul>
+<p>2.5节 自由CFTs举例
+2.6节 Virasoro代数</p>
+<ul>
+<li>具体到chapter1中的String，一通复分析计算得到了Virasoro Algebra</li>
+</ul>
+<p>对，就看了这么一点。</p>
+<h6 id="415">4.15<a hidden class="anchor" aria-hidden="true" href="#415">#</a></h6>
+<p>算是把第二章看完了</p>
+<p>2.7节 Mode expansion</p>
+<p>这一节就是把前面在2.5中提到的几个CFT用2.6里面的一些方法，计算一些基本的量，比较重点计算的主要是</p>
+<ul>
+<li>X^mu CFT</li>
+<li>bc CFT</li>
+</ul>
+<p>2.8节 Vertex operators</p>
+<p>饺子醋来咯。最展现CFT魅力的一集。</p>
+<ul>
+<li>由于世界面w-coord可以由共形变换z=exp(-iw)，变换到一个z-coord上的unit disk(closed string)，又由于
+$$
+\Psi_\mathcal{A}=\int [\phi_i]_{\phi_b}exp(-S[\phi_i])\mathcal{A}(0)
+$$
+可知w-coord中的任意态都对应z-coord中的一个local operator at origin，此即是vertex operator.</li>
+<li>计算了general升降算符与态认同的表示</li>
+<li>bc theory and open string camputation</li>
+<li>path integral and an explicit example &mdash; single free scalar field</li>
+</ul>
+<p>2.9节</p>
+<p>累了，后面更。</p>
+<hr>
+<p>有一些开始没想明白，后来想通了的问题</p>
+<ol>
+<li>为什么在共形权h的定义中
+$$
+\mathcal{A}'(z')=\xi^{-h}\mathcal{A}(z) 
+   $$
+h恰好是A算符共形变换的z^-2项系数，即
+$$
+T(z)\mathcal{A}(0,0)=\dots+\frac{h}{z^2}\mathcal{A}(0,0)+\frac{1}{z}\partial \mathcal{A}(0,0)+\dots
+   $$
+可以考虑无穷小的共形变换：
+$$
+\xi=1+\epsilon
+   $$
+$$
+z'=(1+\epsilon)z=z+\epsilon v(z),i.e. v(z)=z
+   $$
+于是由Ward恒等式可得：
+$$
+\delta\mathcal{A}(z)=-\epsilon(z\mathcal{A}^{(0)}(z)+\mathcal{A}^{(1)}(z))
+   $$
+另一方面，
+$$
+\mathcal{A}'(z')=\xi^{-h}\mathcal{A}(z) =(1+\epsilon)^{-h}\mathcal{{A}}
+=(1-\epsilon h)\mathcal{A}
+\\
+\mathcal{A}'(z')=\mathcal{A}'(z+\epsilon z)=\mathcal{A}'(z)+\epsilon z \partial \mathcal{A}(Z)
+\\
+\xRightarrow{}\delta\mathcal{A}=\mathcal{A}'(z)-\mathcal{A}(z)=-h\epsilon \mathcal{A}(z)-\epsilon z\partial\mathcal{A}(z)
+   $$
+于是
+$$
+\mathcal{A}^{(1)}(z)=h\mathcal{A}(z)
+   $$</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">lbr23333</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

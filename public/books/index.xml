@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Reading and read on lbr23333</title>
+    <link>http://localhost:1313/books/</link>
+    <description>Recent content in Reading and read on lbr23333</description>
+    <generator>Hugo -- 0.147.4</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/books/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>String Thory Volume 1</title>
+      <link>http://localhost:1313/books/physics/string-theory-1_polchinski/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/books/physics/string-theory-1_polchinski/</guid>
+      <description>Polchinski</description>
+    </item>
+    <item>
+      <title>量子力学第二卷</title>
+      <link>http://localhost:1313/books/physics/quantum_mechanics_zengjy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/books/physics/quantum_mechanics_zengjy/</guid>
+      <description>曾谨言</description>
+    </item>
+    <item>
+      <title>黎曼几何初步</title>
+      <link>http://localhost:1313/books/mathematics/riemannian_geometry-wuxh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/books/mathematics/riemannian_geometry-wuxh/</guid>
+      <description>伍鸿熙</description>
+    </item>
+  </channel>
+</rss>
