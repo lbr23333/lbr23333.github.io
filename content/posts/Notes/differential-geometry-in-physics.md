@@ -17,4 +17,4 @@ Y|_x \in T_xM, x'=\sigma_\epsilon(x)\text{ is a point in nbhd of x.}\\
 \mathcal{L}_XY=\lim_{\epsilon\rightarrow 0}\frac{1}{\epsilon}
 $$
 
-测试$\frac{1}{2}$
+测试 $\frac{1}{2}$
