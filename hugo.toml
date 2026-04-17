@@ -46,19 +46,8 @@ favicon = "/qimojv.JPG"
 
 buildFuture = true
 
-markup:
-  goldmark:
-    extensions:
-      passthrough:
-        enable: true
-        delimiters:
-          block:
-          - - \[
-            - \]
-          - - $$
-            - $$
-          inline:
-          - - \(
-            - \)
-          - - $
-            - $
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [['\[', '\]'], ['$$', '$$']]
+    inline = [['\(', '\)'], ['$', '$']]
