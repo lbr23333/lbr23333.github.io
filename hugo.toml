@@ -45,3 +45,20 @@ favicon = "/qimojv.JPG"
     inline = [['$', '$']]
 
 buildFuture = true
+
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+          inline:
+          - - \(
+            - \)
+          - - $
+            - $
