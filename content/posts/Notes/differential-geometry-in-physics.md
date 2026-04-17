@@ -1,6 +1,7 @@
 ---
 title : "topology and differetial geometry in physics"
 description : "Note on lecture"
+math : true
 ---
 
 ## 流形概述
