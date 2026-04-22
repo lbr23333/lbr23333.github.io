@@ -35,6 +35,12 @@ name = "📖 读书"
 url = "/books/"
 weight = 20
 
+[[menu.main]]
+identifier = "notes"
+name = "📒 笔记"
+url = "/notes/"
+weight = 20
+
 [params.assets]
 favicon = "/qimojv.JPG"
 
