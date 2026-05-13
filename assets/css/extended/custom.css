@@ -2,3 +2,25 @@
     box-sizing: content-box !important;
     line-height: normal !important;
 }
+
+/* 给正文里的引用块加上灰色背景和更好的间距 */
+.post-content blockquote {
+    background-color: #f5f5f5; /* 浅灰色背景 */
+    border-left: 4px solid #8c8c8c; /* 左侧加粗的灰色指示线 */
+    padding: 15px 20px; /* 内部文字与边框的距离（上下15，左右20） */
+    margin: 20px 0; /* 引用块与上下正文的距离 */
+    border-radius: 0 6px 6px 0; /* 右侧微微圆角，视觉更柔和 */
+    color: #333333; /* 字体颜色稍微调深，增加辨识度 */
+}
+
+/* 🌙 完美适配夜间（Dark）模式 */
+.dark .post-content blockquote {
+    background-color: #2b2b2b; /* 夜间模式下的深灰背景 */
+    border-left: 4px solid #6a6a6a; /* 夜间模式下的边框线 */
+    color: #d4d4d4; /* 夜间模式下的字体颜色 */
+}
+
+/* 如果你的引用块里有嵌套的段落，取消它们自带的底部留白 */
+.post-content blockquote p {
+    margin-bottom: 0;
+}
