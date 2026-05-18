@@ -1,6 +1,6 @@
 ---
 title : "lecture note on superstring"
-description : "还不太会"
+description : "还不太会，真的劳累"
 date : 2026-05-18
 weight : 1
 ---
