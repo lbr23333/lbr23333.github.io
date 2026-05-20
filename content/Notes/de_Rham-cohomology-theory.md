@@ -8,6 +8,9 @@ weight : 1
 
 - [1. de Rham上同调群](#1-de-rham上同调群)
 - [2.Mayer-Vietoris sequence](#2mayer-vietoris-sequence)
+- [3.Compact support set de Rham cohomology group](#3compact-support-set-de-rham-cohomology-group)
+- [4.The highest rank de Rham cohomology group](#4the-highest-rank-de-rham-cohomology-group)
+- [5.Map degree theory and its application](#5map-degree-theory-and-its-application)
 
 
 ### 1. de Rham上同调群
@@ -169,7 +172,55 @@ $$
 i.e. $\beta_k $ is surjection.
 
 As I say at the beginning, this trick we will meet again before long.
-> 也就是说我们总得考虑边界上极坏的情况，而这个情况又总可以取为另一边的0，所以交换一下就都完美解决了
+> 也就是说我们总得考虑边界上极坏的情况，而这个情况又总可以取为另一边的0，所以交换一下就都完美解决了.
 ___
+
+### 3.Compact support set de Rham cohomology group
+
 ___
+
+### 4.The highest rank de Rham cohomology group
+
+In this section, we will prove some theorems about the highest-rank de Rham cohomology group.
+
+1. Let $M $ be a connected oriented smooth manifold with m-dimension, then the map $\int_M:H^m_c(M)\rightarrow \R $ is linear isomorphism.(i.e. $H^m_c(M)\simeq \R $)
+   
+2. Let $M $ be a connected orientable smooth manifold with m-dimension, then $H^m_{dR}\simeq \R $.
+
+3. Let $M $ be a non-connected orientable smooth manifold with m-dimension, then $H^m_{dR}=0 $.
+   pf.There always exists exhausted function which divides M into local countable covering $\{V_k\}$, which satisfy:
+   * each $V_k $ is connected and precompact.
+   * $\forall k $,$\exist j>k $ s.t. $V_k\cap V_j\ne 0 $.(In fact, by the definition of exhausted function, $V_k\cap V_j\ne 0 \iff j=k-1,k,k+1$)
+
+    Suppose $\omega $ is any smooth n-form on M, then we can take P.O.U of $\{V_k\} $ as $\{\rho_k\}$ and for each $i $ there is a $\theta_i\in \Omega^{n}_c(M) $ supported on $V_i\cap V_{i+1} $ ,satisfying $\int_M \theta_i =1 $ .Then $\omega_i=\rho_i \omega \in \Omega^n_c(V_i) $, let $c_1=\int_{V_1} \omega_1 $, so $\omega_1-c_1\theta_1 $ is compactly supported on $V_1 $ and $\int_{V_1}(\omega_1-c_1\theta_1)=0 $. By thm1, we know that there exists $\eta_1$ s.t.$d\eta_1=\omega_1-c_1\theta_1 $. In the same way, we can choose $c_2\in\R $ such that 
+    $$
+      \int_{V_2}(\omega_2+c_1\theta_1-c_2\theta_2)=0 
+      \\
+      \exist \eta_2 ~~s.t.~~d\eta_2=\omega_2+c_1\theta_1-c_2\theta_2
+    $$
+    Continuing this way, We get $d\eta_j=\omega_j+c_{j-1}\theta_{j-1}-c_j\theta_j $.Set $\eta=\sum_i \eta_i $, it is well-defined since the local countable of the $\{V_k\} $.And 
+    $$
+      d\eta= d\sum_{i=1}^\infty \eta_i=\sum_{i=1}^\infty \omega_i=\sum_{i=1}^\infty\rho_i \omega=\omega
+    $$
+    So we find that $\omega\in B^m_{dR}(M),\forall \omega\in \Omega^m(M) $, i.e. $ H^m_{dR}=0 $.
 ___
+
+### 5.Map degree theory and its application
+
+Thm:  Map degree is integer and
+$$
+  deg(f)=\sum_{i=1}^k\sigma_i, \sigma_i=\begin{cases}
+    1,\text{ if f is keeping oriented}
+    \\ -1,\text{ if f is inversing oriented.}
+  \end{cases}
+$$
+And we can use this to prove the fur-ball thm:
+
+> there is no non-zero-everywhere smooth vector field on $S^{2n} $.
+> non-zero-everywhere是处处非0，但是我不知道怎么翻译(
+
+Set X is the vector field on $S^{2n}\in \R^{2n+1} $, and we can set $|X_p|=1 ,\forall p\in S^{2n}$ by the metric structure on Euclidean space. Consider the map:
+$$
+  F: S^{2n}\times [0,1]\rightarrow S^{2n},F(p,t)=p \cos(t\pi)+X_p\sin(t\pi)
+$$
+It is obvious that $F(\cdot,0)=Id_{S^{2n}} $ and $F(\cdot,1): p\mapsto -p $, which are homotopical. But $deg(F(\cdot,1))=-1 $ and $deg(Id_{S^{2n}})=1$. Contradiction! 
