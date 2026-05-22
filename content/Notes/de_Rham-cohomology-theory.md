@@ -207,20 +207,143 @@ ___
 
 ### 5.Map degree theory and its application
 
-Thm:  Map degree is integer and
+Let $M,N $ be connected oriented manifolds with $m$-dimension, and $f:M\rightarrow N $ is a proper smooth map. Since we have known that the highest-level $H^m_c(M)\simeq H^m_c(N) \simeq \R $, the map
+$$
+  f^*:H^m_c(M)\to H^m_c(N)(i.e.\R\rightarrow \R)
+$$
+is a linear map. So there is a constant depending only on $f $:
+$$
+  \int_M f^*\omega= deg(f)\int_N \omega.
+$$
+The $deg(f) $ is the map degree.
+
+> a map between topological spaces is called proper if inverse images of compact subsets are compact.
+
+Consider the parameter-changing formula, we have
+
+>Thm:  Map degree is integer and
 $$
   deg(f)=\sum_{i=1}^k\sigma_i, \sigma_i=\begin{cases}
     1,\text{ if f is keeping oriented}
     \\ -1,\text{ if f is inversing oriented.}
   \end{cases}
 $$
-And we can use this to prove the fur-ball thm:
 
-> there is no non-zero-everywhere smooth vector field on $S^{2n} $.
-> non-zero-everywhere是处处非0，但是我不知道怎么翻译(
+In particular, the antipodal map
+$$
+  f:S^m\rightarrow S^m,p\mapsto f(p)=-p
+$$
+and we know that it is orientation-preserving when $m $ is odd and orientation- inverse when $m $ is even. So
+$$
+  deg(f)=\begin{cases}
+    &1,     &\text{m is odd};
+    \\& -1, &\text{m is even}.
+  \end{cases}
+$$
 
-Set X is the vector field on $S^{2n}\in \R^{2n+1} $, and we can set $|X_p|=1 ,\forall p\in S^{2n}$ by the metric structure on Euclidean space. Consider the map:
+>Thm:Let $M,N,P $ be connected oriented manifolds with the same dimensions:
+>* If $f:M\rightarrow N $ and $g:N\rightarrow P $ are proper maps, then $g\circ f $ is also proper and
+$$
+  deg(g\circ f)=deg(f)deg(g)
+$$
+>* If $f $ and $g $ are proper and homotopic, them
+$$
+  deg(f)= deg(g)
+$$
+
+With the Whitney approximate thm, there always exists a smooth $g $ homotopic to $f $, with $deg(f)=deg(g) $.Conversely, the degrees cna be used to describe whether 2 maps are homotopic:
+
+> Hopf map degree theory:
+>
+> Let $M $ is a connected oriented __compact__ manifold with $m $-dimension, then the continuous map $f,g:M\rightarrow S^m $ are homotopic if and only if $deg(f)=deg(g) $.
+
+This shows that the map degree is the **only** homotopic invariance in continuous map space $C(M,S^m) $, but I will not prove this thm here.
+
+And we can get map degree by the local information:
+> Let $M,N $ be connected oriented manifolds. If the proper smooth map $f:M\rightarrow N $ is not surjection, then $deg(f)=0 $.
+
+pf. consider that the proper map is closed map(closed set $\to $ closed set), then if $q\notin f(M) $, there exists open nbhd $\tilde{U} $ of $q $, s.t.$\tilde{U}\cap f(M)=0 $. Take a $m $-form $\omega $ supported on $\tilde{U} $ s.t. $\int_M \omega=1 $.And $\int_M f^*\omega =0 $ since there is no pre-image in $M $.So the map degree $deg(f)=0 $.
+
+It is kind of counterintuitive, but recall the map degree is the **only** homotopic invariance in continuous map space. You(in fact it is me) will feel comfortable.
+
+Consider $f $ is surjection and proper. Let $q\in N $ is a regular value of $f $. Then $f^{-1}(q)=\{p_1,\dots,p_k\} $ is a finite set, and there exists nbhd $\tilde{U} $ of $q $ and nbhd $\{U_i\} $ of $p_i $  s.t.
+* for $i\ne j $,$U_i\cap U_j= \emptyset $
+* $f^{-1}(\tilde{U})=\cup_{i=1}^k U_i$
+* f is diffeomorphism between $\tilde{U} $ and any $U_i $.
+
+And we can choose the charts $U_i,\tilde{U} $, which are small enough s.t. they are respectively connected and oriented charts. Let
+$$
+  \sigma_i=\begin{cases}
+    &1 ,& f:U_i\rightarrow \tilde{U} \text{ is orientation-preserving}
+    \\&-1,& f:U_i\rightarrow \tilde{U}\text{ is orientation-inverse}
+  \end{cases}
+$$
+Take $\omega\in \Omega^m_c(\tilde{U}) $ s.t. $\int_N \omega=1 $. Then $supp (f^*\omega) \subset \cup_{i=1}^k U_i$, and
+$$
+  \int_M f^*\omega =\sum_{i=1}^k\int_{U_i}f^* \omega=\sum_{i=1}^k\sigma_i\int_{\tilde{U}}\omega=\sum_{i=1}^k\sigma_i
+$$ 
+
+Then we have proved:
+> the map degree of $f$ has to be integer, and 
+$$
+  deg(f)=\sum_{i=1}^k\sigma_i
+$$ 
+
+Consider 
+$$
+  f:\mathbb{C}\rightarrow \mathbb{C},w\mapsto w^k
+$$
+Since $f $ is always orientation-preserving adn there are k regular pre-images when $w\ne 0 $, we know that $deg(f)=k $.And we can use this to prove the Algebra foundational theorem:
+
+Consider polynomial $P(z)=z^k+a_{k-1}z^{k-1}+\dots+a_1z+a_0 $, and $S^2 $ is the compactiftion of $\mathbb{C} $, in where we take North pole $N $ as $\infty $. Then we consider the homotopy between $P(z) $ and $z^k $:
+$$
+  F:S^2\times [0,1] \rightarrow S^2
+  \\
+  F(z,t)=z^k+t(a_{k-1}z^{k-1}+\dots+a_1z+a_0)
+$$
+Since the homotopic invariance of the map degree, we know that
+$$
+  deg(P(z))=deg(z^k)
+$$
+If there is not any solution of $P(z) $, i.e. $P(z) $ is not surjection at least $0\notin P(S^2) $. With the theorem we have proved, $deg(P(z))=0 $.Contradiction!
+
+So there is at least 1 solution, then we use the local method.
+
+If $0 $ is a regular value, i.e. there is not multiple root. Take a $\omega\in \Omega^k_c(S^2) $ s.t. $\int_{S^2}\omega=1 $ , its nbhd $U $ and nbhd of 0-pre-images $\{U_i\} $:
+$$
+  \int_{S^2}P^*\omega=\sum_{i=1}^k\int_{U_i}P^*\omega=\sum_{i=1}^k\sigma_i\int_U\omega=\sum_{i=1}^k\sigma_i=k
+$$
+where $\sigma_i=1 $ since $P $ is orientation-preserving.
+
+ If $w $ is  one of the solutions, $w $ is a $m $-multiple root.Then $0 $ is not a regular value now. Near the $w $, $P(z)\sim (z-w)^m $ and its nbhd is $U_1 $. so
+$$
+  \int_{S^2} P^*\omega=\int_{U_1}P^*\omega +else=m\int_U\omega+else
+$$
+Consider $P(z)=P(\rho e^{i\theta})=\rho^m e^{im\theta} $, so 
+$$
+  \begin{align*}
+   r\rightarrow  r^m,\theta\rightarrow m\theta
+  \end{align*}
+$$
+but $r=1 $, then the integral is 
+$$
+  \int_0^{\theta}\int_0^1f(r,\theta)\rightarrow \int_0^{m\theta}\int_0^1f(r,\theta)=m\int_0^{\theta}\int_0^1f(r,\theta)
+$$
+
+we can see that, even though there is a multiple root, it dose not change the map degree. 
+
+In fact, with the Sard thm, we can always take a regular value by take a perturbation and avoid the critical value, and we have k good pre-images.
+
+SO we have proved the Algebra foundational theorem.
+
+And we can use the property of map degree to prove the Hairy ball thm:
+
+> There is nowhere vanishing smooth vector field on $S^{2n} $.
+> nowhere vanishing是处处非0，但是我不知道这样翻译对不对
+
+Set X is the nowhere vanishing vector field on $S^{2n}\in \R^{2n+1} $, and we can set $|X_p|=1 ,\forall p\in S^{2n}$ by the metric structure on Euclidean space. Consider the map:
 $$
   F: S^{2n}\times [0,1]\rightarrow S^{2n},F(p,t)=p \cos(t\pi)+X_p\sin(t\pi)
 $$
 It is obvious that $F(\cdot,0)=Id_{S^{2n}} $ and $F(\cdot,1): p\mapsto -p $, which are homotopical. But $deg(F(\cdot,1))=-1 $ and $deg(Id_{S^{2n}})=1$. Contradiction! 
+
