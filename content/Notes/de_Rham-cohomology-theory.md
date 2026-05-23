@@ -11,6 +11,7 @@ weight : 1
 - [3.Compact support set de Rham cohomology group](#3compact-support-set-de-rham-cohomology-group)
 - [4.The highest rank de Rham cohomology group](#4the-highest-rank-de-rham-cohomology-group)
 - [5.Map degree theory and its application](#5map-degree-theory-and-its-application)
+- [6.Poincaré duality](#6poincaré-duality)
 
 
 ### 1. de Rham上同调群
@@ -347,3 +348,119 @@ $$
 $$
 It is obvious that $F(\cdot,0)=Id_{S^{2n}} $ and $F(\cdot,1): p\mapsto -p $, which are homotopical. But $deg(F(\cdot,1))=-1 $ and $deg(Id_{S^{2n}})=1$. Contradiction! 
 
+### 6.Poincaré duality  
+
+总结前面所计算的结果
+* 对于$M=\R^m $
+$$
+  \begin{align*}
+    H_{dR}^k(\R^m)\simeq\begin{cases}
+      &\R ,~~k=0
+      \\& 0,~~k\ne 0
+    \end{cases}
+    ,
+    H_c^k(\R^m)\simeq\begin{cases}
+      &\R ,~~k=m
+      \\& 0,~~k\ne m
+    \end{cases}
+  \end{align*}
+$$
+
+* 对于$M=S^m $
+$$
+  \begin{align*}
+    H_{dR}^k(S^m)\simeq H_c^k(S^m)\simeq \begin{cases}
+      &\R ,~~k=0,m
+      \\& 0,~~k\ne 0,m
+    \end{cases}
+  \end{align*}
+$$
+
+* 对于任意的连通定向流形
+$$
+  H_{dR}^0\simeq \R,~~
+  H_{dR}^m(M)\simeq\begin{cases}
+    &\R,&M\text{ is compact}
+    \\&0,&M\text{ is not compact}
+  \end{cases}
+$$
+$$
+  H_{c}^m\simeq \R,~~
+  H_{c}^0(M)\simeq\begin{cases}
+    &\R,&M\text{ is compact}
+    \\&0,&M\text{ is not compact}
+  \end{cases}
+$$
+  不连通也同样有类似的结果：改为$\R^K,\R^{K_c} $，其中$K,K_c $分别是连通分支数和紧连通分支数.
+  
+* 对于不可定向的流形，就是
+$$
+  \begin{align*}
+    H_{dR}^0(M)\simeq\R,~~H_{c}^0\simeq\begin{cases} 
+    &\R,&M\text{ is compact}
+    \\&0,&M\text{ is not compact}
+  \end{cases}
+  \end{align*}
+  \\ H_{dR}^m(M)=H_c^m(M)=0
+$$
+
+这强烈暗示了de Rham上同调群与紧支的de Rham上同调群之间的对偶关系。为了显式表现出来，考虑利用积分构造一种双线性的映射:
+$$
+  \begin{align*}
+    P^k_M:&H^k_{dR}(M)\times H^{m-k}_c(M)\to \R
+    \\& P^k_M([\omega],[\eta])=\int_M \omega\wedge\eta
+  \end{align*}
+$$
+该映射将两个线性空间做了类似内积的操作，映射到了$\R $，结合线性代数中对偶空间相关，显然诱导了一个映射，将de Rham上同调群中的元素映射到了相应紧支de Rham上同调群的对偶空间中的一个元素上，而紧支de Rham上同调群的对偶空间中的元素实际上就是一个积分（正如线性代数中一个线性空间的对偶空间中的元素是一个对偶矢量，它将线性空间中的矢量映射到$\R $上，这里的积分将$\omega\in H_c^{m-k}(M) $映射到$\R $）即
+$$
+  \begin{align*}
+    \mathcal{P}^k_M&:H_{dR}^k\rightarrow (H_c^{m-k}(M))^*，
+    \\& [\omega]\mapsto ([\eta]\mapsto\int_M \omega\wedge\eta)
+    \\& i.e. \mathcal{P}^k_M([\omega])([\eta])=\int_M \omega\wedge\eta
+  \end{align*}
+$$
+注意上面定义的顺序，不同的文章定义可能不同。
+而Poincaré对偶就是指，$\mathcal{P}^k_M:H_{dR}^k\rightarrow (H_c^{m-k}(M))^* $是一个同构.
+
+其证明很麻烦，这里只给出一个相对简单的情况，即$M $有有限好覆盖。
+Lemma:下图标交换
+（待施工）
+于是考虑到归纳法：
+
+首先对于$M $的好覆盖中只有一个Chart，即$M\simeq \R^m $，于是
+* $k\ne 0,H_{dR}^k\simeq H_c^k(M)\simeq \{0\} $，$\mathcal{P}^k_M $当然是一个线性同构，即这个情况是trivial的
+* $k =0 ，\mathcal{P}^0_M:[1]\mapsto \int_M $，由于总可以构造任意的$H^m_c(M) $中的形式使得积分结果可以取到$\R $中任意值，所以是满射，即是线性同构。
+  
+假设对于“$M $有$k-1 $个开集组成的好覆盖”的情况成立。那么对于$M $有$k$个开集组成的好覆盖”的情况，假定这些开集为$\{U_1,...,U_k \} $，令$U=U_1\cup\dots\cup U_{k-1},V=U_k $，于是$U,V,U\cap V $都有不超过$k-1 $个开集组成的好覆盖，那么由假设$\mathcal{P}^k_U,\mathcal{P}^k_V,\mathcal{P}^k_{U\cap V} $都是线性同构，再由五引理和上面的Lemma可知，$\mathcal{P}^k_M $是一个线性同构，于是就证得了 Poincaré duality.
+
+> 由于对于有限维的线性空间，
+
+由 Poincaré对偶立马可以得到
+
+紧支de Rham上同调群的Kunneth公式:
+$$
+  H_c^k(M\times N)\simeq \oplus_{i=0}^k H_c^i(M)\otimes H_c^{k-i}(N) 
+$$
+since
+$$
+  \begin{align*}
+    H_c^k(M\times N)&\simeq H_{dR}^{m+n-k}(M\times N)\simeq \oplus_{i=0}^{m+n-k} H_{dR}^i(M)\otimes H_{dR}^{m+n-k-i}(N) 
+    \\& \simeq \oplus_{i=m}^{m-k} H_{dR}^i(M)\otimes H_{dR}^{k-i}(N) 
+    \\& \simeq \oplus_{i=0}^{k} H_{dR}^{m-i}(M)\otimes H_{dR}^{n-k+i}(N) 
+    \\& \simeq \oplus_{i=0}^{k} H_{c}^{i}(M)\otimes H_c^{k-i}(N)
+  \end{align*}
+$$
+
+然后后面还有一些Betti数和Euler示性数相关的小结论（待施工）
+
+重头戏是子流形的 Poincaré对偶（待施工）
+
+于是在Thom中大放光彩（待施工）；因为得到的结论可以计算Lefschetz不定点，再进一步得到 Poincaré-Hopf定理，利用指标计算Euler示性数，定义Euler类，最后引出切丛Euler类与Euler示性数之间的关系，得到Chern-Gauss-Bonnet定理。
+
+未完待续！
+___
+___
+___
+___
+___
+___
