@@ -144,3 +144,20 @@ ___
 ___
 
 ___
+
+
+$$
+  \rho^\alpha\partial_\alpha\psi=0,
+  \rho^0=\begin{bmatrix}
+    0&-i
+    \\ i &0
+  \end{bmatrix}
+  \rho^1=\begin{bmatrix}
+    0&i
+    \\ i &0
+  \end{bmatrix}
+  \\then ~  0=\rho^\alpha\partial_\alpha\psi=\rho^0\partial_0\psi+\rho^1\partial_1\psi=-i\begin{bmatrix}
+    \partial_0\psi_+-\partial_1\psi_+
+    \\\partial_0\psi_-+\partial_1\psi_-
+  \end{bmatrix}
+$$

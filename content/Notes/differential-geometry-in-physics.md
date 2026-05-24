@@ -3,6 +3,9 @@ title : "topology and differetial geometry in physics"
 description : "Note on lecture"
 weight : 1
 ---
+
+> 原本以为是很严谨的，没想到是和物理系中其他课一样的草率。不过如果视作motivation去进一步学习，那便是极佳的。
+
 - [😩A really brief introduction of Symplectic geometry application in mechanics](#a-really-brief-introduction-of-symplectic-geometry-application-in-mechanics)
 - [😭A really brief introduction of Homology and de Rham Cohomology](#a-really-brief-introduction-of-homology-and-de-rham-cohomology)
   - [0.一些Preliminaries和符号规定](#0一些preliminaries和符号规定)
