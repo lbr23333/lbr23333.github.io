@@ -155,7 +155,7 @@ $$
     * $Mat(n,\R)\simeq \R^{n^2} $:矩阵群,包罗万象,~~老霸道了~~.
     * $GL(m,\R)=\{M\in Mat(n,\R)|det(M)\ne 0 \} $是$Mat(n,\R) $的一个开子集,因为$det $是一个连续函数,0是$\R $中的闭集,所以$GL $就是开.
     * $SL(n,\R)=\{M\in Mat(n,\R)|det(M) = 1 \} $: 用上面的正则值定理,为了证明其是$Mat $的一个子流形,就是要证明$1 $是$Mat $的正则值,又即是证明$(d(det))_M:\R^{n^2}\rightarrow \R $是满的.这也是相对容易的,考虑行列式的Laplace展开,有$\frac{\partial}{\partial a_{ij}}(det M)=A_{ij} $.而$det(M)=1 $就要求至少有一个$A_{ij}\ne 0$,所以就可以构造任意符号要求的矩阵,使得$A_{ij} $可以取到$\R $,即$(d(det))_M:\R^{n^2}\rightarrow \R $是满🐍.从而说明$SL(n,\R) $是矩阵群的一个子流形.
-    * $O(n,\R)=\{A\in Mat(n,\R)|A^TA=1 \} $也是一个矩阵群的子流形,考虑:
+    * $O(n,\R)=\{A\in Mat(n,\R)|A^TA=I_n \} $也是一个矩阵群的子流形,考虑:
   
       $SMat(n,\R)=\{M\in Mat(n,\R)|M ~ is ~ symmetric \}=\{M\in Mat(n,\R)|M=A^TA \} $以及映射
     $$
@@ -165,7 +165,9 @@ $$
         & P(A)= A^TA
       \end{align*}
     $$
-    考虑$P(A+\epsilon B)-P(A)=\epsilon (dP)_A(B)+O(\epsilon ) $,于是在上映射下即$(A^T+\epsilon B^T)(A+\epsilon B)-A^TA= \epsilon (B^TA+A^TB)+O(\epsilon ) $,于是就是要证明$(dP)_A(B)=B^TA+A^TB $是满的.也就是要证明,对于任意的$C\in SMat(n,\R) $,都有$C=B^TA+A^TB $.注意到,取$B=AC/2 $,即
+    显然$O(n,\R)=P^{-1}(I_n) $,要证$O(n,\R) $是子流形,即证明$\forall A\in O(n,\R),(dP)_A:Mat(n,\R) \rightarrow SMat(n,\R)  $是满的.(注意对于线性Lie群,其切空间就是其本身.)
+
+      考虑$P(A+\epsilon B)-P(A)=\epsilon (dP)_A(B)+O(\epsilon ) $,于是在上映射下即$(A^T+\epsilon B^T)(A+\epsilon B)-A^TA= \epsilon (B^TA+A^TB)+O(\epsilon ) $,于是就是要证明$(dP)_A(B)=B^TA+A^TB $是满的.也就是要证明,对于任意的$C\in SMat(n,\R) $,都有$C=B^TA+A^TB $.注意到,取$B=AC/2 $,即
     $$
       A^T(\frac{AC}{2})+\frac{1}{2}(C^TA^TA)=C
     $$
