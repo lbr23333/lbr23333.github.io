@@ -152,9 +152,51 @@ $$
    \in M' , rank(d\varphi)_x=n $, then $M' $ is a regular submanifold of $M $ with $m-n $ dimensions. And such $y $ is the regular value of $N $.
 
     这个定理在微分几何中几乎被一笔带过,但其实是一个证明子流形的有力工具,下面给给出一些例子:
-    * $Mat(n,\R)\simeq \R^{n^2} $
-    * $GL(m,\R)$
+    * $Mat(n,\R)\simeq \R^{n^2} $:矩阵群,包罗万象,~~老霸道了~~.
+    * $GL(m,\R)=\{M\in Mat(n,\R)|det(M)\ne 0 \} $是$Mat(n,\R) $的一个开子集,因为$det $是一个连续函数,0是$\R $中的闭集,所以$GL $就是开.
+    * $SL(n,\R)=\{M\in Mat(n,\R)|det(M) = 1 \} $: 用上面的正则值定理,为了证明其是$Mat $的一个子流形,就是要证明$1 $是$Mat $的正则值,又即是证明$(d(det))_M:\R^{n^2}\rightarrow \R $是满的.这也是相对容易的,考虑行列式的Laplace展开,有$\frac{\partial}{\partial a_{ij}}(det M)=A_{ij} $.而$det(M)=1 $就要求至少有一个$A_{ij}\ne 0$,所以就可以构造任意符号要求的矩阵,使得$A_{ij} $可以取到$\R $,即$(d(det))_M:\R^{n^2}\rightarrow \R $是满🐍.从而说明$SL(n,\R) $是矩阵群的一个子流形.
+    * $O(n,\R)=\{A\in Mat(n,\R)|A^TA=1 \} $也是一个矩阵群的子流形,考虑:
+  
+      $SMat(n,\R)=\{M\in Mat(n,\R)|M ~ is ~ symmetric \}=\{M\in Mat(n,\R)|M=A^TA \} $以及映射
+    $$
+       \begin{align*}
+        &P:Mat(n,\R)\simeq R^{n^2} \rightarrow SMat(n,\R)\simeq R^{n(n+1)/2}
+        \\
+        & P(A)= A^TA
+      \end{align*}
+    $$
+    考虑$P(A+\epsilon B)-P(A)=\epsilon (dP)_A(B)+O(\epsilon ) $,于是在上映射下即$(A^T+\epsilon B^T)(A+\epsilon B)-A^TA= \epsilon (B^TA+A^TB)+O(\epsilon ) $,于是就是要证明$(dP)_A(B)=B^TA+A^TB $是满的.也就是要证明,对于任意的$C\in SMat(n,\R) $,都有$C=B^TA+A^TB $.注意到,取$B=AC/2 $,即
+    $$
+      A^T(\frac{AC}{2})+\frac{1}{2}(C^TA^TA)=C
+    $$
+    即对于任意的$C $都可以找到一个$B $使得$A^TB+B^TA=C $,也就是说$dP_A $是满的,即对于任意的$A^TA=a $,$a $都是$P $的正则值,特别的,$1 $也是,即$O(n,\R) $是$Mat(n,\R)  $的一个子流形.
 
+    * Symplectic Group:为了引入辛群,先考虑
+    $$
+      J=\begin{bmatrix}
+        0 & -I_n\\ I_n & 0
+      \end{bmatrix}
+      \in Mat(n,\R) ~~~
+      J^T=J,J^2=-I_{2n}
+    $$
+    考虑
+    $$
+      \varphi:Mat(n,\R) \rightarrow AMat(2n,\R)  ~~~ \varphi(A)=A^TJA
+    $$ 
+    其中类似于$SMat $定义了$SMat $即反对称矩阵集.辛群$S_p(n,\R)=\varphi^{-1}(J) $.完全可以同理于上说明辛群是$Mat(n,\R)  $的子流形:
+
+      对于$A\in \varphi^{-1}(J) $,即$A^TJA=J $.考虑
+        $$
+        \begin{align*}
+           (d\varphi)_A:Mat(2n,\R) \rightarrow AMat(2n,\R)
+        \end{align*}
+        $$
+      同样有$\varphi(A+\epsilon B)-\varphi(A)=\epsilon (d\varphi)_A(B)+O(\epsilon ) $,即
+        $$
+          (A^T+\epsilon B^T)J(A+\epsilon B)-A^TJA=\epsilon (A^TJB+B^TJA)+O(\epsilon )
+        $$
+      即证$B\mapsto A^TJB+B^TJA $是满的.仍是解方程$C=A^TJB+B^TJA $,依旧是注意到有$B=-\frac{1}{2}AJC $.即得到$d\varphi $是满的.
+      > 思考题: 对于任意辛群中元素A,$det(A)=1$.
 ___
 ___
 ___
