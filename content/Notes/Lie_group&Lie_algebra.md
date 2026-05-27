@@ -11,6 +11,7 @@ date : "2026-05-25"
   - [0.0 符号约定](#00-符号约定)
   - [0.1 微分算子与微分微分表达式](#01-微分算子与微分微分表达式)
   - [0.2 映射与子流形](#02-映射与子流形)
+- [1.Lie群与Lie代数](#1lie群与lie代数)
 
 
 ### 0 Preliminaries of differential manifolds
@@ -146,12 +147,12 @@ $$
     反例:(待补充)
 
 6. 子流形:
-   $M $是一个光滑流形,$N\subset M$,若$i:N\rightarrow M $是一个嵌入,那么称$N $是$M $的子流形.若$i $还是正则的,那么称$N $是正则子流形.
+   $M $是一个光滑流形,$N\subset M$且$N $上有光滑结构,若$i:N\rightarrow M $是一个嵌入,那么称$N $是$M $的子流形.若$i $还是正则的,那么称$N $是正则子流形.
 
-   正则值定理(关于正则值,仍然可以参见 [微分几何]{{< ref "/Notes/微分流形杂谈.md" >}}):$M,N $ are smooth manifolds, $\varphi:M\rightarrow N $ is smooth. For $y\in N $, let $M'=\varphi^{-1}(y) $. If $\forall x
+   正则值定理(关于正则值,仍然可以参见 [微分几何]({{< ref "/Notes/微分流形杂谈.md" >}})):$M,N $ are smooth manifolds, $\varphi:M\rightarrow N $ is smooth. For $y\in N $, let $M'=\varphi^{-1}(y) $. If $\forall x
    \in M' , rank(d\varphi)_x=n $, then $M' $ is a regular submanifold of $M $ with $m-n $ dimensions. And such $y $ is the regular value of $N $.
 
-    这个定理在微分几何中几乎被一笔带过,但其实是一个证明子流形的有力工具,下面给给出一些例子:
+    这个定理在微分几何中几乎被一笔带过,但其实是一个证明子流形的有力工具,下面给给出一些李群的例子:
     * $Mat(n,\R)\simeq \R^{n^2} $:矩阵群,包罗万象,~~老霸道了~~.
     * $GL(m,\R)=\{M\in Mat(n,\R)|det(M)\ne 0 \} $是$Mat(n,\R) $的一个开子集,因为$det $是一个连续函数,0是$\R $中的闭集,所以$GL $就是开.
     * $SL(n,\R)=\{M\in Mat(n,\R)|det(M) = 1 \} $: 用上面的正则值定理,为了证明其是$Mat $的一个子流形,就是要证明$1 $是$Mat $的正则值,又即是证明$(d(det))_M:\R^{n^2}\rightarrow \R $是满的.这也是相对容易的,考虑行列式的Laplace展开,有$\frac{\partial}{\partial a_{ij}}(det M)=A_{ij} $.而$det(M)=1 $就要求至少有一个$A_{ij}\ne 0$,所以就可以构造任意符号要求的矩阵,使得$A_{ij} $可以取到$\R $,即$(d(det))_M:\R^{n^2}\rightarrow \R $是满🐍.从而说明$SL(n,\R) $是矩阵群的一个子流形.
@@ -197,9 +198,45 @@ $$
         $$
           (A^T+\epsilon B^T)J(A+\epsilon B)-A^TJA=\epsilon (A^TJB+B^TJA)+O(\epsilon )
         $$
-      即证$B\mapsto A^TJB+B^TJA $是满的.仍是解方程$C=A^TJB+B^TJA $,依旧是注意到有$B=-\frac{1}{2}AJC $.即得到$d\varphi $是满的.
+      即证$B\mapsto A^TJB+B^TJA $是满的.仍是解方程$C=A^TJB+B^TJA $,依旧是注意到有$B=-\frac{1}{2}AJC $.即得到$d\varphi$是满的.
       > 思考题: 对于任意辛群中元素A,$det(A)=1$.
+
+7. Frobenius定理
+   这是微分几何中的重点,但这里还是强调一下,因为在有了Lie代数,反过来要构造其所对应的一个Lie群就要用到该定理.
+
+   先定义**分布**的概念:分布就是切丛的一个子空间.具体来说考虑$M $是$N $的子流形,对于$x\in M\subset N,T_xM\subset T_x(N)$,对$N $上每一个点$x $都指定一个$T_x(N) $的$m $维子空间$L_x $.$\mathcal{L}=L_x|x\in N $就是一个$m $维的分布.
+
+   考虑$N $上一个坐标卡$V $,设其坐标为$(x^1,\dots,x^n) $,则$V $上的$C^\infty $向量场可用基表示为
+   $$
+     X=\sum_{i=1}^na^i(x)\frac{\partial}{\partial x^i},a^i\in C^\infty
+   $$
+   且总可以找到$L_x=Span\{X_1(x),\dots,X_m(x) \} $,其中$X_i(x)\in T_x(N) $.若$X_i\in \mathfrak{X}(N) $,就称$\mathcal{L} $是一个$C^\infty $的分布.(但注意上面的定义都是local的,光滑性依赖于所选择坐标卡)如$m=1,N=S^2n $上就没有处处非零的向量场,自然选不到一个全局都好的基,也就没有一个全局的光滑分布(也就是前面提到过的不可平行化).
+
+   然后继续给出几个定义:
+   * 对于$N $的子流形$M $,存在$N $上的一个分布$\mathcal{L} $,使得$L_x=T_x(M),\forall x\in M $,就称$M $是$N $关于$\mathcal{L} $的一个**积分子流形**.有时会将条件弱化成$T_x(M)\subset L_x $,但想表达的意思是差不多的.
+   * 若对于$\forall x\in N,\exist  $过点$x $的$\mathcal{L} $的积分子流形,那么称$\mathcal{L} $是**可积的**.我们知道,对易操作对于切向量来说是封闭的,即$X,Y\in L_x=T_x(M) $.所以$\mathcal{L} $可积就意味着$[X,Y]\in T_x(M) $,更加形式化一点就是$[\mathcal{L},\mathcal{L}]\subset \mathcal{L} $
+  
+    于是,反过来.若$[\mathcal{L},\mathcal{L}]\subset \mathcal{L} $,则称$\mathcal{L} $是**对合的**.
+    
+    局部Frobenius定理所考虑的就是是否有
+    $$
+      \text{对合}\iff \text{可积}
+    $$
+    证明在微分几何中是常见的.进一步就是整体的 Frobenius定理:
+      > N是光滑流形,$\mathcal{L} $是N上的m维的对合的分布,则过N上任意点p,都存在唯一的极大积分子流形$M_p $.$\mathcal{L} $的任何积分子流形都是N的拟正则子流形,并且是某个极大积分子流形的开子流形.
+
+      证明要点:对于$p\in N $.直接构造出
+      $$
+        M_p=\{q\in N|\text{存在一条分片光滑的}\mathcal{L}\text{的积分曲线连接}p,q \}
+      $$
+      (ref,Warner,GTM94)
+
+      以上就是微分流形的基础部分.
 ___
+
+### 1.Lie群与Lie代数
+
+
 ___
 ___
 ___
