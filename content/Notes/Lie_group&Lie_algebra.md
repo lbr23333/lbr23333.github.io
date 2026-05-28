@@ -223,17 +223,18 @@ $$
       \text{对合}\iff \text{可积}
     $$
     证明在微分几何中是常见的.进一步就是整体的 Frobenius定理:
-      {{% mathbox type="blue" title="Frobenius定理" %}}
-      N是光滑流形,$\mathcal{L} $是N上的m维的对合的分布,则过N上任意点p,都存在唯一的极大积分子流形$M_p $.$\mathcal{L} $的任何积分子流形都是N的拟正则子流形,并且是某个极大积分子流形的开子流形.
-      {{% /mathbox %}}
 
-      证明要点:对于$p\in N $.直接构造出
-      $$
-        M_p=\{q\in N|\text{存在一条分片光滑的}\mathcal{L}\text{的积分曲线连接}p,q \}
-      $$
-      (ref,Warner,GTM94)
+{{% mathbox type="blue" title="Frobenius定理" %}}
+N是光滑流形,$\mathcal{L} $是N上的m维的对合的分布,则过N上任意点p,都存在唯一的极大积分子流形$M_p $.$\mathcal{L} $的任何积分子流形都是N的拟正则子流形,并且是某个极大积分子流形的开子流形.
+{{% /mathbox %}}
 
-      以上就是微分流形的基础部分.
+证明要点:对于$p\in N $.直接构造出
+$$
+  M_p=\{q\in N|\text{存在一条分片光滑的}\mathcal{L}\text{的积分曲线连接}p,q \}
+$$
+(ref,Warner,GTM94)
+
+以上就是微分流形的基础部分.
 ___
 
 ### 1.Lie群与Lie代数
@@ -273,6 +274,7 @@ $\iff$
 {{% /mathbox %}}
 
 若$G $连通,则$G'=G $.
+
 > 什么事射影极限,我也不懂
 
 {{% mathbox type="blue" title="" %}}
@@ -286,6 +288,7 @@ $\iff$
 {{% mathbox type="slate" title="例子🌰" %}}
 $G=(\R,+) $:$\varphi:G\rightarrow G $是群同态,即$\varphi(x+y)=\varphi(x)+\varphi(y) $.若$\varphi $是连续的,那么可知$\varphi(x)=cx $.
 {{% /mathbox %}}
+
 > 实际上在一点处的联系、单调、可测,同样可以得到上结论,可见光滑的条件是过强的.
 
 
