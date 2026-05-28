@@ -2,7 +2,7 @@
 title: "量子力学第二卷"
 description: "曾谨言"
 ---
-{{< progress read="70" total="100" >}}
+{{< progress read="70" total="100" />}}
 
 或许并没有读到70%。
 
