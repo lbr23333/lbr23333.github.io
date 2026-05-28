@@ -223,7 +223,9 @@ $$
       \text{对合}\iff \text{可积}
     $$
     证明在微分几何中是常见的.进一步就是整体的 Frobenius定理:
-      > N是光滑流形,$\mathcal{L} $是N上的m维的对合的分布,则过N上任意点p,都存在唯一的极大积分子流形$M_p $.$\mathcal{L} $的任何积分子流形都是N的拟正则子流形,并且是某个极大积分子流形的开子流形.
+      {{% mathbox type="blue" title="Frobenius定理" %}}
+      N是光滑流形,$\mathcal{L} $是N上的m维的对合的分布,则过N上任意点p,都存在唯一的极大积分子流形$M_p $.$\mathcal{L} $的任何积分子流形都是N的拟正则子流形,并且是某个极大积分子流形的开子流形.
+      {{% /mathbox %}}
 
       证明要点:对于$p\in N $.直接构造出
       $$
@@ -237,24 +239,32 @@ ___
 ### 1.Lie群与Lie代数
 
 先引入一个更一般的概念**拓扑群**:
-> $X $是一个拓扑空间,若其有群结构,即
-> 1. $\mu:X\times X\rightarrow X |(x,y)\mapsto xy |$连续
-> 2. $i: X\rightarrow  X |x\mapsto x^{-1}  |$连续
-> 3. 单位元$e\in X $
-> 满足$(xy)z=x(yz),ex=xe=x,\forall x, \exist ! y $使得$yx=xy=e $
->
-> 那么称$X $是一个拓扑群.
+{{% mathbox type="green" title="拓扑群" %}}
+  $X $是一个拓扑空间,若其有群结构,即
+ 1. $\mu:X\times X\rightarrow X |(x,y)\mapsto xy |$连续
+ 2. $i: X\rightarrow  X |x\mapsto x^{-1}  |$连续
+ 3. 单位元$e\in X $
+ 满足$(xy)z=x(yz),ex=xe=x,\forall x, \exist ! y $使得$yx=xy=e $
+
+ 那么称$X $是一个拓扑群.
+{{% /mathbox %}}
+
 
 加上光滑结构就得到了**Lie群**:
-> 若$G$ 是一个光滑流形,其上有光滑映射$\mu:G\times G \rightarrow G,i:G\rightarrow  G $以及$e\in G $,满足群的定义.则称$G $是一个Lie群.
+{{% mathbox type="green" title="Lie群" %}}
+若$G$ 是一个光滑流形,其上有光滑映射$\mu:G\times G \rightarrow G,i:G\rightarrow  G $以及$e\in G $,满足群的定义.则称$G $是一个Lie群.
+{{% /mathbox %}}
 
 *实际上,由上可见其实在任意的一个范畴里都可以定义一个类似的结构.*
 
 对于Lie群而言,可以先*遗忘*其光滑结构,视为一个拓扑群,且该拓扑群是$A_2,T_2 $且局部欧的.于是自然就引出了Hilbert第五问题:
-> 是否所有的连续群都是可微群?如果不行,至少加上什么条件?
+{{% mathbox type="purple" title="" %}}
+是否所有的连续群都是可微群?如果不行,至少加上什么条件?
 
+{{% /mathbox %}}
 放在这里就是拓扑群至少在什么条件下,能变成一个Lie群?在1950s有一群人先给出了一个没那么强的形式:拓扑群+Locally Euclidean+T2 ==> Lie群.后来发展成
-{{% mathbox type="slate" title="G-Yamabe" %}}
+
+{{% mathbox type="blue" title="G-Yamabe" %}}
 若$G$局部紧.则对于其单位元的任何开领域$U$,都存$G $的开子集$G' $以及一切包含于$U $的$G' $紧正规子群$K $,使得$G'/k $是Lie群.
 
 $\iff$
@@ -265,28 +275,13 @@ $\iff$
 若$G $连通,则$G'=G $.
 > 什么事射影极限,我也不懂
 
-{{% mathbox type="green" title="" %}}
+{{% mathbox type="blue" title="" %}}
 拓扑群的开子群一定是闭的
 {{% /mathbox %}}
 证明:设$H $是$G $的一个开子群,那么由陪集分解$G=\bigcup_{x\in G}xH $.其中$xH=\varphi^{-1}(H) $,其中$\varphi:y\mapsto x^{-1}y $,由Lie群的定义可知$\varphi $是连续的,于是可知$xH $也是开的.那么对于任意的$H=G- $其他的陪集,由于其他的陪集都是开集且开集并为开,可知$H $是闭的.$\Box $
 
 设$G_1,G_2 $是两个Lie群,若$\varphi:G_1\rightarrow G_2 $是群同态,且是光滑的.则称之为一个Lie群同态.
 
-{{% mathbox type="slate" title="" %}}
-
-{{% /mathbox %}}
-
-{{% mathbox type="blue" title="" %}}
-
-{{% /mathbox %}}
-
-{{% mathbox type="red" title="" %}}
-
-{{% /mathbox %}}
-
-{{% mathbox type="orange" title="" %}}
-
-{{% /mathbox %}}
 
 
 
