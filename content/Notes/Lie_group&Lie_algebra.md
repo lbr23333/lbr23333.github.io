@@ -280,8 +280,13 @@ $\iff$
 {{% /mathbox %}}
 证明:设$H $是$G $的一个开子群,那么由陪集分解$G=\bigcup_{x\in G}xH $.其中$xH=\varphi^{-1}(H) $,其中$\varphi:y\mapsto x^{-1}y $,由Lie群的定义可知$\varphi $是连续的,于是可知$xH $也是开的.那么对于任意的$H=G- $其他的陪集,由于其他的陪集都是开集且开集并为开,可知$H $是闭的.$\Box $
 
+{{% mathbox type="green" title="Lie群同态" %}}
 设$G_1,G_2 $是两个Lie群,若$\varphi:G_1\rightarrow G_2 $是群同态,且是光滑的.则称之为一个Lie群同态.
-
+{{% /mathbox %}}
+{{% mathbox type="slate" title="例子🌰" %}}
+$G=(\R,+) $:$\varphi:G\rightarrow G $是群同态,即$\varphi(x+y)=\varphi(x)+\varphi(y) $.若$\varphi $是连续的,那么可知$\varphi(x)=cx $.
+{{% /mathbox %}}
+> 实际上在一点处的联系、单调、可测,同样可以得到上结论,可见光滑的条件是过强的.
 
 
 
