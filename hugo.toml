@@ -51,3 +51,6 @@ favicon = "/qimojv.JPG"
     inline = [['$', '$']]
 
 buildFuture = true
+
+[markup.goldmark.renderer]
+unsafe = true
