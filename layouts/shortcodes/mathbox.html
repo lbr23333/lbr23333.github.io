@@ -1,0 +1,8 @@
+<div class="mathbox {{ .Get "type" | default "def" }}">
+  {{ if .Get "title" }}
+  <div class="mathbox-title">{{ .Get "title" }}</div>
+  {{ end }}
+  <div class="mathbox-content">
+    {{ .Inner }}
+  </div>
+</div>
