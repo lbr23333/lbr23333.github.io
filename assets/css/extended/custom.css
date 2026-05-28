@@ -88,3 +88,36 @@
 .dark .mathbox.thm .mathbox-title { color: #ff8a95; }
 .dark .mathbox.cor { background-color: rgba(253, 126, 20, 0.1); }
 .dark .mathbox.cor .mathbox-title { color: #ffa256; }
+
+/* ================= 🌟 新增颜色方案 ================= */
+/* --- 🌟 翠绿色系 (Green)  --- */
+.mathbox.green {
+    border-left-color: #10b981; /* 柔和的翠绿边框 */
+    background-color: #ecfdf5;  /* 极浅的薄荷绿背景 */
+}
+.mathbox.green .mathbox-title { color: #047857; }
+
+/* --- 🌟 丁香紫系 (Purple) --- */
+.mathbox.purple {
+    border-left-color: #8b5cf6; /* 优雅的紫罗兰边框 */
+    background-color: #f5f3ff;  /* 极浅的薰衣草紫背景 */
+}
+.mathbox.purple .mathbox-title { color: #6d28d9; }
+
+/* --- 🌟 蓝灰冷色系 (Slate) --- */
+.mathbox.slate {
+    border-left-color: #64748b; /* 沉稳的蓝灰边框 */
+    background-color: #f8fafc;  /* 接近纯白但带点冷灰的背景 */
+}
+.mathbox.slate .mathbox-title { color: #334155; }
+
+
+/* ================= 🌙 新增颜色的夜间模式适配 ================= */
+.dark .mathbox.green { background-color: rgba(16, 185, 129, 0.1); }
+.dark .mathbox.green .mathbox-title { color: #34d399; }
+
+.dark .mathbox.purple { background-color: rgba(139, 92, 246, 0.1); }
+.dark .mathbox.purple .mathbox-title { color: #a78bfa; }
+
+.dark .mathbox.slate { background-color: rgba(100, 116, 139, 0.1); }
+.dark .mathbox.slate .mathbox-title { color: #94a3b8; }
