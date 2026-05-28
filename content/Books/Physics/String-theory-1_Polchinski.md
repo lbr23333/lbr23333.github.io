@@ -2,7 +2,7 @@
 title: "String Thory Volume 1"
 description: "Polchinski"
 ---
-{{< progress read="76" total="328" />}}
+{{< progress read="76" total="328" >}}
 
 >悲哀的是，在初次接触量子场论到正式开始学习弦论，居然过了足足两年？
 
