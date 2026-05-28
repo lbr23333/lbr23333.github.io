@@ -236,7 +236,21 @@ ___
 
 ### 1.Lie群与Lie代数
 
+先引入一个更一般的概念**拓扑群**:
+> $X $是一个拓扑空间,若其有群结构,即
+> 1. $\mu:X\times X\rightarrow X |(x,y)\mapsto xy |$连续
+> 2. $i: X\rightarrow  X |x\mapsto x^{-1}  |$连续
+> 3. 单位元$e\in X $
+> 满足$(xy)z=x(yz),ex=xe=x,\forall x, \exist ! y $使得$yx=xy=e $
+>
+> 那么称$X $是一个拓扑群.
 
+加上光滑结构就得到了**Lie群**:
+>
+
+{{% mathbox type="def" title="定义 1.1 (流形)" %}}
+设 $M$ 是一个豪斯多夫空间。如果对 $M$ 中的任意一点 $p$，都存在一个包含 $p$ 的开邻域 $U$，使得 $U$ 同胚于 $\mathbb{R}^n$ 中的某个开集，则称 $M$ 为一个拓扑流形。
+{{% /mathbox %}}
 ___
 ___
 ___

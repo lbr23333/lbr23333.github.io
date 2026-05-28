@@ -8,3 +8,12 @@
 <p style="font-size: 0.85em; color: #888; text-align: center; margin-top: -15px; margin-bottom: 20px;">
   当前阅读进度: {{ .Get "read" }} / {{ .Get "total" }} 页 ({{ printf "%.1f" $percentage }}%)
 </p>
+
+<div class="mathbox {{ .Get "type" | default "def" }}">
+  {{ if .Get "title" }}
+  <div class="mathbox-title">{{ .Get "title" }}</div>
+  {{ end }}
+  <div class="mathbox-content">
+    {{ .Inner }}
+  </div>
+</div>

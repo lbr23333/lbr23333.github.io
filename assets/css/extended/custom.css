@@ -24,3 +24,67 @@
 .post-content blockquote p {
     margin-bottom: 0;
 }
+
+/* ================= 数学盒子基础样式 ================= */
+.mathbox {
+    margin: 1.5em 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #f8f9fa; /* 默认极浅灰背景 */
+    border-left: 5px solid #6c757d; /* 默认左侧灰边 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* 轻微立体阴影 */
+}
+
+.mathbox-title {
+    padding: 8px 15px;
+    font-weight: bold;
+    font-size: 1.05em;
+    color: #333;
+    background-color: rgba(0,0,0,0.03); /* 标题栏底色 */
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.mathbox-content {
+    padding: 15px;
+}
+.mathbox-content p:last-child {
+    margin-bottom: 0; /* 消除底部多余空白 */
+}
+
+/* --- 🌟 主题色彩：定义 (Definition) - 蓝色系 --- */
+.mathbox.def {
+    border-left-color: #007bff;
+    background-color: #f0f7ff;
+}
+.mathbox.def .mathbox-title { color: #0056b3; }
+
+/* --- 🌟 主题色彩：定理 (Theorem) - 红色系 --- */
+.mathbox.thm {
+    border-left-color: #dc3545;
+    background-color: #fff5f5;
+}
+.mathbox.thm .mathbox-title { color: #a71d2a; }
+
+/* --- 🌟 主题色彩：引理/推论 (Lemma/Cor) - 橙色系 --- */
+.mathbox.cor {
+    border-left-color: #fd7e14;
+    background-color: #fff9f4;
+}
+.mathbox.cor .mathbox-title { color: #c35a00; }
+
+
+/* ================= 🌙 夜间模式适配 ================= */
+.dark .mathbox {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.dark .mathbox-title {
+    background-color: rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.dark .mathbox.def { background-color: rgba(0, 123, 255, 0.1); }
+.dark .mathbox.def .mathbox-title { color: #66b0ff; }
+.dark .mathbox.thm { background-color: rgba(220, 53, 69, 0.1); }
+.dark .mathbox.thm .mathbox-title { color: #ff8a95; }
+.dark .mathbox.cor { background-color: rgba(253, 126, 20, 0.1); }
+.dark .mathbox.cor .mathbox-title { color: #ffa256; }
