@@ -253,10 +253,40 @@ ___
 对于Lie群而言,可以先*遗忘*其光滑结构,视为一个拓扑群,且该拓扑群是$A_2,T_2 $且局部欧的.于是自然就引出了Hilbert第五问题:
 > 是否所有的连续群都是可微群?如果不行,至少加上什么条件?
 
-放在这里就是拓扑群至少在什么条件下,能变成一个Lie群?
+放在这里就是拓扑群至少在什么条件下,能变成一个Lie群?在1950s有一群人先给出了一个没那么强的形式:拓扑群+Locally Euclidean+T2 ==> Lie群.后来发展成
+{{% mathbox type="slate" title="G-Yamabe" %}}
+若$G$局部紧.则对于其单位元的任何开领域$U$,都存$G $的开子集$G' $以及一切包含于$U $的$G' $紧正规子群$K $,使得$G'/k $是Lie群.
 
+$\iff$
 
+局部紧群一定是Lie群的射影极限.
+{{% /mathbox %}}
 
+若$G $连通,则$G'=G $.
+> 什么事射影极限,我也不懂
+
+{{% mathbox type="green" title="" %}}
+拓扑群的开子群一定是闭的
+{{% /mathbox %}}
+证明:设$H $是$G $的一个开子群,那么由陪集分解$G=\bigcup_{x\in G}xH $.其中$xH=\varphi^{-1}(H) $,其中$\varphi:y\mapsto x^{-1}y $,由Lie群的定义可知$\varphi $是连续的,于是可知$xH $也是开的.那么对于任意的$H=G- $其他的陪集,由于其他的陪集都是开集且开集并为开,可知$H $是闭的.$\Box $
+
+设$G_1,G_2 $是两个Lie群,若$\varphi:G_1\rightarrow G_2 $是群同态,且是光滑的.则称之为一个Lie群同态.
+
+{{% mathbox type="slate" title="" %}}
+
+{{% /mathbox %}}
+
+{{% mathbox type="blue" title="" %}}
+
+{{% /mathbox %}}
+
+{{% mathbox type="red" title="" %}}
+
+{{% /mathbox %}}
+
+{{% mathbox type="orange" title="" %}}
+
+{{% /mathbox %}}
 
 
 
