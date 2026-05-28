@@ -289,7 +289,40 @@ $\iff$
 $G=(\R,+) $:$\varphi:G\rightarrow G $是群同态,即$\varphi(x+y)=\varphi(x)+\varphi(y) $.若$\varphi $是连续的,那么可知$\varphi(x)=cx $.
 {{% /mathbox %}}
 
-> 实际上在一点处的联系、单调、可测,同样可以得到上结论,可见光滑的条件是过强的.
+> 实际上,在一点处的联系、单调、可测,同样可以得到上结论,可见光滑的条件是过强的.
+
+
+{{% mathbox type="green" title="左平移与右平移" %}}
+$l_a:G\rightarrow G,l_a(x)=ax $为左平移,$r_a:G\rightarrow G,r_a(x)=xa $为右平移.
+{{% /mathbox %}}
+
+{{% mathbox type="slate" title="" %}}
+$i_a:G\rightarrow G,i_a(x)=axa^{-1} $是Lie群同态,因为
+$$
+  i_a(xy)=a(xy)a^{-1}= ax(a^{-1}a)ya^{-1}=i_a(x)i_a(y)
+$$
+{{% /mathbox %}}
+
+{{% mathbox type="" title="green" %}}
+设$G,H $都是Lie群,若$H\subset G $既是子流形,又是子群,那么称之为$M $的一个Lie子群.
+{{% /mathbox %}}
+
+> 有没有菠萝群
+
+{{% mathbox type="blue" title="" %}}
+设$G,H $都是Lie群,$H $是$G $的子群(仅代数意义上).
+* 若$H $是拟正则嵌入子流形,那么$H $是Lie子群;
+* 若$H $是正规嵌入子流形,那么$H $是闭的Lie子群.
+{{% /mathbox %}}
+证明:考虑$\nu:G\times G\rightarrow G ,\nu(x,y)\mapsto xy^{-1} $,那么由Lie群的定义,$\nu $是光滑的.若考虑
+$$
+  \tilde{\nu}=\nu|_{H\times H}:H\times H\rightarrow H\xhookrightarrow{j}G
+$$
+
+那么若$j $是拟正则嵌入,取$P=H\times H ,u:H\times H\rightarrow H $使得$\tilde{\nu}=j\circ u $,可知$u $是光滑的,所以$H $是一个Lie群.
+
+进一步,若$j $是正则嵌入,可知是局部闭的,即$H $是$\bar{H} $中的开集,其中$\bar{H } $有子空间拓扑.$\bar{H} $是闭子群,$H $是$\bar{H} $中的开子群.再由前面的定理“拓扑群中的开子群都是闭子群”,可知$H $是$\bar{H} $中的闭子群,由于闭包是最小包含$H $的闭集,可知$H=\bar{H} $.$\Box$
+
 
 
 
