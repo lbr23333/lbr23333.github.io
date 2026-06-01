@@ -229,6 +229,10 @@ $$
   \delta \sigma^\alpha=[\bar{\epsilon }Q,\sigma^\alpha]=i\bar{\epsilon}\rho^\alpha\theta
 $$
 {{% /mathbox %}}
+于是可以对$\Phi $进行超对称变换:
+$$
+  \delta_\epsilon\Phi=i(\epsilon^+Q_++\epsilon^-Q_-)\Phi
+$$
 
 
 
