@@ -172,7 +172,7 @@ $$
 $$
 即超对称作用量为
 $$
-  \begin{align*}
+  \boxed{\begin{align*}
     S&=\frac{1}{4\pi\alpha'}
   \int d^2\sigma\,
   \left[
@@ -183,7 +183,7 @@ $$
     \bar\psi^\mu\rho^\alpha\partial_\alpha\psi^\nu
   \right]
   \\& =\frac{1}{4\pi \alpha'}\int d^2\sigma[\partial_aX\cdot\partial^aX+i\alpha'(\psi_+\partial_-\psi_++\psi_-\partial_+\psi_-)]
-  \end{align*}
+  \end{align*}}
 $$
 
 #### 3.超空间与超场
@@ -231,8 +231,17 @@ $$
 {{% /mathbox %}}
 于是可以对$\Phi $进行超对称变换:
 $$
-  \delta_\epsilon\Phi=i(\epsilon^+Q_++\epsilon^-Q_-)\Phi
+  \begin{align*}
+    \delta_\epsilon\Phi&=i(\epsilon^+Q_++\epsilon^-Q_-)\Phi
+    \\& =i\epsilon^+(\sqrt{\frac{\alpha'}{2}}\psi^\mu_++\theta^-F^\mu+i\theta^+\partial_+X^\mu+i\sqrt{\frac{\alpha'}{2}}\theta^+\theta^-\partial_+\psi^\mu_-)
+    \\& +i\epsilon^-(\sqrt{\frac{\alpha'}{2}}\psi^\mu_-+\theta^+F^\mu+i\theta^-\partial_-X^\mu-i\sqrt{\frac{\alpha'}{2}}\theta^+\theta^-\partial_+\psi^\mu_-)
+  \end{align*}
 $$
+于是可得到:
+$$
+  \delta_\epsilon\psi^\mu_+=-\sqrt{\frac{2}{\alpha'}}\epsilon^+\partial_+X^\mu-i\sqrt{\frac{2}{\alpha'}}\epsilon^-F^\mu
+$$
+
 
 
 
