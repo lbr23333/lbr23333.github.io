@@ -4,15 +4,44 @@ description : "还不太会，真的劳累"
 date : 2026-05-18
 weight : 1
 ---
-- [0.Majorana表示与一些约定](#0majorana表示与一些约定)
-- [1.超对称变换](#1超对称变换)
-- [2.超对称作用量](#2超对称作用量)
-- [3.超空间与超场](#3超空间与超场)
-- [4.RNS边界条件](#4rns边界条件)
-- [5.RNS弦的量子化](#5rns弦的量子化)
-- [6.GSO投影](#6gso投影)
+- [Preliminaries](#preliminaries)
+  - [路径积分与配分函数](#路径积分与配分函数)
+  - [对称与守恒](#对称与守恒)
+- [玻色弦](#玻色弦)
+- [超弦](#超弦)
+  - [0.Majorana表示与一些约定](#0majorana表示与一些约定)
+  - [1.超对称变换](#1超对称变换)
+  - [2.超对称作用量](#2超对称作用量)
+  - [3.超空间与超场](#3超空间与超场)
+  - [4.RNS边界条件](#4rns边界条件)
+  - [5.RNS弦的量子化](#5rns弦的量子化)
+  - [6.GSO投影](#6gso投影)
 
 
+### Preliminaries
+
+#### 路径积分与配分函数
+
+#### 对称与守恒
+
+介绍一个在场论中没那么常用的方法:
+{{% mathbox type="blue" title="Noether方法" %}}
+对于一个具有全局对称性的 $d $-  维系统,对称性由参数 $\epsilon  $ 描述.若先将其局域化为 $\epsilon(\sigma) $ ,那么对于变换 $\phi\rightarrow \phi+\epsilon^\mu(\sigma)\partial _\mu\phi(\sigma) $ ,由于是一个对称性变换,作用量不变 $\delta S=0 $ .  可知 $\delta S=\int d^d\sigma j^\mu_\alpha\partial ^\alpha\epsilon_\mu $ ,因为只有这样才能使得当 $\sigma $ 回到全局的常数时有 $\delta S=0 $ .
+
+进一步,由分布积分, $\int d^2\sigma \partial ^\alpha j^\mu_\alpha\epsilon =0 $ ,即有 $\partial ^\alpha j_\alpha^\mu=0 $ .
+
+还有守恒荷 $Q_\alpha=\int d^{d-1}\sigma j^0_\alpha $ ,有 $\frac{dQ_\alpha}{d\tau}=0 $ .
+{{% /mathbox %}}
+
+
+
+
+
+### 玻色弦
+
+
+
+### 超弦
 #### 0.Majorana表示与一些约定
 
 考虑二维的Dirac gamma 矩阵,以示区分用$\rho $表示,有
