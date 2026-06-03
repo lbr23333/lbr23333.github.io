@@ -26,11 +26,16 @@ weight : 1
 
 介绍一个在场论中没那么常用的方法:
 {{% mathbox type="blue" title="Noether方法" %}}
-对于一个具有全局对称性的 $d $-  维系统,对称性由参数 $\epsilon  $ 描述.若先将其局域化为 $\epsilon(\sigma) $ ,那么对于变换 $\phi\rightarrow \phi+\epsilon^\mu(\sigma)\partial _\mu\phi(\sigma) $ ,由于是一个对称性变换,作用量不变 $\delta S=0 $ .  可知 $\delta S=\int d^d\sigma j^\mu_\alpha\partial ^\alpha\epsilon_\mu $ ,因为只有这样才能使得当 $\sigma $ 回到全局的常数时有 $\delta S=0 $ .
+对于一个具有全局对称性的 $d $-  维系统,对称性由参数 $\epsilon  $ 描述.若先将其局域化为 $\epsilon(\sigma) $ ,那么对于变换 $\phi\rightarrow \phi+\epsilon^\mu(\sigma)\partial _\mu\phi(\sigma) $ ,由于是一个对称性变换,作用量不变 $\delta S=0 $ .  可知 $\boxed{\delta S=\int d^d\sigma j^\mu_\alpha\partial ^\alpha\epsilon_\mu }$ ,因为只有这样才能使得当 $\sigma $ 回到全局的常数时有 $\delta S=0 $ .
 
-进一步,由分布积分, $\int d^2\sigma \partial ^\alpha j^\mu_\alpha\epsilon =0 $ ,即有 $\partial ^\alpha j_\alpha^\mu=0 $ .
+进一步,由分布积分, $\int d^2\sigma \partial ^\alpha j^\mu_\alpha\epsilon =0 $ ,即有 $\boxed{\partial ^\alpha j_\alpha^\mu=0} $ .
 
-还有守恒荷 $Q_\alpha=\int d^{d-1}\sigma j^0_\alpha $ ,有 $\frac{dQ_\alpha}{d\tau}=0 $ .
+还有守恒荷 $Q^\mu=\int d^{d-1}\sigma j^\mu_0 $ ,有 $\boxed{\frac{dQ^\mu}{d\tau}=0} $ . 因为
+$$
+  \frac{dQ^\mu}{d\tau}=\int d^{d-1}\sigma \frac{dj^\mu_0}{d\tau}=\int d^{d-1}\sigma \sum_{i=1}^{d-1}\partial_ij^\mu_i
+  =\int_{\Sigma\rightarrow \infty} dS_i j^\mu_i=0
+$$
+
 {{% /mathbox %}}
 
 Ward恒等式:生成元 $\sim $ 守恒荷
@@ -122,11 +127,8 @@ $$
     \\
     & = \int d^dx\partial_\mu\langle Oj^\mu_a \rangle \omega_a
   \end{align*}
-  于是完成了证明.
 $$
-
-
- 
+于是完成了证明.
 {{% /mathbox %}}
 
 
