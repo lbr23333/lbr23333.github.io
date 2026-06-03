@@ -5,8 +5,8 @@ date : 2026-05-18
 weight : 1
 ---
 - [Preliminaries](#preliminaries)
-  - [路径积分与配分函数](#路径积分与配分函数)
-  - [对称与守恒](#对称与守恒)
+  - [1.路径积分与配分函数](#1路径积分与配分函数)
+  - [2.对称与守恒](#2对称与守恒)
 - [玻色弦](#玻色弦)
 - [超弦](#超弦)
   - [0.Majorana表示与一些约定](#0majorana表示与一些约定)
@@ -20,9 +20,9 @@ weight : 1
 
 ### Preliminaries
 
-#### 路径积分与配分函数
+#### 1.路径积分与配分函数
 
-#### 对称与守恒
+#### 2.对称与守恒
 
 介绍一个在场论中没那么常用的方法:
 {{% mathbox type="blue" title="Noether方法" %}}
@@ -32,6 +32,104 @@ weight : 1
 
 还有守恒荷 $Q_\alpha=\int d^{d-1}\sigma j^0_\alpha $ ,有 $\frac{dQ_\alpha}{d\tau}=0 $ .
 {{% /mathbox %}}
+
+Ward恒等式:生成元 $\sim $ 守恒荷
+
+考虑 $\phi'(x)=\phi(x)-i\omega_aG_a\phi $ , $\langle O \rangle=\langle \phi(x_1)\dots\phi(x_n) \rangle $ ,令 $\langle 1 \rangle =1 $ ,于是 $\langle O \rangle =\frac{1}{Z}\int [D\phi]O(x)e^{iS} $ , $\langle O' \rangle = \frac{1}{Z}\int [D\phi']O(x')e^{iS'} $ ,解析延拓到欧氏时空,那么
+$$
+  \begin{align*}
+    \delta\langle O \rangle &=\langle \delta O \rangle =\langle O'-O \rangle =\langle O' \rangle -\langle O \rangle 
+    \\
+    & =\int d^d x\partial _\mu \langle j^\mu_a O \rangle  \omega^a
+  \end{align*}
+$$
+这里假设了 $\delta\left| \Omega \right\rangle =0$. 而另一方面,记 $\phi(x^1)=\phi^1 $ , 有
+$$
+  \langle \delta O \rangle =\langle \sum_{j=1}^k \phi^1\dots\delta \phi^j\dots\phi^k \rangle =-i\omega_a\langle \sum_{j=1}^k \phi^1\dots G_a\phi^j\dots\phi^k \rangle 
+$$
+对比上下两式,可得
+$$
+  \partial_\mu\langle j^\mu_a(x)O(y) \rangle =-i\langle  \sum_{j=1}^k \phi^1\dots G_a\phi^j\dots\phi^k\rangle \delta(x^j-y^j)
+$$
+
+考虑到在全区域积分中全导数项为 $0 $ , 即有
+$$
+  0=-i\langle  \sum_{j=1}^k \phi^1(y^1)\dots G_a\phi^j(y^j) \dots\phi^k(y^k) \rangle
+$$
+若再对于每一个 $y_j $ 考虑,即积分区域不再是全区域,而只是包含某一个 $y^j $ 的区域 $\Sigma $ ,则
+$$
+  \begin{align*}
+    \int_{\Sigma}dx\partial _\mu\langle j^\mu O \rangle &=\int_{\partial \Sigma}dx \langle j^\mu_a O \rangle = -\int_{\Sigma^+} d\vec{x}\langle j^\mu_a O \rangle +\int_{\Sigma^-} d\vec{x}\langle j^\mu_a O \rangle
+    \\
+    &=-\langle Q_a|_{\Sigma^+}O \rangle +\langle Q_a|_{\Sigma^-}O \rangle
+  \end{align*}
+$$
+由路径积分的编时,上即 $-\langle Q_a O \rangle+\langle O Q_a  \rangle =\langle [Q_a,O] \rangle  $ .即
+$$
+  -i\langle  \sum_{j=1}^k \phi^1(y^1)\dots G_a\phi^j(y^j) \dots\phi^k(y^k) \rangle=\langle [Q_a,O] \rangle
+$$
+可以发现,积分区域只包含 $\phi(y_j) $ ,其他的场根本就不重要,完全可以设为 $1 $ ,即
+$$
+  \boxed{[\hat Q_a,\hat\phi]=iG_a\hat\phi}
+$$
+更形式化一点也就是
+$$
+  {[\hat Q_a,\cdot]=iG_a}
+$$
+{{% mathbox type="slate" title=" $\langle \delta O \rangle= \int d^d x\partial _\mu \langle j^\mu_a O \rangle  \omega^a $ " %}}
+证明: 考虑到 
+$$
+  \begin{align*}
+    \langle O \rangle &=\frac{1}{Z}\int [D\phi]O[\phi]e^{-S[\phi]} 
+    \\
+    &=\frac{1}{Z}\int [D\phi']O[\phi']e^{-S[\phi]'} 
+  \end{align*}
+$$
+考虑到遍历所有的场构型 $[D\phi]=[D\phi '] $ , 以及所考虑的是非反常对称,那么
+$$
+  \begin{align*}
+    &\langle O \rangle =\langle O' \rangle 
+    \\
+    & =\frac{1}{Z}\int [D\phi']O[\phi']e^{-S[\phi]'} 
+    \\
+    & =\frac{1}{Z}\int [D\phi](O+\delta O)e^{-S-\delta S} 
+    \\
+    & =\frac{1}{Z}\int [D\phi](O+\delta O)(1-\delta S)e^{-S}
+    \\
+    & =\frac{1}{Z}\int [D\phi](O+\delta O-O\delta S)e^{-S}  
+  \end{align*}
+$$
+于是
+$$
+  \begin{align*}
+    &\int [D\phi](\delta O-O\delta S)e^{-S}=0
+    \\
+    \Rightarrow & \langle \delta O-O\delta S \rangle =0
+  \end{align*}
+$$
+利用前面所得到的 $\delta S=-\int d^dxj^\mu_a\partial_\mu\omega_a$ 
+$$
+  \begin{align*}
+    \langle \delta O \rangle &=\langle O\delta S \rangle 
+    \\
+    & =\langle -O\int d^dxj^\mu_a\partial_\mu\omega_a \rangle 
+    \\
+    & =-\int [D\phi] (O\int d^dxj^\mu_a\partial_\mu\omega_a )e^{-S}
+    \\
+    & =-\int d^dx[\int [D\phi] (Oj^\mu_a)e^{-S}]\partial_\mu\omega_a
+    \\
+    & = -\int d^dx\langle Oj^\mu_a \rangle \partial_\mu\omega_a
+    \\
+    & = \int d^dx\partial_\mu\langle Oj^\mu_a \rangle \omega_a
+  \end{align*}
+  于是完成了证明.
+$$
+
+
+ 
+{{% /mathbox %}}
+
+
 
 
 
