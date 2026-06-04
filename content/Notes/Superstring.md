@@ -14,9 +14,15 @@ weight : 1
   - [3.边界条件与模式展开(待施工)](#3边界条件与模式展开待施工)
   - [3.正则量子化(待施工)](#3正则量子化待施工)
   - [4.光锥量子化(待施工)](#4光锥量子化待施工)
-- [一些CFT](#一些cft)
+- [一些CFT(待施工)](#一些cft待施工)
   - [0.Free massless scalar and complex coord.(待施工)](#0free-massless-scalar-and-complex-coord待施工)
   - [OPE](#ope)
+  - [Noether\&Ward 再放送](#noetherward-再放送)
+  - [共形变换](#共形变换)
+  - [一些例子](#一些例子)
+  - [Virasoro代数](#virasoro代数)
+  - [Mode Expansion](#mode-expansion)
+  - [Vertex operator](#vertex-operator)
 - [超弦](#超弦)
   - [0.Majorana表示与一些约定](#0majorana表示与一些约定)
   - [1.超对称变换](#1超对称变换)
@@ -314,7 +320,7 @@ $$
 $$
 从这里就可以看到,没有了 $\eta^{00}=-1 $   所带来的负模.
 
-### 一些CFT
+### 一些CFT(待施工)
 
 #### 0.Free massless scalar and complex coord.(待施工)
 
@@ -365,6 +371,22 @@ $$
 #### OPE
 
 👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
+
+#### Noether&Ward 再放送
+
+#### 共形变换
+
+#### 一些例子
+
+* Linear Dilation CFT
+*  $\mathfrak{bc} $ CFT
+*   $\beta\gamma $ CFT
+ 
+#### Virasoro代数
+
+#### Mode Expansion
+
+#### Vertex operator
 
 ### 超弦
 #### 0.Majorana表示与一些约定
@@ -916,6 +938,51 @@ R-R型: 将一对Majorana-Weyl旋量张量积后得到的玻色子.在IIA中,两
 
 
 ___
+
+> 2026.6.4 期末
+
+弦论期末考试,都还挺简单,最后一题题提到 $T $ -对偶,有意思.大概如下:
+$$
+  S=\frac{1}{2\pi\alpha'}\int d^2\sigma [\partial_+Y\partial_-Y-V_+\partial_-Y-V_-\partial_+Y
+  \\
+  +V_+V_--\tilde{X}(\partial_+V_--\partial_-V_+)]
+$$
+然后要求先用 $V_\pm $ 的运动方程
+$$
+  V_+=\partial_-\tilde{X}+\partial_+Y
+  \\
+  V_-=\partial_+\tilde{X}+\partial_-Y
+$$
+得到:
+$$
+  S'=\frac{1}{2\pi\alpha'}\int d^2\sigma\partial_+\tilde{X}\partial_-\tilde{X}
+$$
+再求解 $\tilde{X} $ 的运动方程,也就是
+$$
+  \partial_+V_--\partial_-V_+=0
+$$
+题目要求忽略 nontrivial 的同调性质,那么就可以设
+$$
+  V_+=\partial_+W;V_-=\partial_-W
+$$
+于是
+$$
+  S''=\frac{1}{2\pi\alpha'}\int d^2\sigma(\partial_+W+\partial_+Y)(\partial_-W+\partial_-Y)
+$$
+可以重设变量 $X=W+Y $ ,于是
+$$
+  S''=\frac{1}{2\pi\alpha'}\int d^2\sigma\partial_+X\partial_-X
+$$
+可见 $S'' $ 形式上与 $S' $ 一致,也就是说其所得的配分函数是一致的,这就是两个理论的对偶.另外,根据前面 $V_\pm $ 的运动方程和后面的 $V_\pm=\partial_\pm(X-Y) $ ,有
+$$
+    \begin{cases}
+        \partial_\tau X=-\partial_\sigma \tilde{X}
+        \\
+        \partial_\sigma X=-\partial_\tau \tilde{X}
+    \end{cases}
+$$
+也就是说一个边界 $\sigma=0 $ 处边界条件为 Neumann 的 $X $ 对偶于一个在 $\sigma=0 $ 边界条件为 Dirichlet 的 $\tilde X $ .
+
 
 ___
 
