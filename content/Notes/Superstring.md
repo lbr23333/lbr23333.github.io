@@ -14,6 +14,9 @@ weight : 1
   - [3.边界条件与模式展开(待施工)](#3边界条件与模式展开待施工)
   - [3.正则量子化(待施工)](#3正则量子化待施工)
   - [4.光锥量子化(待施工)](#4光锥量子化待施工)
+- [一些CFT](#一些cft)
+  - [0.Free massless scalar and complex coord.(待施工)](#0free-massless-scalar-and-complex-coord待施工)
+  - [OPE](#ope)
 - [超弦](#超弦)
   - [0.Majorana表示与一些约定](#0majorana表示与一些约定)
   - [1.超对称变换](#1超对称变换)
@@ -311,6 +314,57 @@ $$
 $$
 从这里就可以看到,没有了 $\eta^{00}=-1 $   所带来的负模.
 
+### 一些CFT
+
+#### 0.Free massless scalar and complex coord.(待施工)
+
+复坐标下
+$$
+  S_{\text{Pol}}=
+$$
+
+运动方程
+$$
+  \langle \partial\bar{\partial}X^\mu \rangle =0
+$$
+可以加入一些没有支在 $z $ 的场,放到路径积分中并不会改变什么
+$$
+  \langle \partial\bar{\partial}X^\mu\dots \rangle =0
+$$
+在 Hilbert 空间的形式化语言下就是
+$$
+  \partial\bar{\partial}X^\mu=0
+$$
+但更有意思的是当插入的场中有靠近 $z $ 的场,也就是说会产生接触项,例如
+$$
+  \begin{align*}
+    0&=\int [dX]\frac{\delta}{\delta X_\mu(z,\bar{z})}[\exp(-S)X^\nu(z',\bar{z}')]
+    \\
+    & =\int [dX]\exp(-S)
+    \\
+    & ~~\times [\eta^{\mu\nu}\delta^2(z-z',\bar{z}-\bar{z}') + \frac{1}{\pi \alpha'}\partial_z\partial_{\bar z}X^\mu(z,\bar{z})X^\nu(z',\bar{z}')]
+    \\
+    &= \eta^{\mu\nu}\langle \delta^2(z-z',\bar{z}-\bar{z}') \rangle 
+    +\frac{1}{\pi\alpha'}\partial_z\partial_{\bar z}\langle X^\mu(z,\bar{z})X^\nu(z',\bar{z}') \rangle 
+  \end{align*}
+$$
+在 Hilbert 形式下就是
+$$
+  -\eta^{\mu\nu}\delta^2(z-z',\bar{z}-\bar{z}') = 
+  \frac{1}{\pi\alpha'}\partial_z\partial_{\bar z}X^\mu(z,\bar{z})X^\nu(z',\bar{z}')
+$$
+引入正规排序
+$$
+  :X^\mu(z)X^\nu(z'):=X^\mu(z)X^\nu(z')+\frac{\alpha'}{2}\eta^{\mu\nu}\ln |z_{12}|^2
+$$
+其中 $z_{12}=z_1-z_2 $ ,于是有
+$$
+  \partial_1\bar{\partial}_1:X^\mu(z_1)X^\nu(z_2):=0
+$$
+
+#### OPE
+
+👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
 
 ### 超弦
 #### 0.Majorana表示与一些约定
