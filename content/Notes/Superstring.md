@@ -5,9 +5,15 @@ date : 2026-05-18
 weight : 1
 ---
 - [Preliminaries](#preliminaries)
-  - [1.路径积分与配分函数](#1路径积分与配分函数)
+  - [1.路径积分与配分函数(未施工)](#1路径积分与配分函数未施工)
   - [2.对称与守恒](#2对称与守恒)
 - [玻色弦](#玻色弦)
+  - [0.点粒子的作用量(未施工)](#0点粒子的作用量未施工)
+  - [1.弦的作用量(未施工)](#1弦的作用量未施工)
+  - [2.对称性(未施工)](#2对称性未施工)
+  - [3.边界条件与模式展开(待施工)](#3边界条件与模式展开待施工)
+  - [3.正则量子化(待施工)](#3正则量子化待施工)
+  - [4.光锥量子化(待施工)](#4光锥量子化待施工)
 - [超弦](#超弦)
   - [0.Majorana表示与一些约定](#0majorana表示与一些约定)
   - [1.超对称变换](#1超对称变换)
@@ -20,7 +26,7 @@ weight : 1
 
 ### Preliminaries
 
-#### 1.路径积分与配分函数
+#### 1.路径积分与配分函数(未施工)
 
 #### 2.对称与守恒
 
@@ -139,6 +145,171 @@ $$
 
 ### 玻色弦
 
+#### 0.点粒子的作用量(未施工)
+
+ $S_{NG} $
+
+ $S_{Pol} $  
+
+#### 1.弦的作用量(未施工)
+$$
+   S_{NG}=-T\int d^2\sigma\sqrt{-det(\partial_a X^\mu \partial_b X^\nu G_{\mu\nu})}
+$$
+其中 $G_{\mu\nu} $ 是 Target Space 中的度规.
+
+
+$$
+  S_{\text{Pol}}=-\frac{T}{2}\int d^2\sigma \sqrt{-h}h^{ab}\partial _a X^\mu \partial _bX^\nu G_{\mu\nu}  
+$$
+其中 $h_{ab} $ 是世界面上的度规.
+{{% mathbox type="slate" title="$S_{\text{Pol}} $ 与 $S_{NG} $ 是等价" %}}
+考虑 $S_{pol} $ 的世界面上度规 $h^{ab} $ 的运动方程,可以得到
+$$
+  \partial_aX\cdot \partial _bX-\frac{1}{2}h_{ab}h^{cd}\partial _cX\cdot\partial _dX=0
+$$
+对其求行列式,再取更号得
+$$
+  \sqrt{-det(\partial_aX\cdot \partial _bX)} = \frac{1}{2}h^{cd}\partial _cX\cdot\partial _dX\sqrt{-det h_{ab}}
+$$
+可见上两个作用量等价.
+{{% /mathbox %}}
+由于 $S_{\text{Pol}} $ 中没有更号,更方便进行量子化,所以后面的讨论都是用该作用量.
+
+#### 2.对称性(未施工)
+
+* Poincaré
+* 重参数化
+* Weyl
+
+其中重参数化对称性和Weyl对称性都是局域的对称性,严格来说只能算是不变性而不是对称性.也就是说都只是一些gauge.可以由此选得 $h^{ab}=\eta^{ab} $ .但是选了之后发现,只要满足 $-\partial_a\epsilon _b-\partial _b\epsilon _a+\Lambda \delta_{ab}=0 $ ,就还是可以保持上面所选的世界面度规不变,也就是说还有剩余的gauge.转换到光锥规范中会发现是
+$$
+  \begin{cases}
+    \epsilon ^+=\epsilon ^+(\sigma^+)
+    \\
+    \epsilon ^-=\epsilon ^-(\sigma^-)
+  \end{cases}
+$$
+这实际上就是二维世界面上的共形不变性.
+
+还可以根据作用量得到世界面上度规场的能动张量为0,这是必然的,因为该度规场说白了只是一个辅助场.根据Weyl不变性,可以得到世界面上度规的零迹traceless性.于是有一个问题{{% mathbox type="blue" title="为什么有了 $T_{ab}=0 $ 还要强调其无迹?" %}}
+1. Weyl invariance
+2. 后面会出现 Weyl 反常.
+{{% /mathbox %}}
+
+另外根据Poincare对称性还可以得到 Target Space 上的一些对称操作的生成元和守恒荷.
+
+$$
+   S'=-\frac{T}{2}\int d^2\sigma [\partial_a(X^\mu +\omega^\mu_\lambda X^\lambda)\partial_a(X^\nu +\omega^\nu_\rho X^\rho)]G_{\mu\nu}
+  \\
+  \begin{align*}
+    \delta S
+    &=-\frac{T}{2}\int d^2\sigma [\partial_a X^\mu\partial^a(\omega^\nu_\rho X^\rho)+\partial_a X^\nu\partial^a(\omega^\mu_\lambda X^\lambda)]G_{\mu\nu}
+    \\
+    & = -\frac{T}{2}\int d^2\sigma [\partial_a X^\mu\partial^a(\omega_{\mu\rho} )X^\rho+\partial_a X^\nu\partial^a(\omega_{\nu\lambda} X^\lambda)]
+    \\
+    & =-T\int d^2\sigma [\partial_a X^\mu\partial^a(\omega_{\mu\nu} )X^\nu]
+    \\
+    & =T \int d^2 \sigma \partial_a(\omega_{\mu\nu})[X^\mu\partial ^aX^\nu-X^\nu\partial ^aX^\mu]
+  \end{align*}
+$$
+最后一步是因为 $\omega $ 的反对称.于是就可以得到 
+$$
+  J_a^{\mu\nu}=T[X^\mu\partial _aX^\nu-X^\nu\partial _aX^\mu ]=X^\mu P^\nu_a-X^\nu P^\mu_a
+$$
+ 
+
+#### 3.边界条件与模式展开(待施工)
+
+考虑到$S=-\frac{T}{2}\int d^2\sigma \partial_\alpha X^\mu\partial^\alpha X_\mu$,其有表面项为
+$$
+  -T\int d\tau [(X_\mu'\delta X^\mu)^{\sigma=\pi}_{\sigma=0}]=0
+$$
+对于开弦,即
+$$
+  \delta X^\mu=0 ~~ (Dirichlet)
+  \\
+  \partial_{\sigma^1}X_\mu=0 ~~ (Newmann)
+$$
+
+对于闭弦,没有边界,但有周期性条件:
+
+👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
+由 $X^\mu $ 的运动方程
+$$
+  \partial_+\partial_-X^\mu=0
+$$
+可知*类似于*复分析中的全纯与反全纯函数一样,有
+$$
+  \partial_+X^\mu=\partial_+X^\mu(\sigma^+)
+  \\
+  \partial_-X^\mu=\partial_-X^\mu(\sigma^-)
+$$
+于是有一个形式解为 $X^\mu(\tau,\sigma)=X^\mu_L(\sigma^+)+X^\mu_R(\sigma^-) $ .
+
+可根据边界条件对其作  $\mathcal{F}ourier $  展开,
+$$
+  \begin{cases}
+    \partial_+ X^\mu=
+    \\
+    \partial_- X^\mu=
+  \end{cases}
+$$
+
+#### 3.正则量子化(待施工)
+
+正则量子化
+
+Virasoro约束消去了负模态:
+
+先猜是
+
+再猜是 $L_m\left| phys \right\rangle=0,m>0  $,该条件就使得负模态vanish.
+{{% mathbox type="slate" title="" %}}
+若没有,考虑到 $[L_m,\alpha^\nu_n]=(-m)\alpha^\mu_{m+n} $ ,有
+$$
+  \begin{align*}
+    &L_na^{0\dagger}_{-m}\left| p \right\rangle \ne 0
+    \\ \Rightarrow& (-n)a^{0\dagger}_{n-m}\left| p \right\rangle \ne 0
+  \end{align*}
+$$
+也就是说 $m-n\le 0 $ ,但对于 $m\ge 2 $ ,总有 $n\ge 1 $ ,使得前式不成立,矛盾.所以说明成功消去了00负模态.
+{{% /mathbox %}} 
+
+#### 4.光锥量子化(待施工)
+
+前面正则量子化中加入Virasoro约束的方式稍显生硬,在光锥量子化中能更加自然地放入.
+
+首先在 Target Space 中引入光锥坐标: 
+$$
+  X^\pm:=\frac{X^0\pm X^{D-1}}{\sqrt{2}} 
+$$
+于是有度规为 $\eta_{-+}=\eta_{+-}=-1,\eta_{++}=\eta_{--}=0,\eta_{ii}=1 $ 其他为 $0 $ .那么经过一些**稍微仔细**的计算,就可以得到
+$$
+  S_{\text{Pol}}=-2T\int d^\sigma(-\partial_+X^+\partial_-X^-
+  -\partial_+X^-\partial_-X^++\partial_+X^i\partial_-X_i)
+$$
+其世界面上的能动张量为
+$$
+  T_{\pm\pm}=\frac{\delta S}{\delta g}
+$$
+可以得到
+$$
+  \partial_{\pm}X^-=\frac{1}{\partial_{\pm}X^+}\sum^{D-2}_{i=1}(\partial_\pm X^i)^2
+$$
+对于剩下的共形对称性,直接取 $X^+ $ 为世界面时间,即
+$$
+  X^+=x^++\frac{2\pi\alpha'}{l}p^+\tau
+$$
+这就是光锥规范.光锥量子化就是在光锥坐标和光锥规范下进行的.于是
+$$
+  T_{\alpha\beta}=0 \iff 
+  \partial_{\pm}X^-=\frac{l}{\pi\alpha'p^+}\sum^{D-2}_{i=1}(\partial_\pm X^i)^2
+$$
+也就是说可以用 $\{X^i \} $ 表示出 $\{x^-,p^-,\alpha^-\} $ ,即 $X^+,X^- $ 都被固定,就像在处理矢量场中只有横向的自由度是物理的那样.量子化条件就是
+$$
+  [X^i(\tau,\sigma),\Pi^j(\tau,\sigma')]=2i\pi\alpha'\delta^{ij}\delta(\sigma-\sigma')
+$$
+从这里就可以看到,没有了 $\eta^{00}=-1 $   所带来的负模.
 
 
 ### 超弦
@@ -425,15 +596,15 @@ $$
 
 对于费米子部分的边界条件可以完全同理于玻色弦给出:
 {{% mathbox type="slate" title="Recall of the boundary condition of Bosonic String" %}}
-考虑到$S=\frac{T}{2}\int d^2\sigma \partial_\alpha X^\mu\partial^\alpha X_\mu$,其有表面项为
+考虑到$S=-\frac{T}{2}\int d^2\sigma \partial_\alpha X^\mu\partial^\alpha X_\mu$,其有表面项为
 $$
   -T\int d\tau [(X_\mu'\delta X^\mu)^{\sigma=\pi}_{\sigma=0}]=0
 $$
 即
 $$
-  \delta X^\mu=0 ~~ Dirichlet
+  \delta X^\mu=0 ~~ (Dirichlet)
   \\
-  \partial_{\sigma^1}X_\mu=0 ~~ Newmann
+  \partial_{\sigma^1}X_\mu=0 ~~ (Newmann)
 $$
 {{% /mathbox %}}
 有类似的表面项为
