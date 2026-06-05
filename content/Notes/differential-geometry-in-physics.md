@@ -11,6 +11,8 @@ weight : 1
   - [0.一些Preliminaries和符号规定](#0一些preliminaries和符号规定)
   - [1.基础概念](#1基础概念)
   - [2.同调群](#2同调群)
+- [HOMOTOPY GROUPS](#homotopy-groups)
+  - [映射空间与同伦群](#映射空间与同伦群)
 
 
 ### 😩A really brief introduction of Symplectic geometry application in mechanics
@@ -90,3 +92,115 @@ $$
 
 流形M上，r阶闭形式的全体组成了$Ker(d_r)$，而r阶恰当形式的全体为$Im(d_{r-1})$.于是外微分的幂零性就等价于$Im(d_{r-1})\subset Ker(d_r)$.这是一个很好性质
 
+### HOMOTOPY GROUPS
+
+引入一种新的等价关系,考虑 $\mathcal{F} $ 是从拓扑空间 $X $ 到拓扑空间 $Y $ 的连续映射集,对于 $f,g\in \mathcal{F} $ ,若在 $Y $ 中 $f(X) $ 可以连续形变到 $g(X) $ ,那么称 $f $ 同伦于 $g $ .
+
+% #### 1.基本群
+%
+%考虑一个有洞的disc拓扑空间 $X $ 和一个没有洞的 $Y $ , $Y $ 中的闭合曲线总是可以连续地收缩到一点,也就是说 $Y $ 中所有的曲线都是同伦等价的,或者说,  $Y $ 中只有一个同伦类.但是在 $X $ 中,每一个同伦类由 $n\in \Z $ 所刻画, $n<0 $ 表示绕洞顺时针旋转的次数, $n>0 $ 就是绕洞逆时针.也就是说 $X $ 中有无穷多的等价类,考虑到 $\Z $ 的加法群结构, $n+m $ 就对应于先绕 $n $ 次再绕 $m $ 次的闭合曲线.同伦类的集合因此就被赋予了群结构,此即基本群(fundamental group).
+%
+%##### paths and loops
+
+#### 映射空间与同伦群
+在拓扑空间 $\Sigma,X $ 中分别取定**基点** $\sigma_0\in\Sigma,x_0\in X $ ,考虑所有保持基点的映射 $f:\Sigma\rightarrow X $ ,即 $f(\sigma_0)=x_0 $ ,所有的保持基点的连续映射构成一个映射空间 $X^\Sigma=\{f|f:\Sigma\rightarrow X,f(\sigma_0)=x_0 \} $ .
+{{% mathbox type="slate" title="例子" %}}
+* 显然 $X^\{1\}={f_0} $ 是一个单点集,由单个映射 $f_0(1)=x_0 $ 所构成.
+* 对于 $S^0=\{ \pm 1  \} \rightarrow X $ 的 $X^{\{ S^0 \} } $ ,基点为 $f(1)=x_0 $ ,所以 $f $ 完全由 $f(-1) $ 所确定, $\forall f\in X^{ S^0  },f\xLeftrightarrow{1:1}f(-1)\in X $,也就是说 $X^{ S^0 }\simeq X $.  
+* 显然,对于离散的多点集 $\Sigma=\{ \sigma_0,\sigma_1,\dots,\sigma_n \}  $ 到 $X $ 所构成的 $X^{\left\{ \Sigma \right\} } $ 有
+$$
+  X^{\left\{ \Sigma \right\} }\cong \underbrace{X \times \dots \times X}_n
+$$
+{{% /mathbox %}}
+
+{{% mathbox type="green" title="约定" %}}
+ $\cong $ 表同胚, $\simeq $ 表同伦, $\sim $ 是同调或者一般的等价关系.
+{{% /mathbox %}}
+
+由此可以定义所谓的**道路空间**和**圈空间**: $X^{[0,1]},X^{S^1} $:
+$$
+  X^{[0,1]}=\left\{ f|f(t)\in X;f(0)=x_0 \right\} 
+  \\
+  X^{S^1}=\left\{ f|f(t)\in X;f(0)=f(1)=x_0 \right\} 
+$$
+另外,保基映射 $f:\Sigma_2\rightarrow \Sigma_1,g:X_1\rightarrow X_2 $  诱导了   $g^f:X_1^{\Sigma_1}\rightarrow X_2^{\Sigma_2} $ ,其中 $g^f(h)=g\circ h\circ f ,\forall h\in X_1^{\Sigma_1}$ 
+>  $\Sigma_2\xrightarrow{f}\Sigma_1\xrightarrow{h}X_1\xrightarrow{g}X_2 $
+
+{{% mathbox type="blue" title=" $g^f $ 的结合性" %}}
+具有某种结合性,也就说,对于另外两个保基映射 $f':\Sigma_3\rightarrow \Sigma_2,g':X_2\rightarrow X_3 $ ,那么
+$$
+  {g'}^{f'}\circ g^f=(g'\circ g)^{f\circ f'}:X_1^{\Sigma_1}\rightarrow X_3^{\Sigma_3}
+$$
+根据连续函数的复合的结合律可以很容易得到.实际上,也就是将
+$$
+  \Sigma_2\xrightarrow{f}\Sigma_1\xrightarrow{h}X_1\xrightarrow{g}X_2 
+$$
+增长到了
+$$
+  \Sigma_3\xrightarrow{f'}
+  \Sigma_2\xrightarrow{f}\Sigma_1\xrightarrow{h}X_1\xrightarrow{g}X_2 
+  \xrightarrow{g'}X_3 
+$$
+{{% /mathbox %}}
+根据该性质, $f_t,g_t $ 分别是两个伦移,那么 $H(\cdot,t)={g_t}^{f_t}:X_1^{\Sigma_1}\rightarrow X_2^{\Sigma_2} $ 就给出了从 $g_0^{f_0} $ 到 $g_1^{f_1} $ 的伦移,因为连续函数的复合还是连续函数.
+
+{{% mathbox type="blue" title="同伦复合" %}}
+若 $\Sigma_1\simeq\Sigma_2,X_1\simeq X_2 $ ,那么 $X_1^{\Sigma_1}\simeq X_2^{\Sigma_2} $ 
+
+根据同伦的定义,存在一些复合为 $\mathbb{1} $的函数,再结合上命题就很容易证明. 
+
+推论: 道路空间总是可缩的,即 $X^{[0,1]} \simeq X^{\left\{ 1 \right\} }\simeq \left\{ f_0 \right\}  $ .这在直观上也是很显然的.
+{{% /mathbox %}}
+
+{{% mathbox type="blue" title="" %}}
+给定拓扑空间 $X_j,Y_j $ 及连续保基映射 $f_j:X_j\rightarrow Y_j $ ,存在 $\vee_{i}f_j:\vee_j X_j\rightarrow \vee_j Y_j $,具有如下性质
+* 若 $g_j:Y_j\rightarrow Z_j $ 是连续保基映射,那么
+$$
+  \left(\bigvee_j g_j\right )\circ \left(\bigvee_j f_j\right )=\bigvee_j (g_j\circ f_j)
+$$
+* 若 $f_j\simeq g_j:X_j\rightarrow Y_j  $  是同伦等价的映射,那么
+$$
+  \bigvee_j f_j\simeq \bigvee_j g_j:\bigvee_j X_j\rightarrow \bigvee_j Y_j
+$$
+{{% /mathbox %}}
+> 直观上,可以将 $\bigvee_j X_j $ 理解成一朵花🌸,不同的 $X_j $ 就是各个花瓣,对其做楔和也就是将其粘到一起,只在中心一点相交. $f_j $ 的保基性使得其基点只能取为花的中心(也即交点 $x_0,y_0 $ ),否则会导致函数多值.这样的视角下,后面两个性质就几乎是显然的了.
+
+给出显式的表达, $F=\bigvee f_j:\bigvee X_j\rightarrow \bigvee Y_j $ 自然地定义为
+$$
+  F([x])=\left( \bigvee _j f_j \right) ([x])=[f_k(x)],x\in X_k,k\in J
+$$
+
+可以证明该定义的良定性,即与 $[x] $ 的代表元选取无关,实际上楔和中所诱导的等价类也只有两种,即交点和非交点:
+* 对于各个交点 $x=\mathring{x_k} $ ,选择任意的 $\mathring{x}_j,j\in J $ ,其都被 $F $ 映射到 $\bigvee_j  Y_j $ 中的交点处,所以与代表元选取无关.
+* 对于 $x\in X_k/\left\{ \mathring{x}_k \right\}  $ ,显然 $[x]=\left\{ x \right\}  $ 只有一个元素,自然良定.
+
+那么,令 $G=\bigvee g_j:\bigvee Y_j\rightarrow \bigvee Z_j $ ,当 $x\in X_k $ , $f_k(x)\in Y_k $ 时,有
+$$
+  G\circ F([x])=G([f_k(x)])=[g_k\circ f_k(x)]
+  \\
+  =\left( \bigvee(gj\circ f_j) \right) ([x])
+$$
+于是我们证明了第一个性质.对于第二条: 设 $f_j\simeq g_j $ ,有伦移
+$$
+  H_j:X_j\times [0,1]\rightarrow Y_j
+$$
+定义
+$$
+  H(\cdot,t)=\bigvee_j H_j(\cdot,t):\bigvee_j X_j\rightarrow \bigvee_j Y_j
+$$
+提供了 $\bigvee f_j $ 到 $\bigvee g_j $ 的伦移,自然就是第二条结论.
+
+由上命题,可以得到一个推论:若 $X_j\simeq Y_j,\forall j\in J $ ,则 $\bigvee X_j \simeq \bigvee Y_j $.由同伦的定义和上命题第一条任意证明.于是: $Y\simeq \left\{ \mathring{y} \right\}  $是可缩空间,那么 $X\vee Y\simeq X\vee \left\{ \mathring{y} \right\} \cong X $ .
+
+完全同理地,可以得到
+{{% mathbox type="blue" title="归纳积" %}}
+
+{{% /mathbox %}}
+
+
+
+
+___
+___
+___
+___
