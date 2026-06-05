@@ -192,7 +192,62 @@ $$
 
 由上命题,可以得到一个推论:若 $X_j\simeq Y_j,\forall j\in J $ ,则 $\bigvee X_j \simeq \bigvee Y_j $.由同伦的定义和上命题第一条任意证明.于是: $Y\simeq \left\{ \mathring{y} \right\}  $是可缩空间,那么 $X\vee Y\simeq X\vee \left\{ \mathring{y} \right\} \cong X $ .
 
-完全同理地,可以得到
+完全同理地,可以得到归纳积的相关同伦性质.
+先简单回顾归纳积的定义
+$$
+  X\wedge Y:=(X\times Y)/(X\vee Y)
+$$
+例如
+* 对于单点集 $\left\{ \mathring{y} \right\}  $ 和以 $\mathring{x} $ 为基点的空间X,前面已经知道了
+$$
+  X\vee \left\{ \mathring{y} \right\}\cong \left( X\times \left\{ \mathring{y} \right\} \right) \cup \left( \left\{ \mathring{x} \right\} \times \left\{ \mathring{y} \right\}\right) 
+  \\
+  =X\times \left\{ \mathring{y} \right\}
+$$
+于是
+$$
+  X\wedge\left\{ \mathring{y} \right\}=(X\times \left\{ \mathring{y} \right\})/(X\vee \left\{ \mathring{y} \right\})
+  \\
+  \cong (X\times \left\{ \mathring{y} \right\})/(X\times \left\{ \mathring{y} \right\})
+  \\
+  =\left\{ \mathring{x} \right\}\times\left\{ \mathring{y} \right\}=\left\{ (\mathring{x}, \mathring{y}) \right\}
+$$
+也就是说 $X\wedge\left\{ \mathring{y} \right\} $ 同胚于一个单点集.
+
+* 对于 $X\wedge S^0=X\wedge \left\{ \pm 1 \right\}  $ ,可以类似处理.不妨选取 $x_0,+1 $ 为基点,那么
+$$
+  X\vee S^0=(X\times \left\{ + 1 \right\} )\cup (\left\{ \mathring{x}\times S^0 \right\} )
+$$
+于是
+$$
+  \begin{align*}
+    X\wedge S^0&=(X\times S^0)/(X\vee S^0)
+    \\ &=X\times \left\{ -1 \right\} \cong X
+  \end{align*}
+$$
+> 这里最后一步的商细节如下:
+>
+> 首先考虑 
+$$
+  X\times S^0=(X\times \left\{ +1 \right\} )\cup (X\times \left\{ -1 \right\} ) =X_{top} \cup X_{down}
+$$
+> 于是 $(X\times S^0)/(X\times\left\{  +1 \right\} )\cong (\left\{ \mathring{x} \right\} \times \left\{ +1 \right\} )\cup (X\times \left\{ -1 \right\} ) $ .
+> 再模去 $\left\{ \mathring{x} \right\} \times \left\{ \pm 1 \right\}  $ 也就是得到
+$$
+  (\left\{ \mathring{x} \right\} \times \left\{ +1 \right\} )\cup (X_{down}/\left\{ (\mathring{x},-1) \right\}  )\cong X_{down}
+$$
+可知在 Smash Product 中, $S^0 $ 是类似单位元的东西.
+
+
+*  $X\wedge S^1 $ :
+  
+    可以想象类似 $T^2 $ 的东西,
+    ![picsol1](/images/Topology/picsol1.png)
+    应用图解法可以得到
+
+
+
+
 {{% mathbox type="blue" title="归纳积" %}}
 
 {{% /mathbox %}}
