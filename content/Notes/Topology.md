@@ -11,6 +11,7 @@ date : 2026-06-07
   - [3.3同伦](#33同伦)
     - [道路同伦](#道路同伦)
   - [3.4 基本群](#34-基本群)
+    - [$\\pi\_1 $ 的函子性](#pi_1--的函子性)
 
 
 
@@ -402,6 +403,109 @@ $$
 $$
   \pi_1(X,x_0)=\Omega(X,x_0)/\underset{p}{\sim}=\pi_0(\Omega(X,x_0))
 $$
+即基本群 $\pi_1(X,x_0) $ 衡量的是圈空间 $\Omega(X,x_0) $ 的道路连通性:
+* 对应于 $\pi_1(X,x_0) $ 中单位元的圈 $\iff $ 能在  $X $  中收缩到一点的圈
+* 对应于 $\pi_1(X,x_0) $ 中同一元素的两个圈 $\iff $ 能在  $X $  中通过连续形变相互转化的圈.
+
+#####  $\pi_1 $ 的函子性
+
+根据前面的描述,已经知道了 
+$$
+  \boxed{\pi_1:\mathcal{Pointed TOP}\rightarrow \mathcal{GROUP}}
+$$
+即是一个从固定点的拓扑空间范畴到群范畴的对应,但目前还不能说明是一个函子,因为要证明其保持态射的一些性质.
+
+ $\mathcal{Pointed TOP} $ 中
+* 对象是带有固定点的拓扑空间 $(X,x_0) $ 
+* 态射是带有固定点的联系映射 $f\in \mathcal{C}((X,x_0),(Y,y_0)) $ ,满足 $f(x_0)=y_0 $ .
+
+对于道路同伦的 $\gamma_1\underset p\sim \gamma_2 $ ,由于连续映射 $f $ 有 $f\circ \gamma_1\underset p\sim f\circ\gamma_2 $.所以 $f $  自然诱导了基本群之间的映射
+$$
+  f_*:\pi_1(X,x_0)\rightarrow \pi_1(Y,y_0),[\gamma]_p\mapsto[f\circ \gamma]_p
+$$
+可以验证 $f_* $ 继承了 $f $ 在固定点拓扑空间范畴中的性质:
+1. 群同态: $f_*([\gamma_1]_p*[\gamma_2]_p)=f_*([\gamma_1*\gamma_2]_p)=[f\circ(\gamma_1*\gamma_2)]_p=[(f\circ\gamma_1)*(f\circ\gamma_2)]_p =[f\circ\gamma_1]_p*[f\circ\gamma_2]_p $ .
+2. 恒等:  $Id_X\mapsto Id_{\pi_1(X,x_0)} $ 
+3. $(g\circ f)_* =g_*\circ f_* $ ,  since  $(g\circ f)_*([\gamma]_p) =g_*([f\circ \gamma]_p)=([g\circ f\circ \gamma]_p)=g_*\circ f_*([\gamma]_p)  $ .
+
+也就是说 $\pi_1 $ 确实是两个范畴之间的函子.函子是保等价性的:
+{{% mathbox type="blue" title="基本群是拓扑不变量" %}}
+若 $f:X\rightarrow Y $ 是一个同胚,那么 $f_* $ 是基本群之间的同构:
+$$
+  f_*:\pi_1(X,x_0)\simeq \pi_1(Y,f(x_0))
+$$
+{{% /mathbox %}}
+证明:
+$$
+  f_*\circ (f^{-1})_*=(f\circ f^{-1})_*=(Id_Y)_*=Id_{\pi_1(Y,y_0)}
+  \\
+  (f^{-1})_*\circ f_*=(f^{-1}\circ f)_*=(Id_X)_*=Id_{\pi_1(X,x_0)}
+$$
+即 $f_*,(f^{-1})_* $ 是互逆的群同态,即群同构.
+
+根据函子将乘法对象映到乘法对象,还有
+{{% mathbox type="blue" title="乘积空间的基本群" %}}
+$\pi_1(X\times Y,(x_0,y_0))\cong \pi_1(X,x_0)\times \pi_1(Y,y_0) $ 
+{{% /mathbox %}}
+证明: 对于乘积空间,有有投影映射:
+$$
+  p_1:(X\times Y,(x_0,y_0))\rightarrow (X,x_0)
+  \\
+  p_2:(X\times Y,(x_0,y_0))\rightarrow (Y,y_0)
+$$
+于是由函子作用后,得到群范畴中的投影映射:
+$$
+  \pi_1(p_1)=p_{1*}:\pi_1(X\times Y,(x_0,y_0))\rightarrow \pi_1(X,x_0)
+  \\
+  \pi_1(p_)=p_{2*}:\pi_1(X\times Y,(x_0,y_0))\rightarrow \pi_1(Y,y_0)
+$$
+于是有
+$$
+  \varphi:\pi_1(X\times Y,(x_0,y_0))\rightarrow \pi_1(X ,x_0)\times \pi_1(Y,y_0)
+  \\
+  \varphi([\gamma])= (p_{1*}[\gamma],p_{2*}[\gamma])=([p_1\circ \gamma],[p_2 \circ \gamma])
+$$
+再构造其逆
+$$
+  \psi:\pi_1(X ,x_0)\times \pi_1(Y,y_0)\rightarrow \pi_1(X\times Y,(x_0,y_0))
+  \\
+  \psi([\gamma_1],[\gamma_2])=[\gamma_1\times\gamma_2]
+$$
+显然是良定的:
+$$
+  \forall \alpha,\gamma_1\in [\gamma_1],\beta,\gamma_2\in [\gamma_2],
+  \\
+  \psi([\alpha],[\beta])=[\alpha\times\beta]=[\gamma_1\times\gamma_2]=\psi([\gamma_1],[\gamma_2])
+$$
+是群同态:
+$$
+  \psi([\alpha]\cdot[\alpha'],[\beta]\cdot[\beta'])=\psi([\alpha],[\beta])\cdot\psi([\alpha'],[\beta'])
+$$
+还可以验证
+$$
+  \psi\circ\varphi=Id,
+  \\
+  \varphi\circ\psi=Id.
+$$
+于是就证明了
+$$
+  \pi_1(X\times Y,(x_0,y_0))\cong \pi_1(X,x_0)\times \pi_1(Y,y_0).
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
