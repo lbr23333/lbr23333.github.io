@@ -9,6 +9,8 @@ date : 2026-06-07
   - [3.2 道路连通](#32-道路连通)
     - [范畴间的函子](#范畴间的函子)
   - [3.3同伦](#33同伦)
+    - [道路同伦](#道路同伦)
+  - [3.4 基本群](#34-基本群)
 
 
 
@@ -254,6 +256,153 @@ $$
 称 $f_0 $ 和 $f_1 $ 是同伦的,记作 $f_0\sim f_1 $ . 且称 $F $ 是其之间的一个同伦.
 {{% /mathbox %}}
 根据前面的命题,可以知道, $f_0\sim f_1 $  $\Rightarrow $  $f_0,f_1\in (\mathcal{C}(X,Y),\mathcal{T}_{c.o.}) $ 在同一道路连通分支中.而若 $X $ 是 LCH 空间,那么任意从 $f_0 $ 到 $f_1 $ 的连续形变都由一个同伦给出,即 $f_0\sim f_1 $   $\iff $  $f_0,f_1 $ 在同一个道路连通分支中.
+
+> 为什么要引入紧开拓扑 $\mathcal{T}_{c.o.} $ 作为连续函数空间 $\mathcal{C}(X,Y) $ 的拓扑?
+>
+> (似乎有些问题👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷)
+> 
+> 对于逐点收敛拓扑,它太弱了,因为逐点收敛的函数,其极限函数可能并不收敛,换句话说,逐点收敛拓扑只能保证有限个点处的取值,而点与点之间的映射可能非常糟糕.对于一致收敛拓扑,它由太强了,依赖于度规.而紧开拓扑的的子基为 $S(K,U)=\left\{ f\in \mathcal{C}(X,Y)|f(K)\subset U \right\}  $ ,其中 $K $ 是 $X $ 中的紧集, $U $ 是 $Y $ 中的开集.在 $LCH $ 空间下,紧开拓扑等价于在紧集上一致收敛.是唯一能够让 $G\in \mathcal{C}(T\times X,Y) \iff F\in \mathcal{C}(T,\mathcal{C}(X,Y))  $ 完美成立的拓扑.选择紧集 $K $ 也是为了保证一定的有界性.
+>
+> 对于上面的 $X $ 不是 LCH 空间,很容易给出一个反例: 
+> 
+> $X=\mathbb{Q},Y=\mathbb{R} $ , 如果已经有一个同伦 $H\in \mathcal{C}(I\times \mathbb{Q},\R)$ 总是能得到连接 $f_0,f_1 $ 的道路 $\gamma(t) $ .
+> 
+> 但若只是有在映射空间 $\mathcal{C}(X,Y) $ 中构造道路 $\gamma(t)=f_t $  , 考虑一整个区间上的连续性就会出问题,例如考虑 $U=(-1,1)\cap\mathbb{Q} $ , 根据前点集拓扑学 , 没有紧集 $K $ 能够包含 $U $ .也就是说对于上面的 $\gamma(t) $ 根本无法构造一个同伦 $H(t,x)\in \mathcal{C}(I\times \mathbb{Q},\R) $ .
+>
+> 更具体一点,实际上
+$$
+  H:I\times X\xrightarrow{f\times Id}\mathcal{C}(X,Y)\times X\xrightarrow{ev}Y
+$$
+>其中 $ev $ 是赋值映射,即 $ev(f_t,x)=f_t(x) $ .选择构造 $f_0(x)=0 $ 为常值映射 , 划定 $\R $ 中的开集 $V=(-0.1,0.1) $ ,若 $H $ 连续,则一定有一个包含 $(f_0,0) $ 的开集 $S(K,U)\times W $ 被 $ev $ 映射到 $V $ 中,但是没有紧集能包含 $W $ ,对于 $W $ 中紧集之外的点,其根本不受子基 $S(K,U) $ 的约束.注意 $S(K,U) $ 是映射空间中的开集.
+> 
+> 若是 LCH 空间,就存在管状领域使得对于紧集 $K $ 总是有开集 $V\subset K $ 使得这一切都是好的.
+
+引入记号,对于每一个 $f\in \mathcal{C}(X,Y) $ , 记 $[f] $ 为 $f $ 的同伦等价类.且记 $[X,Y] = \mathcal{C}(X,Y)/\sim  $ 为 $\mathcal{C}(X,Y) $ 中的同伦等价类.对于两个映射 $f_0,f_1 $ 能放在同一个等价类中,就是说存在 $H\in\mathcal{C}(X\times I,Y) $ 为 $f_0,f_1 $ 的同伦.另外映射空间的道路连通分支 $\pi_0(\mathcal{C}(X,Y)) $  中两个映射对应其中同一个元素当且仅当存在 $\gamma\in \mathcal{C}(I,\mathcal{C}(X,Y)) $  . 因此根据前面的分析,若 $X $ 为 LCH 空间,那么 $[X,Y]=\pi_0(\mathcal{C}(X,Y)) $  .
+
+一个特殊情况是,若 $X $ 为单点集,那么 $f_0,f_1 $ 的象也都是单点.于是 $f_0,f_1 $ 同伦 $\iff $ 对应的两个点可以由 $Y $ 中的道路连接.即
+$$
+  [\left\{ pt \right\} ,Y]=\pi_0(Y)
+$$
+
+{{% mathbox type="blue" title="" %}}
+1. 若 $f_i\in \mathcal{C}(X,Y),g_i\in \mathcal{C}(Y,Z),i=1,2 $ ,且 $f_1\sim f_2,g_1\sim g_2 $ ,那么 $g_1\circ f_1\sim g_2\circ f2 $ .
+{{% /mathbox %}}
+证明是容易的,显式构造出两个同伦并进行等时复合就能得到.
+
+于是同伦类的下列操作都是良定的:
+1. 复合: $[X,Y]\times [Y,Z]\rightarrow [X,Z] ;([f],[g])\mapsto [g\circ f] $ .
+2. 拉回
+3. 推前
+
+{{% mathbox type="green" title="零伦" %}}
+若 $f\in \mathcal{C}(X,Y) $ 同伦于某个常值映射,那么称之为零伦的.
+{{% /mathbox %}}
+
+例如,对于欧氏空间中的星状域 $Y\subset \R^n $ ,存在中心点 $y_0\in Y $ 使得与任何点道路连通.那么对于任意的拓扑空间 $X,Z $ 都有:
+* 任意连续映射 $f\in \mathcal{C}(X,Y) $ 是零伦的.因为有
+$$
+  F(t,x)=ty_0+(1-t)f(x)
+$$
+* 任意连续映射 $f\in \mathcal{C}(Y,Z) $ 是零伦的.因为有
+$$
+  F(t,y)=f(ty_0+(1-t)y)
+$$
+{{% mathbox type="green" title="可缩空间" %}}
+若拓扑空间 $X $ 的恒等映射 $Id_X $ 是零伦的,则称之为可缩空间.
+{{% /mathbox %}}
+1. 由上例,可知欧氏空间中的星状域都是可缩的.
+2. 对于拓扑空间 $X $ 的锥空间 $C(X)=X\times[0,1]/X\times\left\{ 0 \right\}  $ 都是可缩的,证明过程与星状域类似,构造
+$$
+  H((x,t),s)=(x,(1-s)t)
+$$
+  由此还可知,任意的拓扑空间都能被嵌入到某个可缩空间.
+
+类似于同胚,可以定义:
+{{% mathbox type="green" title="同伦等价" %}}
+对于 $X,Y $ 若存在 $f\in\mathcal{C}(X,Y) $ 和 $g\in\mathcal{C}(Y,X) $ 使得
+$$
+  f\circ g \sim Id_Y,g\circ f \sim Id_X
+$$
+则称 $X,Y $ 是同伦等价的,记作 $X\sim Y $ .并称 $f,g $ 为 $X,Y $ 之间的同伦等价.
+{{% /mathbox %}}
+
+显然同伦等价是一个比同胚要弱的关系.
+
+##### 道路同伦
+
+回到最开始,我们想定义一套代数运算来处理拓扑问题,但是遇到了一些问题.具体来说,一大问题是道路是参数依赖的,于是可以进行重参数化
+{{% mathbox type="green" title="重参数化" %}}
+对于 $X $ 中的两个道路 $\gamma_1,\gamma_2 $ , 连续映射 $f:[0,1]\rightarrow [0,1] $ 满足, $f(0)=0,f(1)=1 $ 使得
+$$
+  \gamma_2\circ f=\gamma_1
+$$
+则称 $\gamma_2 $ 是 $\gamma_1 $ 的重参数化.
+{{% /mathbox %}}
+显然,重参数化前后的两个道路是同伦的. $F(t,s)=\gamma_1((1-t)s+tf(s)) $ 就是同伦.
+> 本质上是用到了 $[0,1] $ 的凸性,即任何 $[0,1]\rightarrow [0,1] $ 的连续映射都是同伦的,故 $f:s\mapsto f(s),Id:s\mapsto s $ 是同伦的,即对于任意的 $t $ , $(1-t)s+tf(s) $ 都是一个介于 $s $ 与 $f(s) $ 之间的点.
+
+所以道路运算都是保同伦类的:
+{{% mathbox type="blue" title="道路运算保同伦类" %}}
+对于任意的 $\gamma_i\in \Omega(X;x_i,x_{i+1}),\gamma\in \Omega(X;x_1,x_2) $ :
+1.  $(\gamma_1*\gamma_2)*\gamma_3\sim \gamma_1*(\gamma_2*\gamma_3) $ 
+2.  $\gamma_{x_1}*\gamma\sim \gamma $ 
+3.  $\gamma*\bar{\gamma}\sim \gamma_{x_1},\bar\gamma*{\gamma}\sim \gamma_{x_2} $ 
+{{% /mathbox %}}
+
+于是自然会去想研究道路同伦类的代数运算,如 $[\gamma_1]*[\gamma_2]=[\gamma_1*\gamma_2] $ , 但是 $\gamma_1,\gamma_2 $ 可能首尾不相连,所以 $ \gamma_1*\gamma_2 $ 可能根本就没有意义.于是进一步定义固定端点的同伦:
+{{% mathbox type="green" title="道路同伦" %}}
+
+记作 $\gamma_0\underset{p}{\sim}\gamma_1 $ 
+
+$\gamma $ 的道路同伦等价类: $[\gamma]_p $
+
+固定端点 $x_0,x_1 $ 的道路同伦等价类集合: $\pi(X;x_0,x_1) $ .
+{{% /mathbox %}}
+
+{{% mathbox type="blue" title="良定性" %}}
+
+{{% /mathbox %}}
+
+{{% mathbox type="blue" title="群胚" %}}
+
+{{% /mathbox %}}
+
+可见,对于
+$$
+  \pi(X)=\bigcup_{x,y\in X}\pi(X;x,y)
+$$
+取逆运算是处处有定义的,但是乘法只能在部分元素之间进行,只有“首尾相连”的道路同伦类才能相乘.但若再进一步,将每一个固定端点的道路首尾设作为同一点,就不会有上面问题.
+
+#### 3.4 基本群
+令 $\pi_1(X,x_0)=\pi(X;x_0,x_0) $ ,就是一个群.因为显然任意两个元素可以相乘而且封闭,有单位元 $e=[\gamma_{x_0}]_p $ 以及逆元 $[\gamma]_p^{-1}=[\bar\gamma]_p $ .
+
+于是就有
+{{% mathbox type="blue" title=" $\pi_1(X,x_0) $ 群运算" %}}
+
+{{% /mathbox %}}
+
+{{% mathbox type="green" title="基本群" %}}
+称 $\pi_1(X,x_0) $ 为以 $x_0 $ 为基点的基本群.
+{{% /mathbox %}}
+
+对于在同一个道路分支的 $x_1,x_2 $ , $\pi_1(X,x_1),\pi_1(X,x_2) $ 是同构的,因为总是存在连接 $x_1,x_2 $ 的道路 $\lambda $ ,于是在 $\pi_1(X,x_1) $ 中的元素 $[\gamma]_p $ 就可以构造 $\lambda^{-1}*\gamma*\lambda\underset{p}{\sim}\gamma $ 使得 $[\lambda^{-1}*\gamma*\lambda]_p\in \pi_1(X,x_2) $ .所以之后考虑道路连通的空间 $X $ 都可以省去基点 $x_0 $ ,即其基本群(族)为 $\pi_1(X) $ .
+
+{{% mathbox type="green" title="单连通空间" %}}
+设 $X $ 是道路连通空间,若其基本群是平凡的,即 $\pi_1(X)=\set{e} $ ,则称 $X $ 为单连通空间.
+{{% /mathbox %}}
+于是欧氏空间中的星形域都是单连通的.后面将证明
+$$
+  \pi_1(S^n,x_0)\cong \begin{cases}
+    \mathbb{Z}&,n=1
+    \\
+    \set{e}& ,n\ge 2
+  \end{cases}
+$$
+也就是说 $S^1 $ 不是单连通的,而 $S^n(n\ge 2) $ 是单连通的.直观上来说,单连通的概念很好理解,也就是衡量空间中有没有“洞”.具体地,由于 $[0,1] $ 是LCH空间,所以
+$$
+  \pi_1(X,x_0)=\Omega(X,x_0)/\underset{p}{\sim}=\pi_0(\Omega(X,x_0))
+$$
+
 
 
 ___
