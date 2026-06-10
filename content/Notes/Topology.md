@@ -14,6 +14,8 @@ date : 2026-06-07
     - [pi\_1的函子性](#pi_1的函子性)
     - [作为固定点拓扑空间范畴中同伦等价类的pi\_1](#作为固定点拓扑空间范畴中同伦等价类的pi_1)
     - [基本群的性质](#基本群的性质)
+  - [3.5 圆的基本群的计算](#35-圆的基本群的计算)
+    - [S^n(n大于2)的基本群](#snn大于2的基本群)
 
 
 
@@ -621,12 +623,54 @@ $$
 
 ![高阶同伦群的Abelian性](/images/Topology/homotopy_grp_abelian.jpg)
 
-> 可见天然地有道路同伦,
+> 可见天然地有道路同伦.根本原因在于,我们所定义的道路同伦是保基点的.这也导致了 $\pi_0 $ 没有一些很好的群性质.如果我们选择保“基线”而不是保基点,那么显然上图就跟前面基本群那张图一样遇到一些阻碍,即不能再轻易使得两边是“保基线同伦”的了.
+>
+> 就此打住.
 
+引入形变收缩的性质: 若有收缩 $r:X\rightarrow A $ 使得 $r\sim Id_X $ ,则称 $A $ 为 $X $ 的一个形变收缩.并称 $A $ 为 $X $ 的形变收缩核.
+{{% mathbox type="blue" title="形变收缩 $\Rightarrow $ 相同基本群" %}}
+若 $A $ 是 $X $ 的形变收缩核,那么 $\pi_1(X)\cong \pi_1(A) $ .
+{{% /mathbox %}}
+证明也是很显然, $i:A\hookrightarrow X\Rightarrow r\circ i=Id_A $ ,且 $i\circ r=r\sim Id_A $ ,也就是说 $r,i $ 是 $A,X $ 的同伦,即 $A\sim X $ ,由前命题, $\pi_1(X)\cong \pi_1(A)  $ .
 
+特别的,对于可缩空间 $X\sim \left\{ pt \right\}  $ ,其基本群即
+$$
+  \pi_1(X)\cong \pi_1(\left\{ pt \right\} )\cong \left\{ e \right\} 
+$$
+即可缩空间都是单连通的.
 
+> 其实这里的形变收缩很直观地反应了同伦与同胚的区别,对于一些形如 $\huge* $ 的东西,其可以收缩到一点 $\huge{\cdot} $ ,也就是说 $\huge{*}\sim \huge{\cdot} $ .但是这两个东西显然是不同胚的,考虑到前面的一个结论,同胚的两个空间去掉同胚对应的一点后,仍然是同胚的,但是上面俩去掉中间一点后甚至前者都不是连通的了,显然不是同胚的.
 
+> 实际上,这里也可以利用 $\pi_n $ 的函子性进行一些推广,对于同伦等价的 $X\sim Y $ 由
+$$
+  f\circ g\sim Id,g\circ f\sim Id,
+$$
+由 $\pi_n $ 对应到群范畴即是
+$$
+  f_*\circ g_*\sim Id_{\pi_n(X)},g_*\circ f_*\sim Id_{\pi_n(Y)},
+$$
+可得到 $\pi_n(X)\cong \pi_n(Y) $ 
+>
+> 本质上,同伦群作为商空间,将几何上的同伦等价 $\sim $ 转化为代数上的同构 $\cong $ 就是代数拓扑的核心思想.
 
+### 3.5 圆的基本群的计算
+
+#### S^n(n大于2)的基本群
+
+{{% mathbox type="blue" title="并集的单连通性" %}}
+若 $X=U\cup V $ ,其中 $U,V $ 都是 $X $ 中的单连通开集,且 $U\cap V $ 是道路连通的,则 $X $ 是单连通的.
+{{% /mathbox %}}
+证明:👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
+
+于是对于 $S^n(n\ge 2) $ 总是可以选南北两个大半球cover住整个 $S^n $ ,而且两个大半球都是单连通的,其交也显然是道路连通的.所以 $S^n(n\ge 2) $ 都是单连通的,即
+{{% mathbox type="blue" title="" %}}
+$n\ge 2 $ , $\pi_1(S^n)\cong \left\{ e \right\}  $ .
+{{% /mathbox %}}
+
+进一步,由于 $R^n\setminus\set{0}\sim S^{n-1} $ ,所以还有
+{{% mathbox type="blue" title="" %}}
+$n\ge 3 $ , $\pi_1(R^n\setminus\set{0})\cong \left\{ e \right\}  $ .
+{{% /mathbox %}}
 
 
 
