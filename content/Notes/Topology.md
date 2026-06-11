@@ -16,6 +16,7 @@ date : 2026-06-07
     - [基本群的性质](#基本群的性质)
   - [3.5 圆的基本群的计算](#35-圆的基本群的计算)
     - [S^n(n大于2)的基本群](#snn大于2的基本群)
+    - [S^1的基本群](#s1的基本群)
 
 
 
@@ -672,6 +673,8 @@ $n\ge 2 $ , $\pi_1(S^n)\cong \left\{ e \right\}  $ .
 $n\ge 3 $ , $\pi_1(R^n\setminus\set{0})\cong \left\{ e \right\}  $ .
 {{% /mathbox %}}
 
+####  S^1的基本群
+> 没想到最简单的非平凡基本群都这么复杂...
 
 
 
@@ -685,6 +688,9 @@ $n\ge 3 $ , $\pi_1(R^n\setminus\set{0})\cong \left\{ e \right\}  $ .
 
 
 
+
+
+> 不是那么值得一提的是, $\pi_1(T^2)=\mathbb{Z}^2=\langle \alpha,\beta|\alpha\beta\alpha^{-1}\beta^{-1}=1 \rangle  $ 的 Abelian 性体现在 $(a,b)+(c,d)=(c,d)+(a,b) $ , 也就是说对于 $T^2 $ 上的两种不同的loops所构成的一整个 loop ,其中的 $\alpha,\beta $ 的先后是可以交换的,而不是 $(a,b)=(b,a) $ .
 
 
 ___

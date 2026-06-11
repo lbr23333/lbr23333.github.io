@@ -242,7 +242,7 @@ $$
 *  $X\wedge S^1 $ :
   
     可以想象类似 $T^2 $ 的东西,
-    ![picsol1](/images/Topology/picsol1.png)
+    ![picsol1](/images/Topology/picsol1.pdf)
     应用图解法可以得到 $X\wedge S^1 $ 得到的是 $X $ 作为赤道面所旋转出来的“实心球”.
     
 
