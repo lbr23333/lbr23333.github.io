@@ -17,6 +17,12 @@ date : 2026-06-07
   - [3.5 圆的基本群的计算](#35-圆的基本群的计算)
     - [S^n(n大于2)的基本群](#snn大于2的基本群)
     - [S^1的基本群](#s1的基本群)
+  - [3.6 Van Kampen 定理](#36-van-kampen-定理)
+  - [3.7 覆叠空间](#37-覆叠空间)
+    - [另外一些覆叠空间的例子](#另外一些覆叠空间的例子)
+    - [群作用与覆叠空间](#群作用与覆叠空间)
+    - [提升引理](#提升引理)
+    - [万有覆叠空间](#万有覆叠空间)
 
 
 
@@ -676,6 +682,11 @@ $n\ge 3 $ , $\pi_1(R^n\setminus\set{0})\cong \left\{ e \right\}  $ .
 ####  S^1的基本群
 > 没想到最简单的非平凡基本群都这么复杂...
 
+### 3.6 Van Kampen 定理
+
+
+
+
 
 
 
@@ -693,6 +704,116 @@ $n\ge 3 $ , $\pi_1(R^n\setminus\set{0})\cong \left\{ e \right\}  $ .
 > 不是那么值得一提的是, $\pi_1(T^2)=\mathbb{Z}^2=\langle \alpha,\beta|\alpha\beta\alpha^{-1}\beta^{-1}=1 \rangle  $ 的 Abelian 性体现在 $(a,b)+(c,d)=(c,d)+(a,b) $ , 也就是说对于 $T^2 $ 上的两种不同的loops所构成的一整个 loop ,其中的 $\alpha,\beta $ 的先后是可以交换的,而不是 $(a,b)=(b,a) $ .
 
 
+
+
+### 3.7 覆叠空间
+
+> 物理中常见的 $SU(2) $ 作为 $SO(3) $ 的二重覆盖,其实就在说是一个二重的覆叠空间.实际上,前面我们已经遇到过了覆叠空间,在计算 $\pi_1(S^1)\cong \mathbb{Z} $ 是所用到的 $p:\R\rightarrow S^1 $ 中, $\R $ 就是作为 $S^1 $ 的覆叠空间出现.
+
+{{% mathbox type="green" title="覆叠空间" %}}
+对于拓扑空间 $X $ ,若存在另一个拓扑空间 $\tilde X $ 和映射 $p:\tilde X\rightarrow X $ ,使得对于任意的 $x\in X $ ,存在一个 $x $ 的开邻域 $U $ 满足:
+1.  $p^{-1}(U)=\bigcup_\alpha V_\alpha $ , 其中 $V_\alpha \subset \tilde{X}$ 是无交的开集,即 $V_\alpha \cap V_\beta=\emptyset $ .
+2.  对于 $p|_{V_{\alpha}}:V_\alpha\rightarrow U $ 即将 $p $ 限制到某一个 $V_\alpha $ 上, $p|_{V_{\alpha}}  $ 是一个同胚.
+
+那么称 $\tilde{X} $ 为 $X $ 的一个覆叠空间, $p $ 为相应的覆叠映射.对于任意的 $x $ , $p^{-1}(x) $ 为 $x $ 的纤维.
+{{% /mathbox %}}
+
+> 在代数拓扑中,几何上的直观是很重要的,在各种证明中几乎都是先有了几何上的直观证明,再将其严格化为自然语言.所以后面我会尽可能地加上一些图,以帮助直观理解证明.
+>
+> 一个有用的例子是前面已经用过的“弹簧”:
+> ![弹簧](/images/Topology/coveringspace1.png)
+>
+> 后面会看到这是一个非常“标准”的例子.
+
+#### 另外一些覆叠空间的例子
+
+#### 群作用与覆叠空间
+
+若群 $G $ 在拓扑空间 $\tilde{X} $ 上的作用,满足对于任意的 $\tilde{x}\in\tilde{X} $ ,存在 $\tilde{x} $ 的开邻域 $\tilde{U} $ ,使得对于任意的 $g\in G $ , $g\cdot\tilde{U}\cap \tilde{U}=\emptyset $  .那么称 $G $ 是纯不连续的.
+
+{{% mathbox type="blue" title="" %}}
+若 $G $ 作用到 $\tilde{X} $ 上是纯不连续的,那么 $\tilde{X} $ 是商空间 $X=\tilde{X}\setminus G $ 的覆叠空间.
+{{% /mathbox %}}
+
+证明:(主要依赖于群结构和群元的作用是一个同胚)
+
+#### 提升引理
+{{% mathbox type="green" title="映射的提升" %}}
+
+{{% /mathbox %}}
+
+
+{{% mathbox type="green" title="general 提升引理" %}}
+
+{{% /mathbox %}}
+
+由此可得到道路的提升引理和同伦的提升引理.
+
+
+
+
+{{% mathbox type="blue" title="提升的唯一性" %}}
+
+{{% /mathbox %}}
+
+
+{{% mathbox type="blue" title="提升的存在性" %}}
+
+{{% /mathbox %}}
+
+
+{{% mathbox type="blue" title="基本群与终点群" %}}
+$p:\tilde{X}\rightarrow X $ 为一个覆叠映射, $\tilde{x}_0\in \tilde{X} $ 且 $x_0=p(\tilde{x}_0) $ .定义一个提升对应:
+$$
+  \alpha:\pi_1(X,x_0)\rightarrow p^{-1}(x_0)
+  \\
+  \alpha([\gamma]_p):=\tilde{\gamma}(1)\in p^{-1}(x_0)
+$$
+其中 $\tilde{\gamma} $ 是 $\gamma $ 满足 $\gamma(0)=\tilde{x}_0 $ 的唯一提升.那么
+1.  $\alpha:\pi_1(X,x_0)\rightarrow p^{-1}(x_0) $ 是良定的.
+2.  若 $\tilde{X} $ 是道路连通的,那么 $\alpha $ 是满射.
+3.  若 $\tilde{X} $ 是单连通的,那么 $\alpha $ 是双射.
+{{% /mathbox %}}
+> 注意在 $X $ 中的loop,在其覆叠空间中不一定再是一个loop,而可能只是一个path.
+
+
+#### 万有覆叠空间
+
+{{% mathbox type="green" title="万有覆叠空间" %}}
+
+{{% /mathbox %}}
+
+{{% mathbox type="blue" title="群作用与基本群的群结构" %}}
+设 $G $ 在 $\tilde{X} $ 上的作用是纯不连续的,从而 $p:\tilde{X}\rightarrow X=\tilde{X}\setminus G$  是覆叠映射,那么
+1. 对于任意的 $x_0\in X $ 以及 $\tilde{x_0}\in p^{-1}(x_0) $ ,存在一个群同态
+$$
+  \beta:\pi_1(X,x_0)\rightarrow G
+$$
+2.  若 $\tilde{X} $ 是道路连通的,那么 $\beta $ 是满射.
+3.  若 $\tilde{X} $ 是单连通的,那么 $\beta $ 是双射.
+{{% /mathbox %}}
+
+证明:
+
+由于 $G $ 是纯不连续的,那么对于 $p^{-1}(x_0) $ 中的各个点,可以用 $G $ 中的元素将其联系起来,即对于任意的 $\tilde{x}_1\in p^{-1}(x_0) $ ,存在 $g\in G $ 使得 $\tilde{x}_1 =g\cdot \tilde{x}_0$ .定义
+$$
+  \rho: p^{-1}(x_0)\rightarrow G,\tilde{x}_1\mapsto g
+$$
+由群作用的定义,这是一个双射.那么
+$$
+  \beta:\rho\circ\alpha:\pi_1(X,x_0)\rightarrow G
+  \\
+  [\gamma]\xmapsto{\alpha}\tilde{\gamma}(1)=\tilde{x}_1\xmapsto{\rho}g
+$$
+由于 $\rho $ 是一个群同构,所以由前面 $\alpha $ 的性质就可以得到2.3.性质.下面证明 $\beta $ 是一个群同态.考虑两个基本群中元素的代表元 $\gamma_1,\gamma_2 $ ,分别有唯一的提升为 $\tilde{x}_1,\tilde{x}_2 $ .
+
+
+
+
+
+
+___
+___
 ___
 ___
 ___
