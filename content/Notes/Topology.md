@@ -23,6 +23,7 @@ date : 2026-06-07
     - [群作用与覆叠空间](#群作用与覆叠空间)
     - [提升引理](#提升引理)
     - [万有覆叠空间](#万有覆叠空间)
+  - [3.8 覆叠空间的分类](#38-覆叠空间的分类)
 
 
 
@@ -756,10 +757,22 @@ $n\ge 3 $ , $\pi_1(R^n\setminus\set{0})\cong \left\{ e \right\}  $ .
 
 {{% /mathbox %}}
 
-
+对于一般映射的提升, $f $ 提升到 $\tilde{f} $ ,由 $\pi_1 $ 的 函子性,有
+$$
+  f_*(\pi_1(Y,y_0))=p_*(\tilde{f}_*(\pi_1(Y,y_0)))\subset p_*(\pi_1(\tilde{X},\tilde{x}_0))
+$$
+这就是提升存在的必要条件.实际上,在 $Y $ 是道路连通且局部道路连通时,这就是充要条件.
 {{% mathbox type="blue" title="提升的存在性" %}}
-
+$p:(\tilde{X},\tilde{x}_0)\rightarrow (X,x_0 ) $ 是一个覆叠映射,并且 $f:(Y,y_0)\rightarrow (X,x_0) $ 是连续的. 若$Y $ 是道路连通且局部道路连通时,那么 $f $ 可以被提升为 $\tilde{f} $ 当且仅当
+$$
+  f_*(\pi_1(Y,y_0))\subset p_*(\pi_1(\tilde{X},\tilde{x}_0))
+$$
 {{% /mathbox %}}
+
+可由此再次得到,  对于 $n\ge 2 $ ,任意连续映射 $f:S^n\rightarrow S^1 $  是零伦的.因为 $\pi_1(S^n)=\Set{e} $ ,所以 $Im(f_*)=\Set{e} $ . $S^n $ 是道路连通且是局部道路连通的,可以被提升到 $\tilde{f}:S^n\rightarrow \R $ . $\R $ 是可缩的,所以 $\tilde{f} $ 零伦.那么 $f=p\circ \tilde{f} $ 也是零伦的.也就是说 $\pi_n(S^1)=\Set{e} $ .
+
+
+
 
 
 {{% mathbox type="blue" title="基本群与终点群" %}}
@@ -774,13 +787,20 @@ $$
 2.  若 $\tilde{X} $ 是道路连通的,那么 $\alpha $ 是满射.
 3.  若 $\tilde{X} $ 是单连通的,那么 $\alpha $ 是双射.
 {{% /mathbox %}}
-> 注意在 $X $ 中的loop,在其覆叠空间中不一定再是一个loop,而可能只是一个path.
+> 注意在 $X $ 中的loop,在其覆叠空间中不一定再是一个loop,可能只是一个path.如在 $\R\rightarrow S^1 $ 中.这个证明也可以用该例子直观想象.
+>
+> 另外,这里关于 $\alpha $ 的满射有点微妙.可以想象两个分离的“弹簧”分别为 $\R_{up} $ 和 $\R_{down} $ ,其覆叠映射规则都和前一样,这两个 $\R $ 的并显然不是道路连通的,所以选定 $\tilde{x}_0 $ 在其中一个 $\R $ 后, $\alpha $ 只能映射到这个 $\R $ ,从而不是满的.
+
+证明:
+
+
+
 
 
 #### 万有覆叠空间
 
 {{% mathbox type="green" title="万有覆叠空间" %}}
-
+若 $\tilde{X} $ 为 $X $ 的一个覆叠空间,且 $\tilde{X} $ 是单连通的,那么称之为 $X $ 的万有覆叠空间.
 {{% /mathbox %}}
 
 {{% mathbox type="blue" title="群作用与基本群的群结构" %}}
@@ -805,7 +825,174 @@ $$
   \\
   [\gamma]\xmapsto{\alpha}\tilde{\gamma}(1)=\tilde{x}_1\xmapsto{\rho}g
 $$
-由于 $\rho $ 是一个群同构,所以由前面 $\alpha $ 的性质就可以得到2.3.性质.下面证明 $\beta $ 是一个群同态.考虑两个基本群中元素的代表元 $\gamma_1,\gamma_2 $ ,分别有唯一的提升为 $\tilde{x}_1,\tilde{x}_2 $ .
+由于 $\rho $ 是一个群同构,所以由前面 $\alpha $ 的性质就可以得到2.3.性质.
+
+下面证明 $\beta $ 是一个群同态.考虑两个基本群中元素的代表元 $\gamma_1,\gamma_2 $ ,分别有唯一的提升为 $\tilde{\gamma}_1,\tilde{\gamma}_2 $ ,令
+$$
+  g_1=\beta([\gamma_1]_p),g_2=\beta([\gamma_2]_p)
+  \\
+  g_1\cdot\tilde{x}_0=\tilde{\gamma}_1(1),g_2\cdot\tilde{x}_0=\tilde{\gamma}_2(1)
+$$
+那么 $g_1\cdot\tilde{\gamma}_2 $ 是从 $g_1\cdot \tilde{x}_0=\tilde{\gamma}_1(1) $  到 $g_1\cdot \tilde{\gamma_2}(1)=g_1g_2\cdot \tilde{x}_0 $ 的一条道路.由道路提升的唯一性可知
+$$
+  \widetilde{\gamma_1*\gamma_2}=\tilde{\gamma}_1*(g_1\cdot\tilde{\gamma}_2)
+$$
+所以 
+$$
+\widetilde{\gamma_1*\gamma_2}(1)=\tilde{\gamma}_1*(g_1\cdot\tilde{\gamma}_2)(1)=g_1\cdot \tilde{\gamma}_2(1)=g_1g_2\cdot \tilde{x}_0
+$$
+即
+$$
+  \beta([\gamma_1]_p,[\gamma_2]_p)=\beta([\gamma_1*\gamma_2]_p)
+  =\rho((\widetilde{\gamma_1*\gamma_2})(1))=g_1g_2=\beta([\gamma_1]_p)\beta([\gamma_2]_p)
+$$
+于是完成了证明.
+
+
+由此可得,因为 $\mathbb{RP}^{2} =S^2\setminus \mathbb{Z}_2 $ ,所以 $\pi_1(\mathbb{RP}^{2} )=\mathbb{Z}_2 $ .进一步,考虑 $f:\mathbb{RP}^{2}\rightarrow S^1  $ .由于没有从 $\mathbb{Z}_2\rightarrow \mathbb{Z} $ 的非平凡群同态 $f $ ,所以 $Im(f_*)=\Set{e} $ ,将 $f $ 提升为 $\tilde{f}:S^n\rightarrow \R $ . $\R $ 可缩可得 $\tilde{f} $ 零伦,于是 $f=p\circ \tilde{f} $ 也是零伦.
+
+
+
+### 3.8 覆叠空间的分类
+由上一节,已经得到了: 当 $\tilde{X} $ 单连通,也就是 $\tilde{X} $ 作为 $X $ 的万有覆叠时,有一个 $X $ 的基本群到  $G $ 群的同构.但若考虑较小的一个覆盖呢?考虑到前面的结论: $p_*:\pi_1(\tilde{X},\tilde x_0)\rightarrow \pi_1(X,{x}_0) $ 是单同态,也就是说有 $\pi_1(X,{x}_0) $ 的子群 $p_*(\pi_1(X,{x}_0)) $ 同构于 $\pi_1(\tilde{X},\tilde{x}_0) $ .前面两个结果暗示: 存在 $X $ 的基本群到 $X $ 的覆叠空间之间的一一对应,而且该对应是反序的,因为最小的子群 $\Set{e} $ 所对应的是“最大的”万有覆叠空间.
+
+> 虽然这里的“最大”来得有点突然,在后面会给出解释.但这里可以先考虑,结合前一节最后的命题,若 $\tilde{X} $ 不是万有覆叠,那么就没有一个同构,而只是一个从基本群到 $G $ 的同态.这就暗示了越小的子群对应的是越大的覆叠空间.
+
+对于给定的拓扑空间 $X $ ,若已经有了万有覆叠空间,那么对于任意的 $x\in X $ ,存在其开邻域 $U $ 同胚于 $\tilde{X} $ 中的一个开集 $\tilde{U} $ ,即
+$$
+  p|_{\tilde{U}}:\tilde{U}\rightarrow U 
+$$
+是一个同胚.那么 $U $ 中的任意一个 loop 都能被提升到 $\tilde{U} $ 中的一个 loop  $\tilde{\gamma} $ .由于是万有覆叠,其基本群平凡,所以 $\tilde{\gamma} $ 是零伦的,复合上投影映射,即有 $\gamma $ 是零伦的.于是就得到了存在万有覆叠的必要条件: 对于任意的 $x $ ,存在其一个邻域 $U $ 使得 $U $ 中任意的圈在 $X $ 中都是零伦的.(注意只要求在 $X $ 中而不要求在 $U $ 中)换句话说,对于包含映射 $i:U\rightarrow X $ 所诱导的 $i_*:\pi_1(U,x)\rightarrow \pi_1(X,x) $ 是平凡同态,即 $i_*(\pi_1(U,x))=\Set{e} $ .称满足该条件的拓扑空间为**半局部单连通空间**.
+
+> 直观上来说,也就是 $X $ 中不能有任意小的洞.
+>
+> 由于并没有要求 $U $ 中任意的圈在 $U $ 中单连通,所称之为半局部单连通.
+
+{{% mathbox type="blue" title="万有覆叠空间的存在性" %}}
+若 $X $ 是道路连通且是局部道路连通的,那么 $X $ 存在万有覆叠 $\tilde{X} $  $\iff $  $X $ 是半局部单连通的.
+{{% /mathbox %}}
+称 $U $ 是 $X $ 中的基本开集,如果 $U $ 是 $X $ 中道路连通开集,且 $i_*(\pi_1(U,x))=\Set{e} $ .
+
+证明概要:
+1. 构造 $\tilde{X}=\Set{[\gamma]_p} $ ,其中 $\gamma $ 是以 $x_0 $ 为起点的一条 $X $ 中的道路.投影映射 $p:\tilde{X}\rightarrow X $ , $[\gamma]_p\mapsto \gamma(1) $ ,因为 $X $ 道路连通,所以 $p $ 是满射.
+2. 👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷 
+
+
+{{% mathbox type="blue" title="一般覆叠空间的存在性" %}}
+设 $X $ 是道路连通,局部道路连通且半局部单连通空间.则对于 $\pi_1(X,x_0) $ 的任意子群 $H $ ,存在 $X $ 的覆叠空间 $p:\tilde{X}_H\rightarrow X $ 和基点 $\tilde{x}_0\in p^{-1}(x_0) $ 使得
+$$
+  p_*(\pi_1(\tilde{X},\tilde{x}_0))=H
+$$
+{{% /mathbox %}}
+证明:👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
+
+有了子群 $H\subset \pi_1(X,x_0) $ 与 $X $ 的覆叠空间之间对应的存在性之后,考虑其唯一性.考虑 $X $ 的两个覆叠空间 $p_1:\tilde{X}_1\rightarrow X $和 $p_2:\tilde{X}_2\rightarrow X $  ,若存在一个同胚 $h:\tilde{X}_1 \rightarrow \tilde{X}_2$ 使得
+$$
+  p_1=p_2\circ h
+$$
+则称这两个覆叠空间是同构的, $h $ 为一个**覆叠空间同构**.
+(交换图)👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
+
+实际上,上面的同构是一族同构,因为对于基本群总是要带上基点考虑.考虑 $h:\tilde{X}_1\rightarrow \tilde{X}_2 $ 为 $X $ 覆叠空间的同构,那么对于任意的 $x_0\in X $ , $h $ 是从 $p^{-1}_1(x_0) $ 到 $p^{-1}_2(x_0) $ 之间的一一映射.分别取其中的 $\tilde{x}_1,\tilde{x}_2 $ ,其中 $\tilde{x}_2=h(\tilde{x}_1) $  ,有
+
+(交换图)👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
+
+即 $p_2\circ h=p_1,p_1\circ h^{-1}=p_2 $ ,由 $\pi_1 $ 的函子性,有
+$$
+  (p_1)_*(\pi_1(\tilde{X}_1,\tilde{x}_1))=(p_2)_*(\pi_1(\tilde{X}_2,\tilde{x}_2))
+$$
+于是得到了关于 $X $ 的两个不同的覆叠空间同构的必要条件: 同构的覆叠空间对于 $\pi_1(X,x_0) $ 中相同的子群.加上一定条件后,就得到了覆叠空间与基本群的子群对应的唯一性:
+{{% mathbox type="blue" title="覆叠空间的唯一性" %}}
+设 $X $ 是道路连通且局部道路连通的拓扑空间,那么 $X $ 的两个道路连通的覆叠空间 $p_1:(\tilde{X}_1,\tilde{x}_1)\rightarrow (X,x_0) $ 和 $p_1:(\tilde{X}_2,\tilde{x}_2)\rightarrow (X,x_0) $ 之间存在保基点的覆叠空间同构 $h:(\tilde{X}_1,\tilde{x}_1)\rightarrow (\tilde{X}_2,\tilde{x}_2) $  $\iff $ 
+$$
+  (p_1)_*(\pi_1(\tilde{X}_1,\tilde{x}_1))=(p_2)_*(\pi_1(\tilde{X}_2,\tilde{x}_2))
+$$
+特别地,如果 $X $ 还是半局部单连通的,那么 $X $ 的万有覆叠空间在同构的意义下唯一.
+{{% /mathbox %}}
+证明: 必要性已经得到证明.对于充分性:存在
+$$
+  (p_1)_*(\pi_1(\tilde{X}_1,\tilde{x}_1))=(p_2)_*(\pi_1(\tilde{X}_2,\tilde{x}_2))
+$$
+即两个覆叠空间相互满足提升存在性条件,那么可以分别提升 $p_1,p_2 $ :
+$$
+  \tilde{p}_1:(\tilde{X}_1,\tilde{x}_1)\rightarrow (\tilde{X}_2,\tilde{x}_2)
+  \\
+  \tilde{p}_2:(\tilde{X}_2,\tilde{x}_2)\rightarrow (\tilde{X}_1,\tilde{x}_1)
+$$
+有
+$$
+  p_1=p_2\circ \tilde{p}_1\\
+  p_2=p_1\circ \tilde{p}_2
+$$
+由提升的唯一性,可得 $\tilde{p}_1\circ \tilde{p}_2=Id_{\tilde{X}_2},\tilde{p}_2\circ \tilde{p}_1=Id_{\tilde{X}_1}$ .即可知 $\tilde{p}_1 $ 就是两个覆叠空间之间的同构.
+
+于是根据子群之间的关系,就可以得到
+{{% mathbox type="blue" title="带基点覆叠空间的分类定理" %}}
+对于道路连通,局部道路连通且半局部单连通的拓扑空间 $X $ ,由
+$$
+  (\tilde{X},\tilde{x}_0) \longleftrightarrow p_*(\pi_1((\tilde{X},\tilde{x}_0)))
+$$
+之间的对应关系,可以得到
+$$
+  \set{\small{\text{道路连通覆叠空间}}p:(\tilde{X},\tilde{x}_0)\rightarrow (X_0,x_0)\small{\text{在保基点同构下的同构类}}}
+$$
+与
+$$
+  \Set{\pi_1(X,x_0)\small{\text{的子群}}}
+$$
+之间的一个一一对应,且反序.即若
+$$
+  (p_1)_*(\pi_1(\tilde{X}_1,\tilde{x}_1))\subset (p_2)_*(\pi_1(\tilde{X}_2,\tilde{x}_2))
+$$
+当且仅当存在一个覆叠映射 $p_3:(\tilde{X}_1,\tilde{x}_1)\rightarrow (\tilde{X}_2,\tilde{x}_2) $ 使得 $p_1=p_2\circ p_3 $ .
+{{% /mathbox %}}
+若忽略基点,那么有 
+{{% mathbox type="blue" title="覆叠空间的分类定理" %}}
+对于道路连通,局部道路连通且半局部单连通的拓扑空间 $X $ 
+$$
+  \set{\small{\text{道路连通覆叠空间}}p:\tilde{X}\rightarrow X_0\small{\text{的同构类}}}
+$$
+和
+$$
+  \Set{\pi_1(X,x_0)\small{\text{的子群的共轭类}}}
+$$
+之间存在一一对应.
+{{% /mathbox %}}
+
+
+于是终于知道了为什么万有覆叠空间是“万有的”,因为其基本群为 $\Set{e} $ ,即 $p_*(\pi_1(\hat{X},\hat{x}))=\Set{e} $ ,对于 $X $ 的基本群的任一其他子群, $\Set{e} $ 当然是该子群的子群,即 $\hat{X} $ 总是 $X $ 其他覆叠空间的覆叠空间.
+
+
+下面给出一些应用覆叠空间的例子:
+
+1. 判断 $\mathbb{RP}^2 $ 是否为 Klein bottle 的覆叠空间?反之呢?
+   两个空间具有覆叠关系,说明其具有同胚的万有覆叠空间.注意到 $\mathbb{RP}^2 $ 的万有覆叠空间为 $S^2 $ ,而 Klein bottle 的万有覆叠为 $\R^2 $ ,显然不是同胚的.所以其相互之间都不为覆叠空间.
+
+   另外还可以通过其基本群进行判断, 
+   $$
+     \pi_1(KB)=\langle a,b|ab^{-1}a^{-1}b^{-1}=1 \rangle,\pi_1(\mathbb{RP}^2)=\mathbb{Z}_2
+   $$
+    无限群不可能嵌入到有限群中,所以 Klein  不可能覆叠 $\mathbb{RP}^2 $ .另一方面, $\pi_1(KB) $ 没有 $\mathbb{Z}_2 $ 子群,所以反之也不成立.
+
+2. 寻找对于所有覆叠空间 $\iff $ 寻找基本群的子群
+   例如对于 $\mathbb{RP}^{n} \times \mathbb{RP}^{m}  $ ,有
+   $$
+     \pi_1(\mathbb{RP}^{n} \times \mathbb{RP}^{m} )\cong Z_2\oplus Z_2=\set{e,a}\oplus \set{e,b}
+   $$
+   所以有子群为
+   $$
+     \set{e},\set{e,a},\set{e,b},\set{e,ab},\set{e,a,b,ab}
+   $$
+   分别对应覆叠空间为
+   $$
+     S^n\times S^m,\mathbb{RP}^{n} \times S^m,S^n \times \mathbb{RP}^{m} ,
+     \\
+     S^n\times S^m\setminus (v,w)\sim (-v,-w),\mathbb{RP}^{n} \times \mathbb{RP}^{m}
+   $$
+
+3. 
+   
+   
 
 
 
