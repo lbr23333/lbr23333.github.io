@@ -365,10 +365,9 @@ $G $ 是连通的Lie群, $\tilde{G} $ 是其万有覆叠空间, $\pi:\tilde{G}\r
 
 
 一些例子
-1. $\pi:\R^n\rightarrow \mathbb{T}^n $
-  显然就是 $\R\rightarrow \R/\mathbb{Z}=\mathbb{T} $  ,即  $\pi_1(\mathbb{T}^n)=\mathbb{Z}^n $ .
+$\pi:\R^n\rightarrow \mathbb{T}^n $.显然就是 $\R\rightarrow \R/\mathbb{Z}=\mathbb{T} $  ,即  $\pi_1(\mathbb{T}^n)=\mathbb{Z}^n $ .
 
-2.  \{{% mathbox type="slate" title="" %}}
+\{{% mathbox type="slate" title=" $SU(2)$与 $SO(3)$ " %}}
 $$
   \tilde{G}=SU(2)=\small{\set{A=\begin{bmatrix}a &b \\ c& d
 \end{bmatrix}\in Mat(2,\mathbb{C})|A^\dagger A=I ,det(A)=1}}
@@ -384,7 +383,7 @@ $$
     即 $A=\begin{bmatrix}a &b \\ -\bar b& \bar a
     \end{bmatrix} ,|a|^2+|b|^2=1$ .令 $a=x+iy,b=z+iw $ 那么就是 $x^2+y^2+z^2+w^2=1 $ .也就是说,作为流形, $SU(2)\cong S^3 $ .进一步就可知 $\pi_1(SU(2))=0 $ .
 
-    再考虑
+再考虑
     $$
       \mathbb{H}_2=\Set{b=\begin{bmatrix}
         x &y\\z &w
