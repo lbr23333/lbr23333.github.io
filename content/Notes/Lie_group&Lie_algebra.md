@@ -389,30 +389,30 @@ $$
         x &y\\z &w
       \end{bmatrix}\in Mat(2,\mathbb{C})|B^\dagger =B}
     $$
-    有 $\tilde{G}=SU(2) $ 作为其万有覆叠, $\varphi:\tilde{G}\times \mathbb{H}_2\rightarrow \mathbb{H}_2 $,具体地
+有 $\tilde{G}=SU(2) $ 作为其万有覆叠, $\varphi:\tilde{G}\times \mathbb{H}_2\rightarrow \mathbb{H}_2 $,具体地
     $$
       (A,B)\mapsto ABA^{-1}=\varphi_A(B)
     $$
-    注意其中 $A\in SU(2) $  ,所以有
+注意其中 $A\in SU(2) $  ,所以有
     $$
       tr(\varphi_A(B))=tr(B)\\
       det(\varphi_A(B))=det(B)
     $$
-    取 $V=\Set{B\in \mathbb{H}_2|tr(B)=0} $ ,可得
+取 $V=\Set{B\in \mathbb{H}_2|tr(B)=0} $ ,可得
     $$
       B=\begin{bmatrix}
         x_3 & x_1+ix_2 \\ x_1-ix_2 & -x_3
       \end{bmatrix}=x_1\sigma_1+x_2\sigma_2+x_3\sigma_3,x_i\in \R
     $$
-    其中 $\sigma_i $ 是Pauli矩阵.所以 $\varphi|_V:\tilde{G}\times V\rightarrow V $ 也保 $det ,tr $ .特别地, 
+其中 $\sigma_i $ 是Pauli矩阵.所以 $\varphi|_V:\tilde{G}\times V\rightarrow V $ 也保 $det ,tr $ .特别地, 
     $$
       det(B)=-(x_1^2+x_2^2+x_3^2),det(\varphi_A(B))=det(B)
     $$
-    可见 $\varphi_A:V\cong \R^3\rightarrow V\cong \R^3 $ 是保度规的,也就是说 $\varphi_A\in O(3) $ ,由于 $\tilde{G} $ 连通,而 $\varphi $ 是连续映射,所以实际上只会映射到含有单位元的连通分支
+可见 $\varphi_A:V\cong \R^3\rightarrow V\cong \R^3 $ 是保度规的,也就是说 $\varphi_A\in O(3) $ ,由于 $\tilde{G} $ 连通,而 $\varphi $ 是连续映射,所以实际上只会映射到含有单位元的连通分支
     $$
       \varphi : \tilde{G}\rightarrow SO(3)
     $$
-    下再说明 $\varphi $ 是满的,实际上直接计算可得
+下再说明 $\varphi $ 是满的,实际上直接计算可得
     $$
       \varphi\begin{bmatrix}
         a &b\\-\bar b&\bar a
@@ -425,9 +425,9 @@ $$
         2Re(\bar a b) & 2Im(\bar a b) & |a|^2-|b|^2
       \end{bmatrix}
     $$
-    由欧拉角,只需要证明绕任意轴的旋转可以由上得到,就证明了任意的转动能由上得到.取适当的 $a,b $ 即可证明.
+由欧拉角,只需要证明绕任意轴的旋转可以由上得到,就证明了任意的转动能由上得到.取适当的 $a,b $ 即可证明.
 
-    综上, $SU(2) $ 是 $SO(3) $ 的万有覆叠空间.实际上,考虑到 $SO(3)\cong \mathbb{RP}^3 $ ,可知 $SU(2) $ 是其二重覆叠.
+综上, $SU(2) $ 是 $SO(3) $ 的万有覆叠空间.实际上,考虑到 $SO(3)\cong \mathbb{RP}^3 $ ,可知 $SU(2) $ 是其二重覆叠.
 {{% /mathbox %}}
 
 
