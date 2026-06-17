@@ -974,8 +974,16 @@ $$
    $$
     无限群不可能嵌入到有限群中,所以 Klein  不可能覆叠 $\mathbb{RP}^2 $ .另一方面, $\pi_1(KB) $ 没有 $\mathbb{Z}_2 $ 子群,所以反之也不成立.
 
+    那么  $\pi_1(KB) $ 是什么?
+    * 不妨先考虑其二重覆叠空间,即 $\pi_1(\tilde{X})\setminus \mathbb{Z}_2\cong \pi_1(KB) $ :显然对于自由群 $\langle a,b|baba^{-1}=1 \rangle  $ 到 $\mathbb{Z} $ 的非平凡同态的选择有三种: 
+      * $\phi(a)=0,\phi(b)=1 $ , $a,b^2 \in ker(\phi) $ ,令 $x=a,y=b $ ,可得新的约束关系为 $xy=yx $ ,即所得到的是 $\langle a,b \rangle  \cong \mathbb{Z}\times\mathbb{Z}   $ ,即该情况下的2覆叠空间为环面 $T^2 $ .
+      *  $\phi(a)=1,\phi(b)=0 $
+      *  $\phi(a)=1,\phi(b)=1 $ 
+  
+> 为什么属于 Ker 才能成为生成元?可见前面 群作用与基本群的群结构 .只有当 $\beta $ 将其映到Ker中,才对应到 $p^{-1}(x_0) $ 中的同一点,也才可以将底空间 $X $ 中的圈映到 $\tilde{X} $ 中的圈,否则为 path 根本就不在 $\pi_1(\tilde{X}) $ 中.
+
 2. 寻找对于所有覆叠空间 $\iff $ 寻找基本群的子群
-   例如对于 $\mathbb{RP}^{n} \times \mathbb{RP}^{m}  $ ,有
+  * 例如对于 $\mathbb{RP}^{n} \times \mathbb{RP}^{m}  $ ,有
    $$
      \pi_1(\mathbb{RP}^{n} \times \mathbb{RP}^{m} )\cong Z_2\oplus Z_2=\set{e,a}\oplus \set{e,b}
    $$
@@ -989,8 +997,15 @@ $$
      \\
      S^n\times S^m\setminus (v,w)\sim (-v,-w),\mathbb{RP}^{n} \times \mathbb{RP}^{m}
    $$
+  * 又如对于 $S^1\vee S^1 $ ,有
+  $$
+    \pi_1(S^1\vee S^1)=\langle a,b \rangle 
+  $$
+  
+  * 还如对于 $T^2 $ 
 
-3. 
+3. 对于任意的拓扑群,都有一个万有覆叠.另外对于拓扑群的任意覆叠空间仍是一个覆叠空间.
+  
    
    
 

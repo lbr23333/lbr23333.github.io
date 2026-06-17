@@ -12,6 +12,7 @@ date : "2026-05-25"
   - [0.1 微分算子与微分微分表达式](#01-微分算子与微分微分表达式)
   - [0.2 映射与子流形](#02-映射与子流形)
 - [1.Lie群与Lie代数](#1lie群与lie代数)
+- [2.6 局部同构群](#26-局部同构群)
 
 
 ### 0 Preliminaries of differential manifolds
@@ -337,6 +338,98 @@ $$
   \\0& & 1
 \end{bmatrix} \in Mat(n,\R) \} $,上三角矩阵:
 考虑到上三角矩阵群的维数$\frac{1}{2}n(n+1) $,那么其一定可以用$GL(n,\R) $群的某些基前系数为0表示,即其在$GL $中就是一个正则嵌入子流形,所以进步一根据前面的定理可知,$T^n(n,\R) $是一个闭的Lie子群.
+
+
+
+
+
+
+
+### 2.6 局部同构群
+>关于前面覆叠空间的部分,可参考[拓扑学笔记]({{< ref "Notes/Topology.md" >}})
+
+
+{{% mathbox type="blue" title="Lemma 1 光滑流形覆叠空间的存在性" %}}
+若 $M $ 是一个光滑流形,那么存在 $M $ 的万有覆叠空间 $\tilde{M} $ ,且 $\tilde{M} $ 上有唯一的微分结构,使得 $\pi:\tilde{M}\rightarrow M $ 是一个光滑映射.
+{{% /mathbox %}}
+
+{{% mathbox type="blue" title="Lemma 2 提升引理" %}}
+设 $\varphi:(X,x_0)\rightarrow (Y,y_0) $ 是一个覆叠映射, $(Z,z_0) $ 是一道路连通、局部道路连通且半局部单连通的空间.那么若 $\alpha:(Z,z_0)\rightarrow (Y,y_0) $ 满足 $\alpha_*(\pi_1(Z,z_0))\subset \varphi_*(\pi_1(X,x_0)) $ ,那么存在唯一的提升映射 $\tilde{\alpha}:(Z,z_0)\rightarrow (X,x_0) $ 使得 $\varphi\circ \tilde{\alpha}=\alpha $ .
+{{% /mathbox %}}
+后面所考虑的情况中, $X,Z $ 一般都是单连通的,也就是说上面的提升映射总是存在的.
+
+{{% mathbox type="blue" title="" %}}
+$G $ 是连通的Lie群, $\tilde{G} $ 是其万有覆叠空间, $\pi:\tilde{G}\rightarrow G $ 是其覆叠映射,那么对于任意的 $\tilde{e}=\pi^{-1}(e) $ ,存在 $\tilde{G} $ 上的唯一以 $\tilde{e} $ 为单位元的Lie群结构,且 $\pi $ 仍是群同态.
+{{% /mathbox %}}
+证明: 关键在于定义群乘法和逆.
+
+
+一些例子
+1. $\pi:\R^n\rightarrow \mathbb{T}^n $
+  显然就是 $\R\rightarrow \R/\mathbb{Z}=\mathbb{T} $  ,即  $\pi_1(\mathbb{T}^n)=\mathbb{Z}^n $ .
+
+2.  \{{% mathbox type="slate" title="" %}}
+$$
+  \tilde{G}=SU(2)=\small{\set{A=\begin{bmatrix}a &b \\ c& d
+\end{bmatrix}\in Mat(2,\mathbb{C})|A^\dagger A=I ,det(A)=1}}
+$$
+  即 $\begin{bmatrix}\bar a &\bar c \\ \bar b& \bar d
+    \end{bmatrix} \begin{bmatrix}a &b \\ c& d
+    \end{bmatrix}=\begin{bmatrix}1 &0 \\ 0& 1
+    \end{bmatrix}$ , $ad-bc=1 $ 
+    可知即
+    $$
+      c=-\bar{b},d=\bar{a},|a|^2+|b|^2=1
+    $$
+    即 $A=\begin{bmatrix}a &b \\ -\bar b& \bar a
+    \end{bmatrix} ,|a|^2+|b|^2=1$ .令 $a=x+iy,b=z+iw $ 那么就是 $x^2+y^2+z^2+w^2=1 $ .也就是说,作为流形, $SU(2)\cong S^3 $ .进一步就可知 $\pi_1(SU(2))=0 $ .
+
+    再考虑
+    $$
+      \mathbb{H}_2=\Set{b=\begin{bmatrix}
+        x &y\\z &w
+      \end{bmatrix}\in Mat(2,\mathbb{C})|B^\dagger =B}
+    $$
+    有 $\tilde{G}=SU(2) $ 作为其万有覆叠, $\varphi:\tilde{G}\times \mathbb{H}_2\rightarrow \mathbb{H}_2 $,具体地
+    $$
+      (A,B)\mapsto ABA^{-1}=\varphi_A(B)
+    $$
+    注意其中 $A\in SU(2) $  ,所以有
+    $$
+      tr(\varphi_A(B))=tr(B)\\
+      det(\varphi_A(B))=det(B)
+    $$
+    取 $V=\Set{B\in \mathbb{H}_2|tr(B)=0} $ ,可得
+    $$
+      B=\begin{bmatrix}
+        x_3 & x_1+ix_2 \\ x_1-ix_2 & -x_3
+      \end{bmatrix}=x_1\sigma_1+x_2\sigma_2+x_3\sigma_3,x_i\in \R
+    $$
+    其中 $\sigma_i $ 是Pauli矩阵.所以 $\varphi|_V:\tilde{G}\times V\rightarrow V $ 也保 $det ,tr $ .特别地, 
+    $$
+      det(B)=-(x_1^2+x_2^2+x_3^2),det(\varphi_A(B))=det(B)
+    $$
+    可见 $\varphi_A:V\cong \R^3\rightarrow V\cong \R^3 $ 是保度规的,也就是说 $\varphi_A\in O(3) $ ,由于 $\tilde{G} $ 连通,而 $\varphi $ 是连续映射,所以实际上只会映射到含有单位元的连通分支
+    $$
+      \varphi : \tilde{G}\rightarrow SO(3)
+    $$
+    下再说明 $\varphi $ 是满的,实际上直接计算可得
+    $$
+      \varphi\begin{bmatrix}
+        a &b\\-\bar b&\bar a
+      \end{bmatrix}=
+      \begin{bmatrix}
+        Re(a^2-b^2) & -Im(a^2+b^2) & -2Re(ab)
+        \\
+        Im(a^2-b^2) & Re(a^2+b^2) & -2Im(ab)
+        \\
+        2Re(\bar a b) & 2Im(\bar a b) & |a|^2-|b|^2
+      \end{bmatrix}
+    $$
+    由欧拉角,只需要证明绕任意轴的旋转可以由上得到,就证明了任意的转动能由上得到.取适当的 $a,b $ 即可证明.
+
+    综上, $SU(2) $ 是 $SO(3) $ 的万有覆叠空间.实际上,考虑到 $SO(3)\cong \mathbb{RP}^3 $ ,可知 $SU(2) $ 是其二重覆叠.
+{{% /mathbox %}}
 
 
 
