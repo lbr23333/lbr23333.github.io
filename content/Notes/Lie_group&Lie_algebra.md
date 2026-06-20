@@ -12,7 +12,17 @@ date : "2026-05-25"
   - [0.1 微分算子与微分微分表达式](#01-微分算子与微分微分表达式)
   - [0.2 映射与子流形](#02-映射与子流形)
 - [1.Lie群与Lie代数](#1lie群与lie代数)
-- [2.6 局部同构群](#26-局部同构群)
+  - [1.1 Lie群](#11-lie群)
+  - [1.2Lie代数](#12lie代数)
+    - [Lie代数的表示](#lie代数的表示)
+  - [1.3 李群的李代数](#13-李群的李代数)
+  - [1.4 包络代数](#14-包络代数)
+  - [1.5 子群和子代数](#15-子群和子代数)
+  - [1.6 局部同构群](#16-局部同构群)
+  - [1.7 同态](#17-同态)
+  - [1.8 Lie's 基本定理](#18-lies-基本定理)
+  - [1.9 闭子群、齐性空间、轨道空间](#19-闭子群齐性空间轨道空间)
+  - [1.10 指数映射](#110-指数映射)
 
 
 ### 0 Preliminaries of differential manifolds
@@ -140,8 +150,10 @@ $$
     设$\varphi:M\rightarrow N $是一个正则嵌入:
     (a) 对于$y\in \varphi(M) $存在$y $的开领域$V $以及$V $上的一个光滑映射$F:V\rightarrow \R^{n-m} $使得$\varphi(M)\cap V=\{z\in V|F(z)=0 \} $
     (这实际上就是子流形的方程解的描述)
+
     (b)对于$x\in M,y=\varphi(x)\in \varphi(M) $,分别存在$x,y $的开领域$U,V $使得$\varphi(U)=\varphi(M)\cap V $
     (子流形的参数方程描述)
+
     (c)设$P $是一个光滑流形,$U:P\rightarrow M $是一个任意的映射,那么
     $U $是光滑的$\iff $ $\varphi\circ U: P\rightarrow N $是光滑的.(证明就利用正则嵌入在像空间有足够好的局域性质)
     
@@ -226,7 +238,7 @@ $$
     证明在微分几何中是常见的.进一步就是整体的 Frobenius定理:
 
 {{% mathbox type="blue" title="Frobenius定理" %}}
-N是光滑流形,$\mathcal{L} $是N上的m维的对合的分布,则过N上任意点p,都存在唯一的极大积分子流形$M_p $.$\mathcal{L} $的任何积分子流形都是N的拟正则子流形,并且是某个极大积分子流形的开子流形.
+$N$ 是光滑流形, $\mathcal{L} $ 是 $N$ 上的 $m$ 维的对合的分布,则过 $N$ 上任意点 $p$ ,都存在唯一的极大积分子流形 $M_p $ .$\mathcal{L} $的任何积分子流形都是 $N$ 的拟正则子流形,并且是某个极大积分子流形的开子流形.
 {{% /mathbox %}}
 
 证明要点:对于$p\in N $.直接构造出
@@ -239,6 +251,7 @@ $$
 ___
 
 ### 1.Lie群与Lie代数
+#### 1.1 Lie群
 
 先引入一个更一般的概念**拓扑群**:
 {{% mathbox type="green" title="拓扑群" %}}
@@ -278,24 +291,32 @@ $\iff$
 
 > 什么事射影极限,我也不懂
 
-{{% mathbox type="blue" title="" %}}
-拓扑群的开子群一定是闭的
+
+拓扑群有一个很强的结论:
+{{% mathbox type="blue" title="拓扑群的开子群一定是闭的" %}}
 {{% /mathbox %}}
-证明:设$H $是$G $的一个开子群,那么由陪集分解$G=\bigcup_{x\in G}xH $.其中$xH=\varphi^{-1}(H) $,其中$\varphi:y\mapsto x^{-1}y $,由Lie群的定义可知$\varphi $是连续的,于是可知$xH $也是开的.那么对于任意的$H=G- $其他的陪集,由于其他的陪集都是开集且开集并为开,可知$H $是闭的.$\Box $
+证明:设$H $是$G $的一个开子群,那么由陪集分解$G=\bigcup_{x\in G}xH $.其中$xH=\varphi^{-1}(H) $,其中 $\varphi:y\mapsto x^{-1}y$ ,由Lie群的定义可知 $\varphi $是连续的,于是可知$xH $也是开的.那么对于 $H=G\setminus \bigcup_{x\ne e}xH $ ,由于其他的陪集 $xH $  都是开集且开集并为开,可知$H $是闭的.$\Box $
+
+于是,对于连通的 $G $ ,其只有平庸的开子群,因为非空的开子群既开又闭,只能是 $G $ .
 
 {{% mathbox type="green" title="Lie群同态" %}}
 设$G_1,G_2 $是两个Lie群,若$\varphi:G_1\rightarrow G_2 $是群同态,且是光滑的.则称之为一个Lie群同态.
 {{% /mathbox %}}
-{{% mathbox type="slate" title="例子🌰" %}}
+例子🌰: 
+
 $G=(\R,+) $:$\varphi:G\rightarrow G $是群同态,即$\varphi(x+y)=\varphi(x)+\varphi(y) $.若$\varphi $是连续的,那么可知$\varphi(x)=cx $.
-{{% /mathbox %}}
+
 
 > 实际上,在一点处的联系、单调、可测,同样可以得到上结论,可见光滑的条件是过强的.
 
-
+下面
 {{% mathbox type="green" title="左平移与右平移" %}}
-$l_a:G\rightarrow G,l_a(x)=ax $为左平移,$r_a:G\rightarrow G,r_a(x)=xa $为右平移.
+$l_a:G\rightarrow G,l_a(x)=ax $为左平移,$r_a:G\rightarrow G,r_a(x)=xa $为右平移. $a\in G $ 
 {{% /mathbox %}}
+
+这是群结构所带来的,由Lie群的定义可知,左平移与右平移都是光滑的,而且其逆也是光滑的.即左右平移都是微分同胚.实际上,两者的作用一致,在后面通常默认选择做平移处理问题.
+
+> 因为左撇子更习惯?
 
 {{% mathbox type="slate" title="" %}}
 $i_a:G\rightarrow G,i_a(x)=axa^{-1} $是Lie群同态,因为
@@ -304,29 +325,42 @@ $$
 $$
 {{% /mathbox %}}
 
-{{% mathbox type="" title="green" %}}
-设$G,H $都是Lie群,若$H\subset G $既是子流形,又是子群,那么称之为$M $的一个Lie子群.
+{{% mathbox type="green" title="Lie子群" %}}
+设$G,H $ 都是Lie群,若 $H\subset G$ 既是子流形,又是子群,那么称之为$M $的一个Lie子群.
 {{% /mathbox %}}
 
-> 有没有菠萝群
+但实际上, $H $ 为Lie群的条件是有点过强的.
+
+> 有李子群,那有没有菠萝群
 
 {{% mathbox type="blue" title="" %}}
-设$G,H $都是Lie群,$H $是$G $的子群(仅代数意义上).
+设$G$是Lie群,$H $是$G $的子群(仅代数意义上的子群).
 * 若$H $是拟正则嵌入子流形,那么$H $是Lie子群;
 * 若$H $是正规嵌入子流形,那么$H $是闭的Lie子群.
 {{% /mathbox %}}
+
 证明:考虑$\nu:G\times G\rightarrow G ,\nu(x,y)\mapsto xy^{-1} $,那么由Lie群的定义,$\nu $是光滑的.若考虑
 $$
   \tilde{\nu}=\nu|_{H\times H}:H\times H\rightarrow H\xhookrightarrow{j}G
 $$
 
-那么若$j $是拟正则嵌入,取$P=H\times H ,u:H\times H\rightarrow H $使得$\tilde{\nu}=j\circ u $,可知$u $是光滑的,所以$H $是一个Lie群.
+那么若$j $是拟正则嵌入,   $u:H\times H\rightarrow H $使得$\tilde{\nu}=j\circ u $,可知$u $是光滑的,所以$H $是一个Lie群.
 
 进一步,若$j $是正则嵌入,可知是局部闭的,即$H $是$\bar{H} $中的开集,其中$\bar{H } $有子空间拓扑.$\bar{H} $是闭子群,$H $是$\bar{H} $中的开子群.再由前面的定理“拓扑群中的开子群都是闭子群”,可知$H $是$\bar{H} $中的闭子群,由于闭包是最小包含$H $的闭集,可知$H=\bar{H} $.$\Box$
 
-可见群结构使得光滑结构上的局部闭性质变成了整体闭.
+> 正则子流形是局部闭的:对于正则子流形 $S(\dim S=i) $ ,考虑嵌入到的空间 $M(\dim M=m) $ 中的光滑结构,其中一个Chart为 $U $ ,那么 $S\cap U $ 在该Chart的坐标下就为 $x^{j+1}=\dots=x^m=0 $ ,那么根据投影映射的连续性,就有 
+$$
+  S\cap U =F^{-1}(0),F(p)=(x^{i+1}(p),\dots,x^n(p))
+$$
+所以 $S\cap U $ 是闭的.也就是说对于 $S $ 中任意一点,都有一个开邻域 $U $ 使得 $S\cap U $ 为闭集.满足局部闭的定义.
 
-一些例子:
+可见群结构使得光滑结构上的局部闭性质变成了整体闭.实际上,后面将会证明 Cartan闭子群定理:
+$$
+  \small{\text{闭子群}}\iff\small{\text{正则Lie子群}}
+$$
+可见 闭 在Lie群中是一个非常强的条件.
+
+一些Lie群的例子:(感觉这个位置有点尴尬)
 * $\R^n,\mathbb{C}^n $
 * $\mathbb{C}^*=\{z\in \mathbb{C} | z\ne 0\} $
 * $T^m=\{(z^1,\dots,z^m)\in \mathbb{C}^m:|z^i|=1 \}=(S^1)^m $
@@ -339,13 +373,193 @@ $$
 \end{bmatrix} \in Mat(n,\R) \} $,上三角矩阵:
 考虑到上三角矩阵群的维数$\frac{1}{2}n(n+1) $,那么其一定可以用$GL(n,\R) $群的某些基前系数为0表示,即其在$GL $中就是一个正则嵌入子流形,所以进步一根据前面的定理可知,$T^n(n,\R) $是一个闭的Lie子群.
 
+#### 1.2Lie代数
+在习惯上,似乎有两种Lie代数:一种是物理壬喜欢的用Lie括号定义的Lie代数,另一种是数学壬定义的Lie群单位元的切空间.实际上是同一个东西,本节中先考虑前者.
+
+记 $\mathbb{k} $ 为一个含幺交换环(一般来说可以就当成是一个域,比如 $\R,\mathbb{C} $ ).那么一个 $\mathbb{k} $ 代数就是 $(A,\mu) $ ,定义为
+$$
+  A:\mathbb{k}-module
+  \\
+  \mu :A\times A\rightarrow A
+$$
+对于 $(A_1,\mu_1),(A_2,\mu_2) $ , 若 $\varphi:A_1\rightarrow A_2 $ 是一个 $\mathbb{k} $ -同态,即
+$$
+  \varphi(\mu_1(x,y))=\mu_2(\varphi(x),\varphi(y))
+$$
+那么称 $\varphi $ 是一个 $\mathbb{k} $ -代数同态.
+
+{{% mathbox type="green" title="Lie代数" %}}
+对于一个 $\mathbb{k} $  -代数 $(A,[\cdot,\cdot]) $ :
+$$
+  [\cdot,\cdot] :A \times A\rightarrow A
+  \\
+  (x,y)\mapsto [x,y]
+$$
+若满足
+1.  $[x,x]=0,\forall x\in A $ 
+2.  Jacobi恒等式
+$$
+  [[x,y],z]+[[y,z],x]+[[z,x],y]=0
+$$
+则称 $(A,[\cdot,\cdot]) $ 是 $\mathbb{k} $ 上的Lie代数.常用 $\mathfrak{g} $ 来表示Lie代数.
+{{% /mathbox %}}
+
+注意: 上面条件1有些情况下可以换成 1'条件:
+$$
+  [x,y]=-[y,x]
+$$
+有很多书上也都是这么定义的.乍一看:
+1. 取 $[x+y,x+y] $ 并利用双线性就能从 1 $\rightarrow  $ 1'
+2. 考虑 $[x,x]=-[x,x] $ ,也即是 $2[x,x]=0 $ 似乎能得到 1' $\rightarrow  $ 1.但是 $\mathbb{k} $ 只是一个含幺交换群, $2 $ 在其中不一定有逆,所以就会出问题.比如 $\mathbb{k}=\mathbb{Z}_2 $ ,在 1' 条件下就会变成诡异的
+$$
+  [x,y]=[y,x]
+$$
+
+前面的 $\mathbb{k} $ 代数同态具体到Lie代数就是,在 $(\mathfrak{g}_1,[,]_1) $ 与 $(\mathfrak{g}_2,[,]_2) $ 之间有
+$$
+  \varphi:\mathfrak{g}_1\rightarrow \mathfrak{g}_2,\varphi([x,y]_1)=[\varphi(x),\varphi(y)]_2
+$$
+
+设 $\mathfrak{g} $ 中有一组基为 $x_1,\dots,x_n $ ,那么
+$$
+  [x_i,x_j]=\sum_{k=1}^n C^k_{ij}x_k
+$$
+称 $C^k_{ij} $ 为 $(\mathfrak{g},[,]) $ 关于基 $\Set{x_1,\dots,x_n} $ 的结构常数.
+1. 根据 $[x_i,x_i]=0 $ 可知 $C^k_{ij}+C^k_{ji}=0 \Rightarrow C^k_{ii}=0 $ .
+2. 根据Jacobi恒等式,有
+$$
+  \sum^n_{l=1}(CC+CC+CC)=0
+$$
+
+Q:给定 $C^k_{ij} $ 能否找到所有的Lie代数结构? 设 $\mathbb{k}=\mathbb{C} $ , $V $ 是一个 $n $ 维的 $\mathbb{C} $ 空间,那么就是在问 $V $ 上有多少Lie括号?
+
+取一组基 $\Set{x_1,\dots,x_n} $ ,考虑可能的 $\Set{C^k_{ij}|i,j,k=1,\dots,n} $ .那么
+$$
+  A_n=\Set{C^k_{ij}\in\mathbb{C}^{n^3}|C^k_{ij}+C^k_{ji}=0,\sum(CC+CC+CC)=0}
+$$
+就是一些二次曲面和一些平面交得的代数簇. $A_n $ 上每一点都是一个Lie代数结构.
+
+还可以对已有的 $\mathbb{k} $ -Lie代数换成另一个 $\mathbb{K} $ Lie代数,其中 $\mathbb{K} $ 是交换、结合的 $\mathbb{k} $ -代数.对于 $\mathbb{k} $ 上的Lie代数 $\mathfrak{g} $ ,有
+$$
+  \mathfrak{g}_{\mathbb{K}}=\mathbb{K}\otimes_{\mathbb{k}}\mathfrak{g}
+$$
+$\otimes_{\mathbb{k}} $ 意味着多重 $\mathbb{k} $ 线性.即对于 $\mathfrak{g}_{\mathbb{K}} $ 中的 $\sum^m_i x_i\otimes_{\mathbb{k}}a_i $ , $\mathbb{k} $ 中的元素乘到 $x_i $ 或 $a_i $ 上都是可以"提出来"的.对于
+$$
+  [x\otimes a,y\otimes b]_{\mathfrak{g}_{\mathbb{K}}}=(xy)\otimes[a,b]_{\mathfrak{g}}
+$$
+可验证$[,]_{\mathfrak{g}_{\mathbb{K}}} $:
+1.  反称
+2.  满足 Jacobi 恒等式
+
+另外,显然 $(\mathfrak{g},[,]_{\mathfrak{g}_{\mathbb{K}}}) $ 是 $\mathbb{K} $ 代数.所以 ${\mathfrak{g}_{\mathbb{K}}} $ 是一个 $\mathbb{K} $ 上的Lie代数.
+
+例:
+1. $\mathfrak{g}=\R,\mathbb{K}=\mathbb{C} $, $\mathfrak{g}_{\mathbb{C}} $ 称为 $\mathfrak{g}_\R  $ 的复化.
+
+{{% mathbox type="green" title="Lie子代数与理想" %}}
+设 $\mathfrak{g} $ 是一个 $\mathbb{k} $ -代数,对于 $\mathfrak{g} $ 的两个子集 $a,b $ ,
+$$
+  [a,b]=Span\Set{(x,y)|x\in a,y\in b}=\Set{\sum^n_{i=1}(x_i,y_i)|x_i\in a,y_i\in b}
+$$
+
+1. 若 $\mathfrak{h} $ 是 $\mathfrak{g} $ 的 $\mathbb{k} $ -子模,满足 $[\mathfrak h,\mathfrak h]\subseteq \mathfrak h $ ,则称 $\mathfrak h $ 是一个Lie子代数.
+2. 设 $\mathfrak{h} $ 是一个Lie子代数,若 $[\mathfrak{h},\mathfrak{g}]\subset \mathfrak{h} $ ,则称 $\mathfrak{h} $ 为 $\mathfrak{g} $ 的一个理想.
+{{% /mathbox %}}
+
+{{% mathbox type="blue" title="Lemma." %}}
+1. 设 $\varphi:g_1\rightarrow g_2 $ 是Lie代数同态,那么 $Im(\varphi) $ 是 $g_2 $ 的子代数, $Ker(\varphi) $ 是 $g_1 $ 的子理想.
+2. 设 $h $ 是 $g $ 的理想记 $q=g/h $ ,有
+$$
+  [x+h,y+h]_g:=[x,y]_g+h
+$$
+则 $q $ 是一个Lie子代数, $g\rightarrow q $ 的投影是Lie代数同态.
+{{% /mathbox %}}
+
+这都是抽象代数中的结论.证明略.
+
+设 $g_1,\dots,g_m $ 是一些李代数.有
+$$
+g=g_1\times \dots \times g_m
+\\
+g=g_1\oplus \dots \oplus g_m
+$$
+前者是笛卡尔积,后者是作为 $\mathbb{k} $ - module.但实际上是差不多的.对于直和
+$$
+  x=(x_1,\dots,x_m)=x_1\oplus\dots\oplus x_m
+  \\
+  [x,y]_g:=[x_1\oplus\dots\oplus x_m,y_1\oplus \dots\oplus y_m]=\bigoplus_{i=1}^n[x_i,y_i]
+$$
+对于不同Lie代数 $g_i $ 中的元素 $x_i $ ,其之间是不想干的.即 $[x_i,x_j]=0,i\ne j $ ,于是
+$$
+  [g_i,g_j]_g=0
+$$
+称
+$$
+  g=\bigoplus_{i=1}^m g_i
+$$
+为 $g_1,\dots,g_m $ 的直和.(在老瓦的书上是用笛卡尔积处理的,结果是一致的,因为有限维的直和笛卡尔积本来就是一样的.)
+
+后面可能会遇到 $g=b\oplus n $ ,但是 $[b,n]\ne 0 $ 的情况,也就是说只是作为 $\mathbb{k} $ -module的直和分解,而不是作为Lie代数的分解.
+
+一些例子:
+1. $(V,[,])$, $[,]=0 $ 是 $V $ 上的 Abelian 李代数.
+2. $\mathfrak{gl}(V)=End(V) $ , $[X,Y]=XY-YX $ ,于是 $\mathfrak{gl}(n,\mathbb{k})=Mat(n,\mathbb{k}) $.
+3.  $\mathfrak{sl}(n,\mathbb{k})=\Set{A\in \mathfrak{gl}(n,\mathbb{k})|tr(A)=0} $
+4.  $\mathfrak{o}(n,\mathbb{k})=\Set{A\in \mathfrak{gl}(n,\mathbb{k})|A^T+A=0} $
+5.  $\mathfrak{s_p}(2n,\mathbb{k})=\Set{A\in Mat(2n,\mathbb{k})|A^TJ+JA=0} $, $J=\begin{bmatrix}
+  0 &-I_n\\I_n &0
+\end{bmatrix} $ 
+6. $\mathfrak{u}(n)=\Set{A\in Mat(n,\mathbb{C})|A^\dagger+A=0} $
+7. 
+
+##### Lie代数的表示
+
+#### 1.3 李群的李代数
 
 
 
 
 
 
-### 2.6 局部同构群
+
+
+
+#### 1.4 包络代数
+
+
+
+
+
+
+
+
+
+#### 1.5 子群和子代数
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### 1.6 局部同构群
 >关于前面覆叠空间的部分,可参考[拓扑学笔记]({{< ref "Notes/Topology.md" >}})
 
 
@@ -429,6 +643,90 @@ $$
 
 综上, $SU(2) $ 是 $SO(3) $ 的万有覆叠空间.实际上,考虑到 $SO(3)\cong \mathbb{RP}^3 $ ,可知 $SU(2) $ 是其二重覆叠.
 {{% /mathbox %}}
+
+
+
+
+
+
+
+
+
+
+#### 1.7 同态
+
+
+
+
+
+
+
+
+
+#### 1.8 Lie's 基本定理
+
+
+
+
+
+
+
+
+
+#### 1.9 闭子群、齐性空间、轨道空间
+
+
+
+
+
+
+
+
+
+#### 1.10 指数映射
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
