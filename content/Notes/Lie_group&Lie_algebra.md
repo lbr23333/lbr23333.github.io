@@ -503,16 +503,51 @@ $$
 
 一些例子:
 1. $(V,[,])$, $[,]=0 $ 是 $V $ 上的 Abelian 李代数.
-2. $\mathfrak{gl}(V)=End(V) $ , $[X,Y]=XY-YX $ ,于是 $\mathfrak{gl}(n,\mathbb{k})=Mat(n,\mathbb{k}) $.
+2. $\mathfrak{gl}(V)=End(V) $ , $[X,Y]=XY-YX $ ,实际上 $\mathfrak{gl}(n,\mathbb{k})=Mat(n,\mathbb{k}) $.
 3.  $\mathfrak{sl}(n,\mathbb{k})=\Set{A\in \mathfrak{gl}(n,\mathbb{k})|tr(A)=0} $
 4.  $\mathfrak{o}(n,\mathbb{k})=\Set{A\in \mathfrak{gl}(n,\mathbb{k})|A^T+A=0} $
 5.  $\mathfrak{s_p}(2n,\mathbb{k})=\Set{A\in Mat(2n,\mathbb{k})|A^TJ+JA=0} $, $J=\begin{bmatrix}
   0 &-I_n\\I_n &0
 \end{bmatrix} $ 
-6. $\mathfrak{u}(n)=\Set{A\in Mat(n,\mathbb{C})|A^\dagger+A=0} $
-7. 
+6. $\mathfrak{u}(n)=\Set{A\in Mat(n,\mathbb{C})|A^\dagger+A=0} $,其中 $A^\dagger $ 并不是 $\mathbb{C} $ 线性的,所以只是 $\R $ 代数.
+7. 在微分流形中,已经知道了 $\mathfrak{X}(M) $ 是一个Lie代数,因为 $[X,Y]\in \mathfrak{X},\forall X,Y\in \mathfrak{X} $ .但更具体地来说, $\mathfrak{X}(M) $ 只是 $\R $ 上的Lie代数,作为 $C^\infty(M) $-module, $\mathfrak{X}(M) $ 并不是 $C^\infty(M) $ 上的Lie代数,因为 $[,] $ 并不是 $C^\infty(M) $  线性的.
+8.  $A $ 是一个 $\R $ 代数, $\mu: A\times A\rightarrow A $ , $(a,b)\mapsto ab $ .导子:  $D:A\rightarrow A $ ( $\mathbb{k} $ module同态)
+$$
+  D(ab)=D(a)b+aD(b)
+$$
+Fact: $D_1,D_2 $ 是导子,则 $[D_1,D_2]=D_1D_2-D_2D_1 $ 也是导子.
+$$
+  Der(A)=\Set{D:A\rightarrow A|D\small{\text{是导子}}}  \subseteq End_{\mathbb{k}}(A)
+$$
+若 $\mathfrak{g} $ 是一个Lie代数,则 $Der(\mathfrak{g}) $ 也是.例如,
+$$
+  ad:\mathfrak{g}\rightarrow Der(\mathfrak{g}),X\mapsto ad_X
+  \\
+  ad_X:\mathfrak{g}\rightarrow \mathfrak{g},Y\mapsto [X,Y]
+$$
+$ad_X $ 是一个导子,因为
+$$
+  ad_X([Y,Z])=[ad_X(Y),Z]+[Y,ad_X(Z)]
+$$
+展开后就是Lie代数所满足的 Jacobi恒等式,即 Jacobi恒等式实际上是导子的 Leibniz律.
 
+
+
+> 实际上,在下一节中会证明,上面的(2)--(6)就是前面提到过的几个矩阵群的Lie代数,将会看到,即便是最简单的 $GL(n,\R) $ 也没那么容易证明其Lie代数就是 $\mathfrak{gl}(n,\R) $ .
 ##### Lie代数的表示
+就和一般的表示一样,为了方便研究,选择将其放在某些具有线性结构的对象中处理.在Lie代数中,这个线性的对象就是前面所提到的 $\mathfrak{gl} $ .
+
+设 $\mathfrak{g} $ 是一个 $\mathbb{k} $ -Lie代数, $V $ 是一个 $\mathbb{k} $ 模, $\mathfrak{gl}(V) $ 是一个 $\mathbb{k} $ Lie代数.若有一个Lie代数同态
+$$
+  \varphi:\mathfrak{g} \rightarrow \mathfrak{gl}(V)
+$$
+则 $V $ 是一个 $\mathfrak{g}  $ 模, $(V,\varphi) $ 是一个 $\mathfrak{g}  $ 的表示.
+> 实际上,在大多数情况下,用到的都是 $\mathbb{k} =\R,\mathbb{C} $ .该情况下, $V $ 就是一个(复)线性空间.于是一个表示就是将 $\mathfrak{g}  $ 中的元素同态为该线性空间中的线性变换 $\mathfrak{gl}(V)\subseteq  End(V) $ .
+
+1.  $dim V=1 $ , $\varphi =0 $ 是平凡表示.
+2.  $ad: \mathfrak{g} \rightarrow Der(\mathfrak{g} )\subseteq \mathfrak{gl}(\mathfrak{g} )  $ 是伴随表示.
+
+
 
 #### 1.3 李群的李代数
 
@@ -562,7 +597,7 @@ $$
 #### 1.6 局部同构群
 >关于前面覆叠空间的部分,可参考[拓扑学笔记]({{< ref "Notes/Topology.md" >}})
 
-
+对于一般的拓扑空间,其具有万有覆叠空间的充要条件是,该空间道路连通、局部道路连通且半局部单连通.由于默认考察的对象都是连通的流形,再考虑到流形具有局部欧的性质,所以这些条件都是自动满足的.也即是说:
 {{% mathbox type="blue" title="Lemma 1 光滑流形覆叠空间的存在性" %}}
 若 $M $ 是一个光滑流形,那么存在 $M $ 的万有覆叠空间 $\tilde{M} $ ,且 $\tilde{M} $ 上有唯一的微分结构,使得 $\pi:\tilde{M}\rightarrow M $ 是一个光滑映射.
 {{% /mathbox %}}
@@ -575,8 +610,13 @@ $$
 {{% mathbox type="blue" title="" %}}
 $G $ 是连通的Lie群, $\tilde{G} $ 是其万有覆叠空间, $\pi:\tilde{G}\rightarrow G $ 是其覆叠映射,那么对于任意的 $\tilde{e}=\pi^{-1}(e) $ ,存在 $\tilde{G} $ 上的唯一以 $\tilde{e} $ 为单位元的Lie群结构,且 $\pi $ 仍是群同态.
 {{% /mathbox %}}
-证明: 关键在于定义群乘法和逆.
+证明: 关键在于定义群乘法和逆.再次用到一个经典的trick,即乘法和逆直接用除法来定义.考虑
+$$
+  \alpha:\tilde{G}\times \tilde{G}\rightarrow G,(\tilde{x},\tilde{y})\mapsto \pi(\tilde{x})\cdot\pi(\tilde{y})^{-1}
+$$
+👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
 
+于是之后可以用覆叠空间的分类去对Lie群进行分类.
 
 一些例子
 $\pi:\R^n\rightarrow \mathbb{T}^n $.显然就是 $\R\rightarrow \R/\mathbb{Z}=\mathbb{T} $  ,即  $\pi_1(\mathbb{T}^n)=\mathbb{Z}^n $ .
@@ -644,17 +684,31 @@ $$
 综上, $SU(2) $ 是 $SO(3) $ 的万有覆叠空间.实际上,考虑到 $SO(3)\cong \mathbb{RP}^3 $ ,可知 $SU(2) $ 是其二重覆叠.
 {{% /mathbox %}}
 
+Q: 是否所有的Lie群都是矩阵群?
 
-
-
-
-
-
+A: 不是,可以用万有覆叠进行证明.
+👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
 
 
 
 #### 1.7 同态
+考虑到对于群同态 $\varphi:G_1\rightarrow G_2 $ ,有结论
+1.  $\varphi(G_1) $ 是 $G_2 $ 的子群.
+2.  $Ker(\varphi) $ 是 $G_1 $ 的正规子群.
 
+自然会问,对于一个Lie群同态:
+$$
+  \Phi:G_1\rightarrow G_2
+$$
+是否有
+1.  $\Phi(G_1) $ 是否为 $G_2 $ 的Lie子群?
+2.  $Ker(\Phi) $ 是否为 $G_1 $ 的正规子群?
+
+另外, $\Phi $ 诱导出的 $\varphi:\mathfrak{g}_1\rightarrow \mathfrak{g}_2  $ ,同样会有两个问题:
+1. $\varphi(\mathfrak{g}_1 ) $ 是 $\mathfrak{g}_2  $ 的Lie子代数吗?
+2. $Ker(\varphi) $ 是 $\mathfrak{g}_1  $ 的理想吗?
+
+由于 $\mathfrak{g}  $ 是线性空间,所以上面两条是显然成立的.
 
 
 
@@ -685,38 +739,69 @@ $$
 
 #### 1.10 指数映射
 
+设 $G $ 是一个Lie群, $\mathfrak{g}  $ 是 $G $ 的Lie代数.对于实数加法群 $\R $ ,其Lie代数也是 $\R $ , Lie括号为 $[,]=0 $ .若
+$$
+  \Phi:\R\rightarrow G
+$$
+是李群同态,则 $\varphi=d\Phi:\R\rightarrow \mathfrak{g}  $ 是一个Lie代数同态.
 
+反之,若 $\varphi:\R\rightarrow G $ 是一个Lie代数同态(注意到其中 $\R $ 的运算 $[,]=0 $ 是平凡的,所以同态总是成立),又注意到 $\R $ 是单连通的,所以有Lie群同态 $\Phi:\R\rightarrow G $ 使得 $d\Phi=\varphi $ .具体地
+$$
+  \varphi:\R\rightarrow \mathfrak{g} ,t\mapsto \varphi(t)
+$$
+记 $X=\varphi(1) $ ,则 $\varphi(x)=t\cdot X $ ,因为 $\varphi $ 是一个线性映射.即完全由 $X $ 这一元素决定.对于 $X\in \mathfrak{g}  $ 记 $\varphi_X(t)=tX $ . $\Phi_X(t) $ 就是 $\varphi_X $ 所对应的Lie群同态.
 
+{{% mathbox type="blue" title="Lemma" %}}
+ $\Phi_{sX}(t)=\Phi_X(st) $ 
+{{% /mathbox %}}
+证明:  $t=0,\Phi_{\dots}(0)=e,\forall \dots $ 成立,因为 $\Phi $ 是同态.在 $e $ 附近取一Chart $U $ , 坐标为 $u=(u^1,\dots,u^n) $ 且 $u^i(e)=0 $ . 对于 $X\in \mathfrak{g}  $ , $X $ 在 $U $ 上就是
+$$
+  X=\sum^n_{i=1}X^i(u)\frac{\partial}{\partial u^i}
+$$
+设 $\Phi_X(t)=(u^1(t),\dots,u^n(t)) $ (就是 $X $ 的单参数微分同胚群),因为
+$$
+  \frac{d}{dt}\Phi_X(t)=X^i(u(t))
+$$
+所以
+$$
+  \begin{cases}
+    \frac{d u^i}{dt}=X^i(u(t))
+    \\
+    u^i(0)=0
+  \end{cases}
+$$ 
+对于 $\Phi_X(st)=(u^1(st),\dots,u^n(st)) $ ,有
+$$
+  \frac{du^i(st)}{dt}=s X^i(u(st))
+$$
+对于 $\Phi_{sX}(t)=(\tilde{u}^1(t),\dots,\tilde{u}^n(t)) $ 有
+$$
+  \frac{d\tilde u^i(t)}{dt}=s X^i(\tilde u(t))
+$$
+有同样的ODE与初始条件,由ODE解的唯一性可知两者相等.对于超出了 $U $ 的部分,总是有
+$$
+  \Phi_{sX}(t)=(\Phi_{sX}(t/n))^n,\Phi_{X}(st)=(\Phi_{X}(st/n))^n
+$$
+收缩回 $U $ 中.于是完成证明.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+> 注意这里有一个比较 subtle 的地方,可能会问:为什么不是
+$$
+  d\Phi_X=\varphi_X=tX
+$$
+而是
+$$
+  \frac{d}{dt}\Phi_X(t)=X^i(u(t))
+$$
+注意 $\R $ 的双重身份:
+> 1. $\Phi_X(t) $ 一方面是 $X $ 的流.由定义,
+$$
+  d\Phi_X(t)/dt=X_{\Phi_X(t)}=X(u^i(t))
+$$
+> 2. 另一方面是Lie群同态.考虑其微分
+$$
+  \varphi_X=d\Phi_X:\R\rightarrow \mathfrak{g} , c\frac{d}{dt}\mapsto cX=\varphi(c)
+$$
+其中 $\R $ 是Lie代数,其中元素为 $c d/dt $ , $d(\Phi_X)_t(c\frac{d}{dt})=cX $ , 所以 $(d\Phi_X)_t(\frac{d}{dt})=X $.与上一致.实际上是 $\R $ 的切空间是其本身所带来的一些小问题.
 
 
 
