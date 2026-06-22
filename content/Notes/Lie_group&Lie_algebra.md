@@ -784,7 +784,7 @@ $$
 $$
 收缩回 $U $ 中.于是完成证明.
 
-> 注意这里有一个比较 subtle 的地方,可能会问:为什么不是
+注意这里有一个比较 subtle 的地方,可能会问:为什么不是
 $$
   d\Phi_X=\varphi_X=tX
 $$
@@ -793,19 +793,75 @@ $$
   \frac{d}{dt}\Phi_X(t)=X^i(u(t))
 $$
 注意 $\R $ 的双重身份:
-> 1. $\Phi_X(t) $ 一方面是 $X $ 的流.由定义,
+1. $\Phi_X(t) $ 一方面是 $X $ 的流.由定义,
 $$
   d\Phi_X(t)/dt=X_{\Phi_X(t)}=X(u^i(t))
 $$
-> 2. 另一方面是Lie群同态.考虑其微分
+2. 另一方面是Lie群同态.考虑其微分
 $$
   \varphi_X=d\Phi_X:\R\rightarrow \mathfrak{g} , c\frac{d}{dt}\mapsto cX=\varphi(c)
 $$
-其中 $\R $ 是Lie代数,其中元素为 $c d/dt $ , $d(\Phi_X)_t(c\frac{d}{dt})=cX $ , 所以 $(d\Phi_X)_t(\frac{d}{dt})=X $.与上一致.实际上是 $\R $ 的切空间是其本身所带来的一些小问题.
+其中 $\R $ 是Lie代数,其中元素为 $c d/dt $ , $d(\Phi_X)_0(c\frac{d}{dt})=cX $ , 所以 $(d\Phi_X)_0(\frac{d}{dt})=X $.与上一致.实际上是 $\R $ 的切空间是其本身所带来的一些小问题.
 
+{{% mathbox type="green" title="指数映射" %}}
+指数映射是指
+$$
+  \exp:\mathfrak{g} \rightarrow G,X\mapsto exp(X)=\Phi_X(1) ,1\in \R
+$$
+{{% /mathbox %}}
 
+有一些比较显然的性质:
+1.  $exp(0)=e,0\in \mathfrak{g} ,e\in G $ .
+2.  $exp((t+s)X)=exp(tX)\cdot exp(sX) $ since
+$$
+  L.H.S=\Phi_X(t+s)=\Phi_X(t)\cdot\Phi_X(s)=R.H.S
+$$
+3. $exp(-X)=(exp(X))^{-1} $ .
 
+在前面得到 $\Phi:\R\rightarrow G $ 对应的 $\varphi(t)=d\Phi(t)=tX $ .也得到了
+$$
+  X=(d\Phi_X)_0(\frac{d}{dt})
+$$
+称为 $\Phi $ 的无穷小生成元.更具体地:
+$$
+  t\mapsto exp(tX)=\Phi_X(t)
+$$
+是过 $e $ 的 $X $ 的积分曲线.那么过 $g\in G $ 的 $X $ 的积分曲线就是
+$$
+  t\mapsto g\cdot exp(tX)
+$$
+设 $f $ 是 $g $ 附近定义的一个函数,有
+$$
+  X(g)(f)=df_g(X_g)=(\frac{d}{dt}|_{t=0}f)(X_g)=\frac{d}{dt}|_{t=0}(f(g\cdot \exp(tX)))
+$$
+该式子在研究微分方程的单参数变换群时经常用到.
 
+{{% mathbox type="blue" title="指数映射的局部微分同胚" %}}
+若 $\exp:\mathfrak{g}\rightarrow G  $ 是光滑的,且存在 $0\in \mathfrak{g} $ 的开邻域 $U $  和 $e\in G $ 的开邻域 $V $ 使得
+$$
+  \exp:U\rightarrow V
+$$
+是微分同胚.
+{{% /mathbox %}}
+显然,对于Lie群单位元所在的连通区域 $G^\circ $ ,可以利用左平移在任意点上找到这样的微分同胚.
+
+证明: 在 $e $ 附近取Chart $U $ ,有坐标系为 $(u^1,\dots,u^n) $ ,设 $X_1,\dots,X_n $ 为 $\mathfrak{g}  $ 的一组基.且 $(X_i)(e)=\frac{\partial}{\partial u^i} $ ,设
+$$
+  X_i=\sum^n_{j=1}F^j_i(n)\frac{\partial}{\partial u^j},i=1,\dots,n
+$$
+对于 $X\in \mathfrak{g}  $ , $X=x_1X_1+\dots+x_nX_n $ .设
+$$
+  \Phi_X(t)=(u^1(t),\dots,u^n(t))
+$$
+那么
+$$
+  \frac{du^i}{dt}=X^i(u(t))=x_1F^i_1+\dots+x_nF^i_n,i=1,\dots,n
+$$
+解记为 $u^i(t;x_1,\dots,x_n) $ ,那么
+$$
+  \exp(X)=\Phi_X(1)=(u^1(1;x_1,\dots,x_n),\dots,u^n(1;x_1,\dots,x_n))
+$$
+由 ODE 定理: $\exp(X) $ 是光滑的.总可以取到 $e $ 处足够小的 $V $ 使得 $\exp $ 是可逆的,于是就是局部的微分同胚.
 
 
 
