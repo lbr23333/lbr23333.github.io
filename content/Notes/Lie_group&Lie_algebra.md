@@ -23,6 +23,8 @@ date : "2026-05-25"
   - [1.8 Lie's 基本定理](#18-lies-基本定理)
   - [1.9 闭子群、齐性空间、轨道空间](#19-闭子群齐性空间轨道空间)
   - [1.10 指数映射](#110-指数映射)
+  - [1.11 李群结构的唯一性](#111-李群结构的唯一性)
+  - [1.12 李群上的Taylor展开](#112-李群上的taylor展开)
 
 
 ### 0 Preliminaries of differential manifolds
@@ -863,13 +865,130 @@ $$
 $$
 由 ODE 定理: $\exp(X) $ 是光滑的.总可以取到 $e $ 处足够小的 $V $ 使得 $\exp $ 是可逆的,于是就是局部的微分同胚.
 
+例子:
+1. 对于 $G=GL(n,\R),\mathfrak{g}=\mathfrak{gl}(n,\R),A\in \mathfrak{g} $ . 设 $\Phi_A(t)=B(t) $ ,有
+$$
+  \begin{cases}
+    B'(t)=B(t)A
+    \\
+    B(0)=I
+  \end{cases}
+  \Rightarrow B(t)=e^{tA}
+$$
+其中第一条是之前计算 $GL(n,\R) $ 的Lie代数时所得到的结果.所以 $\exp(A)=e^A $ ,这也是称之为指数映射的原因---在线性Lie群就表现为矩阵的指数映射.
+2. 若 $tr(A)=0 $ 即 $A\in \mathfrak{sl}(n,\R) $ ,有
+$$
+  det(e^A)=e^{tr A}=1
+$$
+即 $\exp(A)\in SL(n,\R) $ .
+3. 若 $A^T+A=0 $ 即 $A\in \mathfrak{o}(n,\R)  $ ,有 $Q=\exp(A) $ 
+$$
+  Q^TQ=\exp(A^T+A)=I
+$$
+即 $\exp:\mathfrak{o}(n,\R)\rightarrow SO(n,\R)  $ ,注意由于 $\exp $ 连续,所以映射到连通分支.
+> 上面的计算实际上用到了后面的BCH公式,一般是没有
+$$
+  \exp(A)\cdot \exp(B)=\exp(A+B)
+$$
+除非 $[A,B]=0 $ ,而上面情况中 $[A^T,A]=[-A,A]=0 $ .
+
+实际上,根据上例可以看出, $\exp $ 不一定是满的,也不一定是单的.
+
+例如:
+$$
+  G=SL(2,\R)=\Set{A|det(A)=1} 
+  \\
+  \mathfrak{g} =\mathfrak{sl} (2,\R)=\Set{X|tr X=0}
+$$
+$\exp:\mathfrak{g}\rightarrow G  $ 就是不满的:
+
+对于 $X\in\mathfrak{g}  $ 只有如下三种可能
+$$
+  \begin{align*}
+    X\sim \begin{pmatrix}0 & * \\ 0 & 0\end{pmatrix} 
+    &\exp(X)=\begin{pmatrix}1 &* \\ 0 &1 \end{pmatrix}
+    &tr(X)= 2
+    \\
+    X\sim \begin{pmatrix}\lambda & 0 \\ 0 & -\lambda\end{pmatrix} 
+    &\exp(X)=\begin{pmatrix}e^{\lambda} &* \\ 0 &e^{-\lambda} \end{pmatrix}
+    &tr(X)\ge 2
+    \\
+     X\sim \begin{pmatrix}i\lambda & 0 \\ 0 & -i\lambda\end{pmatrix} 
+    &\exp(X)=\begin{pmatrix}e^{i\lambda} &* \\ 0 &e^{-i\lambda} \end{pmatrix}
+    &tr(X)\ge -2
+  \end{align*}
+$$
+可见 $tr X/ge -2 $ ,但是 $SL(2,\R) $ 中显然有 $A=\begin{pmatrix}
+  -2 & 0 \\ 0 &-\frac12
+\end{pmatrix} $ .所有上指数映射不满.
+
+另外还不一定是单的,如 $\exp:\mathfrak{o}(2,\R)\rightarrow SO(2,\R)  $ 
+$$
+  \exp\begin{pmatrix}
+    0 & -t \\ t & 0
+  \end{pmatrix}=
+  \begin{pmatrix}
+    \cos t & -\sin t \\ \sin t & \cos t
+  \end{pmatrix}
+$$
+就不是单的.
+
+{{% mathbox type="blue" title="" %}}
+(a) $\Phi:G_1\rightarrow G_2 $ 是Lie群同态, $\varphi:\mathfrak{g}_1\rightarrow \mathfrak{g}_2   $ 是相应的Lie代数同态.则下图标交换
+$$
+  \begin{align*}
+    \mathfrak{g}_1&\xrightarrow{\exp}&G_1
+    \\
+    \varphi\downarrow& & \downarrow\Phi
+    \\
+    \mathfrak{g}_2 &\xrightarrow{\exp} & G_2
+  \end{align*}
+$$
+特别地, $\varphi(X)=0\iff \forall t\in \R ,\exp(tX)\in Ker(\Phi) $ .
+
+(b)  $H $ 是 $G $ 的Lie子群, $H $ 的Lie代数为 $\tilde{h} $ .有含入映射
+$$
+  I:H\hookrightarrow G
+  \\
+  dI:\tilde{h}\hookrightarrow \mathfrak{g} 
+$$
+记 $h=dI(\tilde{h}) $ ,则 $X\in h\iff \forall t\in \R ,\exp(tX)\in H $ .
+{{% /mathbox %}}
+
+> 注意,其中 $H $ 是 $G $ 的Lie子群并不一定是正则子流形.最后的 $\exp(tX)\in H  $ 中的 $H $ 实际上是 $I(H) $ .
+
+证明:👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
 
 
 
 
 
+#### 1.11 李群结构的唯一性
 
 
+
+#### 1.12 李群上的Taylor展开
+
+有Lie群 $G $ 和其Lie代数 $\mathfrak{g}  $ ,对于 $g\in G,X\in\mathfrak{g}  $ . $c(t)=g\cdot exp(tX) $ 是 $G $ 上过 $g $ 的 $X $ 的唯一的积分曲线.对于 $f\in C^\infty(G) $ ,前面提到
+$$
+  X(f)(g)=\frac{d}{dt}|_{t=0}(f(g\cdot \exp(tX)))
+$$
+引入一个记号:
+{{% mathbox type="green" title="" %}}
+对于 $G $ 上的微分算子 $D $ , $f(g;D):= D(f)(g) $ .
+{{% /mathbox %}}
+
+{{% mathbox type="blue" title="Lemma 1" %}}
+(a)
+$$
+  X^k(f)(g)=f(g;X^k)=\frac{d^k}{dt^k}|_{t=0}f(g\cdot \exp(tX)) 
+$$
+(b) 
+$$
+  f(g\cdot\exp(tX))=\sum_{k=0}f(g;X^k)\frac{t^k}{k!}
+$$
+{{% /mathbox %}}
+证明: (a) $\Rightarrow $ (b)是显然的.所以只证明(a).
 
 
 
