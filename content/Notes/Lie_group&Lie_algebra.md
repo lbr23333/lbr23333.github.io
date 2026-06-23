@@ -906,15 +906,15 @@ $\exp:\mathfrak{g}\rightarrow G  $ 就是不满的:
 对于 $X\in\mathfrak{g}  $ 只有如下三种可能
 $$
   \begin{align*}
-    X\sim \begin{pmatrix}0 & * \\ 0 & 0\end{pmatrix} 
+    &X\sim \begin{pmatrix}0 & * \\ 0 & 0\end{pmatrix} 
     &\exp(X)=\begin{pmatrix}1 &* \\ 0 &1 \end{pmatrix}
     &tr(X)= 2
     \\
-    X\sim \begin{pmatrix}\lambda & 0 \\ 0 & -\lambda\end{pmatrix} 
+    &X\sim \begin{pmatrix}\lambda & 0 \\ 0 & -\lambda\end{pmatrix} 
     &\exp(X)=\begin{pmatrix}e^{\lambda} &* \\ 0 &e^{-\lambda} \end{pmatrix}
     &tr(X)\ge 2
     \\
-     X\sim \begin{pmatrix}i\lambda & 0 \\ 0 & -i\lambda\end{pmatrix} 
+     &X\sim \begin{pmatrix}i\lambda & 0 \\ 0 & -i\lambda\end{pmatrix} 
     &\exp(X)=\begin{pmatrix}e^{i\lambda} &* \\ 0 &e^{-i\lambda} \end{pmatrix}
     &tr(X)\ge -2
   \end{align*}
@@ -1145,6 +1145,7 @@ $$
 $$
 由此可知 $\exp(X)\exp(Y)=\exp(Y)\exp(X) $ .
 {{% /mathbox %}}
+
 > 看似用之前的展开公式直接展开证明就可以了,但似乎下面的方法更简单,而且也不太能确定展开后面的项都是有交换子的(?)
 
 证明:  $\exp(tX)\exp(sY)\exp(-tX)=\exp(se^{ad_X}(Y))=\exp(sY) $ ,于是就证明了
@@ -1159,7 +1160,7 @@ $$
     \\ &=\varphi(t)\varphi(s)
   \end{align*}
 $$
-另一方面,$\varphi $ 的无穷小生成元为 $X+Y $ .而 $X+Y $ 对应的同态为
+于是,$\varphi $ 的无穷小生成元为 $X+Y $ .而另一方面 $X+Y $ 对应的同态为
 $$
   \exp(t(X+Y))
 $$
@@ -1169,6 +1170,21 @@ $$
 $$
 取 $t=1 $ 即得证. $\Box $ 
 > 为什么 $\varphi $ 的无穷小生成元为 $X+Y $ ?
+>
+> 考虑到流的定义 $\Phi_X(t)=\gamma_e(t) $ ,其中 $\gamma_e(0)=e $ .对于 $\exp(tX) $ 的导数,有
+$$
+  \frac{d}{dt}\exp(tX)=\frac{d}{dt}\Phi_X(t)=\frac{d}{dt}\gamma_e(t)=X_{\gamma_e(t)}
+$$
+> 而其中 $X_{\gamma_e(t)}=\gamma_e(t)X=\exp(tX)X $ .所以
+$$
+  \begin{align*}
+    &\frac{d}{dt}(\exp(tX)\exp(tY))
+  \\&=X\exp(tX)\exp(tY)+\exp(tX)Y\exp(tY)
+  \end{align*}
+$$
+> 取 $t=0 $ ,即 $X+Y $ ,也就是无穷小生成元.
+>
+> 注意其中 $X_{\gamma_e(t)}=\gamma_e(t)X $ 实际上是一个简写的记号,标准的是 $\gamma_e(t)X:=d(L_{\gamma_e(t)})_eX $ .
 
 由上可知,
 $$
