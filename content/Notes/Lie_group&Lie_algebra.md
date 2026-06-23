@@ -1065,6 +1065,7 @@ $$
 $$
 {{% /mathbox %}}
 随着上面的陈述,其证明是显然的.
+
 > 几何表示论中通常将一个表示的对象放到几何上,这就是一个例子.
 
 考虑Lie群对其自身的共轭作用: $G\times G\rightarrow G $ , $(x,y)\mapsto yxy^{-1} $ .取上面的 $x_0=e $ ,那么其稳定化子群就是 $G_e=G $ .于是
@@ -1132,7 +1133,7 @@ $$
 $$
 即 $\lambda=ad $ .再根据最开始的等式,就有
 $$
-  Ad_{\exp(tX)}=e^{\lambda(tX)}=e^{t\lambda(X)}
+  Ad_{\exp(tX)}=e^{\lambda(tX)}=e^{t\lambda(X)}=e^{ad_X}
 $$
 完成证明. $\Box $ 
 
@@ -1195,9 +1196,38 @@ $$
   G\cong \mathfrak{g} 
 $$
 
+{{% mathbox type="blue" title="" %}}
+设$G$ 是连通的Lie群, $\mathfrak{g}$ 是其Lie代数. $H$连通,是 $G $ 的李子群,Lie代数为 $\mathfrak{h}  $ .则 $H\triangleleft G $ 当且仅当 $\mathfrak{h}  $ 是 $\mathfrak{g}  $ 的理想. 
+{{% /mathbox %}}
+
+证明:👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
 
 
-
+例子: $G=GL(V),\mathfrak{g} =\mathfrak{gl}(V) $,对于 $X\in \mathfrak{g} ,A\in G $ ,有
+$$
+  \begin{align*}
+    &e^X=\sum^\infty_{n=0}\frac{X^n}{n!}
+    \\
+    &Ae^XA^{-1}=\sum^\infty_{n=0}\frac{1}{n!}(AXA^{-1})^n=e^{AXA^{-1}}
+  \end{align*}
+$$
+结合前面共轭作用的定义 $Ad_y(X)=X^y$ 以及 $\exp(X^y)=y\exp(X)y^{-1}$ ,可知上面
+$$
+  Ad_A(X)=X^A=Ae^XA
+$$
+(这也是称之为共轭映射的原因)代入 $A=e^Y $ ,则有
+$$
+  e^{ad_Y}(X)=Ad_{e^Y}(X)=e^YXe^{-Y}
+$$
+展开两边,得到
+$$
+  ad_Y^{n}(X)=\sum^n_{l=0}(-1)^{n-l}\begin{pmatrix}n\\l\end{pmatrix}Y^lXY^{n-l}
+$$
+> 实际上, $e^{ad_Y}(X)=e^YXe^{-Y} $ 完全可以用
+$$
+  ad_Y^{n+1}(X)=[Y,ad_Y^n(X)]
+$$
+去归纳证明.
 
 
 
