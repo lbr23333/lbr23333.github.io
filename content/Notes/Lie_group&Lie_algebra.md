@@ -25,6 +25,7 @@ date : "2026-05-25"
   - [1.10 指数映射](#110-指数映射)
   - [1.11 李群结构的唯一性](#111-李群结构的唯一性)
   - [1.12 李群上的Taylor展开](#112-李群上的taylor展开)
+  - [1.13 伴随作用](#113-伴随作用)
 
 
 ### 0 Preliminaries of differential manifolds
@@ -959,6 +960,10 @@ $$
 
 证明:👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
 
+实际上,根据上面的证明,对于任意的光滑映射 $\pi:G\rightarrow M $ ,都有
+$$
+  \boxed{\pi\circ\exp=\exp\circ d\pi}
+$$
 
 
 
@@ -988,7 +993,196 @@ $$
   f(g\cdot\exp(tX))=\sum_{k=0}f(g;X^k)\frac{t^k}{k!}
 $$
 {{% /mathbox %}}
-证明: (a) $\Rightarrow $ (b)是显然的.所以只证明(a).
+证明: (a) $\Rightarrow $ (b)是显然的.所以只证明(a).而(a)的证明也几乎是显然的,因为已经有了 $X(f)(g)=\frac{d}{dt}|_{t=0}(f(g\cdot \exp(tX))) $,那么
+$$
+  \begin{align*}
+    X^2(f)(g)&=X(X(f))(g)=\frac{d}{dt}|_{t=0}X(f)(g\cdot \exp(tX))
+    \\& =\frac{d}{dt}|_{t=0}\frac{d}{ds}|_{s=0}f(g\cdot \exp(tX)\cdot\exp(sX))
+    \\&=\frac{d}{dt}|_{t=0}\frac{d}{ds}|_{s=0}f(g\cdot\exp((t+s)X))
+    \\&=\frac{d}{d(t+s)}|_{t+s=0}\frac{d}{d(t+s)}|_{t+s=0}f(g\cdot\exp((t+s)X))
+    \\&=\frac{d^2}{dt^2}|_{t=0}f(g\cdot\exp(tX))
+  \end{align*}
+$$
+于是再根据归纳法,就很容易证明一般 $X^k(f)(g) $ 的结果.
+
+
+
+
+
+
+#### 1.13 伴随作用
+
+回顾前面Lie代数 $\mathfrak{g}  $ 的表示是指一个Lie代数同态
+$$
+  \varphi:\mathfrak{g} \rightarrow \mathfrak{gl} (V)
+$$
+特别地,有伴随表示
+$$
+  ad:\mathfrak{g} \rightarrow \mathfrak{gl} (\mathfrak{g} ),X\mapsto ad_X\\
+  ad_XY=[X,Y]
+$$
+由Jacobi恒等式可知是同态.另外,也有 $G $ 的表示为一个Lie群同态
+$$
+  \Phi:G\rightarrow GL(V)
+$$
+本节的目标是定义 $G $ 在 $\mathfrak{g}  $ 上的伴随作用
+$$
+  Ad:G\rightarrow GL(\mathfrak{g} )
+$$
+对于 $y\in G $ , 考虑共轭作用
+$$
+  i_y:G\rightarrow G,x\mapsto yxy^{-1}
+$$
+是Lie群同构.因为对于任何 $z\in G $ ,有 $x=y^{-1}zy\in G $ ,所以是满的.对于 $yxy^{-1}=yzy^{-1} $ 有 $x=z $ 所以是单的.最后因为
+$$
+  i_y(xz)=i_y(x)i_y(z)
+$$
+所以是同态,于是是同构.共轭作用所诱导的Lie群同构
+$$
+  di_y:\mathfrak{g} \rightarrow \mathfrak{g} ,X\mapsto X^y
+$$
+显然有 $di_y\in GL(\mathfrak{g} ) $ .那么
+$$
+  Ad:G\rightarrow GL(\mathfrak{g} ),y\mapsto di_y
+$$
+就是想要定义的 $G $ 在 $\mathfrak{g}  $ 上的伴随作用.对于 $\mathfrak{g}  $ 的子集 $\mathfrak{b}  $ ,记
+$$
+  \mathfrak{b} ^y=\Set{X^y|X\in\mathfrak{b} }=Ad_y(\mathfrak{b} )
+$$
+还有另一种定义方法:
+{{% mathbox type="blue" title="Lemma" %}}
+设 $G $ 是一个Lie群,光滑作用在流形 $M $ 上,对于 $x_0\in M $ , $G_{x_0} $ 是其稳定子群,有 $t_g:M\rightarrow M,x\mapsto g\circ x $ ,则对于每个 $g\in G_{x_0} $ ,定义
+$$
+  L_g:=(dt_g)_{x_0}:T_{x_0}M\rightarrow T_{x_0}M
+$$
+由于 $t_g $ 是微分同胚,所以 $L_g $ 是线性同构,即 $L_g\in GL(T_{x_0}M) $ .于是有
+$$
+  L:G_{x_0}\rightarrow GL(T_{x_0}M),g\mapsto L_g=(dt_g)_{x_0}
+$$
+是 $G_{x_0} $ 在 $T_{x_0}M $ 上的作用.有
+$$
+  L_{g_1}=L_{g_1}L_{g_2}
+$$
+{{% /mathbox %}}
+随着上面的陈述,其证明是显然的.
+> 几何表示论中通常将一个表示的对象放到几何上,这就是一个例子.
+
+考虑Lie群对其自身的共轭作用: $G\times G\rightarrow G $ , $(x,y)\mapsto yxy^{-1} $ .取上面的 $x_0=e $ ,那么其稳定化子群就是 $G_e=G $ .于是
+$$
+  L:G\rightarrow GL(T_eM)=GL(\mathfrak{g} )
+$$
+就是 $G $ 在其Lie代数上的作用.即再一次得到了相同的定义.所以
+$$
+  Ad_y(X)=X^y=L(y)(X)=(di_y)_e(X_e)
+$$
+考虑到前面所得到的关系 $\exp(d\pi)=\pi\exp $ ,取其中 $\pi=i_y $ ,那么有
+$$
+  \exp(X^y)=y\exp(X)y^{-1}
+$$
+{{% mathbox type="blue" title="Lie群伴随表示与Lie代数伴随表示" %}}
+
+$$
+  Ad:G\rightarrow GL(\mathfrak{g} )
+  \\
+  ad:\mathfrak{g} \rightarrow \mathfrak{gl}(\mathfrak{g} ) 
+$$
+有
+1. $d(Ad)=ad $ 
+2. $Ad_{\exp(X)}=e^{ad_X} $ ,后者是矩阵的指数.
+
+{{% /mathbox %}}
+
+证明: 记 $\lambda=d(Ad) $ ,则利用 $\pi\circ\exp=\exp\circ d\pi $ 
+$$
+  Ad_{\exp(tX)}=\exp(\lambda(tX))=e^{t\lambda(X)}
+$$
+将其作用到 $Z\in \mathfrak{g}  $ 上,得
+$$
+  Ad_{exp(tX)}(Z)=Z+t\lambda(X)(Z)+O(t^2)
+$$
+方便起见,记
+$$
+  y:=\exp(tX),Ad_y(Z)=Z^y
+$$
+于是
+$$
+  \begin{align*}
+    \exp(tZ^y)&=y\exp(tZ)y^{-1}=\exp(tX)\exp(tZ)\exp(-tX)
+    \\ &=\exp(tZ+t^2[X,Z]+O(t^3))
+  \end{align*}
+$$
+一方面,展开上式左边
+$$
+  \begin{align*}
+    f(\exp(tZ^y))&=f(\exp(t(Z+t\lambda(X)(Z)+O(t^2))))
+    \\ &=f(e)+(Z+t\lambda(X)(Z))(f)(e)t+Z^2(f)\frac{t^2}{2}+O(t^3)
+  \end{align*}
+$$
+另一方面,展开上式右边
+$$
+  \begin{align*}
+    &f(\exp(tZ+t^2[X,Z]))=f(exp(t(Z+t[X,Z])))
+    \\
+    &=f(e)+(Z+t[X,Z])(f)(e)t+Z^2(f)(e)\frac{t^2}{2}+O(t^3)
+  \end{align*}
+$$
+对比两式即有
+$$
+  \lambda(X)(Z)=[X,Z]=ad_XZ
+$$
+即 $\lambda=ad $ .再根据最开始的等式,就有
+$$
+  Ad_{\exp(tX)}=e^{\lambda(tX)}=e^{t\lambda(X)}
+$$
+完成证明. $\Box $ 
+
+可知 $Ker(Ad)=C(G^\circ) $ 即 $G^\circ $ 的中心化子,对应的Lie子代数是 $\mathfrak{g}  $ 的中心 $Z(\mathfrak{g} ) $ .
+
+{{% mathbox type="blue" title="交换Lie群与交换Lie代数" %}}
+对于 $\forall X,Y\in\mathfrak{g}  $ ,若 $[X,Y]=0 $ ,那么
+$$
+  \exp(X+Y)=\exp(X)\exp(Y)
+$$
+由此可知 $\exp(X)\exp(Y)=\exp(Y)\exp(X) $ .
+{{% /mathbox %}}
+> 看似用之前的展开公式直接展开证明就可以了,但似乎下面的方法更简单,而且也不太能确定展开后面的项都是有交换子的(?)
+
+证明:  $\exp(tX)\exp(sY)\exp(-tX)=\exp(se^{ad_X}(Y))=\exp(sY) $ ,于是就证明了
+$$
+  \exp(X)\exp(Y)=\exp(Y)\exp(X)
+$$
+考虑 $\varphi:t\mapsto \exp(tX)\exp(tY) $ 是Lie群同态.有
+$$
+  \begin{align*}
+    \varphi(t+s)&=\exp(tX)\exp(sX)\exp(tY)\exp(sY)
+    \\ &=\exp(tX)\exp(tY)\exp(sX)\exp(sY)
+    \\ &=\varphi(t)\varphi(s)
+  \end{align*}
+$$
+另一方面,$\varphi $ 的无穷小生成元为 $X+Y $ .而 $X+Y $ 对应的同态为
+$$
+  \exp(t(X+Y))
+$$
+所以根据ODE有
+$$
+  \exp(t(X+Y))=\exp(tX)\exp(tY)
+$$
+取 $t=1 $ 即得证. $\Box $ 
+> 为什么 $\varphi $ 的无穷小生成元为 $X+Y $ ?
+
+由上可知,
+$$
+  G^\circ ~commutable\iff \mathfrak{g} ~commutable
+$$
+此时 $\exp:\mathfrak{g} \rightarrow G^\circ $ 是覆叠映射. $G^\circ \cong \mathfrak{g} /Ker(\exp)$.但是整个Lie群可以是 $G=G^\circ\times H $,其中 $H $ 是离散的、不可交换的.特别地,对于连通、单连通且交换的 $G $ ,有
+$$
+  G\cong \mathfrak{g} 
+$$
+
+
+
+
+
 
 
 
