@@ -36,7 +36,7 @@ date : "2026-05-25"
 > 总之就是非常神秘
 
 * 流形$M $上的全体光滑函数记作$C^\infty(M)=\mathcal{O}(M) $.若$f_1|_x=f_2|_x $，记$f_1\sim_x f_2 $构成一种等价关系，那么$\mathcal{O}(M)/\sim_x =\mathcal{O}_x(M)$称为x点的函数芽germ，由函数芽可以定义切空间。
-* 流形$M $上的全体向量场记作$\mathfrak{X}(M) $，前面在微分几何中通常记作$\Gamma^\infty (M) $
+* 流形$M $上的全体向量场记作$\mathfrak{X}(M) $，在微分几何中通常记作$\Gamma^\infty (TM) $.其实这个记号是舶自丛理论中的截面, $\Gamma(P) $ 表示 $P $ 上截面构成的集合,而 $TM $ 就是指 $M $ 的切丛.
 * 
 
 #### 0.1 微分算子与微分微分表达式
@@ -216,6 +216,18 @@ $$
         $$
       即证$B\mapsto A^TJB+B^TJA $是满的.仍是解方程$C=A^TJB+B^TJA $,依旧是注意到有$B=-\frac{1}{2}AJC $.即得到$d\varphi$是满的.
       > 思考题: 对于任意辛群中元素A,$det(A)=1$.
+
+> 简单回顾一下线性代数: 幺正群群元保持 $n $ -维复线性空间 $V\cong \mathbb{C}^n $  的内积不变的线性变换:
+$$
+  u,v\in V,\langle u,v \rangle =\sum^{n}_{j=1}\bar{u}_jv^j
+$$
+> 再线性变换 $U $ 下
+$$
+  v\rightarrow v'=U\cdot v,\bar{u}^T\rightarrow \bar{u}'^T\cdot U^\dagger
+$$
+> 于是,  $\langle u',v' \rangle =\langle u,v \rangle \iff U^\dagger U=1 $ .所以幺正群的群元要求 $U^\dagger U=1 $ .
+>
+> 类似地,正交群就是保持 $\R^n $ 中的欧氏内积.可以同理得到 $A^TA=1 $ .
 
 7. Frobenius定理
    这是微分几何中的重点,但这里还是强调一下,因为在有了Lie代数,反过来要构造其所对应的一个Lie群就要用到该定理.
@@ -887,6 +899,7 @@ $$
   Q^TQ=\exp(A^T+A)=I
 $$
 即 $\exp:\mathfrak{o}(n,\R)\rightarrow SO(n,\R)  $ ,注意由于 $\exp $ 连续,所以映射到连通分支.
+
 > 上面的计算实际上用到了后面的BCH公式,一般是没有
 $$
   \exp(A)\cdot \exp(B)=\exp(A+B)
