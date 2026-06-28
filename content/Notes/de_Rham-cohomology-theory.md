@@ -1,24 +1,35 @@
 ---
-title : "de Rham上同调"
+title : "同调与 de Rham上同调"
 description : "An introduction"
 weight : 1
+ShowToc : true 
+TocOpen : true
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 > 在代数拓扑中，同调群是一个重要的刻画空间的拓扑不变量。而由[Stokes公式]({{< ref "Notes/微分流形杂谈.md#Stokes_formula" >}})$\int_Md\omega=\int_{\partial M}\omega$可知，对空间求边缘其实际上和对微分形式求外微分是一种对偶的操作，也就是说，可以不用同调群中求边缘的方法，应用[几何与组合]({{< ref "Notes/differential-geometry-in-physics.md" >}})去研究，而是通过研究对微分形式的外微分，应用分析的方法的去研究。后者即是上同调群(Cohomology，co其实际上都是一种对偶的意思，更常见的翻译是“余”)。
 
-- [1. de Rham上同调群](#1-de-rham上同调群)
-- [2.Mayer-Vietoris sequence](#2mayer-vietoris-sequence)
-- [3.Compact support set de Rham cohomology group](#3compact-support-set-de-rham-cohomology-group)
-- [4.The highest rank de Rham cohomology group](#4the-highest-rank-de-rham-cohomology-group)
-- [5.Map degree theory and its application](#5map-degree-theory-and-its-application)
-- [6.Poincaré duality](#6poincaré-duality)
 
 
-### 1. de Rham上同调群
+### de Rham上同调群
 
-首先定义闭与恰当形式。设$\mathcal{M}$是一个光滑流形，$\omega\in\Omega^k(\mathcal{M})$是$\mathcal{M}$上的一个$k$次光滑微分形式。(1)若$d\omega=0$，则称$\omega$是闭微分形式(closed form);(2)若存在$\eta\in \Omega^{k-1}(M)$使得$\omega=d\eta$，则称$\omega$是恰当形式(exact form).
-
-> I will try my best to write in English below regarding as a challenge for me, and it is more convenient for me actually.
+首先定义闭与恰当形式。设$\mathcal{M}$是一个光滑流形，$\omega\in\Omega^k(\mathcal{M})$是$\mathcal{M}$上的一个$k$次光滑微分形式。
+1. 若$d\omega=0$，则称$\omega$是闭微分形式(closed form)
+2. 若存在$\eta\in \Omega^{k-1}(M)$使得$\omega=d\eta$，则称$\omega$是恰当形式(exact form).
 
 And we note the set of all k-closed form on $\mathcal{M}$ as $Z^k(M)$, and all the k-exact form as $B^k(M)$.
 
@@ -33,12 +44,44 @@ where $K$ is the # of connected component.
 
 * When $k=m$, $Z^m(M)=\Omega^m(M) $
 
+根据上面的定义,
+$$
+  Z^k(M)=\ker (d:\Omega^k(M)\rightarrow \Omega^{k+1}(M))
+  \\
+  B^k(M)=Im(d:\Omega^{k+1}(M)\rightarrow \Omega ^k(M))
+$$
+由于外微分 $d^2\omega=0 $ ,所以显然有
+$$
+  B^k(M)\subset Z^k(M)\subset \Omega^k(M)
+$$
+{{% mathbox type="green" title="de Rham 上同调群" %}}
+流形 $M $ 的 $k $ 阶 de Rham 上同调群为商空间
+$H^k_{dR}(M):=Z^k(M)/B^k(M) $ 
+并称等价类 $[\omega] $ 为 $\omega\in Z^k(M) $ 所在的 de Rham 上同调类.
+{{% /mathbox %}}
+
+例子: 对于 $\dim M=\R $ ,显然其上任意的微分形式 $\omega=g(t)dt $ ,有 $d\omega=0 $ 且 $\omega=d(G(t)) $ ,其中 $G(t) $ 是 $g(t) $ 的原函数.所以 
+$$
+  \Omega^1(\R)=Z^1(\R)=B^1(\R) 
+$$
+另一方面,对于 $k=0 $ ,也就是一个光滑函数,由于 $\R $ 连通,所以 $Z^0(\R)\cong\R $ ,另外 $B^0(\R)=\Set{0} $ .即有 $H^{0}_{dR}(\R) =\R,H^{1}_{dR}(\R) =\Set{0} $  .
+
+更一般地,对于一个 $m $ 维流形 $M $ , 有 $K $ 个连通分支,那么
+$$
+  H^{k}_{dR}(M) \cong\begin{cases}
+    \R^K,&k=0\\ \Set{0},&k\gt m
+  \end{cases}
+$$
+
+{{% mathbox type="green" title="" %}}
+若 $\dim H^{r}_{dR}(M) \lt \infty $ 对于任意的 $k $ 成立,那么
+1. 称 $b_k(M)=\dim H^{k}_{dR}(M)  $ 为 $M $ 的 $k $ 阶 **Betti 数**.
+2. 称 $\chi(M)=\sum_{k=0}^m(-1)^kb_k(M) $ 为 $M $ 的 **Euler 示性数**.
+
+{{% /mathbox %}}
 
 
-
-
-
-### 2.Mayer-Vietoris sequence
+### Mayer-Vietoris sequence
 
 > 一种计算特定上同调群的工具
 
@@ -176,11 +219,11 @@ As I say at the beginning, this trick we will meet again before long.
 > 也就是说我们总得考虑边界上极坏的情况，而这个情况又总可以取为另一边的0，所以交换一下就都完美解决了.
 ___
 
-### 3.Compact support set de Rham cohomology group
+### Compact support set de Rham cohomology group
 
 ___
 
-### 4.The highest rank de Rham cohomology group
+### The highest rank de Rham cohomology group
 
 In this section, we will prove some theorems about the highest-rank de Rham cohomology group.
 
@@ -206,7 +249,7 @@ In this section, we will prove some theorems about the highest-rank de Rham coho
     So we find that $\omega\in B^m_{dR}(M),\forall \omega\in \Omega^m(M) $, i.e. $ H^m_{dR}=0 $.
 ___
 
-### 5.Map degree theory and its application
+### Map degree theory and its application
 
 Let $M,N $ be connected oriented manifolds with $m$-dimension, and $f:M\rightarrow N $ is a proper smooth map. Since we have known that the highest-level $H^m_c(M)\simeq H^m_c(N) \simeq \R $, the map
 $$
@@ -348,7 +391,7 @@ $$
 $$
 It is obvious that $F(\cdot,0)=Id_{S^{2n}} $ and $F(\cdot,1): p\mapsto -p $, which are homotopical. But $deg(F(\cdot,1))=-1 $ and $deg(Id_{S^{2n}})=1$. Contradiction! 
 
-### 6.Poincaré duality  
+### Poincaré duality  
 
 总结前面所计算的结果
 * 对于$M=\R^m $

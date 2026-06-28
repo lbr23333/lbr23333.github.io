@@ -6,8 +6,8 @@ weight : 1
 
 > 原本以为是很严谨的，没想到是和物理系中其他课一样的草率。不过如果视作motivation去进一步学习，那便是极佳的。
 
-- [😩A really brief introduction of Symplectic geometry application in mechanics](#a-really-brief-introduction-of-symplectic-geometry-application-in-mechanics)
-- [😭A really brief introduction of Homology and de Rham Cohomology](#a-really-brief-introduction-of-homology-and-de-rham-cohomology)
+- [辛几何在经典力学中的应用(入门)](#辛几何在经典力学中的应用入门)
+- [同调群与 de Rham 理论](#同调群与-de-rham-理论)
   - [0.一些Preliminaries和符号规定](#0一些preliminaries和符号规定)
   - [1.基础概念](#1基础概念)
   - [2.同调群](#2同调群)
@@ -15,11 +15,11 @@ weight : 1
   - [映射空间与同伦群](#映射空间与同伦群)
 
 
-### 😩A really brief introduction of Symplectic geometry application in mechanics
+### 辛几何在经典力学中的应用(入门)
 
 待施工
 
-### 😭A really brief introduction of Homology and de Rham Cohomology
+### 同调群与 de Rham 理论
 
 一些基础的内容在另一个Note中可以看到，所必须的是关于[微分形式]({{< ref "Notes/微分流形杂谈.md#differetial_form" >}})的部分。
 
@@ -94,28 +94,35 @@ $$
 
 ### HOMOTOPY GROUPS
 
-引入一种新的等价关系,考虑 $\mathcal{F} $ 是从拓扑空间 $X $ 到拓扑空间 $Y $ 的连续映射集,对于 $f,g\in \mathcal{F} $ ,若在 $Y $ 中 $f(X) $ 可以连续形变到 $g(X) $ ,那么称 $f $ 同伦于 $g $ .
+引入一种新的等价关系,考虑 $\mathcal{F} $ 是从拓扑空间 $X $ 到拓扑空间 $Y $ 的连续映射集,对于 $f,g\in \mathcal{F} $ ,若在 $Y $ 中 $f(X) $ 可以连续形变到 $g(X) $ ,那么称 $f $ 同伦于 $g $ .其中连续形变是指连续映射
+$$
+  \mathcal{F}:I\times X\rightarrow Y
+$$
+其中 $I=[0,1] $ .有 $\mathcal{F}(0,x)=f(x),\mathcal{F}(1,x)=g(x) $ .
 
-% #### 1.基本群
-%
-%考虑一个有洞的disc拓扑空间 $X $ 和一个没有洞的 $Y $ , $Y $ 中的闭合曲线总是可以连续地收缩到一点,也就是说 $Y $ 中所有的曲线都是同伦等价的,或者说,  $Y $ 中只有一个同伦类.但是在 $X $ 中,每一个同伦类由 $n\in \Z $ 所刻画, $n<0 $ 表示绕洞顺时针旋转的次数, $n>0 $ 就是绕洞逆时针.也就是说 $X $ 中有无穷多的等价类,考虑到 $\Z $ 的加法群结构, $n+m $ 就对应于先绕 $n $ 次再绕 $m $ 次的闭合曲线.同伦类的集合因此就被赋予了群结构,此即基本群(fundamental group).
-%
-%##### paths and loops
+若在拓扑空间 $X,Y $ 之间存在连续映射 $f:X\rightarrow Y,g:Y\rightarrow X $ 使得
+$$
+  f\circ g=Id_Y,g\circ f=Id_X
+$$
+那么称空间 $X,Y $ 是同伦等价的,并称 $f,g $ 为其之间的同伦等价.
 
 #### 映射空间与同伦群
 在拓扑空间 $\Sigma,X $ 中分别取定**基点** $\sigma_0\in\Sigma,x_0\in X $ ,考虑所有保持基点的映射 $f:\Sigma\rightarrow X $ ,即 $f(\sigma_0)=x_0 $ ,所有的保持基点的连续映射构成一个映射空间 $X^\Sigma=\{f|f:\Sigma\rightarrow X,f(\sigma_0)=x_0 \} $ .
 {{% mathbox type="slate" title="例子" %}}
-* 显然 $X^\{1\}={f_0} $ 是一个单点集,由单个映射 $f_0(1)=x_0 $ 所构成.
+* 显然 $X^{\{1\}}={f_0} $ 是一个单点集,由单个映射 $f_0(1)=x_0 $ 所构成.
 * 对于 $S^0=\{ \pm 1  \} \rightarrow X $ 的 $X^{\{ S^0 \} } $ ,基点为 $f(1)=x_0 $ ,所以 $f $ 完全由 $f(-1) $ 所确定, $\forall f\in X^{ S^0  },f\xLeftrightarrow{1:1}f(-1)\in X $,也就是说 $X^{ S^0 }\simeq X $.  
 * 显然,对于离散的多点集 $\Sigma=\{ \sigma_0,\sigma_1,\dots,\sigma_n \}  $ 到 $X $ 所构成的 $X^{\left\{ \Sigma \right\} } $ 有
 $$
   X^{\left\{ \Sigma \right\} }\cong \underbrace{X \times \dots \times X}_n
 $$
+
 {{% /mathbox %}}
 
 {{% mathbox type="green" title="约定" %}}
  $\cong $ 表同胚, $\simeq $ 表同伦, $\sim $ 是同调或者一般的等价关系.
 {{% /mathbox %}}
+
+> 似乎与另一个Note中的符号不一致( )
 
 由此可以定义所谓的**道路空间**和**圈空间**: $X^{[0,1]},X^{S^1} $:
 $$
@@ -142,17 +149,22 @@ $$
   \xrightarrow{g'}X_3 
 $$
 {{% /mathbox %}}
-根据该性质, $f_t,g_t $ 分别是两个伦移,那么 $H(\cdot,t)={g_t}^{f_t}:X_1^{\Sigma_1}\rightarrow X_2^{\Sigma_2} $ 就给出了从 $g_0^{f_0} $ 到 $g_1^{f_1} $ 的伦移,因为连续函数的复合还是连续函数.
+
+> 注意上指标中 $f,f' $ 的反结合.
+
+根据该性质, 设 $f_t,g_t $ 分别是两个伦移,那么 $H(\cdot,t)={g_t}^{f_t}:X_1^{\Sigma_1}\rightarrow X_2^{\Sigma_2} $ 就给出了从 $g_0^{f_0} $ 到 $g_1^{f_1} $ 的伦移,因为连续函数的复合还是连续函数.
 
 {{% mathbox type="blue" title="同伦复合" %}}
 若 $\Sigma_1\simeq\Sigma_2,X_1\simeq X_2 $ ,那么 $X_1^{\Sigma_1}\simeq X_2^{\Sigma_2} $ 
 
-根据同伦的定义,存在一些复合为 $\mathbb{1} $的函数,再结合上命题就很容易证明. 
 
-推论: 道路空间总是可缩的,即 $X^{[0,1]} \simeq X^{\left\{ 1 \right\} }\simeq \left\{ f_0 \right\}  $ .这在直观上也是很显然的.
 {{% /mathbox %}}
 
-{{% mathbox type="blue" title="" %}}
+根据同伦的定义,存在一些复合为 $\mathbb{1} $的函数,再结合上命题就很容易证明. 
+
+推论: 道路空间总是可缩的,即 $X^{[0,1]} \simeq X^{\left\{ 1 \right\} }\simeq \left\{ f_0 \right\}  $ .这在直观上也是很显然的: 在任何空间中,一条道路总是能沿着自身缩到一点.
+
+{{% mathbox type="blue" title="楔和点函子性" %}}
 给定拓扑空间 $X_j,Y_j $ 及连续保基映射 $f_j:X_j\rightarrow Y_j $ ,存在 $\vee_{i}f_j:\vee_j X_j\rightarrow \vee_j Y_j $,具有如下性质
 * 若 $g_j:Y_j\rightarrow Z_j $ 是连续保基映射,那么
 $$
@@ -163,22 +175,22 @@ $$
   \bigvee_j f_j\simeq \bigvee_j g_j:\bigvee_j X_j\rightarrow \bigvee_j Y_j
 $$
 {{% /mathbox %}}
-> 直观上,可以将 $\bigvee_j X_j $ 理解成一朵花🌸,不同的 $X_j $ 就是各个花瓣,对其做楔和也就是将其粘到一起,只在中心一点相交. $f_j $ 的保基性使得其基点只能取为花的中心(也即交点 $x_0,y_0 $ ),否则会导致函数多值.这样的视角下,后面两个性质就几乎是显然的了.
+> 直观上,可以将 $\bigvee_j X_j $ 理解成一朵花🌸,不同的 $X_j $ 就是各个花瓣,对其做楔和也就是将其粘到一起,只在中心一点相交. $f_j $ 的保基性使得其基点只能取为花的中心(也即交点 $x_0,y_0 $ ),否则会导致函数多值.这样的视角下,后面两个性质就几乎是显然的了. 
 
-给出显式的表达, $F=\bigvee f_j:\bigvee X_j\rightarrow \bigvee Y_j $ 自然地定义为
+具体的证明: 给出显式的表达, $F=\bigvee f_j:\bigvee X_j\rightarrow \bigvee Y_j $ 自然地定义为
 $$
   F([x])=\left( \bigvee _j f_j \right) ([x])=[f_k(x)],x\in X_k,k\in J
 $$
 
-可以证明该定义的良定性,即与 $[x] $ 的代表元选取无关,实际上楔和中所诱导的等价类也只有两种,即交点和非交点:
-* 对于各个交点 $x=\mathring{x_k} $ ,选择任意的 $\mathring{x}_j,j\in J $ ,其都被 $F $ 映射到 $\bigvee_j  Y_j $ 中的交点处,所以与代表元选取无关.
-* 对于 $x\in X_k/\left\{ \mathring{x}_k \right\}  $ ,显然 $[x]=\left\{ x \right\}  $ 只有一个元素,自然良定.
+可以证明该定义的良定性,即与 $[x] $ 的代表元选取无关,实际上楔和中所诱导的等价类也只有两种,即交点和非交点(花蕊与花瓣):
+* 对于各个交点 $x=\mathring{x_k} $ ,选择任意的 $\mathring{x}_j,j\in J $ ,其都被 $F $ 映射到 $\bigvee_j  Y_j $ 中的交点处,所以与代表元选取无关.实际上,由于每个花瓣空间中的保基映射都是确定一个基点的,所以 $\bigvee _jX_j $ 空间各 $X_j $ 只能在同一点楔和,否则会导致函数多值.
+* 对于 $x\in X_k/\left\{ \mathring{x}_k \right\}  $ ,显然等价类 $[x]=\left\{ x \right\}  $ 只有一个元素,自然良定.
 
 那么,令 $G=\bigvee g_j:\bigvee Y_j\rightarrow \bigvee Z_j $ ,当 $x\in X_k $ , $f_k(x)\in Y_k $ 时,有
 $$
   G\circ F([x])=G([f_k(x)])=[g_k\circ f_k(x)]
   \\
-  =\left( \bigvee(gj\circ f_j) \right) ([x])
+  =\left( \bigvee(g_j\circ f_j) \right) ([x])
 $$
 于是我们证明了第一个性质.对于第二条: 设 $f_j\simeq g_j $ ,有伦移
 $$
@@ -188,17 +200,20 @@ $$
 $$
   H(\cdot,t)=\bigvee_j H_j(\cdot,t):\bigvee_j X_j\rightarrow \bigvee_j Y_j
 $$
-提供了 $\bigvee f_j $ 到 $\bigvee g_j $ 的伦移,自然就是第二条结论.
+提供了 $\bigvee f_j $ 到 $\bigvee g_j $ 的伦移,自然就是第二条结论. $\Box $ 
 
-由上命题,可以得到一个推论:若 $X_j\simeq Y_j,\forall j\in J $ ,则 $\bigvee X_j \simeq \bigvee Y_j $.由同伦的定义和上命题第一条任意证明.于是: $Y\simeq \left\{ \mathring{y} \right\}  $是可缩空间,那么 $X\vee Y\simeq X\vee \left\{ \mathring{y} \right\} \cong X $ .
+由上命题,可以得到一个推论:若 $X_j\simeq Y_j,\forall j\in J $ ,则 $\bigvee X_j \simeq \bigvee Y_j $.由同伦的定义和上命题第一条任意证明.于是,若 $Y\simeq \left\{ \mathring{y} \right\}  $是可缩空间,那么 $X\vee Y\simeq X\vee \left\{ \mathring{y} \right\} \cong X $ .
 
-完全同理地,可以得到归纳积的相关同伦性质.
-先简单回顾归纳积的定义
+> 在直观上也是显然的,楔和是一点并,所以一个可缩的空间楔和上任意一个空间并不改变该空间作为子空间的可缩性.
+
+完全同理地,可以得到 smash product 的相关同伦性质.
+
+先简单回顾 smash product 的定义
 $$
   X\wedge Y:=(X\times Y)/(X\vee Y)
 $$
-例如
-* 对于单点集 $\left\{ \mathring{y} \right\}  $ 和以 $\mathring{x} $ 为基点的空间X,前面已经知道了
+例如:
+* 对于单点集 $\left\{ \mathring{y} \right\}  $ 和以 $\mathring{x} $ 为基点的空间 $X$ ,前面已经知道了
 $$
   X\vee \left\{ \mathring{y} \right\}\cong \left( X\times \left\{ \mathring{y} \right\} \right) \cup \left( \left\{ \mathring{x} \right\} \times \left\{ \mathring{y} \right\}\right) 
   \\
@@ -236,24 +251,49 @@ $$
 $$
   (\left\{ \mathring{x} \right\} \times \left\{ +1 \right\} )\cup (X_{down}/\left\{ (\mathring{x},-1) \right\}  )\cong X_{down}
 $$
+
 可知在 Smash Product 中, $S^0 $ 是类似单位元的东西.
 
-
-*  $X\wedge S^1 $ :
+*  $X\wedge S^1 $ :(图解法)
   
     可以想象类似 $T^2 $ 的东西,
     ![picsol1](/images/Topology/picsol1.pdf)
-    应用图解法可以得到 $X\wedge S^1 $ 得到的是 $X $ 作为赤道面所旋转出来的“实心球”.
-    
+    应用图解法可以得到 $X\wedge S^1 $ 得到的是 $X $ 作为赤道面所旋转出来的“实心球”. 对于 $S^m\wedge S^1=S^{m+1} $ 的更直观解释来自于 Nakahara:
+    [$S^m\wedge S^1= S^{m+1}$](images/Topology/Smashproduct1.pdf)
 
 
+同理,类似于前面楔和的函子性,有 smash Product 的函子性:
+{{% mathbox type="blue" title="smash product 的函子性" %}}
+对于 $X_i,Y_i $ , $f_i:X_i\rightarrow Y_i $ 是连续保基的( $i=1,2 $ ).存在
+$$
+  f_1 \wedge f_2:X_1\wedge X_2\rightarrow Y_1\wedge Y_2
+$$
+有
+1. 若 $g_i:Y_i\rightarrow Z_i ,i=1,2$ ,则
+$$
+  (f_1\bigwedge f_2)\circ (g_1\bigwedge g_2)=(f_1\circ g_1)\bigwedge (f_2\circ g_2)
+$$
 
-
-{{% mathbox type="blue" title="归纳积" %}}
+2. 若 $f_j\simeq g_j:X_j\rightarrow Y_j $ 是同伦的映射,那么
+$$
+  f_1\bigwedge f_2\simeq g_1\bigwedge g_2:X_1\bigwedge X_2\rightarrow  Y_1\bigwedge Y_2
+$$
 
 {{% /mathbox %}}
 
+{{% mathbox type="blue" title="推论" %}}
+1. 若 $X_j\simeq Y_j $ 是同伦等价的,则
+$$
+  X_1\bigwedge X_2\simeq Y_1\bigwedge Y_2
+$$
+2. 任意的 $X $ 与可缩的 $Y $ 的 smash product 是可缩的.因为
+$$
+  X\bigwedge Y\simeq X\bigwedge \Set{\mathring{y}}\simeq \Set{(\mathring{x}, \mathring{y})}
+$$
 
+
+
+{{% /mathbox %}}
 
 
 ___
