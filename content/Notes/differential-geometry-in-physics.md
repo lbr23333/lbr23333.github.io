@@ -259,7 +259,11 @@ $$
     可以想象类似 $T^2 $ 的东西,
     ![picsol1](/images/Topology/picsol1.pdf)
     应用图解法可以得到 $X\wedge S^1 $ 得到的是 $X $ 作为赤道面所旋转出来的“实心球”. 对于 $S^m\wedge S^1=S^{m+1} $ 的更直观解释来自于 Nakahara:
-    [$S^m\wedge S^1= S^{m+1}$](images/Topology/Smashproduct1.pdf)
+    [$S^m\wedge S^1= S^{m+1}$](/images/Topology/Smashproduct1.pdf).
+
+> 粗略来说,可以将 $X_1\times X_2 $ 视为一种丛, $(X_1\times X_2)/(X_1\wedge X_2) $ 就是这个丛模去底空间和一根 fiber ,于是就得到了一个蝉蛹状的东东.
+>[](/images/Topology/Smashproduct2.pdf)
+> 也就是同胚于一点用 $X_1 $ 沿 $X_2 $ 绕出来的一个拓扑空间
 
 
 同理,类似于前面楔和的函子性,有 smash Product 的函子性:
@@ -281,19 +285,25 @@ $$
 
 {{% /mathbox %}}
 
+证明: 令 $F([x])=(f_1\wedge f_2)([x_1,x_2])=[f_1(x_1),f_2(x_2)] $ .其良定性与前面楔和中的证明同理:
+1.  $[x_1,x_2]\in X_1\wedge X_2 $ 只会映到 $(\mathring{x}_1,\mathring{x}_2) $ .
+2.  $[x_1,x_2]\notin X_1\wedge X_2 $ 就是映到 $(f_1(x_1),f_2(x_2)) $ .
+
+都与代表元的选取无关.然后构造同伦就可以证明.
+
 {{% mathbox type="blue" title="推论" %}}
 1. 若 $X_j\simeq Y_j $ 是同伦等价的,则
 $$
   X_1\bigwedge X_2\simeq Y_1\bigwedge Y_2
 $$
-2. 任意的 $X $ 与可缩的 $Y $ 的 smash product 是可缩的.因为
+1. 任意的 $X $ 与可缩的 $Y $ 的 smash product 是可缩的.因为
 $$
   X\bigwedge Y\simeq X\bigwedge \Set{\mathring{y}}\simeq \Set{(\mathring{x}, \mathring{y})}
 $$
 
-
-
 {{% /mathbox %}}
+
+根据上面的第二条推论, $X $ 的约化角锥 $C(X)=X\wedge [0,1] $ 是可缩的.
 
 
 ___
