@@ -13,6 +13,8 @@ weight : 1
   - [2.同调群](#2同调群)
 - [HOMOTOPY GROUPS](#homotopy-groups)
   - [映射空间与同伦群](#映射空间与同伦群)
+  - [群结构](#群结构)
+  - [同伦群的初等计算](#同伦群的初等计算)
 
 
 ### 辛几何在经典力学中的应用(入门)
@@ -259,10 +261,11 @@ $$
     可以想象类似 $T^2 $ 的东西,
     ![picsol1](/images/Topology/picsol1.pdf)
     应用图解法可以得到 $X\wedge S^1 $ 得到的是 $X $ 作为赤道面所旋转出来的“实心球”. 对于 $S^m\wedge S^1=S^{m+1} $ 的更直观解释来自于 Nakahara:
-    [$S^m\wedge S^1= S^{m+1}$](/images/Topology/Smashproduct1.pdf).
+    ![$S^m\wedge S^1= S^{m+1}$](/images/Topology/Smashproduct1.pdf).
 
 > 粗略来说,可以将 $X_1\times X_2 $ 视为一种丛, $(X_1\times X_2)/(X_1\wedge X_2) $ 就是这个丛模去底空间和一根 fiber ,于是就得到了一个蝉蛹状的东东.
->[](/images/Topology/Smashproduct2.pdf)
+> ![蝉蛹](/images/Topology/Smashproduct2.pdf)
+> (图中ai画的有点小问题)
 > 也就是同胚于一点用 $X_1 $ 沿 $X_2 $ 绕出来的一个拓扑空间
 
 
@@ -304,6 +307,115 @@ $$
 {{% /mathbox %}}
 
 根据上面的第二条推论, $X $ 的约化角锥 $C(X)=X\wedge [0,1] $ 是可缩的.
+
+> 约化角锥同样是很容易通过图像解释的.最后的结果是一个 $X $ 为底面的半实心球体,其相应的半球面由 $\partial X\wedge [0,1] $ 给出.
+
+楔和与 smash product 满足分配律和结合律:
+1.  $(X\vee Y)\wedge Z\cong (X\wedge Z)\vee (Y\wedge Z) $ 
+2.  $(X\wedge Y)\wedge Z\cong X\wedge (Y\wedge Z ) $ 
+
+> 其中结合律在下面三个条件之一满足时才成立:
+> 1.  $X,Y $ compact , and $X $ is  $T_2 $ .
+> 2.  $Y,Z $ compact , and $Z $ is  $T_2 $ .
+> 3.  $X,Z $ is LCH .
+
+还满足
+{{% mathbox type="blue" title="" %}}
+1.  若$X,Y $ 为  $T_2 $ 空间,那么
+$$
+  Z^{X\vee Y}\cong Z^X \times Z^Y
+$$
+
+2. 若 $X,Y $ 为紧致的 $T_2 $ 空间,那么
+$$
+  Z^{X\wedge Y}\cong (Z^Y)^X
+$$
+
+3. 若 $X $ 为 $T_2 $ 空间,那么
+$$
+  (Y\times Z)^X\cong Y^X\times Z^X
+$$
+
+所以才称之为楔和和 smash product.
+{{% /mathbox %}}
+
+例子:后面考虑的高阶同伦群中所用到的"高阶"圈空间 $X^{S^n} $ 实际上也就是圈空间的圈空间的圈空间的圈空间
+$$
+  \Omega(\Omega(\dots\Omega(X)))\cong X^{S^1\wedge \dots \wedge S^1}\cong X^{S^n}
+$$
+
+考虑 $X^\Sigma $ 中的同伦保基映射 $f,g:\Sigma\rightarrow X $ , $f\simeq g $ ,在 $X^\Sigma $ 中确定了一个等价关系,其同伦等价类 $[f] $ 形成的空间为
+$$
+  [\Sigma,X]=\Set{[f]:f\in X^\Sigma}=X^\Sigma/\simeq 
+$$
+于是
+{{% mathbox type="green" title="同伦群" %}}
+$n $-阶同伦群定义为 $\pi_n(X)=[S^n,X] $ 
+{{% /mathbox %}}
+
+连续保基映射 $f:Y_0\rightarrow Y_1 $ 诱导了同伦等价类空间中的映射
+$$
+  f_\bullet:[X,Y_0]\rightarrow [X,Y_1]
+$$
+该映射是良好定义的,因为很容易验证, $f_\bullet([h])=[f\circ h] $ 与代表元 $h $ 的选取无关.
+
+{{% mathbox type="blue" title=" $\bullet $ 的函子性" %}}
+1. 若 $f\cong f':Y_0\rightarrow Y_1 $ ,那么
+$$
+  f_\bullet=f_\bullet':[X,Y_0]\rightarrow [X,Y_1]
+$$
+1.  $Id $ 所诱导的 $Id_\bullet $ 仍是恒等映射.
+2.  若 $g:Y_1\rightarrow Y_2 $ ,那么
+$$
+  (g\circ f)_\bullet=g_\bullet \circ f_\bullet :[X,Y_0]\rightarrow [X,Y_2]
+$$
+
+{{% /mathbox %}}
+
+由定义,都是显然的.
+
+> 实际上,这里是更一般的函子.更多用到的是 $\pi_n $ 的函子性,将一个带基点的拓扑空间范畴,对应到一个群范畴.更多可以参见拓扑的笔记.
+
+根据函子性,若 $f:Y_0\rightarrow Y_1 $ 是同伦等价映射,那么所诱导的 $f_\bullet $ 是双射.若 $[X,Y] $ 都是有群结构的空间,那么 $f_\bullet $ 实际上是同构.
+
+> 双射是集合范畴中的态射.
+
+{{% mathbox type="blue" title="" %}}
+若对于一切空间 $X $ , $f_\bullet:[X,Y_0]\rightarrow [X,Y_1] $ 都是双射,那么 $f:Y_0\rightarrow Y_1 $ 是同伦等价映射, $Y_0\simeq Y_1 $ .
+{{% /mathbox %}}
+
+证明: 实际上这也是函子性的体现.取 $X=Y_1 $ ,那么存在
+$$
+  f^{-1}_\bullet:[Y_1,Y_1]\rightarrow [Y_1,Y_0]
+$$
+还存在 $g:Y_1\rightarrow Y_0 $ ,
+$$
+  [g]:=f^{-1}_\bullet([1])
+$$
+即 $f_\bullet([g])=[f\circ g]=[1] $ ,也就是
+$$
+  f\circ g \simeq 1
+$$
+同理,取 $X=Y_0 $ 可以得到 $g\circ f\simeq 1 $ .于是完成证明. $\Box $ 
+
+{{% mathbox type="blue" title="Whitehead 定理" %}}
+若 $\pi_n(Y_0)\cong \pi_n(Y_n) ,\forall n$ ,那么
+$$
+  Y_0\simeq Y_1
+$$
+
+{{% /mathbox %}}
+
+后面将看到,由于 $S^n $ 是  $AH'I $-空间,所以 $\pi_n(X)=[S^n,X] $ 具有群结构,且在 $n\gt 1 $ 时是交换群.
+
+#### 群结构
+
+
+
+
+
+#### 同伦群的初等计算
+
 
 
 ___
