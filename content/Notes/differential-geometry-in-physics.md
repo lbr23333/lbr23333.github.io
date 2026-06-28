@@ -261,11 +261,12 @@ $$
     可以想象类似 $T^2 $ 的东西,
     ![picsol1](/images/Topology/picsol1.pdf)
     应用图解法可以得到 $X\wedge S^1 $ 得到的是 $X $ 作为赤道面所旋转出来的“实心球”. 对于 $S^m\wedge S^1=S^{m+1} $ 的更直观解释来自于 Nakahara:
-    ![$S^m\wedge S^1= S^{m+1}$](/images/Topology/Smashproduct1.pdf).
+    ![$S^m\wedge S^1= S^{m+1}$](/images/Topology/Smashproduct1.pdf)
+    (图中ai画的有点小问题)
 
 > 粗略来说,可以将 $X_1\times X_2 $ 视为一种丛, $(X_1\times X_2)/(X_1\wedge X_2) $ 就是这个丛模去底空间和一根 fiber ,于是就得到了一个蝉蛹状的东东.
 > ![蝉蛹](/images/Topology/Smashproduct2.pdf)
-> (图中ai画的有点小问题)
+> 
 > 也就是同胚于一点用 $X_1 $ 沿 $X_2 $ 绕出来的一个拓扑空间
 
 
