@@ -2,24 +2,23 @@
 title : "topology and differetial geometry in physics"
 description : "Note on lecture"
 weight : 1
+ShowToc : true
+TocOpen : true 
 ---
 
 > 原本以为是很严谨的，没想到是和物理系中其他课一样的草率。不过如果视作motivation去进一步学习，那便是极佳的。
 
-- [辛几何在经典力学中的应用(入门)](#辛几何在经典力学中的应用入门)
-- [同调群与 de Rham 理论](#同调群与-de-rham-理论)
-  - [0.一些Preliminaries和符号规定](#0一些preliminaries和符号规定)
-  - [1.基础概念](#1基础概念)
-  - [2.同调群](#2同调群)
-- [HOMOTOPY GROUPS](#homotopy-groups)
-  - [映射空间与同伦群](#映射空间与同伦群)
-  - [群结构](#群结构)
-  - [同伦群的初等计算](#同伦群的初等计算)
+
+
+### 流形概述
+
+见[微分流形杂谈]({{< ref "/Notes/微分流形杂谈.md" >}}).
 
 
 ### 辛几何在经典力学中的应用(入门)
 
 待施工
+
 
 ### 同调群与 de Rham 理论
 
@@ -92,7 +91,7 @@ $$
 
 
 
-流形M上，r阶闭形式的全体组成了$Ker(d_r)$，而r阶恰当形式的全体为$Im(d_{r-1})$.于是外微分的幂零性就等价于$Im(d_{r-1})\subset Ker(d_r)$.这是一个很好性质
+流形 $M$ 上，  $r$-阶闭形式的全体组成了$Ker(d_r)$，而r阶恰当形式的全体为$Im(d_{r-1})$.于是外微分的幂零性就等价于$Im(d_{r-1})\subset Ker(d_r)$.这是一个很好性质
 
 ### HOMOTOPY GROUPS
 
@@ -379,7 +378,7 @@ $$
 
 根据函子性,若 $f:Y_0\rightarrow Y_1 $ 是同伦等价映射,那么所诱导的 $f_\bullet $ 是双射.若 $[X,Y] $ 都是有群结构的空间,那么 $f_\bullet $ 实际上是同构.
 
-> 双射是集合范畴中的态射.
+> 双射是集合范畴态射中的“同态”.
 
 {{% mathbox type="blue" title="" %}}
 若对于一切空间 $X $ , $f_\bullet:[X,Y_0]\rightarrow [X,Y_1] $ 都是双射,那么 $f:Y_0\rightarrow Y_1 $ 是同伦等价映射, $Y_0\simeq Y_1 $ .
@@ -409,15 +408,169 @@ $$
 
 后面将看到,由于 $S^n $ 是  $AH'I $-空间,所以 $\pi_n(X)=[S^n,X] $ 具有群结构,且在 $n\gt 1 $ 时是交换群.
 
+另外,可以完全同理地建立  $f:X_0\rightarrow X_1 $ 所诱导的$f^\bullet:[X_1,Y]\rightarrow [X_0,Y] $ 的理论:
+* $g^\bullet(f)=f\circ g $ 
+* 其也具有函子性,不过是一个反变函子.也就是说保映射规则为
+$$
+  (f\circ g)^\bullet=g^\bullet \circ f^\bullet
+$$
+ 
+* 若 $f^\bullet:[X_1,Y]\rightarrow [X_0,Y] $ 对于任何的拓扑空间 $Y $ 都是双射,那么 $f $ 是同伦等价映射 $X_0\simeq X_1 $ .
+
+
 #### 群结构
 
+设 $Y $ 为一个拓扑空间, $\mathring{y}\in Y $ 为其基点.若存在映射
+$$
+  m:Y\times Y\rightarrow Y
+$$
+满足 $m\circ i_1\simeq m\circ i_2 \simeq 1_Y $ ,其中 $i_1,i_2 $ 都是含入映射
+$$
+  i_1,i_2:Y\rightarrow Y\times Y,i_1(y)=(y,\mathring{y}),i_2(y)=(\mathring{y},y)
+$$
+于是可以由 $m $ 定义 $Y $ 中两点的乘法,要求基点对应单位元
+*  $\forall y,y'\in Y $ , $y\cdot y'=m(y,y')\in Y $ .
+*  $y\cdot \mathring{y}=m(y,\mathring{y})\simeq m\circ i_1(y)\simeq 1_Y(y)=y $.
+*  $\mathring{y}\cdot y =y $ 同理.
 
+称定义了如此 $m $ 的空间 $Y $ 为 Hopf-空间,下简称 H空间.
 
+进一步,H空间 $Y $ 称为结合的(AH-space),如果有
+$$
+  m\circ (m\times 1_Y)\simeq m\circ (1_Y\times m):Y\times Y\times Y\rightarrow Y
+$$
+于是
+*  $m\circ(m\times 1_Y)(y_1,y_2,y_3)=m(m(y_1,y_2),y_3)=(y_1\cdot y_2)\cdot y_3 $ 
+*  $m\circ(1_Y\times m)(y_1,y_2,y_3)=m(y_1,m(y_2,y_3))=y_1\cdot (y_2\cdot y_3) $ 
 
+由于 $m\circ (m\times 1_y)\simeq m\circ (1_Y\times m)$ ,所以上两式相等,也就是结合律成立.
+
+再进一步,可以定义逆元.先引入一个对角映射
+$$
+  \Delta_Y:Y\rightarrow Y\times Y,\Delta_Y(y)=(y,y)
+$$
+若 $Y $ 上存在映射 $u:Y\rightarrow Y $ 使得
+$$
+  m\circ (u\times 1_Y)\circ \Delta_Y\simeq m\circ(1_Y\times u)\circ \Delta_Y\simeq e_Y
+$$
+于是称 H空间 $Y $ 是有逆的.因为
+$$
+  e_Y(m)=m\circ (u\times 1_Y)\circ \Delta_Y(y)=m\circ (u\times 1_Y)(y,y)=u(y)\cdot y
+$$
+也就是说 $u(y)=y^{-1} $ .同理可以得到右逆也是 $u(y)=y^{-1} $ .
+
+{{% mathbox type="green" title="AHI空间" %}}
+一个 AHI空间 就是指结合、可逆的Hopf空间.
+{{% /mathbox %}}
+
+{{% mathbox type="blue" title="" %}}
+对于任意的拓扑空间 $X $ , AHI空间 $Y $ , $[X,Y] $ 可以赋予一个群结构.
+{{% /mathbox %}}
+证明: 对于任意的 $f,g\in Y^X $ ,令 $f\cdot g=m\circ (f\times g)\circ \Delta_X \in Y^X $. 由于对于同伦等价的 $f\simeq f',g\simeq g' $ , 有
+$$
+  m\circ (f\times g)\circ \Delta_X\simeq m\circ (f'\times g')\circ\Delta_X
+$$
+于是 $[f\cdot g] $ 只依赖于同伦类 $[f],[g] $ ,所以 $[f\cdot g] $ 良定.根据 $Y $ 空间的AHI性质,
+* 结合律
+$$
+  \begin{align*}
+    (f\cdot g)\cdot h&=m\circ ((f\cdot g)\times h)\circ \Delta_X
+    \\&= m\circ([m\circ (f\times g)\circ \Delta_X]\times h)\circ \Delta_X
+    \\&= m\circ(m\times 1_Y)\circ (((f\times g)\circ \Delta_X)\times h)\circ \Delta_X
+    \\&= m\circ(m\times 1_Y)\circ (f\times g\times h)\circ \Delta_X
+    \\& \simeq m\circ (1_Y\circ m)\circ(f\times g\times h)\circ \Delta_X
+    \\& =f\cdot (g\cdot h)
+  \end{align*}
+$$
+其中的 $\Delta_X $ 都是 $x\mapsto (x,x) $ ,但后面可能会出现同一个符号代表 $x\mapsto (x,x) $ 与 $ x\mapsto (x,x,x) $ 的情况.
+* 单位元: 可以同理验证,单位元就是恒等映射.
+* 逆元:  $[f]^{-1}=[u\circ f] $ .
+
+{{% mathbox type="blue" title="" %}}
+设 $Y $ 是一个 AHI空间,任意的映射 $g:X_0\rightarrow X_1 $ 所诱导的
+$$
+  g^\bullet:[X_1,Y]\rightarrow [X_0,Y]
+$$
+是群同态.特别地,当 $g $ 是同伦等价, $g^\bullet $ 是群同构.
+{{% /mathbox %}}
+
+回顾 $g^\bullet $ , $g^\bullet(f)=f\circ g $ .于是证明是容易的: 对于任意的 $f,f':X_1\rightarrow Y $ 
+$$
+  \begin{align*}
+    g^\bullet(f\cdot f')&=(f\cdot f')\circ g
+    \\&=m\circ (f\times f')\circ \Delta_{X_1}\circ g
+    \\&=m\circ (f\times f')\circ (g\times g)\circ\Delta_{X_0}
+    \\&=m\circ ((f\circ g)\times (f'\circ g))\circ \Delta_{X_0}
+    \\&=(f\circ g)\cdot(f'\circ g)
+    \\&=g^\bullet(f)\cdot g^\bullet(f')
+  \end{align*}
+$$
+
+由对偶性,上述的 $X $ 的任意性和 $Y $ 的 AHI性质可以对换,在考虑同伦群 $\pi_n=[S^n,Y] $ 时更方便.将 $X\vee X $ 视为 $X\times X $ 的子集
+$$
+  (X\times \Set{\mathring{x}})\cup (\Set{\mathring{x}}\times X)
+$$
+引入投影映射 $p_1,p_2 $ 和折叠
+$$
+  \nabla_X:X\vee X\rightarrow X,\nabla_X(x,\mathring{x})=\nabla_X(\mathring{x},x)=x
+$$
+可以同前定义 AH'I空间.
+
+若在拓扑空间上存在 $\mu:X\rightarrow X\times X $ 满足
+$$
+  p_1\circ \mu\simeq \mu\circ p_2\simeq 1_X
+$$
+则称之为 H'空间.若还有
+* 结合:  若 $(\mu\vee 1_X )\circ \mu\simeq (1_X\vee \mu)\circ \mu $ 
+* 逆: 若 $\nabla_X\circ (\nu \vee 1_X)\circ \mu\simeq \nabla_X\circ (1_X\vee \nu )\circ \mu \simeq e_X$ ,其中 $e_X $ 是常值映射.
+
+则称之为 AH'I空间.
+
+{{% mathbox type="blue" title="" %}}
+对于任意的拓扑空间 $Y $ , AH'I空间 $X $ , $[X,Y] $ 可以赋予一个群结构.且一样有连续映射 $g:Y_0\rightarrow Y_1 $ 所诱导出的
+$$
+  g_\bullet:[X,Y_0]\rightarrow [X,Y_1]
+$$
+为群同态.特别地,当 $g $ 是同伦等价,那么 $g_\bullet $ 是群同构.
+{{% /mathbox %}}
+
+证明几乎与前完全一致.
+
+{{% mathbox type="blue" title=" $S^1 $ 是AH'I空间" %}}
+
+{{% /mathbox %}}
+证明: 具体考虑乘法 $\mu:S^1\rightarrow S^1\vee S^1 $ ,也就是
+$$
+  S^1\Huge{\circ \xrightarrow{\mu} \infty} \small{S^1\vee S^1} 
+$$
+对两个圆进行参数化,就很容易构造 $p_1\circ \mu $ 以及 $p_2\circ \mu $  与恒等映射 $1_{S^1} $ 之间的同伦.所以 $S^1 $ 是一个 H'空间.结合性与逆元也很容易构造同伦.所以  $S^1 $ 是一个 AH'I空间.也就是说 $\pi(Y)=[S^1,Y] $ 具有群结构.
+
+{{% mathbox type="blue" title="" %}}
+设 $X,Y $ 为拓扑空间
+* 若其中之一为 AH'I空间,那么 $X\wedge Y $ 仍是 AH'I空间
+* 若 $X $ 是 $T_2 $ 的,那么 $Y^X $ 是 AHI空间当且仅当 $X $ 为AH'I空间或者 $Y $ 为 AHI空间.
+
+{{% /mathbox %}}
+
+所以
+* $S^n,X\wedge S^1 $ 都是 AH'I空间,也就是说 $\Omega(Y) $ 为 AHI空间.进一步可知, $\pi_n(Y)=[S^n,Y] $ 以及 $[X,\Omega(Y)] $ 均有群结构.
+
+* $\pi_0(Y) $ 一般没有群结构,描述 $Y $ 的连通分支集.但是当 $Y $ 是AHI空间时,可以赋予群结构.
+
+{{% mathbox type="blue" title="" %}}
+若 $X_1,X_2 $ 都是 AH'I空间,那么 $[X_1\wedge X_2,Y] $ 是交换群.
+
+特别地, 当 $n\ge 2 $ , $\pi_n(Y) $ 是交换群.
+{{% /mathbox %}}
+
+一般来说, $\pi_1(Y) $ 不是交换群.但是也有特例,对于只有一种非平凡环路的空间,其基本群就是交换群,例如 $S^1 $ .
+
+* 可以计算 $\pi_1(S^1)=\mathbb{Z} $ ,可以用Gauss所定义的 "缠绕数" 去计算,主要就是用到 $S^1\simeq \R\setminus \Set{0} $ .或者用覆叠空间去计算,详细见[拓扑学]({{< ref "/Notes/Topology.md" >}}).
+* 还可以计算 $T^2 $ 的基本群为 $\pi_1(T^2)=\mathbb{Z}^2 $ .也是一个交换群.实际上,后面引入的自由群会更加直接地从代数上说明为什么是一个交换群,更直观的图像仍参见[拓扑学]({{< ref "/Notes/Topology.md" >}}).
 
 #### 同伦群的初等计算
 
-
+### 黎曼几何
 
 ___
 ___

@@ -708,6 +708,8 @@ $n\ge 3 $ , $\pi_1(R^n\setminus\set{0})\cong \left\{ e \right\}  $ .
 
 
 > 不是那么值得一提的是, $\pi_1(T^2)=\mathbb{Z}^2=\langle \alpha,\beta|\alpha\beta\alpha^{-1}\beta^{-1}=1 \rangle  $ 的 Abelian 性体现在 $(a,b)+(c,d)=(c,d)+(a,b) $ , 也就是说对于 $T^2 $ 上的两种不同的loops所构成的一整个 loop ,其中的 $\alpha,\beta $ 的先后是可以交换的,而不是 $(a,b)=(b,a) $ .
+>
+> 补: 似乎 $(a,b)=(b,a) $ 在 $T^2 $ 中也是成立的,因为考虑 $T^2 $ 为一个长方形的商空间,那么 $(a,b),(b,a) $ 就分别是沿着边先向上再向右,先向右再向上,但总是会认同.更一般地,可以考虑如下的情况
 
 
 
