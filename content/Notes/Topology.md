@@ -690,22 +690,124 @@ $n\ge 3 $ , $\pi_1(R^n\setminus\set{0})\cong \left\{ e \right\}  $ .
 
 ### 3.6 Van Kampen 定理
 
+根据前面 $S^n $ 基本群的例子,是先考虑了其覆盖的基本群.为了更一般地研究多个小空间所组成的空间的基本群,引入自由群的概念.
 
+{{% mathbox type="green" title="自由群" %}}
 
+{{% /mathbox %}}
 
+显然,若 $S=\Set{c} $ ,那么 $\langle S \rangle =\mathbb{Z} $ .
 
+{{% mathbox type="blue" title="自由群的泛性质" %}}
+对于任意的群 $G $ 和映射 $f:S\rightarrow G $ ,存在唯一的群同态
+$$
+  \varphi:\langle S \rangle \rightarrow G
+$$
+使得 $f=\varphi\circ i $ .其中 $i:S\hookrightarrow \langle S \rangle  $ 是包含映射.
+{{% /mathbox %}}
 
+所以对于任意群 $G $ 和其任一生成元集 $S $ ,都存在唯一的满同态 $\varphi:\langle S \rangle \rightarrow G $ ,于是
 
+{{% mathbox type="blue" title="群是自由群的商" %}}
+$G\cong \langle S \rangle /\ker\varphi $ 
+{{% /mathbox %}}
 
+群的表现:
 
+{{% mathbox type="green" title="群的自由积" %}}
 
+{{% /mathbox %}}
 
+{{% mathbox type="blue" title="自由积的泛性质" %}}
 
+{{% /mathbox %}}
 
+更一般地,设 $F,G,H $ 为三个群,而
+$$
+  \varphi: F\rightarrow G,\psi:F\rightarrow H
+$$
+为两个群同态.令 $N $ 为 $G*H $ 中所包含所有形如
+$$
+  \varphi(a)\psi(a)^{-1},a\in F
+$$
+的元素的最小正规子群.则称群
+$$
+  G*_FH:=G*H/N
+$$
+为 $G $ 和 $H $ 相对于群同态 $\varphi,\psi $ 的**融合自由积**.
 
+设 $S $ 是 $F $ 的一个生成元集,那么根据定义 $G*_FH $ 是自由积 $G*H $ 模去所有关系
+$$
+  \varphi(a)\psi(a)^{-1}=1,\forall a\in S
+$$
+后所得到的商群.
 
+例子
+* $G=\langle a \rangle ,H=\langle b \rangle ,F=\langle c \rangle  $ .那么 $G $ 和 $H $ 相对于同态
+$$
+  \varphi:F\rightarrow G,c\mapsto a^3
+  \\
+  \psi:F\rightarrow H,c\mapsto b^4
+$$
+的融合自由积就是 $G*_FH=\langle a,b|a^3\cdot b^{-4}=1 \rangle  $ .
 
+*  $\Set{e}*_F\Set{e}=\Set{e} $ .
+*  $G*_{\Set{e}}H=G*H $ .
+*  恒等同态 $G*_GG=G*G $ .
+*  同态 $\varphi:F\rightarrow G: G*_F\Set{e}=G/N $ ,其中 $N $ 是由 $Im(\varphi:F\rightarrow G) $ 所生成的最小正规子群.
 
+{{% mathbox type="blue" title="Van Kampen 定理" %}}
+设 $X=U_1\cup U_2 $ ,其中 $U_1,U_2 $ 是 $X $ 中的道路连通开集,且 $U_1\cap U_2 $ 也是道路连通的.那么对于任意的 $x_0\in U_1\cap U_2 $ ,
+$$
+  \pi_1(X,x_0)\simeq \pi_1(U_1,x_0)*_{\pi_1(U_1\cap U_2,x_0)}\pi_1(U_2,x_0)
+$$
+其中的群同态是由包含映射所诱导的群同态
+$$
+  \varphi:{\pi_1(U_1\cap U_2,x_0)}\rightarrow \pi_1(U_1,x_0)
+  \\
+  \psi:{\pi_1(U_1\cap U_2,x_0)}\rightarrow \pi_1(U_2,x_0)
+$$
+
+{{% /mathbox %}}
+
+* 对于 $S^1\vee S^1 $ $\Huge{\infty}  $  ,取其开邻域为两个$\Huge{\propto}$ ,模去的是 $\huge \times $ .显然 $\huge \times $ 是可缩的,即其基本群为 $\Set{e} $ .而 $\Huge{\propto}$ 同伦等价于 $S^1 $ ,所以
+$$
+  \pi_1(S^1\vee S^1)=\langle \alpha \rangle *_{\Set{e}}\langle \beta \rangle =\langle \alpha,\beta \rangle \cong \mathbb{Z}*\mathbb{Z}
+$$
+
+* 对于 $S^2\vee S^2 $ ,也可以如此,选取开邻域为两个球带上一点多出来的球冠.由于基本群都是平凡的,所以 $\pi_1(S^2\vee S^2)=\Set{e} $ .
+
+* 对于 $S^1\vee S^2 $ ,同理 $\pi_1(S^1\vee S^2)=\mathbb{Z} $ .
+* 更一般地,有 $\pi_1(\underbrace{S^1\vee S^1\vee \dots\vee S^1}_n)=\langle a_1,a_2,\dots,a_n \rangle  $ .
+
+> 注意其中 $S^1\vee S^1\vee \dots\vee S^1 $ 是一个花形🌸的空间,基点为中间的花蕊.取开邻域为每个花瓣带上一点其余的花瓣 $\huge * $ ,也是可缩的.问题来了,到现在遇到的所模去的最小正规子群都是平凡的.
+
+考虑 $\mathbb{T}^2 $ 分成
+$$
+  U_1=\mathbb{T}^2\setminus \bar{D},U_2=\tilde{D}
+$$
+其中 ${D} $ 是一个小圆盘, $\tilde{D} $ 是一个包含 $\bar{D} $  稍大于 $D $ 的圆盘.有 $U_1\simeq S^1\vee S^1 $ ,所以
+$$
+  \begin{align*}
+    &\pi_1(U_1)\cong \mathbb{Z}*\mathbb{Z}
+    \\
+    &\pi_1(U_2)\cong \Set{e}
+    \\
+    &\pi_1(U_1\cap U_2)\cong \pi_1(S^1)\cong \mathbb{Z}
+  \end{align*}
+$$
+这就是一个交集的基本群非平凡的例子.但上面的信息还不足以得到 $\mathbb{T}^2 $ 的基本群,而需显式构造出群同态,
+$$
+  \varphi=\iota_*:\pi_1(U_1\cap U_2)\rightarrow \pi_1(U_1)
+$$
+其中 $\pi_1(U_1\cap U_2 )$ 的生成元可以认为是一个绕其一周的圆,而其可以连续形变到边界环路 $aba^{-1}b^{-1} $ ,即
+$$
+  \varphi(1)=aba^{-1}b^{-1}
+$$
+故
+$$
+  \pi_1(\mathbb{T}^2)\cong (\mathbb{Z}*\mathbb{Z})*_{\mathbb{Z}}\Set{e}=\langle a,b|aba^{-1}b^{-1}=1 \rangle \cong \mathbb{Z}.
+$$
 
 > 不是那么值得一提的是, $\pi_1(T^2)=\mathbb{Z}^2=\langle \alpha,\beta|\alpha\beta\alpha^{-1}\beta^{-1}=1 \rangle  $ 的 Abelian 性体现在 $(a,b)+(c,d)=(c,d)+(a,b) $ , 也就是说对于 $T^2 $ 上的两种不同的loops所构成的一整个 loop ,其中的 $\alpha,\beta $ 的先后是可以交换的,而不是 $(a,b)=(b,a) $ .
 >

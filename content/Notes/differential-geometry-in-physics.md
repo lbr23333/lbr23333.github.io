@@ -566,9 +566,215 @@ $$
 一般来说, $\pi_1(Y) $ 不是交换群.但是也有特例,对于只有一种非平凡环路的空间,其基本群就是交换群,例如 $S^1 $ .
 
 * 可以计算 $\pi_1(S^1)=\mathbb{Z} $ ,可以用Gauss所定义的 "缠绕数" 去计算,主要就是用到 $S^1\simeq \R\setminus \Set{0} $ .或者用覆叠空间去计算,详细见[拓扑学]({{< ref "/Notes/Topology.md" >}}).
-* 还可以计算 $T^2 $ 的基本群为 $\pi_1(T^2)=\mathbb{Z}^2 $ .也是一个交换群.实际上,后面引入的自由群会更加直接地从代数上说明为什么是一个交换群,更直观的图像仍参见[拓扑学]({{< ref "/Notes/Topology.md" >}}).
+* 还可以计算 $T^2 $ 的基本群为 $\pi_1(T^2)=\mathbb{Z}^2 $ .也是一个交换群,可以用上面的缠绕数方法,由于 $T^2=S^1\times S^1 $ ,所以很容易得到其基本群为 $\mathbb{Z} $  .实际上,后面引入的自由群会更加直接地从代数上说明为什么是一个交换群,因为 $T^2 $ 上两种不同的圆周相互之间是可以互换顺序的,更直观的图像仍参见[拓扑学]({{< ref "/Notes/Topology.md" >}}).
+
+下面系统地阐述自由群及其在同伦群中的应用.
+
+简单来说,自由群就是各个生成元所组成的各种可能的 word 的集合.,例如对于两个生成元
+$$
+  F_2[a,b]=\Set{a^{m_1}b^{n_1}a^{m_2}b^{n_2}\dots a^{m_k}b^{n_k}:m_i,n_j\in \mathbb{Z},k\ge 0}
+$$
+一般来说,由于并没有交换律 $ab=ba $ ,所以上面的自由群并不是交换群.
+
+例如,对于 $S^1\vee S^1 $ ,其基本群 $\pi_1(S^1\vee S^1)\cong F_2[a,b] $ . $S^1\vee S^1 $  就是
+$$
+  \Huge{8}
+$$
+中间交点为基点,沿上圆走则是 $a $ ,下圆走是 $b $ .于是自由群中的元素 $a^2b^6a^5b^2 $ 就是指先沿上圆走 $2 $ 圈,再沿着下圆走 $6 $ 圈,再沿着上圆 $5 $ 圈,最后再沿着下圆 $2 $ 圈回到基点.
+
+同理可以知道更多生成元所构成的自由群.特别地,对于只有一个生成元的自由群,其天然是一个交换群,这可以解释 $S^1 $ 的基本群是一个交换群.将上面的 $S^1\vee S^1 $ 推广到更多,就得到了
+$$
+  \pi_1(\underbrace{S^1\vee S^1\vee \dots\vee S^1}_n)\cong F_n[a_1,\dots,a_n]
+$$
+> 这实际上是 Van Kampen 定理的一个特例,更多仍参见拓扑学笔记.
+
+一般的有限生成群 $G $ 可以从自由群中添加一些关系得到.例如
+*  $\mathbb{T}^2=(S^1\vee S^1)\cup_f \mathbb{B}^2  $ , 其中 $f:\partial \mathbb{B}^2\rightarrow S^1\vee S^1 $  有  
+$$
+  \pi_1(\mathbb{T}^2)=\Set{\pi_1(S^1\vee S^1)|aba^{-1}b^{-1}=1} =\Set{a^nb^m}\cong \mathbb{Z}\oplus \mathbb{Z}
+$$
+
+推广到 $\Sigma_g $ 就是
+$$
+  \pi_1(\Sigma_g)=\Set{\pi_1(\bigvee_{2g}S^1)|a_1b_1a_1^{-1}b_1^{-1}\dots a_gb_ga_g^{-1}b_g^{-1}=1}  
+$$
+可见其并不像 $\pi_1(T^2) $ 那样是一个交换群.
+
+##### 相对同伦群
+
+更一般地,考虑映射
+$$
+  f:(\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1})\rightarrow (X,A,\mathring{x})
+$$
+其中 $\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1} $ 分别是 $n $-维立方体、其边界和除了底面所以边界的集合. $A $ 是拓扑空间 $X $ 的一个子空间, $\mathring{x} $ 为 $A $ 的基点.
+![相对同伦](/images/Topology/relative_homotopy.pdf)
+
+定义 $(X,A) $ 的相对基本群为 $\pi_n(X,A) $ 是上面映射的全体模去同伦等价关系后所得到的商集.由等价类 $[f] $ 构成:
+$$
+  \pi_n(X,A)=\Set{[f]:f(\mathbb{I}^n_+)\subset X,f(\partial\mathbb{I}^n_+)\subset A,f(\mathbb{J}_+^{n-1})=\Set{\mathring{x}}}
+$$
+
+其群运算与同伦群是相似的.一般来说 $n\ge 3 $ 时是交换群, $n=2 $ 时通常非交换,而 $n=1 $ 时一般不构成群.这些都是可以通过同伦群的性质推广而来.
+##### 相对同伦群
+
+更一般地,考虑映射
+$$
+  f:(\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1})\rightarrow (X,A,\mathring{x})
+$$
+其中 $\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1} $ 分别是 $n $-维立方体、其边界和除了底面所以边界的集合. $A $ 是拓扑空间 $X $ 的一个子空间, $\mathring{x} $ 为 $A $ 的基点.
+![相对同伦](/images/Topology/relative_homotopy.pdf)
+
+定义 $(X,A) $ 的相对基本群为 $\pi_n(X,A) $ 是上面映射的全体模去同伦等价关系后所得到的商集.由等价类 $[f] $ 构成:
+$$
+  \pi_n(X,A)=\Set{[f]:f(\mathbb{I}^n_+)\subset X,f(\partial\mathbb{I}^n_+)\subset A,f(\mathbb{J}_+^{n-1})=\Set{\mathring{x}}}
+$$
+
+其群运算与同伦群是相似的.一般来说 $n\ge 3 $ 时是交换群, $n=2 $ 时通常非交换,而 $n=1 $ 时一般不构成群.这些都是可以通过同伦群的性质推广而来.
+##### 相对同伦群
+
+更一般地,考虑映射
+$$
+  f:(\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1})\rightarrow (X,A,\mathring{x})
+$$
+其中 $\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1} $ 分别是 $n $-维立方体、其边界和除了底面所以边界的集合. $A $ 是拓扑空间 $X $ 的一个子空间, $\mathring{x} $ 为 $A $ 的基点.
+![相对同伦](/images/Topology/relative_homotopy.pdf)
+
+定义 $(X,A) $ 的相对基本群为 $\pi_n(X,A) $ 是上面映射的全体模去同伦等价关系后所得到的商集.由等价类 $[f] $ 构成:
+$$
+  \pi_n(X,A)=\Set{[f]:f(\mathbb{I}^n_+)\subset X,f(\partial\mathbb{I}^n_+)\subset A,f(\mathbb{J}_+^{n-1})=\Set{\mathring{x}}}
+$$
+
+其群运算与同伦群是相似的.一般来说 $n\ge 3 $ 时是交换群, $n=2 $ 时通常非交换,而 $n=1 $ 时一般不构成群.这些都是可以通过同伦群的性质推广而来.
+##### 相对同伦群
+
+更一般地,考虑映射
+$$
+  f:(\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1})\rightarrow (X,A,\mathring{x})
+$$
+其中 $\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1} $ 分别是 $n $-维立方体、其边界和除了底面所以边界的集合. $A $ 是拓扑空间 $X $ 的一个子空间, $\mathring{x} $ 为 $A $ 的基点.
+![相对同伦](/images/Topology/relative_homotopy.pdf)
+
+定义 $(X,A) $ 的相对基本群为 $\pi_n(X,A) $ 是上面映射的全体模去同伦等价关系后所得到的商集.由等价类 $[f] $ 构成:
+$$
+  \pi_n(X,A)=\Set{[f]:f(\mathbb{I}^n_+)\subset X,f(\partial\mathbb{I}^n_+)\subset A,f(\mathbb{J}_+^{n-1})=\Set{\mathring{x}}}
+$$
+
+其群运算与同伦群是相似的.一般来说 $n\ge 3 $ 时是交换群, $n=2 $ 时通常非交换,而 $n=1 $ 时一般不构成群.这些都是可以通过同伦群的性质推广而来.
+
 
 #### 同伦群的初等计算
+
+##### 相对同伦群
+
+更一般地,考虑映射
+$$
+  f:(\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1})\rightarrow (X,A,\mathring{x})
+$$
+其中 $\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1} $ 分别是 $n $-维立方体、其边界和除了底面所以边界的集合. $A $ 是拓扑空间 $X $ 的一个子空间, $\mathring{x} $ 为 $A $ 的基点.
+![相对同伦](/images/Topology/relative_homotopy.pdf)
+
+定义 $(X,A) $ 的相对基本群为 $\pi_n(X,A) $ 是上面映射的全体模去同伦等价关系后所得到的商集.由等价类 $[f] $ 构成:
+$$
+  \pi_n(X,A)=\Set{[f]:f(\mathbb{I}^n_+)\subset X,f(\partial\mathbb{I}^n_+)\subset A,f(\mathbb{J}_+^{n-1})=\Set{\mathring{x}}}
+$$
+
+其群运算与同伦群是相似的.一般来说 $n\ge 3 $ 时是交换群, $n=2 $ 时通常非交换,而 $n=1 $ 时一般不构成群.这些都是可以通过同伦群的性质推广而来.
+##### 相对同伦群
+
+更一般地,考虑映射
+$$
+  f:(\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1})\rightarrow (X,A,\mathring{x})
+$$
+其中 $\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1} $ 分别是 $n $-维立方体、其边界和除了底面所以边界的集合. $A $ 是拓扑空间 $X $ 的一个子空间, $\mathring{x} $ 为 $A $ 的基点.
+![相对同伦](/images/Topology/relative_homotopy.pdf)
+
+定义 $(X,A) $ 的相对基本群为 $\pi_n(X,A) $ 是上面映射的全体模去同伦等价关系后所得到的商集.由等价类 $[f] $ 构成:
+$$
+  \pi_n(X,A)=\Set{[f]:f(\mathbb{I}^n_+)\subset X,f(\partial\mathbb{I}^n_+)\subset A,f(\mathbb{J}_+^{n-1})=\Set{\mathring{x}}}
+$$
+
+其群运算与同伦群是相似的.一般来说 $n\ge 3 $ 时是交换群, $n=2 $ 时通常非交换,而 $n=1 $ 时一般不构成群.这些都是可以通过同伦群的性质推广而来.
+
+> 关于 $\pi_2(X,A) $ 一个直观的例子就是前面提到的 $T^2 $ ,有 $\pi_2(T^2,S^1\vee S^1) $ .其结果是 $F_2*F_2 $ ,所以是非交换的.具体的计算见后.
+
+考虑边界算子 $\partial $ 将 $f $ 限制在 $\mathbb{J}_+^{n-1} $ 上,于是回到了同伦群:
+$$
+  \partial:\pi_n(X,A)\rightarrow \pi_{n-1}(A),\partial[f]:=[\partial f]\in \pi_{n-1}(A)
+$$
+
+* 含入映射 $i:A\hookrightarrow X $ 诱导了同态映射
+$$
+  i_*:\pi_n(A)\rightarrow \pi_n(X)
+$$
+参见前 $\bullet $ 的函子性.
+* 含入映射 $j:\Set{\mathring{x}}\hookrightarrow A $ 将"绝对"映射 $f:(\mathbb{I}^n_+,\partial\mathbb{I}^n_+)\rightarrow (X,A) $  视为相对映射 $j_*f:(\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1})\rightarrow (X,A,\mathring{x}) $ ,同样诱导了群同态:
+$$
+  j_*:\pi_n(X)\rightarrow \pi_n(X,A)
+$$
+
+于是
+$$
+  \dots\rightarrow \pi_n(A)\xrightarrow{i_*}\pi_n(X)\xrightarrow{j_*}\pi_n(X,A)\xrightarrow{\partial}\pi_{n-1}(A)\rightarrow \dots
+$$
+构成正合列,即前面一个映射的 $Im $ 是后一个映射的 $\ker $ .
+*  $Im(i_*)=\ker(j_*) $ .注意 $\pi_n(X) $ 中的等价类是将边界都映为基点的,自然在映射 $j_* $ 下得到单位元,也就是 $j_*\circ i_*=0 $ ,即 $Im(i_*)\subset \ker j_* $ .另一方面,若 $j_*[g]=0 $ ,这说明 $[g] $ 是同伦于常值映射 $\mathring{x} $ 的同伦等价类.而 $\pi_n(X,A) $ 中属于该等价类的就完全落在 $A $ 中.
+
+> $\pi_n(X) $ 是 $X $ 中保持基点 $\mathring{x} $ 的等价类,而 $X_n(X,A) $ 中除了保持基点,还固定底面 $A $ 上的等价类不变. 所以 $\pi_n(X) $ 中的单位元,也即是平凡的等价类,含入映射到 $\pi_n(X,A) $ 中后所得到的就是完全落在底面 $A $ 中的等价类.可以想象原本的基点扩展成了一个面.
+
+
+##### 计算
+
+考虑纤维化:  $F\xhookrightarrow{i}E\xrightarrow{p}B $ ,将上正合列应用到此,有
+$$
+  \dots\rightarrow \pi_n(F)\xrightarrow{i_*}\pi_n(E)\xrightarrow{j_*}\pi_n(E,F)\xrightarrow{\partial}\pi_{n-1}(F)\rightarrow \dots
+$$
+投影映射 $p\rightarrow E $ 诱导了同态映射
+$$
+  p_*: \pi_n(E,F)\rightarrow \pi_n(B,\Set{\mathring{b}})\cong \pi_n(B)
+$$
+若 $B $ 是 Hausdorff空间并且局部可缩,那么有同态提升性质(HLP).
+
+> 实际上就是提升引理,覆叠空间的存在性.而在流形中,上面两条性质是自动满足的.
+
+可以证明, $p $ 作为覆叠映射,所诱导出的 $p_* $ 是双射.也就是说,纤维化
+$$
+  F\xhookrightarrow{i}E\xrightarrow{p}B
+$$
+诱导了长正合序列.
+$$
+  \dots\rightarrow \pi_n(F)\rightarrow \pi_n(E)\rightarrow \pi_n(B)\rightarrow \pi_{n-1}(F)\rightarrow 
+  \\
+  \dots\rightarrow \dots\rightarrow \pi_0(F)\rightarrow \pi_0(E)\rightarrow \pi_0(B)=0
+$$
+可以据此做一些计算.
+1. 对于离散群 $\Gamma $ 作用到拓扑空间 $X $ ,轨道空间 $M=X/\Gamma $ 作为基空间给出纤维化 $\mathcal{O}\hookrightarrow X\rightarrow M $ ,其中 $\mathcal{O}\cong \Gamma $ 是群轨道.
+若 $X $ 是连通且单连通空间,那么 $\pi_0(X)=\pi_1(X)=0 $ ,正合列变为短正合列
+$$
+ 0\rightarrow \pi_1(M)\xrightarrow{g}\pi_0(\Gamma)\xrightarrow{h}0
+$$
+根据正合列的性质可知 $g $ 是双射.所以 $\pi_1(M)\cong \pi_0(\Gamma) $ ,由于 $\Gamma $ 是离散群,所以 $\pi_0(\Gamma)\cong \Gamma $ .
+具体地,对于 $T^n=\R^n/\mathbb{Z}^n $ ,有 $\pi_1(T^n)=\mathbb{Z}^n $ ,特别地 , $\pi_1(S^1) =\mathbb{Z}$.
+
+2. 考虑映射 $f:S^n\rightarrow S^1,n\ge 2 $ ,因为$\pi_1(S^1)=\mathbb{Z} $ 离散,又连续映射 $f $ 所诱导的基本群范畴中的 $f_* $ 是同态,所以其像只能是 $Im(f_*)=\Set{e} $ .所以可以提升成 $\tilde{f}:S^n\rightarrow \R $ ,由于 $\R $ 可缩,故 $\tilde{f} $ 零伦,所以 $f=\tilde{f}\circ p $ 也是零伦的.也就是说 $\pi_n(S^1)=0,n\ge2 $ .可以一般地推广为 $\pi_n(S^m)=0,n\lt m $ .
+3. Hurewicz定理: 若 $X $ 连通,那么
+$$
+  H_1(X,\mathbb{Z})\cong \pi_1(X)/[\pi_1(X),\pi_1(X)]
+$$
+例如,结合上一条结论,对于 $S^n $ ,有 $\pi_{m\lt n}(S^n)=0 $ .所以
+$$
+  \pi_n(S^n)\cong H_n(S^n,\mathbb{Z})\cong \mathbb{Z}
+$$
+
+4. Hopf-纤维化
+   
+   考虑 $S^1\hookrightarrow S^3\xrightarrow{p}S^2 $ .将 $S^3,S^2 $ 分别嵌入到 $\mathbb{C}^2,\mathbb{C}\times \R $ 中,也就是
+   $$
+     S^3: |z_0|^2+|z_1|^2=1,(z_0,z_1)\in \mathbb{C}^2
+     \\
+     S^2: |z|^2+x^2=1,(z,x)\in \mathbb{C}\times \R
+   $$
+   映射 $p $ 定义为 $p(z_0,z_1)=(2z_0z_1^*,|z_0|^2-|z_1|^2), $ 显然对于 $(z_0,z_1)\in S^3 $ 有 $p(z_0,z_1)\in S^2 $ .
+5. 特殊正交群 $G=SO(N) $ ,
 
 ### 黎曼几何
 
