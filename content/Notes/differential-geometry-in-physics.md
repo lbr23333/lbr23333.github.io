@@ -390,7 +390,7 @@ $$
 $$
 还存在 $g:Y_1\rightarrow Y_0 $ ,
 $$
-  [g]:=f^{-1}_\bullet([1])
+  [g] : =f^{-1}_\bullet([1])
 $$
 即 $f_\bullet([g])=[f\circ g]=[1] $ ,也就是
 $$
@@ -600,29 +600,6 @@ $$
 $$
 可见其并不像 $\pi_1(T^2) $ 那样是一个交换群.
 
-
-
-更一般地,考虑映射
-$$
-  f:(\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1})\rightarrow (X,A,\mathring{x})
-$$
-其中 $\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1} $ 分别是 $n $-维立方体、其边界和除了底面所以边界的集合. $A $ 是拓扑空间 $X $ 的一个子空间, $\mathring{x} $ 为 $A $ 的基点.
-![相对同伦](/images/Topology/relative_homotopy.pdf)
-
-定义 $(X,A) $ 的相对基本群为 $\pi_n(X,A) $ 是上面映射的全体模去同伦等价关系后所得到的商集.由等价类 $[f] $ 构成:
-$$
-  \pi_n(X,A)=\Set{[f]:f(\mathbb{I}^n_+)\subset X,f(\partial\mathbb{I}^n_+)\subset A,f(\mathbb{J}_+^{n-1})=\Set{\mathring{x}}}
-$$
-
-其群运算与同伦群是相似的.一般来说 $n\ge 3 $ 时是交换群, $n=2 $ 时通常非交换,而 $n=1 $ 时一般不构成群.这些都是可以通过同伦群的性质推广而来.
-##### 相对同伦群
-
-更一般地,考虑映射
-$$
-  f:(\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1})\rightarrow (X,A,\mathring{x})
-$$
-其中 $\mathbb{I}^n_+,\partial\mathbb{I}^n_+,\mathbb{J}_+^{n-1} $ 分别是 $n $-维立方体、其边界和除了底面所以边界的集合. $A $ 是拓扑空间 $X $ 的一个子空间, $\mathring{x} $ 为 $A $ 的基点.
-![相对同伦](/images/Topology/relative_homotopy.pdf)
 
 定义 $(X,A) $ 的相对基本群为 $\pi_n(X,A) $ 是上面映射的全体模去同伦等价关系后所得到的商集.由等价类 $[f] $ 构成:
 $$
@@ -853,7 +830,7 @@ $$
 再据此处理一些问题.不过总是只能得到同伦群之间的一些相对关系,一些关键的结果总是从其他一些非平凡的过程中得到.
 
 
-#### 计算结果总结
+### 计算结果总结
 
 在这里总结一下各种同调群、同伦群的结果,并简单叙述其计算方法.
 
