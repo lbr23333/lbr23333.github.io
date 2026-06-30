@@ -714,7 +714,7 @@ $$
 
 于是
 $$
-  \dots\rightarrow \pi_n(A)\xrightarrow{i_*}\pi_n(X)\xrightarrow{j_*}\pi_n(X,A)\xrightarrow{\partial}\pi_{n-1}(A)\rightarrow \dots
+  \boxed{\dots\rightarrow \pi_n(A)\xrightarrow{i_*}\pi_n(X)\xrightarrow{j_*}\pi_n(X,A)\xrightarrow{\partial}\pi_{n-1}(A)\rightarrow \dots}
 $$
 构成正合列,即前面一个映射的 $Im $ 是后一个映射的 $\ker $ .
 *  $Im(i_*)=\ker(j_*) $ .注意 $\pi_n(X) $ 中的等价类是将边界都映为基点的,自然在映射 $j_* $ 下得到单位元,也就是 $j_*\circ i_*=0 $ ,即 $Im(i_*)\subset \ker j_* $ .另一方面,若 $j_*[g]=0 $ ,这说明 $[g] $ 是同伦于常值映射 $\mathring{x} $ 的同伦等价类.而 $\pi_n(X,A) $ 中属于该等价类的就完全落在 $A $ 中.
@@ -726,7 +726,7 @@ $$
 
 考虑纤维化:  $F\xhookrightarrow{i}E\xrightarrow{p}B $ ,将上正合列应用到此,有
 $$
-  \dots\rightarrow \pi_n(F)\xrightarrow{i_*}\pi_n(E)\xrightarrow{j_*}\pi_n(E,F)\xrightarrow{\partial}\pi_{n-1}(F)\rightarrow \dots
+  \boxed{\dots\rightarrow \pi_n(F)\xrightarrow{i_*}\pi_n(E)\xrightarrow{j_*}\pi_n(E,F)\xrightarrow{\partial}\pi_{n-1}(F)\rightarrow \dots}
 $$
 投影映射 $p\rightarrow E $ 诱导了同态映射
 $$
@@ -734,7 +734,7 @@ $$
 $$
 若 $B $ 是 Hausdorff空间并且局部可缩,那么有同态提升性质(HLP).
 
-> 实际上就是提升引理,覆叠空间的存在性.而在流形中,上面两条性质是自动满足的.
+> 实际上就是提升引理,覆叠空间的存在性.而在流形中,上面两条性质是自动满足的.HLP 也就是将底空间 $B $  提升为 $E $ 的映射提升.
 
 可以证明, $p $ 作为覆叠映射,所诱导出的 $p_* $ 是双射.也就是说,纤维化
 $$
@@ -773,8 +773,139 @@ $$
      \\
      S^2: |z|^2+x^2=1,(z,x)\in \mathbb{C}\times \R
    $$
-   映射 $p $ 定义为 $p(z_0,z_1)=(2z_0z_1^*,|z_0|^2-|z_1|^2), $ 显然对于 $(z_0,z_1)\in S^3 $ 有 $p(z_0,z_1)\in S^2 $ .
-5. 特殊正交群 $G=SO(N) $ ,
+   映射 $p $ 定义为 $p(z_0,z_1)=(2z_0z_1^*,|z_0|^2-|z_1|^2), $ 显然对于 $(z_0,z_1)\in S^3 $ 有 $p(z_0,z_1)\in S^2 $ .所以诱导出了正合列
+   $$
+     \dots\rightarrow \pi_{n+1}(S^1)\rightarrow \pi_{n+1}(S^3)\rightarrow \pi_{n+1}(S^2)\rightarrow \pi_n(S^1)\rightarrow \pi_n(S^3)\rightarrow \dots
+   $$
+   从中可以得到:
+   * 对于 $n=1 $ , 由于 $\pi_2(S^3)=\pi_1(S^3)=0 $ ,所以
+   $$
+     0\rightarrow \pi_2(S^2)\rightarrow \pi_1(S^1)\rightarrow 0
+   $$
+   对于超短正合列,有 $\pi_2(S^2)\cong \pi_1(S^1)\cong \mathbb{Z} $ .
+   * 对于 $n\ge 2 $ ,由于 $\pi_{n+1}(S^1)=\pi_n(S^1)=0 $ ,所以
+   $$
+     0\rightarrow \pi_{n+1}(S^3)\rightarrow \pi_{n+1}(S^2)\rightarrow 0
+   $$
+   即 $\pi_{n+1}(S^3)\cong  \pi_{n+1}(S^2) $ .特别地, $\pi_{3}(S^3)\cong  \pi_{3}(S^2)\cong \mathbb{Z} $ .
+
+> 一直感觉对于 $m\gt n $ 的 $\pi_m(S^n) $ 非 $0 $ 是一件非常诡异的事情.
+   
+5. 特殊正交群 $G=SO(N) $ 保持 $\R^N $ 空间中的欧氏度规不变,也就是保持 $S^{N-1} $ 不变.其有保持 $S^{N-1} $ 的北极点不变的子群 $SO(N-1) $ .实际上,保持任何点都有自群为 $SO(N-1) $ .所以 $SO(N)/SO(N-1)\cong S^{N-1} $ .有纤维化
+$$
+  SO(N-1)\hookrightarrow SO(N)\xrightarrow{p} S^{N-1}
+$$
+诱导出正合列
+$$
+  \dots\pi_{n+1}(SO(N-1))\rightarrow \pi_{n+1}(SO(N))\rightarrow \pi_{n+1}(S^{N-1})
+  \\
+  \rightarrow \pi_n(SO(N-1))\rightarrow \pi_n(SO(N))\rightarrow \pi_n(S^{N-1})\rightarrow \dots
+$$
+
+由此可计算**一阶同伦群**: 取 $N=2 $ ,由于 $SO(1) $ 为单点集,是可缩的,所以 $\pi_n(SO(1))=0 ,\forall n $ ,于是
+$$
+  0\rightarrow \pi_n(SO(2))\rightarrow \pi_n(S^1)\rightarrow 0
+$$
+有
+$$
+  \pi_n(SO(2))\cong \pi_n(S^1)\cong \begin{cases}
+    \mathbb{Z},&n=1\\0,&n\ge 2
+   \end{cases}
+$$
+另外,取 $N\ge 4 $ ,有 $\pi_1(S^{N-1})=\pi_2(S^{N-1})=0 $ ,于是有
+$$
+  0\rightarrow \pi_1(SO(N-1))\rightarrow \pi_1(SO(N))\rightarrow 0
+$$
+可知有 $\pi_1(SO(3))\cong \pi_1(SO(4))\cong \pi_1(SO(5))\cong \dots $ .另一方面,由于 $SO(3)\cong SU(2)/\mathbb{Z}_2 $ ,而且 $SU(3) $ 单连通,是 $SO(3) $ 的万有覆叠空间.所以 $\pi_1(SO(3))\cong \mathbb{Z}_2 $ .
+
+> 旋量群 $Spin(n) $ 在 $n\gt2 $ 时总是单连通的,所以 $Spin(n) $ 总是 $SO(n) $ 的万有覆叠空间.所以, $\pi_1(SO(n\gt 2))=\mathbb{Z}_2 $ .
+
+对于**二阶同伦群**,考虑纤维化 $ \mathbb{Z}_2\hookrightarrow S^3\rightarrow SO(3) $ 有
+$$
+  0=\pi_2(\mathbb{Z}_2)\rightarrow \pi_2(S^3)\rightarrow \pi_2(SO(3))\rightarrow \pi_1(Z_2)=0
+$$
+于是 $0=\pi_2(S^3)\cong  \pi_2(SO(3)) $ .
+
+另外在 $N\ge 5 $ 时考虑前面的长正合列,有 $\pi_2(S^{N-1})=\pi_3(S^{N-1})=0 $ ,于是有 $\pi_2(SO(4))=\pi_2(SO(5))=\pi_2(SO(6))=\dots $ .另一方面,在前面得到了结果 $\pi_1(SO(4))=\mathbb{Z}_2 $ .另一方面, $SO(4)\cong Spin(4)/\mathbb{Z}_2 $  . 于是又有纤维化
+$$
+  \mathbb{Z}_2\hookrightarrow Spin(4)\rightarrow SO(4)
+$$
+其中
+$$
+  \pi_2(Spin(4))=\pi_2(SU(2)\times SU(2))=\pi_2(SU(2))\times \pi_2(SU(2))=0
+$$
+所以有正合列为
+$$
+  0=\pi_2(Spin(4))\rightarrow \pi_2(SO(4))\rightarrow \pi_2(\mathbb{Z}_2)=0
+$$
+也就是说
+$$
+  \pi_2(SO(4))=\pi_2(SO(5))=\pi_2(SO(6))=\dots=0
+$$
+
+对于**三阶同伦群**,首先考虑纤维化 $\mathbb{Z}_2\hookrightarrow S^3\rightarrow SO(3) $ ,可得 $\pi_3(SO(3))\cong \pi_3(S^3)=\mathbb{Z} $ .另外,根据前面的纤维化 $\mathbb{Z}_2\hookrightarrow Spin(4)\rightarrow SO(4) $ ,可得 $\pi_3(SO(4))\cong \pi_3(Spin(4))\cong \mathbb{Z}^2 $ .对于 $N\ge 6 $ ,有
+$$
+  \pi_3(SO(5))=\pi_3(SO(6))=\dots
+$$
+而其中 $SO(6)=Spin(6)/\mathbb{Z}_2=SU(4)/\mathbb{Z}_2 $ ,构造纤维化可以得到 $\pi_3(SO(6))\cong \pi_3(SU(4)) $,而后面将证明 $\pi_3(SU(4))=\mathbb{Z} $ .
+
+类似地,可以得到更高阶同伦群的结果,从上面的计算过程可见,即便有了正合列,也需要一些已知的结果,而实际上这些已知的结果才是高度非平凡的.又例如,在计算**四阶同伦群**时,要用到 $\pi_4(S^3)\cong \pi_4(S^2)\cong \mathbb{Z}_2 $ ,从而计算得到
+$$
+  \begin{align*}
+    &\pi_4(SO(3))= \pi_4(S^4)=\mathbb{Z}_2
+    \\
+    &\pi_4(SO(4))=\pi_4(S^3)\times \pi_4(S^3)=\mathbb{Z}_2\times \mathbb{Z}_2
+  \end{align*}
+$$
+另外,还有一个一般的结果:
+$$
+  \pi_n(SO(n+2))=\pi_n(SO(n+3))=\pi_n(SO(n+4))=\dots
+$$
+
+6. 特殊幺正群 $G=SU(N) $ ,由于是保持 $\mathbb{C}^N $ 中的内积,类似于上面 $SO(N) $ 的处理,完全同理地有
+$$
+  SU(N-1)\hookrightarrow SU(N)\rightarrow S^{2N-1}
+$$
+
+取 $N=2 $ 可得 $\pi_n(SU(2))\cong \pi_n(S^3) $ ,这是显然的,因为本来就有 $SU(2)\cong S^3 $ .
+
+取 $N\gt 1+\frac{n}{2} $ ,有 $\pi_{n+1}(S^{2N-1})=\pi_n(S^{2N-1})=0 $ ,所以正合列为
+$$
+  0\rightarrow \pi_{n}(SU(N-1))\rightarrow \pi_n(SU(N))\rightarrow 0
+$$
+即 $\pi_n(SU([\frac{n}{2}]+1))=\pi_n(SU([\frac{n}{2}]+2))=\dots $ ,分别取 $n=1,2,3 $ 就有
+$$
+  \begin{align*}
+    &0=\pi_1(SU(1))=\pi_1(SU(2))=\pi_1(SU(3))=\dots
+    \\&0=\pi_2(SU(2))=\pi_2(SU(3))=\dots
+    \\&\mathbb{Z}=\pi_3(SU(2))=\pi_3(SU(3))=\dots
+  \end{align*}
+$$
+
+##### 小结
+总结一下,纤维化是指有了一个
+$$
+  F\hookrightarrow E\xrightarrow{p}B
+$$
+之后,诱导出的正合列
+$$
+  \dots\rightarrow \pi_n(F)\xrightarrow{i_*}\pi_n(E)\xrightarrow{j_*}\pi_n(E,F)\xrightarrow{\partial}\pi_{n-1}(F)\rightarrow \dots
+$$
+中 $p $ 所诱导的 $p_* $ 使得 $\pi_n(E,F)\cong \pi_n(B) $ ,所以得到所需要的正合列为
+$$
+  \dots\rightarrow \pi_n(F)\xrightarrow{i_*}\pi_n(E)\xrightarrow{j_*}\pi_n(B)\xrightarrow{\partial}\pi_{n-1}(F)\rightarrow \dots
+$$
+再据此处理一些问题.不过总是只能得到同伦群之间的一些相对关系,一些关键的结果总是从其他一些非平凡的过程中得到.
+
+
+#### 计算结果总结
+
+在这里总结一下各种同调群、同伦群的结果,并简单叙述其计算方法.
+
+$\boxed{\small{\text{同调群}} } $ 
+
+
+
 
 ### 黎曼几何
 
