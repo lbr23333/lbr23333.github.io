@@ -165,7 +165,7 @@ $$
 
 推论: 道路空间总是可缩的,即 $X^{[0,1]} \simeq X^{\left\{ 1 \right\} }\simeq \left\{ f_0 \right\}  $ .这在直观上也是很显然的: 在任何空间中,一条道路总是能沿着自身缩到一点.
 
-{{% mathbox type="blue" title="楔和点函子性" %}}
+{{% mathbox type="blue" title="楔和的函子性" %}}
 给定拓扑空间 $X_j,Y_j $ 及连续保基映射 $f_j:X_j\rightarrow Y_j $ ,存在 $\vee_{i}f_j:\vee_j X_j\rightarrow \vee_j Y_j $,具有如下性质
 * 若 $g_j:Y_j\rightarrow Z_j $ 是连续保基映射,那么
 $$
@@ -176,6 +176,7 @@ $$
   \bigvee_j f_j\simeq \bigvee_j g_j:\bigvee_j X_j\rightarrow \bigvee_j Y_j
 $$
 {{% /mathbox %}}
+
 > 直观上,可以将 $\bigvee_j X_j $ 理解成一朵花🌸,不同的 $X_j $ 就是各个花瓣,对其做楔和也就是将其粘到一起,只在中心一点相交. $f_j $ 的保基性使得其基点只能取为花的中心(也即交点 $x_0,y_0 $ ),否则会导致函数多值.这样的视角下,后面两个性质就几乎是显然的了. 
 
 具体的证明: 给出显式的表达, $F=\bigvee f_j:\bigvee X_j\rightarrow \bigvee Y_j $ 自然地定义为
@@ -566,7 +567,7 @@ $$
 一般来说, $\pi_1(Y) $ 不是交换群.但是也有特例,对于只有一种非平凡环路的空间,其基本群就是交换群,例如 $S^1 $ .
 
 * 可以计算 $\pi_1(S^1)=\mathbb{Z} $ ,可以用Gauss所定义的 "缠绕数" 去计算,主要就是用到 $S^1\simeq \R\setminus \Set{0} $ .或者用覆叠空间去计算,详细见[拓扑学]({{< ref "/Notes/Topology.md" >}}).
-* 还可以计算 $T^2 $ 的基本群为 $\pi_1(T^2)=\mathbb{Z}^2 $ .也是一个交换群,可以用上面的缠绕数方法,由于 $T^2=S^1\times S^1 $ ,所以很容易得到其基本群为 $\mathbb{Z} $  .实际上,后面引入的自由群会更加直接地从代数上说明为什么是一个交换群,因为 $T^2 $ 上两种不同的圆周相互之间是可以互换顺序的,更直观的图像仍参见[拓扑学]({{< ref "/Notes/Topology.md" >}}).
+* 还可以计算 $T^2 $ 的基本群为 $\pi_1(T^2)=\mathbb{Z}^2 $ .也是一个交换群,可以用上面的缠绕数方法,由于 $T^2=S^1\times S^1 $ ,所以很容易得到其基本群为 $\mathbb{Z}^2 $  .实际上,后面引入的自由群会更加直接地从代数上说明为什么是一个交换群,因为 $T^2 $ 上两种不同的圆周相互之间是可以互换顺序的,更直观的图像仍参见[拓扑学]({{< ref "/Notes/Topology.md" >}}).
 
 下面系统地阐述自由群及其在同伦群中的应用.
 
@@ -611,7 +612,11 @@ $$
 
 #### 同伦群的初等计算
 
-##### 相对同伦群
+##### Van Kampen定理
+
+见[拓扑学笔记]({{< ref "/Notes/Topology.md" >}}).
+
+##### 相对同伦群与正合列
 
 更一般地,考虑映射
 $$
@@ -654,7 +659,7 @@ $$
 > $\pi_n(X) $ 是 $X $ 中保持基点 $\mathring{x} $ 的等价类,而 $X_n(X,A) $ 中除了保持基点,还固定底面 $A $ 上的等价类不变. 所以 $\pi_n(X) $ 中的单位元,也即是平凡的等价类,含入映射到 $\pi_n(X,A) $ 中后所得到的就是完全落在底面 $A $ 中的等价类.可以想象原本的基点扩展成了一个面.
 
 
-##### 计算
+##### 纤维化
 
 考虑纤维化:  $F\xhookrightarrow{i}E\xrightarrow{p}B $ ,将上正合列应用到此,有
 $$
@@ -815,7 +820,12 @@ $$
 $$
 
 ##### 小结
-总结一下,纤维化是指有了一个
+
+1. 推广同伦群,构造一个保基面的同伦群,即相对同伦群
+
+2. 通过相对同伦群理论,得到纤维化.
+
+3. 纤维化是指有了一个
 $$
   F\hookrightarrow E\xrightarrow{p}B
 $$
@@ -830,7 +840,7 @@ $$
 再据此处理一些问题.不过总是只能得到同伦群之间的一些相对关系,一些关键的结果总是从其他一些非平凡的过程中得到.
 
 
-### 计算结果总结
+### 同调群&同伦群计算结果总结
 
 在这里总结一下各种同调群、同伦群的结果,并简单叙述其计算方法.
 
@@ -848,11 +858,135 @@ $\boxed{\small{\text{同调群}} } $
 
 $\boxed{\small{\text{同伦群}} } $ 
 
+方法:
+1. 覆叠空间,纤维化
+2. Van Kampen定理
+3. $\pi_n(X\times Y)=\pi_n(X)\times \pi_n(Y) $ 
+4. 楔和、smash product的函子性 
+
+* 欧氏空间 $\R^m $ 都是可缩的,所以 $\pi_n(\R^m)=0 $ .
+* 球面 $S^m $ 
+  *  $\pi_{\lt n}(S^n)=0 $ , $S^n $ 上的 $S^{m} $ 是可缩的, $ m\lt n $ .
+  *  $\pi_1(S^1)=\mathbb{Z} $ . 利用 $S^1\cong \R/\mathbb{Z} $ .
+  *  $\pi_{n\ge 2}(S^1)=0 $ , 考虑 $f:S^n\rightarrow S^1 $ 的提升.
+  *  $\pi_3(S^2)=\mathbb{Z} $ , 考虑 Hopf 纤维化, $\pi_3(S^3)\cong \pi_3(S^2) $ .
+  *  $\pi_4(S^2)=\mathbb{Z}_2 $ .
+  *  $\pi_n(S^n)=\mathbb{Z} $ , 考虑 Hurenicz定理.
+* 与球面有关的(都用到楔和的性质)
+  * $\pi_1(S^1\vee S^1)=F_2[a,b] $
+  * $\pi_1(T^2)=\langle a,b |aba^{-1}b^{-1}=1 \rangle  $  
+  * $\pi_1(\Sigma_g)=\langle a_1,b_1,\dots,a_g,b_g |a_1b_1a_1^{-1}b_1^{-1}\dots a_gb_ga_g^{-1}b_g^{-1}=1 \rangle   $ 
+* $T^2 $ 还可以考虑Van Kampen定理.见拓扑学笔记.
+* Lie群的一些结果(参见前文)
+
+$$
+    \begin{array}{ccccccc} 
+& S O(2) & S O(3) & S O(4) & S O(5) & S O(6) & \cdots \\
+\pi_{1} & \mathbb{Z} & \mathbb{Z}_{2} & \mathbb{Z}_{2} & \mathbb{Z}_{2} & \mathbb{Z}_{2} & \cdots \\
+\pi_{2} & 0 & 0 & 0 & 0 & 0 & \cdots \\
+\pi_{3} & 0 & \mathbb{Z} & \mathbb{Z} \times \mathbb{Z} & \mathbb{Z} & \mathbb{Z} & \cdots \\
+\pi_{4} & 0 & \mathbb{Z}_{2} & \mathbb{Z}_{2} \times \mathbb{Z}_{2} & & & \cdots
+\end{array}
+$$
+$$
+  \begin{array}{ccccccc} 
+& S U(2) & S U(3) & S U(4) & S U(5) & S U(6) & \cdots \\
+\pi_{1} & 0 & 0 & 0 & 0 & 0 & \cdots \\
+\pi_{2} & 0 & 0 & 0 & 0 & 0 & \cdots \\
+\pi_{3} & \mathbb{Z} & \mathbb{Z} & \mathbb{Z} & \mathbb{Z} & \mathbb{Z} & \cdots \\
+\pi_{4} & \mathbb{Z}_{2} & & & & &
+\end{array}
+$$
+
+
 
 
 
 
 ### 黎曼几何
+
+
+
+#### 一些具体的计算
+
+##### 度规的Lie导数
+
+考虑沿向量场 $X $ 度规 $g=g_{ab}dx^a\otimes dx^b $  的Lie导数.首先回顾对一个  $1 $-形式 $\omega $  的Lie导数,若不想用局域展开的形式去计算,考虑到 $\omega(Y)\in C^\infty(M) ,Y\in\mathfrak{X}(M) $ ,那么一方面
+$$
+  \mathcal{L}_X(\omega(Y))=X(\omega(Y))
+$$
+另一方面,根据 Leibniz律:
+$$
+  \mathcal{L}_X(\omega(Y))=\mathcal{L}_X(\omega)(Y)+\omega(\mathcal{L}_X(Y))
+$$
+所以 $\mathcal{L}_X\omega(Y)=X(\omega(Y))-\omega([X,Y]) $ ,代入局部坐标中的展开形式,取 $Y=\partial_j $ ,于是
+$$
+  (\mathcal{L}_X\omega)_j=X(\omega_j)-\omega([X,\partial_j])
+$$
+代入 $X=X^i\partial_i $ ,即
+$$
+  (\mathcal{L}_X\omega)_j=X^i\partial_i\omega_j-\omega(-(\partial_jX^i)\partial_i)=X^i\partial_i\omega_j+\omega_i\partial_jX^i
+$$
+所以
+$$
+  \boxed{\mathcal{L}_X\omega=(X^i\partial_i\omega_j+\omega_i\partial_jX^i)dx^j}
+$$
+于是可以计算度规的Lie导数:
+
+$$
+  \begin{align*}
+    \mathcal{L}_X(g)&=\mathcal{L}_X(g_{ab}dx^a\otimes dx^b)
+    \\&=X(g_{ab})dx^a\otimes dx^b+g_{ab}\mathcal{L}_X(dx^a)\otimes dx^b+g_{ab}dx^a\otimes\mathcal{L}_X(dx^b)
+  \end{align*}
+$$
+其中
+$$
+  g_{ab}\mathcal{L}_X(dx^a)\otimes dx^b=g_{ab}(\partial_\mu X^a)dx^\mu\otimes dx^b
+$$
+所以上式即
+$$
+  \boxed{(\mathcal{L}_Xg)_{ab}=X^c\partial_c(g_{ab})+g_{cb}\partial_aX^c+g_{ac}\partial_bX^c}
+$$
+另外,对于 Levi-Civita 联络, $\nabla_aX_b=\nabla_a(g_{bc}X^c) $ 计算可得到
+$$
+  (\mathcal{L}_Xg)_{ij}=\nabla_iX_j+\nabla_jX_i
+$$
+
+> 实际上,这里其实根本不需要用到 $1$ -形式的Lie导数,因为Lie导数和外微分 $d $ 是交换的,所以可以直接计算
+$$
+  \mathcal{L}_X(dx^a)=d(\mathcal{L}_Xx^a)=(dX^a)=\partial_jX^adx^j
+$$
+
+> 另外,还可以直接利用 Levi-Civita联络进行计算,考虑
+$$
+  \begin{align*}
+    X(g(Y,Z))&= \mathcal{L}_X(g(Y,Z))
+    \\&=(\mathcal{L}_Xg)(Y,Z)+g(\mathcal{L}_XY,Z)+g(Y,\mathcal{L}_XZ)
+  \end{align*}
+$$
+另一方面,在 与度规适配的Levi-Civita联络下. 一方面,
+$$
+  X(g(Y,Z))=g(\nabla_XY,Z)+g(X,\nabla_YZ)
+$$
+另一方面,
+$$
+  [X,Y]=\nabla_XY-\nabla_YX
+$$
+可以很容易地就得到上面的结果 $(\mathcal{L}_Xg)_{ij}=\nabla_iX_j+\nabla_jX_i $ .
+
+##### 不变测度下的积分
+
+
+
+
+
+
+
+
+
+
+
+
 
 ___
 ___
