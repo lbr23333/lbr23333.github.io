@@ -753,7 +753,7 @@ $$
 $$
   0\rightarrow \pi_1(SO(N-1))\rightarrow \pi_1(SO(N))\rightarrow 0
 $$
-可知有 $\pi_1(SO(3))\cong \pi_1(SO(4))\cong \pi_1(SO(5))\cong \dots $ .另一方面,由于 $SO(3)\cong SU(2)/\mathbb{Z}_2 $ ,而且 $SU(3) $ 单连通,是 $SO(3) $ 的万有覆叠空间.所以 $\pi_1(SO(3))\cong \mathbb{Z}_2 $ .
+可知有 $\pi_1(SO(3))\cong \pi_1(SO(4))\cong \pi_1(SO(5))\cong \dots $ .另一方面,由于 $SO(3)\cong SU(2)/\mathbb{Z}_2 $ ,而且 $SU(2) $ 单连通,是 $SO(3) $ 的万有覆叠空间.所以 $\pi_1(SO(3))\cong \mathbb{Z}_2 $ .
 
 > 旋量群 $Spin(n) $ 在 $n\gt2 $ 时总是单连通的,所以 $Spin(n) $ 总是 $SO(n) $ 的万有覆叠空间.所以, $\pi_1(SO(n\gt 2))=\mathbb{Z}_2 $ .
 
