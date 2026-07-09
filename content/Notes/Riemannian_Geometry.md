@@ -1,13 +1,93 @@
 +++
-date = '2026-03-09T11:00:00+08:00'
+date = '2026-07-09'
 draft = false
 title = 'Riemannian Geometry'
 +++
 
-## Chapter1 Prelimiaries
-Def1.(Smooth Manifold)
-设$\mathcal{M}$是一个m维的拓扑空间，如果
-* $\mathcal{M}$是$A_2,T_2$的
-* 存在$\mathcal{M}$的一个开覆盖$\{U_\alpha\}$,使得对于每一个$U_\alpha$都微分同胚于一个欧氏空间$\mathbb{R}^m$中的开集$V_\alpha$,$\varphi_\alpha:U_\alpha\rightarrow V_\alpha$.且$U_\alpha,U_\beta$的转移函数$\varphi_{\alpha\beta}$也是微分同胚，即$\mathcal{M}$上有一个光滑图册$\mathcal{A}=\{(U_\alpha,V_\alpha,\varphi_\alpha)\}$.
+##  Prelimiaries
 
-则称$\mathcal{M}$是一个光滑流形.
+### 光滑流形
+
+## Riemannian Manifolds
+
+
+### 2. 黎曼度量
+
+
+
+### 3. 黎曼距离
+
+#### 3.1 曲线的长度
+考虑 $\gamma:[a,b]\rightarrow M $ 为一条光滑的参数曲线.于是
+$$
+  \dot{\gamma}(t)=(d\gamma)(\frac{d}{dt}),\dot{\gamma}(t)\in T_{\gamma(t)}M
+$$
+{{% mathbox type="green" title="曲线的长度" %}}
+曲线 $\gamma $ 的长度为
+$$
+  \begin{align*}
+    Length(\gamma)&:=\int^b_a||\dot{\gamma}(t)||_{\gamma(t)}dt
+    \\
+    &=\int^b_a\sqrt{g_{\gamma(t)}(\dot{\gamma}(t),\dot{\gamma}(t))}dt
+  \end{align*}
+$$
+有时会简单记作 $L(\gamma) $ .
+{{% /mathbox %}}
+
+简单起见,总会假设 $\gamma $ 是 regular (非退化)的,即 $\dot{\gamma}(t)\ne 0 $ .于是
+{{% mathbox type="blue" title="" %}}
+曲线长度 $L(\gamma) $ 与 regular参数化无关.
+{{% /mathbox %}}
+证明: 假设曲线 $\gamma:[a,b]\rightarrow M $ 的另一个参数化为 $\gamma_1:[c,d]\rightarrow M $ .于是,存在 $t_1:[a,b]\rightarrow [c,d] $ 即
+$$
+  \gamma_1(t_1(t))=\gamma(t)
+$$
+求导数,有
+$$
+  \dot{\gamma}_1(t_1)\frac{dt_1}{dt}(t)=\dot{\gamma}(t)  
+$$
+由曲线 regular 可知其中 $\frac{dt_1}{dt}(t)\ne 0 $ ,即 $\frac{dt_1}{dt}(t) $ 严格递增或递减,于是
+$$
+  \begin{align*}
+    L(\gamma_1)&=\int^d_c\sqrt{g_{\gamma_1(t_1)}(\dot{\gamma}_1(t_1),\dot{\gamma}_1(t_1) )}dt_1
+    \\
+    &=\int^b_a\sqrt{g_{\gamma(t)}((\frac{dt_1}{dt})^{-1}\dot{\gamma}(t),(\frac{dt_1}{dt})^{-1}\dot{\gamma}(t) )}\frac{dt_1}{dt} dt
+    \\
+    &=\int^b_a\sqrt{g_{\gamma(t)}(\dot{\gamma}(t) ,\dot{\gamma}(t) )}dt=L(\gamma)
+  \end{align*}
+$$
+完成证明 $\Box $ .
+
+用类似地方式可以证明,若 $Id:\varphi:(M,g_M)\rightarrow (N,g_N) $ 是一个局部的isometry,于是对于 $M $ 中任何的光滑曲线 $\gamma $ 都有
+$$
+  L(\gamma)=L(\varphi\circ \gamma)
+$$
+{{% proof %}}
+123
+
+{{% /proof %}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+___
+___
+___
+___
+___

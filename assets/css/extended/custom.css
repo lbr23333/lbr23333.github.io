@@ -104,3 +104,36 @@
 
 .dark .mathbox.slate { background-color: rgba(100, 116, 139, 0.1); }
 .dark .mathbox.slate .mathbox-title { color: #94a3b8; }
+
+/* ================= 证明环境 (Proof) ================= */
+.math-proof {
+    margin: 1.5em 0;
+    padding: 0;
+}
+
+.math-proof .proof-title {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.math-proof .proof-content {
+    /* 保证段落之间的正常间距 */
+    margin-bottom: 0.5em; 
+}
+
+.math-proof .proof-qed {
+    text-align: right; /* 将 Q.E.D 符号推到最右边 */
+    font-size: 1.2em;
+    line-height: 1;
+    margin-top: -1em; /* 稍微向上提一点，使其与最后一行文字看起来更紧凑 */
+    color: #666;
+}
+
+/* --- 🌙 夜间模式适配 --- */
+.dark .math-proof .proof-title {
+    color: #e5e7eb;
+}
+.dark .math-proof .proof-qed {
+    color: #9ca3af;
+}
