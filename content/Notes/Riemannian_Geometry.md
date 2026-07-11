@@ -5,14 +5,85 @@ title = 'Riemannian Geometry'
 weight = 1
 +++
 
-##  Prelimiaries
 
-### 光滑流形
+### 0. 光滑流形
 
-## Riemannian Manifolds
+参见[微分流形杂谈]({{< ref "/Notes/微分流形杂谈.md" >}}).
 
 
 ### 2. 黎曼度量
+
+由于在 Riemannian 几何中有大量的指标求和,所以采用 Einstein 求和约定:上下指标相同默认表示求和,除非特别说明,一般来说求和是从 $1 $ 到空间的维数.例如
+$$
+  a_ib^i:=\sum_ia_ib^i
+$$
+分母上的上指标会被认定为是下指标,反之亦然.通常来说,会选择向量场为下指标,其系数函数为上指标,例如 $a^1X_1+a^2X_2 $ .类似地, $1 $-形式一般会用下指标标记,而其系数函数一般用上指标标记.若取一个标准的坐标基,也就是 $X=X^i\partial_i,\omega=\omega_i dx^i $ .
+
+##### 黎曼度量
+
+设 $M $ 是一个光滑流形,
+{{% mathbox type="green" title="" %}}
+一个 $M $ 上的黎曼度量 $g $ 是指一个定义在 $T_pM $ 上的内积
+$$
+  g_p(\cdot,\cdot)=\langle \cdot,\cdot \rangle _p,\forall p\in M
+$$
+且光滑地依赖于 $p $ .
+{{% /mathbox %}}
+
+1. 其中光滑依赖是指,若 $X,Y $ 是两个 $U\subset M $ 上的光滑向量场,那么 $f(p)=\langle X_p,Y_p \rangle_p $ 是 $U $ 上的一个光滑函数.
+2. 注意,**黎曼度量**并不是一个传统意义上的**度量**,但是 $g $ 可以诱导出一个自然的**距离**作为 $M $ 上的度量.
+
+应用张量的语言,由定义
+$$
+  g:\Gamma^\infty(TM)\times \Gamma^\infty(TM)\rightarrow C^\infty(M)
+$$
+也就是说 $g $ 是 $M $ 上的一个 $(0,2) $-张量,是 $C^\infty(M) $-双线性的.所以作为内积定义中的对称性和正定性,在张量的语言中,也就是 $g $ 作为一个 $(0,2) $-张量是对称且正定的.即
+$$
+  \boxed{\small{\text{一个黎曼度量是指一个光滑、对称且正定的(0,2)-张量场}} }
+$$
+
+在后面的计算中,经常会在局域坐标系中计算.具体地,考虑坐标系 $\Set{U,x^1,\dots,x^m} $ ,记
+$$
+  g_{ij}(p)=\langle \partial_i,\partial_j \rangle_p
+$$
+根据前面的定义,函数 $g_{ij} $  有
+1. 对于任意的 $i,j $ , $g_{ij} $ 在 $p $ 处光滑.
+2. $g_{ij}=g_{ji} $ ,也就是说 $g_{ij(p)} $ 在任意的 $p $ 处都对称.
+3. 矩阵 $g_{ij(p)} $ 在任意 $p $ 处正定.
+
+注意,尽管 $g $ 是内蕴定义的,但函数 $g_{ij} $ 依赖于坐标系的选择.若选择 $U $ 上另一个坐标系为 $\Set{\tilde{x}^1,\dots,\tilde{x}^m} $ ,有转移函数
+$$
+  \tilde{\partial}_i=\frac{\partial x^k}{\partial \tilde{x}^i}\partial_k
+$$
+于是
+$$
+  \tilde{g}_{ij}=\langle \tilde{\partial}^i,\tilde{\partial}^j \rangle =\frac{\partial x^k}{\partial \tilde{x}^i}g_{kl}\frac{\partial x^l}{\partial \tilde{x}^j}
+$$
+换而言之,矩阵之间 $(\tilde{g}_{ij})=J^T(g_{ij})J $ ,其中 $J $ 是Jacobian, $J_{ij}=\frac{\partial x^i}{\partial \tilde{x}^j} $ .因此对于任意 $U $ 中的光滑向量场 $X=X^i\partial_i $ 和 $Y=Y^j\partial_j $ ,
+$$
+  \langle X_p,Y_p \rangle_p=X^i(p)Y^j(p)\langle \partial_i,\partial_j \rangle_p=g_{ij}X^i(p)Y^j(p)
+$$
+所以局部上有
+$$
+    g=g_{ij}dx^i\otimes dx^j
+$$
+
+
+由于每个矩阵 $(g_{ij}) $ 都是正定的,所有可逆.令其逆为 $(g^{ij}) $ ,即
+$$
+  g_{ij}g^{jk}=\delta^k_i
+$$
+矩阵 $(g^{ij}) $ 仍是正定的,可用其定义对偶空间中的内积: 在 $T_p^*M $ 中的$g^* $ .具体地,对于任意 $U $ 中的 $1 $-形式
+$$
+  \omega=\omega_i dx^i,\eta=\eta_j dx^j
+$$
+定义
+$$
+  g^*(\omega,\eta)=\langle \omega,\eta \rangle^*_p:=g^{ij}(p)\omega_i(p)\eta_j(p)
+$$
+显然,其定义是不依赖于坐标的.
+
+
 
 
 
