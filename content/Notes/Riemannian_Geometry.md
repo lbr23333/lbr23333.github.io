@@ -231,7 +231,7 @@ $d $ 是 $M $ 上的一个度量,即满足
 $$
   h=(\varphi^{-1})^*(g_U)
 $$
-有 $(V,h) $ 与 $(U,g|_U) $ 同构.令
+$\varphi $ 是 $(V,h) $ 与 $(U,g|_U) $ 之间的等距变换.令
 $$
   \lambda=\inf\left\{ (h_{ij})_x\small{\text{的本征值}} |x\in \bar{B}_{1/2}(0) \right\} 
 $$
@@ -260,11 +260,92 @@ $$
 于是完成证明.
 {{% /proof %}}
 
+显然,若 $\varphi:(M,g_M)\rightarrow (N,g_N) $ 是 isometry ,那么有
+$$
+  d_M(p,q)=d_N(\varphi(p),\varphi(q))
+$$
+即 $\phi:(M,d_M)\rightarrow (N,d_N) $ 是 isometry.注意其中两个 isometry 分别是黎曼度量和其所诱导的距离度量的isometry,明确期间,后面的 isometry 专指黎曼度量,即 $g_M=\varphi^*g_N $ ,而将后者称为保持距离的,或简称为一个保距变换.
 
+反之也同样有
+{{% mathbox type="blue" title="Myers-Steenrod" %}}
+设 $(M,g_M),(N,g_N) $ 都是黎曼流形,其上分别有诱导的 $d_M,d_N $ .若 $\varphi:(M,d_M)\rightarrow (N,d_N) $ 是一个保持距离的双射,那么 $\varphi $ 是一个isometry.特别地, $\varphi $ 是光滑的.
+{{% /mathbox %}}
 
+实际上,上定理还可以更强
+{{% mathbox type="blue" title="Palais" %}}
+黎曼流形上的黎曼距离,可以决定流形的光滑结构和黎曼度规.
+{{% /mathbox %}}
 
+进一步可以追问:
+{{% mathbox type="slate" title="给定 $M $ 上任意的一个度量结构 $d $ ,是否存在 $M $ 上的黎曼度量 $g $ 使得 $d $ 被实现为 $g $ 所诱导的黎曼距离? " %}}
+答案是否定的,一个经典的反例是 $\R^2 $ 中的 taxicab metric :任意两点之间都有无数条最短的曲线相连.而后面将会证明,黎曼流形中任何一点与其足够小领域中一点都只有唯一最短曲线连接,显然与上面的 taxicab metric 相矛盾.
+{{% /mathbox %}}
 
+有了黎曼度量所诱导的距离函数,可以进步研究其连续性.
+{{% mathbox type="blue" title="" %}}
+对于任意的 $p $ , $f(\cdot)=d(\cdot,p) $ 在 $M $ 上连续.
+{{% /mathbox %}}
 
+这里的连续当然是由流形的拓扑所定义的.
+{{% proof %}}
+只需要证明若 $q_i\rightarrow q $ ,则有 $f(q_i)\rightarrow f(q) $ .取 $(\varphi,U,V) $ Chart,  $q=\varphi(0) $ , $V=B_1(0)\subset \R^m $ , $q_i $ 是流形拓扑下收敛到 $q $ 的序列,即
+$$
+  \forall k,\exist N(k),s.t.\forall i\ge N(k),\varphi(q_i)\in B_{1/k}(0)
+$$
+由三角不等式,有 $|f(q_i)-f(q) |\le d(q,q_i) $ .为了证明 $f(q_i)\rightarrow f(q) $ ,即要证明 $d(q,q_i)\rightarrow 0 $ .
+
+同样取 $h=(\varphi^{-1})^*(g|_U) $ 为 $V $ 上诱导的黎曼度量,令
+$$
+  \Lambda=\sup\Set{(h_{ij})_x\small{\text{的本征值}}|x\in \overline{B_{1/2}(0)} }
+$$
+也就是说对于任意的 $x\in \overline{B_{1/2}(0)}$ 和 $X\in T_xV $ 都有
+$$
+  \langle X,X \rangle_h\le \Lambda\langle X,X \rangle_{g_0}
+$$
+取 $\tilde{\gamma}_i:[0,1]\rightarrow V,\tilde{\gamma}_i(t)=t\varphi(q_i) $ 为连接 $\varphi (q) $ 和 $\varphi(q_i) $ 的直线段.于是对于任意的 $i\ge N(k) $ 都有
+$$
+  L_h(\tilde{\gamma}_i)=\int^1_0\sqrt{\langle \dot{\tilde{\gamma}_i},\dot{\tilde{\gamma}_i} \rangle_h }dt\le \sqrt{\Lambda}\int^1_0\sqrt{\langle \dot{\tilde{\gamma}_i},\dot{\tilde{\gamma}_i} \rangle_{g_0} }dt=L_{g_0}(\tilde{\gamma}_i)\sqrt{\Lambda}=\frac{\sqrt{\Lambda}}{k}
+$$
+也就是说
+$$
+  d(q,q_i)\le L_g(\varphi^{-1}\circ \tilde{\gamma}_i)=L_h(\tilde{\gamma}_i)\le \sqrt\Lambda/k
+$$
+可见有 $d(q,q_i)\rightarrow 0 $ ,即 $f(q_i) $ 收敛到 $f(q) $ .
+{{% /proof %}}
+
+> 注意最后一步中第一个符号是 $\le $ 而不是 $= $ ,关键在于欧氏空间中所诱导的度量和欧氏空间自然的度量 $g_0 $ 有所不同.
+
+由上可知
+{{% mathbox type="blue" title=" " %}}
+$M $ 上诱导的度量拓扑和流形拓扑是相同的
+{{% /mathbox %}}
+{{% proof %}}
+由 $f $ 的连续性就可以知道,任意的度量开球也是流形拓扑中的开集.可见流形拓扑细于度量拓扑.
+
+反之,对于 $M $ 中任一点 $q $ 的开领域 $U $ ,形变到有Chart $(\varphi,U,V=B_1(0)) $ .重复前面证明中的步骤,可得 $\forall p \notin U $ , $d(p,q)\ge \sqrt{\lambda}/2 $ ,即半径为 $\sqrt{\lambda}/2 $ 的开球含于 $U $ 中,也就是说度量拓扑细于流形拓扑.
+
+综上可知,两拓扑相同.
+{{% /proof %}}
+
+但是若再进一步考虑距离函数 $d(\cdot,p) $ 的光滑性,一般而言就没有上面连续性那样好的性质.例如对于欧氏空间中的
+$$
+  d(0,x)=\sqrt{x_1^2+x_2^2}
+$$
+就在 $0 $ 处不光滑.但是在其他位置都光滑.且 $d^2(0,x) $ 总是处处光滑的.
+
+一般地,对于黎曼流形 $(M,g) $ 
+1. $d(\cdot,p) $ 一般在 $q=p $ 处不是光滑的,但 $d^2(\cdot,p) $ 总是处处光滑的.
+2. $d(\cdot,p) $ 在 $U\setminus {p} $ 中是光滑的,其中 $U $ 是 $p $ 的领域,但是整体上可能在某些点处并不光滑,例如对于 $(S^2,g_{round}) $ 考虑 $p=(0,0,-1) $ 也就是南极点,定义
+$$
+  f(q)=d(p,q)=\pi(1-\arccos{z})=\pi(1-\arccos{\sqrt{1-x^2-y^2}})
+$$
+在北极点也并不光滑.
+
+从上例可见, $g_{round} $ 所诱导的并不欧氏距离,因为欧氏距离只有在 $p $ 一点处不光滑,由此再次说明了,度量结构并非都可以由任意的黎曼度量所诱导出来.
+
+### 4. 黎曼测度
+
+### 5. 线性联络
 
 
 
