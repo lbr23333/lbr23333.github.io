@@ -559,6 +559,51 @@ $$
 2.  $ad: \mathfrak{g} \rightarrow Der(\mathfrak{g} )\subseteq \mathfrak{gl}(\mathfrak{g} )  $ 是伴随表示.
 
 
+还有一些从已知的表示得到新表示的方法.设 $V_1,\dots,V_m $ 都是 $\mathfrak{g}  $-模, $\varphi_i:\mathfrak{g} \rightarrow \mathfrak{gl}(V_i) $ 是同态,也就是有一族 $\mathfrak{g}  $ 的表示,那么对于 $V=V_1\oplus \dots\oplus V_m $ 定义
+$$
+  \varphi:\mathfrak{g} \rightarrow \mathfrak{gl}(V)
+$$
+有
+$$
+  \varphi(x)(v_1+\dots+v_m)=\varphi_1(x)(v_1)+\dots+\varphi_m(x)(v_m) 
+$$
+> 我感觉老瓦书上的写法可能更方便理解一点,其实也就是用笛卡尔积, $V=V_1\times\dots\times V_m $ ,于是
+$$
+  \varphi(x)(v_1,\dots,v_m)=(\varphi_1(x)(v_1),\dots,\varphi_n(x)(v_n))
+$$
+
+再考虑 $W=V_1\otimes V_2\otimes \dots\otimes V_m $ ,有
+$$
+  \begin{align*}
+    &\varphi(x)(v_1\otimes \dots\otimes v_m)=(\varphi_1(x) (v_1))\otimes v_2\otimes \dots \otimes v_m
+    \\
+    &+v_1\otimes (\varphi_2(x)(v_2))\otimes \dots\otimes v_m+v_1\otimes v_2\otimes \dots\otimes (\varphi_n(x)(v_n))
+  \end{align*}
+$$
+若 $\varphi:V_1\rightarrow V_2 $ 满足对于任意的 $x\in \mathfrak{g}  $ 下图标交换,那么称 $\psi $ 是一个 $\mathfrak{g}  $ 模同态.
+$$
+  \begin{align*}
+    &V_1&\xrightarrow{\psi}&V_2
+    \\
+    \varphi_1(x)&\downarrow&& \downarrow \varphi_2(x)
+    \\
+    &V_1&\xrightarrow{\psi}&V_2
+  \end{align*}
+$$
+还可以定义子模和商模,于是进一步可以定义Lie代数
+* 不可约: $V $ 没有非平凡的子模.
+* 不可分解: $V $ 不能分解为子模的直和.
+
+例如:  $V $ 有子模 $V_1 $ , $V=V_1\oplus V_2 $ ,但这不是 $\mathfrak{g}  $-模的直和,所以
+$$
+  \varphi(x)=\begin{bmatrix}
+    *&*\\0& *
+  \end{bmatrix}
+$$
+
+更具体地,不可分解是表示为分快上三角,而不可约表示为分块对角.
+
+
 
 ### 1.3 李群的李代数
 
