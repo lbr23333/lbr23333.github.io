@@ -1,5 +1,5 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
+baseURL = 'https://lbr23333.github.io/'
+languageCode = 'zh-cn'
 title = 'lbr23333'
 theme = "PaperMod"
 [params]
