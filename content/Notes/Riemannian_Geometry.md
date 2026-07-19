@@ -493,70 +493,186 @@ $$
 $$
   即并不需要 $Y $ 在某邻域中的全部信息,只需要沿某一条曲线的信息即可.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{{% proof %}}
+👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
+{{% /proof %}}
+
+##### 局部计算
+在 $(\varphi,U,V) $ Chart中, $\nabla_{\partial_i}\partial_j $ 是 $U $ 上的一个光滑向量场,所以一定能够表示成
+$$
+  \nabla_{\partial_i}\partial_j=\Gamma^k{}_{ij}\partial_k
+$$
+其中 $\Gamma\in C^\infty(M) $ 称为该 Chart 下 $\nabla $ 的 **Christoffel symbol** .考虑前面 $\R^n $ 上的
+$$
+  \nabla_XY=X^i(\partial_i Y^j)\partial_j+X^iY^j\gamma^k{}_{ij}\partial_k
+$$
+$\gamma^k{}_{ij} $ 就是 Christoffel symbol ,且对于 $\R^n $ 中的 canonical 线性联络而言,有 $\gamma^k{}_{ij}=0 $ .
+
+在坐标变换下, $\Gamma^k{}_{ij} $ 并不是一个标准的张量变换,
+$$
+  \tilde\Gamma^k{}_{ij}=\dots
+$$
+但是可以证明, $\nabla-\bar{\nabla} $ 中没有最后的bad term,即 $\nabla-\bar{\nabla} $ 总是一个张量.
+
+##### 线性联络的存在性
+
+##### 从线性联络回到平行移动
+
+### 6. Levi-Civita 联络
+
+$(LC)^2=Levi-Civita~Linear~Connection $ 
+
+##### 张量的协变导数
+前面提到,总可以在 $M $ 的丛 $E $ 上定义线性联络
+$$
+  \nabla:\Gamma^\infty(TM)\times \Gamma^\infty(E)\rightarrow \Gamma^\infty(E)
+$$
+满足
+a.  $\nabla_{fX}s=f\nabla_Xs $ ;
+
+b.  $\nabla_X(fs)=(Xf)s+f\nabla_Xs $ .
+
+而这就等价于
+$$
+  \begin{align*}
+    &\nabla:\Gamma^\infty(E)\rightarrow \Gamma^\infty(T^*M\otimes E)
+    \\
+    &\nabla(fs)=df\otimes s+f\nabla s
+  \end{align*}
+$$
+自动满足前面的两条性质.而该形式就诱导出 $\bigotimes^{r,s}TM $ 上的线性联络.
+1.  $TM $ 上的线性联络,就是前面的.
+2.  $\bigotimes^{0,0}TM $ 上的线性联络,由于 $\Gamma^\infty(\bigotimes^{0,0}TM)=C^\infty(M) $ ,所以其上一个线性联络是指
+$$
+  \begin{align*}
+    &\nabla:\Gamma^\infty(TM)\times C^\infty (M)\rightarrow C^\infty(M)
+    \\
+    &(X,f)\mapsto \nabla_Xf
+  \end{align*}
+$$
+  实际上,考虑 $\omega\in \Omega^1(M) $ , $\nabla_Xf:=Xf+\omega(X)f $ 就是 $M\times \R $ 上的线性联络,很容易验证其满足线性联络的定义a.b. 对于 $\omega=0 $ 的情况就是这里所考虑的 $\nabla_Xf=Xf $ ,称之为线性联络在平凡丛上的canonical choice .而且可见实际上只用到了光滑流形的结构,用张量的语言,实际上, 
+$$
+    \nabla=d : C^\infty(M)\rightarrow \Gamma^\infty(TM\otimes \bigotimes{}^{0,0}TM)=\Gamma^\infty(TM)
+$$
+   
+3.  $T^*M=\bigotimes^{0,1}TM $ 上的线性联络.同样是想 
+$$
+  \nabla:\Gamma^\infty(TM)\times \Gamma^\infty(T^*M)\rightarrow \Gamma^\infty(T^*M)=\Omega^1(M)
+$$
+满足a.b. 考虑利用切空间与余切空间之间的对偶性.
+$$
+  \begin{align*}
+    &P^\gamma_{0,t}:T_{\gamma(0)}M\rightarrow T_{\gamma(t)}M
+    \\
+    \Rightarrow &(P^\gamma_{0,t})^*:T^*_{\gamma(t)}M\rightarrow T^*_{\gamma(0)}M
+  \end{align*}
+$$
+  于是可以定义协变导数
+$$
+    (\nabla_X\omega)(p)=\lim_{t\rightarrow 0}\frac{(P^\gamma_{0,t})^*\omega(\gamma(t))-\omega_p}{t}
+$$
+其中 $\gamma(0)=p,\dot{\gamma}(t)=X_{\gamma(t)} $ .这与前面的问题一样,即难以用于具体的计算,应该找到更加代数形式的等价定义.不妨进一步演化,有
+$$
+  \begin{align*}
+    (\nabla_X\omega)(Y_p)&=\lim_{t\rightarrow 0}\frac{(P^\gamma_{0,t})^*\omega(\gamma(t))(Y_p)-\omega_p(Y_p)}{t}
+    \\
+    &=\lim_{t\rightarrow 0}\frac{\omega(\gamma(t))(P^\gamma_{0,t}(Y_p))-\omega_p(Y_p)}{t}
+    \\
+    &=\lim_{t\rightarrow 0}\frac{\omega(\gamma(t))(P^\gamma_{0,t}(Y_p))-\omega_{\gamma(t)}(Y_{\gamma(t)})+\omega_{\gamma(t)}(Y_{\gamma(t)}) -\omega_p(Y_p)}{t}
+  \end{align*}
+$$
+其中,第一部分即
+$$
+  \lim_{t\rightarrow 0}\frac{-\omega_{\gamma(t)}(P^\gamma_{0,t})((P^\gamma_{o,t})^{-1}Y_{\gamma(t)}-Y_p)}{t}=-\omega_p(\nabla_XY)_p
+$$
+第二部分即
+$$
+  \frac{d}{dt}|_{t=0}\omega(Y)=\dot{\gamma}(0)(\omega(Y))=X(\omega(Y))
+$$
+所以
+$$
+  (\nabla_X\omega)(Y)=X(\omega(Y))-\omega(\nabla_XY)
+$$
+
+更一般地,考虑 $\bigotimes^{r,s}TM $ 上的线性联络,先考虑
+$$
+  (P^\gamma_{0,t})^{(r,s)}:\bigotimes{}^{r,s}TM\rightarrow \bigotimes{}^{r,s}TM
+$$
+是一个同构.具体地,在切丛上就是 $P^\gamma_{0,t} $ 作用,在余切丛上就是 $((P^\gamma_{0,t})^*)^{-1} $ 作用.于是有协变导数为
+$$
+  \nabla_XT=\frac{d}{dt}|_{t=0}((P^\gamma_{0,t})^{(r,s)})^{-1}T_{\gamma(t)}
+$$
+同理与上面 $1 $-形式的协变导数的演化,可得到
+$$
+  1
+$$
+
+例子: 对于 $(0,2) $-张量 $g $ ,有
+$$
+  (\nabla_Xg)(Y,Z)=X(\langle Y,Z \rangle )-\langle \nabla_XY,Z \rangle -\langle Y,\nabla_X Z\rangle 
+$$
+
+由上面过程可见,  $\bigotimes{}^{r,s}TM $上的  $\nabla $ 同样有三中localities.还有张量 $T $ 沿一条曲线 $\gamma $ 的平行可同样定义为 $\nabla_{\dot{\gamma}}T=0 $ .
+
+若考虑恒等映射 $I:\Gamma^\infty(TM)\rightarrow \Gamma^\infty(TM) $ 所诱导的 $\tilde{I} $ 为一 $(1,1) $-张量.有
+$$
+  \tilde{I}(\omega\otimes Y)=\omega(Y)
+$$
+于是
+$$
+  (\nabla_X\tilde{I})(\omega,Y)=X(\omega(Y))-(\nabla_X\omega)(Y)-\omega(\nabla_XY)=0
+$$
+这个结果是合理的,因为恒等映射的协变导数本就应该等于 $0 $ .而这也给出了
+$$
+  (\nabla_XY)=X(\omega(Y))-\omega(\nabla_XY)
+$$
+的另一种解释.然而, $\tilde{I}(\omega\otimes Y)=\omega(Y) $ 实际上就是取了一个缩并,即
+$$
+  C^1_1(\omega\otimes Y)=\omega(Y)
+$$
+一方面,
+$$
+  \nabla_XC^1_1(\omega\otimes Y)=\nabla_X(\omega(Y))
+$$
+另一方面,
+$$
+  \begin{align*}
+    C^1_1(\nabla_X(\omega\otimes Y))&=C^1_1((\nabla_XY)\otimes\omega+Y\otimes\nabla_X\omega)
+    \\&=\omega(\nabla_XY)+(\nabla_X\omega)Y
+  \end{align*}
+$$
+这说明 $\nabla_X $ 与 $C^1_1 $ 是对易的,当且仅当 $\nabla_X\tilde{I}=0 $ .从中可以给出一个更一般的结果
+{{% mathbox type="blue" title="" %}}
+给定 $TM $ 上的 $\nabla $ 
+$$
+  \nabla:\gamma^\infty(TM)\times \Gamma^\infty(\bigotimes{}^{r,s}TM)\rightarrow \Gamma^\infty(\bigotimes{}^{r,s}TM)
+$$
+是 $\bigotimes{}^{r,s}TM $ 中的线性联络,其与张量积 $\otimes $ 是**相容的**.
+
+换句话说,对于 $M $ 中全体张量场的代数, $\nabla_X $ 作为协变导数算符,实际上就是该代数的导子.即
+1.  $\nabla_X(T_1\otimes T_2)=(\nabla_X T_1)\otimes T_2+T_1\otimes(\nabla_X T_2) $ 
+2.  $C^i_j(\nabla_XT)=\nabla_X C^i_j(T) $ 
+
+{{% /mathbox %}}
+
+证明就是展开暴算.
+
+所以前面的
+$$
+  (\nabla_X\omega)(Y)=X(\omega(Y))-\omega(\nabla_XY)
+$$
+实际上就是对
+$$
+  \nabla_X(Y\otimes \omega)=(\nabla_XY)\otimes \omega+Y\otimes(\nabla_X\omega)
+$$
+取缩并所得到的结果.更一般地,还可以用此得到一般张量的协变导数.
+
+这给出了 $\nabla_XT $ 的公理化定义.
+\{{% mathbox type="green" title="" %}}
+👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
+{{% /mathbox %}}
+
+##### Hessian与线性联络的对称
 
 
 
