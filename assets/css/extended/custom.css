@@ -137,3 +137,10 @@
 .dark .math-proof .proof-qed {
     color: #9ca3af;
 }
+
+.post-content .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.25rem;
+}
