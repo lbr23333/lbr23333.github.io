@@ -9,22 +9,8 @@ mainSections = ["posts", "notes", "books"]
 [params.profileMode]
 enabled = true
 
-[params.homeInfoParams]
-Title = "你好！我是刘般若"
-Content = """
-粒子天体物理方向研究生。这里主要记录物理、数学学习笔记，读书记录，以及一些日常思考。
-
-**目前关注：** 广义相对论、微分几何、弦论与宇宙线。
-
-**推荐阅读：**
-
-- [Riemannian Geometry](/notes/riemannian_geometry/)
-- [Brief Introduction on Topology](/notes/topology/)
-- [Lie 群与 Lie 代数](/notes/lie_grouplie_algebra/)
-
-[全部笔记](/notes/) · [读书记录](/books/) · [博客](/posts/)
-"""
-
+title = "你好！我是刘般若"
+subtitle = "粒子天体物理研究生"
 imageUrl = "https://github.com/lbr23333.png"
 imageWidth = 120
 imageHeight = 120
