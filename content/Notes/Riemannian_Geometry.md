@@ -3,6 +3,8 @@ date = '2026-07-09'
 draft = false
 title = 'Riemannian Geometry'
 weight = 1
+ShowToc = true
+TocOpen = true
 +++
 
 
