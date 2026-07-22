@@ -670,7 +670,8 @@ $$
 取缩并所得到的结果.更一般地,还可以用此得到一般张量的协变导数.
 
 这给出了 $\nabla_XT $ 的公理化定义.
-\{{% mathbox type="green" title="" %}}
+
+{{% mathbox type="green" title="" %}}
 👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
 {{% /mathbox %}}
 
