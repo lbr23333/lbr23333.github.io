@@ -543,7 +543,11 @@ $$
   \end{align*}
 $$
 自动满足前面的两条性质.而该形式就诱导出 $\bigotimes^{r,s}TM $ 上的线性联络.
-1.  $TM $ 上的线性联络,就是前面的.
+1.  $TM $ 上的线性联络,就是前面所定义的
+$$
+  \boxed{\nabla_XY(f)}
+$$
+
 2.  $\bigotimes^{0,0}TM $ 上的线性联络,由于 $\Gamma^\infty(\bigotimes^{0,0}TM)=C^\infty(M) $ ,所以其上一个线性联络是指
 $$
   \begin{align*}
@@ -593,7 +597,7 @@ $$
 $$
 所以
 $$
-  (\nabla_X\omega)(Y)=X(\omega(Y))-\omega(\nabla_XY)
+  \boxed{(\nabla_X\omega)(Y)=X(\omega(Y))-\omega(\nabla_XY)}
 $$
 
 更一般地,考虑 $\bigotimes^{r,s}TM $ 上的线性联络,先考虑
@@ -606,7 +610,7 @@ $$
 $$
 同理与上面 $1 $-形式的协变导数的演化,可得到
 $$
-  1
+  \boxed{1}
 $$
 
 例子: 对于 $(0,2) $-张量 $g $ ,有
@@ -644,7 +648,7 @@ $$
   \end{align*}
 $$
 这说明 $\nabla_X $ 与 $C^1_1 $ 是对易的,当且仅当 $\nabla_X\tilde{I}=0 $ .从中可以给出一个更一般的结果
-{{% mathbox type="blue" title="" %}}
+{{% mathbox type="blue" title="协变导数的导子性" %}}
 给定 $TM $ 上的 $\nabla $ 
 $$
   \nabla:\gamma^\infty(TM)\times \Gamma^\infty(\bigotimes{}^{r,s}TM)\rightarrow \Gamma^\infty(\bigotimes{}^{r,s}TM)
@@ -667,17 +671,162 @@ $$
 $$
   \nabla_X(Y\otimes \omega)=(\nabla_XY)\otimes \omega+Y\otimes(\nabla_X\omega)
 $$
-取缩并所得到的结果.更一般地,还可以用此得到一般张量的协变导数.
+取缩并所得到的结果.更一般地,还可以用此得到一般张量的协变导数式.比如,对于前面所计算的度规的协变导数,可以考虑
+$$
+  \nabla_X(g(Y,Z))=(\nabla_Xg)(Y,Z)+g(\nabla_XY,Z)+g(Y,\nabla_XZ)
+$$
+于是就得到了 $(\nabla_Xg)(Y,Z)=X(\langle Y,Z \rangle )-\langle \nabla_XY,Z \rangle -\langle Y,\nabla_X Z\rangle  $ .
 
 这给出了 $\nabla_XT $ 的公理化定义.
 
 {{% mathbox type="green" title="" %}}
-👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷👷
+定义在 $TM $ 上任意的线性联络 $\nabla $ 给出了任意张量场 $\Gamma^\infty(\bigotimes^{r,s}TM) $ 唯一的线性联络,满足
+1. 在 $TM $ 上就等于 $\nabla $ .
+2. 在平凡丛 $M\times \R $ 上等于 $\nabla $ .
+3. 满足a.b.
+
 {{% /mathbox %}}
 
 ##### Hessian与线性联络的对称
+前面提到,线性联络的定义有两个等价的视角
+$$
+  \begin{align*}
+    &\nabla:\Gamma^\infty(TM)\times\Gamma^\infty(\bigotimes{}^{r,s} TM)\rightarrow \Gamma^\infty(\bigotimes{}^{r,s} TM)
+    \\
+    &\Updownarrow
+    \\
+    &\nabla:\Gamma^\infty(\bigotimes{}^{r,s} TM)\rightarrow \Gamma^\infty(T^*M\otimes\bigotimes{}^{r,s} TM)=\Gamma^\infty(\bigotimes{}^{r,s+1} TM)
+  \end{align*}
+$$
+也就是有 $(\nabla_XT)(\dotsb)=\nabla T(\dotsb,X)$ ,后面一种视角下的方式是方便进迭代的
+$$
+  \nabla^2:\Gamma^\infty(\bigotimes{}^{r,s} TM)\rightarrow \Gamma^\infty(\bigotimes{}^{r,s+2} TM)
+$$
+也就是
+$$
+  \nabla^2T(\dotsb,X,Y)=\nabla_Y(\nabla T(\dotsb,X))=\nabla_Y\nabla_XT(\dotsb)-\nabla_{\nabla_YX}T(\dotsb)
+$$
+> 注意这里最后一步就是 $\nabla_Y $ 的导子性.具体地
+$$
+  \begin{align*}
+  &\nabla_Y(\nabla T(\dotsb,X))
+  \\
+   &= (\nabla_Y(\nabla T(\dotsb,X)))-\nabla T(\dots,\nabla_YZ,\dots,X)-\nabla T(\dotsb,\nabla_YX)
+  \end{align*}
+$$
+> 而其中
+$$
+  (\nabla_Y(\nabla T(\dotsb,X)))=\nabla_Y\nabla_X T(\dotsb)+\nabla_X T(\dots,\nabla_YZ,\dots,X)
+$$
+ 所以就有了上面的结果.
+
+特别地,若 $r=s=0 $ ,即
+$$
+  \nabla^2f(X,Y)=YXf-(\nabla_YX)f
+$$
+称之为 $f $ 关于 $\nabla $ 的 $\boxed{Hessian} $ .可见 $\nabla^2f $ 是一个线性形式,一般来说并不是对称的,考虑
+$$
+  \begin{align*}
+    &(\nabla^2f)(X,Y)-(\nabla^2f)(Y,X)
+    \\
+    &=Y(X(f))-(\nabla_YX)f-X(Y(f))+(\nabla_XY)f
+    \\
+    &=(\nabla_XY-\nabla_YX-[X,Y])f
+  \end{align*}
+$$
+可见正是 $(\nabla_XY-\nabla_YX-[X,Y]) $ 的存在使得 $Hessian $ 不是对称的,将其定义为 $\boxed{Torsion ~Tensor} $ :
+$$
+  \mathcal{T}(X,Y)=(\nabla_XY-\nabla_YX-[X,Y])
+$$
+可以验证对 $X,Y $ 都是 $C^\infty(M) $ 线性的,即 $\mathcal{T} $ 是一个 $(1,2) $-张量:
+$$
+  \mathcal{T}(fX,Y)=\mathcal{T}(X,fY)=f\mathcal{T}(X,Y)
+$$
+
+一个简单的例子: 考虑 $\R^3 $ 上的 $e_1,e_2,e_3 $ ,定义
+$$
+  \mathcal{T}(e_i,e_j)=e_i\times e_j-e_j\times e_i=2e_i\times e_j
+$$
+(也就是定义 $\nabla_{e_i}e_j=e_i\times e_j $ ),于是考虑 $e_2 $ 沿 $e_1 $ 的平行移动,得到 $X(x) $ ,设
+$$
+  X(x)=a(X)e_1+b(x)e_2+c(X)e_3
+$$
+于是有
+$$
+  0=\nabla_{e_1}X=a'(x)e_1+b'(x)e_2+b(x)e_3+c'(x)e_3-c(x)e_2
+$$
+即 $a'=0,b'=c,c'=-b $ .另外还有初始条件为 $a(0)=c(0)=0,b(0)=1 $ ,于是解得
+$$
+  X(t)=(\cos x)e_2-(\sin x)e_3
+$$
+可以从中探见 Torsion 的几何含义,也就是使得 frame 在平行移动移动下旋转(twist).
+
+##### Local computation
+$\mathcal{T}(\partial_i,\partial_j)=\mathcal{T}^k{}_{ij}\partial_k $ ,另一方面 $\mathcal{T}(\partial_i,\partial_j)=\nabla_{\partial_i}\partial_j-\nabla_{\partial_j}\partial_i $ ,注意其中 $[\partial_i,\partial_j]=0 $ .进一步按照前面定义的 Christoffel
+$$
+  \mathcal{T}^k{}_{ij}=\Gamma^k{}_{ij}-\Gamma^k{}_{ji}
+$$
+故 $\nabla^2f $ 对称 $\iff $  $\mathcal{T}=0 $  $\iff $  $\Gamma^k{}_{ij}=\Gamma^k{}_{ji} $ .
+
+称这样的 $\nabla $ 为 torsion free connection(无挠联络),或者对称联络.
+
+> 前面提到过,Laplacian是Riem几何中最重要的微分算子,而Hessian实际上取trace就是Laplacian,所以为了方便后面的计算,取一个无挠联络是很重要的.
+
+##### 度规相容
+回到黎曼流形 $(M,g) $ 中,考虑其中一中nice联络,满足
+1. torsion free
+2. metric compatile
+
+$g $ 定义了每个切空间中的内积,而 $\nabla $ 诱导了不同切空间之间的平行移动,所以很自然地希望有
+$$
+  P^\gamma_{0,t}:(T_{\gamma(0)}M,g_{\gamma(0)})\rightarrow (T_{\gamma(t)}M,g_{\gamma(t)})
+$$
+是 isometry,这即是**度规相容条件**.
+
+{{% mathbox type="blue" title="等价描述" %}}
+$P^\gamma_{0,t} $ **总是**一个线性isometry,当且仅当 $\nabla g=0 $ .
+{{% /mathbox %}}
+
+> 这里的“总是”是指,对于任何曲线,任何时间参数 $0,t $ 的 $P^\gamma_{0,t} $ .
+
+{{% proof %}}
+$(\Rightarrow ) $ 对于任意的 $X,Y,Z $ ,取曲线 $\gamma $ 满足 $\gamma(0)=p,\dot{\gamma}(0)=X_p  $ .再取 $T_pM $ 的一正交归一基 $\Set{e_1,\dots,e_m} $ ,并记 $e_i(t)=P^\gamma_{0,t} $ , 由于 $P^\gamma_{0,t} $ 为 isometry,所以 $\Set{e_i(t)} $ 是 $T_{\gamma(t)}M $ 的一组正交归一基,记
+$$
+  Y=Y^j(t)e_j(t),Z=Z^k(t)e_k(t)
+$$
+于是根据正交归一基的性质,有
+$$
+  \langle Y,Z \rangle =\sum_j Y^j(t)Z^j(t)
+$$
+那么
+$$
+  \begin{align*}
+    X_p(\langle Y,Z \rangle )&=\sum_j((Y^j)'(0)Z^j(0)+Y^j(0)(Z^j)'(0))
+    \\
+    &=\langle \nabla_{X_p}Y,Z \rangle_p+\langle Y,\nabla_{X_p}Z \rangle_p
+  \end{align*}
+$$
+也就是
+$$
+  (\nabla_Xg)(Y,Z)(p)=X_p\langle Y,Z \rangle_p-\langle \nabla_{X_p}Y,Z \rangle_p-\langle Y,\nabla_{X_p}Z \rangle_p
+$$
+
+反之 $(\Leftarrow) $ 有 $\nabla g=0 $ .设 $X,Y $ 沿 $\gamma $ 平行,有
+$$
+  \frac{d}{dt}\langle X_{\gamma(t)},Y_{\gamma(t)} \rangle =\dot{\gamma}(t) \langle X_{\gamma(t)},Y_{\gamma(t)} \rangle =\nabla_{\dot{\gamma}(t) }\langle X_{\gamma(t)},Y_{\gamma(t)} \rangle 
+$$
+由于 $\nabla g=0 $ 且 $X,Y $ 都是沿 $\gamma $ 是平行的,所以
+$$
+  \nabla_{\dot{\gamma}(t) }\langle X_{\gamma(t)},Y_{\gamma(t)} \rangle =\langle\nabla_{\dot{\gamma}(t) } X_{\gamma(t)},Y_{\gamma(t)} \rangle +\langle X_{\gamma(t)},\nabla_{\dot{\gamma}(t) }Y_{\gamma(t)} \rangle =0
+$$
+即
+$$
+  \langle X_{\gamma(t)},Y_{\gamma(t)} \rangle =const.
+$$
+所以 $P^\gamma_{0,t} $ 为linear isometry.
 
 
+{{% /proof %}}
 
 
 
