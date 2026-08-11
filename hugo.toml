@@ -22,25 +22,25 @@ url = "mailto:lbr200423333@gmail.com"
 
 [[menu.main]]
 identifier = "posts"
-name = "📓 Blogs"
+name = "📓 BLOG"
 url = "/posts/"
 weight = 10
 
 [[menu.main]]
 identifier = "tags"
-name = "🏷️ 标签"
+name = "🏷️ TAG"
 url = "/tags/"
 weight = 30
 
 [[menu.main]]
 identifier = "books"
-name = "📖 读书"
+name = "📖 READ"
 url = "/books/"
 weight = 20
 
 [[menu.main]]
 identifier = "notes"
-name = "📒 笔记"
+name = "📒 NOTE"
 url = "/notes/"
 weight = 20
 
@@ -63,6 +63,6 @@ home = ["HTML", "RSS", "JSON"]
 
 [[menu.main]]
 identifier = "search"
-name = "🔍 搜索"
+name = "🔍"
 url = "/search/"
 weight = 40
