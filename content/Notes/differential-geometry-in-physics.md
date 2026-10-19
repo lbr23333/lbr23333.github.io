@@ -1,7 +1,6 @@
 ---
 title : "topology and differetial geometry in physics"
 description : "Note on lecture"
-weight : 1
 ShowToc : true
 TocOpen : true 
 ---
