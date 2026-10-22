@@ -1,13 +1,12 @@
 .katex, .katex * {
     box-sizing: content-box !important;
-    line-height: normal !important;
 }
 
 /* 给正文里的引用块加上灰色背景和更好的间距 */
 .post-content blockquote {
     background-color: #f5f5f5; /* 浅灰色背景 */
     border-left: 4px solid #8c8c8c; /* 左侧加粗的灰色指示线 */
-    padding: 15px 20px; /* 内部文字与边框的距离（上下15，左右20） */
+    padding: 15px 20px; /* 内部文字与边框的距离（上下 15，左右 20） */
     margin: 20px 0; /* 引用块与上下正文的距离 */
     border-radius: 0 6px 6px 0; /* 右侧微微圆角，视觉更柔和 */
     color: #333333; /* 字体颜色稍微调深，增加辨识度 */
@@ -51,21 +50,21 @@
     margin-bottom: 0; /* 消除底部多余空白 */
 }
 
-/* --- 🌟 主题色彩:蓝色系 --- */
+/* --- 🌟 主题色彩：蓝色系 --- */
 .mathbox.blue {
     border-left-color: #007bff;
     background-color: #f0f7ff;
 }
 .mathbox.blue .mathbox-title { color: #0056b3; }
 
-/* --- 🌟 主题色彩:红色系 --- */
+/* --- 🌟 主题色彩：红色系 --- */
 .mathbox.red {
     border-left-color: #dc3545;
     background-color: #fff5f5;
 }
 .mathbox.red .mathbox-title { color: #a71d2a; }
 
-/* --- 🌟 主题色彩:橙色系 --- */
+/* --- 🌟 主题色彩：橙色系 --- */
 .mathbox.orange {
     border-left-color: #fd7e14;
     background-color: #fff9f4;
@@ -142,5 +141,5 @@
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: 0.25rem;
+  padding: 0.35rem 0;
 }
